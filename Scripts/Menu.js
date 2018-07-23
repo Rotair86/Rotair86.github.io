@@ -82,6 +82,16 @@ function Menu(SourcePage)
 	txt = txt +							'<a href="http://msdn.microsoft.com/en-us/library/gg145045.aspx">.NET Framework Class Library</a>';
 	txt = txt +						'</div>';
 	txt = txt + '';
+	//Installation Requirements
+	txt = txt +						'<div class="clip5x9 nav_root">';
+	txt = txt +							'<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">';
+	txt = txt +						'</div>';
+	txt = txt +						'<div class="nav_div_currentroot';
+	if (SourcePage[0] == 'InstallRequirements') txt = txt + ' current'
+	txt = txt + '">';
+	txt = txt +							'<a href="Installation Requirements.html">Installation Requirements</a>';
+	txt = txt +						'</div>';
+	txt = txt + '';
 	//ERP Namespaces
 	txt = txt +						'<div class="clip5x9 nav_root">';
 	txt = txt +							'<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">';

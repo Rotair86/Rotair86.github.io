@@ -1,0 +1,76 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			Installation Requirements - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Links.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+			
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'InstallRequirements'
+					document.write(Menu(Source));
+				</script> 			
+
+			</div>
+				
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">Installation Requirements</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								These steps are required when a new installation is performed.
+								<br>
+								<br>
+								<h2>Add a Current Install.xml</h2>
+								A <i>Current Install.xml</i> is required for the system to recognize when it is in production
+								or in the sandbox.  This is necessary for:
+								<ul><li>Sending automated e-mails</li>
+								<li>Updating / displaying vendor RFQ responses</li></ul>
+
+								Automated mails do not get sent to the recipients when in the sandbox.  They get sent to the currently logged on user.
+								<br>
+								When viewing RFQs on the sandbox the user has the choice to view test or production.
+								<br>
+								<br>
+								<img src="Graphics\Current Install.PNG" style="padding:10px;border:thin solid black">
+								<br>
+								Example of the <i>Current Install.xml</i>.
+								<br>
+								<br>
+																
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>
