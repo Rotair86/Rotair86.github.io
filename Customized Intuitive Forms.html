@@ -1,0 +1,263 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			Customized Intuitive imsForms - Coded by John Maher and Skip House
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Links.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomizedimsForms'
+					document.write(Menu(Source));
+				</script> 			
+								
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">Assemblies containing forms inheriting from vendor supplied forms whose base is imsForm</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								These are the assemblies that are derived from a vendor supplied form which is in turn derived from imsForm.  The framework finds the customizations
+								by the _CUSTOM suffix.  These classes require the custom bit to be flipped in the 
+								<script type="text/javascript">														
+									document.write(TableLink("LaunchProcessMetadataHeader"));
+								</script> 			
+								table.  The namespaces are named identically to the assemblies and can be considered as one since the vendor has not introduced additional namespaces.
+								<br>
+								<br>
+								Following is a list of the assemblies in alphabetical order.
+
+							</div>
+							
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Customized assemblies of vendor supplied forms</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+										</div>
+									</div>
+								</div>
+																
+								<div class="sectionblock">
+
+									<table id="memberList" class="members" width=100%>
+										<tbody>
+											<tr>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>
+													<a href="IntuitiveUICustomerCUSTOM.html">IntuitiveUI_Customer_CUSTOM</a>
+												</td>
+												<td>
+													For a customer, the modified customer card:
+													<ol>
+													<li>Forces screening to be current before any modifications can be saved.</li>
+													<li>Includes custom fields.</li>
+													<li>Allows addition of notes.</li>
+													<li>Conditionally sends automated e-mails.</li></ol>
+													For a vendor:
+													<ol>
+													<li>Forces screening to be current before any modifications can be saved.</li>
+													<li>Allows addition of notes.</li>
+													<li>Conditionally sends automated e-mails.</li>
+													</ol>
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<a href="IntuitiveUIItemCardCUSTOM.html">IntuitiveUI_ItemCard_CUSTOM</a>
+												</td>
+												<td>
+													The modified item card includes the custom tables:
+													<ol>
+													<li><script type="text/javascript">														
+														document.write(TableLink("tblItemSupplemental"));
+													</script></li>
+													<li><script type="text/javascript">														
+														document.write(TableLink("tblItemUseClass"));
+													</script></li></ol>
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<a href="IntuitiveUIMasterControlCUSTOM.html">IntuitiveUI_MasterControl_CUSTOM</a>
+												</td>
+												<td>
+													Master Controls Explorer.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<a href="IntuitiveUIPurchaseOrderCUSTOM.html">IntuitiveUI_PurchaseOrder_CUSTOM</a>
+												</td>
+												<td>
+													The modified purchase order card:
+													<ol>
+													<li>Forces screening to be current for the vendor before a new order can be created or any modifications can be saved on an existing order.</li>
+													<li>Contains a quantity breakdown for a customer order and stock.</li>
+													<li>Permits entry of setup and tooling charges on the item line.</li>
+													<li>Allows addition of notes and phrases.</li>
+													<li>Checks for foreign vendors.</li>
+													<li>Checks for defense articles.</li>
+													<li>Conditionally sends automated e-mails.</li>
+													</ol>
+													<br>
+													The modified purchase order receipt card:
+													<ol>
+													<li>Forces the counted by field to be required.</li>
+													<li>Create a text file compatible with the label printer for printing labels and send it to the printer.</li>													
+													</ol>
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<a href="IntuitiveUIQuoteCUSTOM.html">IntuitiveUI_Quote_CUSTOM</a>
+												</td>
+												<td>
+													The modified quote card:
+													<ol>
+													<li>Forces screening to be current for the customer before a new quote can be created or any modifications can be saved on an existing quote.</li>
+													<li>Allows addition of phrases.</li>
+													<li>Conditionally sends automated e-mails.</li>
+													</ol>
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<a href="IntuitiveUISalesOrderCUSTOM.html">IntuitiveUI_SalesOrder_CUSTOM</a>
+												</td>
+												<td>
+													The modified sales order card:
+													<ol>
+													<li>Forces screening to be current for the customer before a new quote can be created or any modifications can be saved on an existing order.</li>
+													<li>Collects end user information when required.</li>
+													<li>Includes custom fields.</li>
+													<li>Allows the selection of a certificate.</li>
+													<li>Automatically populates the item and price based on the selected quote.</li>
+													<li>Allows addition of notes and phrases.</li>
+													<li>Checks for customers with foreign addresses.</li>
+													<li>Requires any added items to have a valid use class.</li>
+													<li>Conditionally sends automated e-mails.</li>
+													</ol>
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<a href="IntuitiveUIShipmentCUSTOM.html">IntuitiveUI_Shipment_CUSTOM</a>
+												</td>
+												<td>
+													The modified shipment card:
+													<ol>
+													<li>Forces screening to be current for the customer before a shipment can be entered.</li>
+													<li>Forces screening to be current for the end user before a shipment can be entered.</li>
+													<li>Creates certificates when a shipment is saved.</li>
+													<li>Includes custom fields.</li>
+													<li>Conditionally sends automated e-mails.</li>
+													</ol>
+												</td>
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<a href="IntuitiveUIShopDataMaintenanceCUSTOM.html">IntuitiveUI_ShopDataMaintenance_CUSTOM</a>
+												</td>
+												<td>
+													The modified shop data maintenance:
+													<ol>
+													<li>Forces the user to enter a password before entering time and/or quantities.</li>
+													</ol>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+								</div>
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Notes</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>These forms can not be loaded and shown.  They will error out and not display.  The framework must
+										be used to display them with LaunchMenuItem.</p>
+
+										<p>All events should have basic error trapping.  Below is an example of the minimum recommended.  It uses Intuitive's form to display errors and also writes out the error to the database
+										including the class and function where the error was trapped.</p>
+									
+									</div>
+								</div>
+
+								<div class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">
+													<pre><span style="color: Blue;">Try</span></pre>
+													<br>
+													<pre>    <span style="color: Green;">'Code goes here.</span></pre>
+													<br>
+													<pre><span style="color: Blue;">Catch </span>ex<span style="color: Blue;"> As </span>Exception</pre>
+													<pre>    HandleException(ex)</pre>
+													<pre>    RotairDataAccess_Wrapper.Database.WriteToErrorTable(ex.TargetSite.ReflectedType.Name, _</pre>
+													<pre>                ex.TargetSite.Name, ex.Message)</pre>
+													<br>
+													<pre><span style="color: Blue;">End Try</span></pre>
+												</div>																	
+											</div>
+										</div>
+									</div>
+
+								</div>	
+								
+        					</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

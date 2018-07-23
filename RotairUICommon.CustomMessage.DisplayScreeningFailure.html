@@ -1,0 +1,203 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairUICommon - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairUICommon'
+					Source[2] = 'CustomMessage'
+					Source[3] = 'DisplayScreeningFailure'
+					document.write(Menu(Source));
+				</script> 			
+
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">DisplayScreeningFailure Method</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Displays a messagebox indicating that a screening check did not return success optionally getting a response from the user to
+								screen the party.</p>
+							
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Syntax" onclick="CollapseExpand('Syntax')"><span class="LW_CollapsibleArea_Title">Syntax</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div id='Syntax' class="sectionblock">
+										<div class="codeSnippetContainer">  	  
+											<div class="codeSnippetContainerTabs">
+												<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+													<a>VB</a>
+												</div>
+											</div>
+											<div class="codeSnippetContainerCodeContainer">
+												<div class="codeSnippetToolBar">
+												</div>
+												<div class="codeSnippetContainerCode">
+													<div style="color: Black;">
+														<pre><span style="color: Green;">'Declarations</span></pre>
+														<pre><span style="color: Blue;">Public Sub</span> DisplayScreeningFailure( _</pre>
+														<pre>        eWhich<span style="color: Blue;"> As </span>eScreeningRC _</pre>
+														<pre>) <span style="color: Blue;">As</span> DialogResult</pre>
+														<br>
+														<pre><span style="color: Blue;">Public Sub</span> DisplayScreeningFailure( _</pre>
+														<pre>        eWhich<span style="color: Blue;"> As </span>eScreeningRC, _</pre>
+														<pre>        eSource<span style="color: Blue;"> As </span>eScreenAction _</pre>
+														<pre>) <span style="color: Blue;">As</span> DialogResult</pre>
+														<br>
+														<pre><span style="color: Blue;">Public Sub</span> DisplayScreeningFailure( _</pre>
+														<pre>        eWhich<span style="color: Blue;"> As </span>eScreeningRC, _</pre>
+														<pre>        eSource<span style="color: Blue;"> As </span>eScreenAction, _</pre>
+														<pre>        strMessageSuffix<span style="color: Blue;"> As String</span> _</pre>
+														<pre>) <span style="color: Blue;">As</span> DialogResult</pre>
+														<br>
+														<pre><span style="color: Blue;">Public Sub</span> DisplayScreeningFailure( _</pre>
+														<pre>        eWhich<span style="color: Blue;"> As </span>eScreeningRC, _</pre>
+														<pre>        eSource<span style="color: Blue;"> As </span>eScreenAction, _</pre>
+														<pre>        strMessageSuffix<span style="color: Blue;"> As String</span>, _</pre>
+														<pre>        strMessageStrings<span style="color: Blue;"> As String</span>() _</pre>
+														<pre>) <span style="color: Blue;">As</span> DialogResult</pre>
+														<br>
+														<pre><span style="color: Blue;">Public Sub</span> DisplayScreeningFailure( _</pre>
+														<pre>        eWhich<span style="color: Blue;"> As </span>eScreeningRC, _</pre>
+														<pre>        eSource<span style="color: Blue;"> As </span>eScreenAction, _</pre>
+														<pre>        strMessageSuffix<span style="color: Blue;"> As String</span>, _</pre>
+														<pre>        strMessageStrings<span style="color: Blue;"> As String</span>(), _</pre>
+														<pre>        btnButtons<span style="color: Blue;"> As </span>MessageBoxButtons _</pre>
+														<pre>) <span style="color: Blue;">As</span> DialogResult</pre>
+													</div>				
+												</div>
+											</div>
+											<div id="parameters">
+												<h4 class="subHeading">Parameters</h4>
+													<dl><dt><span class="parameter">eWhich</span></dt>
+														<dd>Type: <a href='RotairTypes.Enumerations.eScreeningRC.html'>eScreeningRC</a><br><span><span>Results of the screening.</span><br></span></dd>
+													</dl>
+													<dl><dt><span class="parameter">eSource</span></dt>
+														<dd>Type: <a href='RotairTypes.Enumerations.eScreenAction.html'>eScreenAction</a><br><span><span>Indicates what caused the screening to be checked.</span><br></span></dd>
+													</dl>
+													<dl><dt><span class="parameter">strMessageSuffix</span></dt>
+														<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string">System.String</a><br><span><span>Text to append to the message.</span><br></span></dd>
+													</dl>
+													<dl><dt><span class="parameter">strMessageStrings</span></dt>
+														<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string">System.String</a><br><span><span>An array of strings that will replace tokens in the message.</span><br></span></dd>
+													</dl>
+													<dl><dt><span class="parameter">btnButtons</span></dt>
+														<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.windows.messageboxbutton.aspx">System.Windows.Forms.MessageBoxButtons</a><br><span><span>Determines what buttons are displayed which also controls what result can be returned.</span><br></span></dd>
+													</dl>
+											</div>							
+										</div>
+									</div>
+									
+								</div>
+							</div>
+									
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>The message to be displayed is filtered on the first argument.  In certain scenarios the second argument can be used to further
+									filter the message.  Optionally text can be appended to the message and also tokens can be embedded into the message for strings
+									that can only be determined at run time.  The last argument will determine whcih buttons are displayed which also indirectly 
+									determines the dialog result returned.</p>
+			
+								</div>
+							</div>
+
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<img src="Graphics/minus.png" name="Example" onclick="CollapseExpand('Example')"><span class="LW_CollapsibleArea_Title">Example</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>If the customer associated with the current sales order did not pass the screening test then a message will be displayed
+									asking the user if they wish to screen this customer.  The message to be displayed is retrieved from the table using a constant
+									from the <a href='RotairTypes.Constants.html'>Constants</a> class.  The customer id is included in the message so it is passed in
+									via the array.  Normally the customer id would be retrieved from the Sales Order object but was hard coded here for clarity.  
+									Lastly instead of the standard OK button we add Yes / No buttons to allow the user to decide the next course of action.</p>
+								
+								</div>
+							</div>
+
+							<div id='Example' class="sectionblock">
+								<div class="codeSnippetContainer">  	  
+									<div class="codeSnippetContainerTabs">
+										<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+											<a>VB</a>
+										</div>
+									</div>
+									<div class="codeSnippetContainerCodeContainer">
+										<div class="codeSnippetToolBar">
+										</div>
+										<div class="codeSnippetContainerCode">
+											<div style="color: Black;">												        
+												<pre><span style="color: Blue;">Dim</span> DR <span style="color: Blue;">As</span> DialogResult</pre>												
+												<pre><span style="color: Blue;">Dim</span> SalesOrder <span style="color: Blue;">As</span> imsAO_SalesOrder_CUSTOM</pre>												
+												<br>
+												<pre>SalesOrder =<span style="color: Blue;"> CType</span>(bdrSalesOrder.AO, imsAO_SalesOrder_CUSTOM)</pre>												
+												<pre><span style="color: Blue;">If Not</span> SalesOrder.ScreenResults = eScreeningRC.Screened_OK <span style="color: Blue;">Then</span></pre>												
+												<pre>    DR = CustomMessage.<b>DisplayScreeningFailure</b>(SalesOrder.ScreenResults, _</pre>
+												<pre>                                                    SalesOrder.ScreenAction, _</pre>
+												<pre>                                                    imsAO_Message.Message(Constants.Question_WantToScreen), _</pre>
+												<pre>                                                    New String() {<span style="color: Red;">"623454"</span>}, _</pre>
+												<pre>                                                    MessageBoxButtons.YesNoCancel)</pre>
+												<pre><span style="color: Blue;">End If</span></pre>
+											</div>																	
+										</div>
+									</div>
+								</div>				
+								
+							</div>	
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

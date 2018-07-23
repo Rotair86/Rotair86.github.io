@@ -1,0 +1,173 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairTypes - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairTypes'
+					Source[2] = 'Structs'
+					Source[3] = 'PersonName'
+					Source[3] = 'Constructor'
+					document.write(Menu(Source));
+				</script> 			
+
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">PersonName Constructor</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Creates a PersonName object setting the name variables (first and last).</p>
+							
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Syntax" onclick="CollapseExpand('Syntax')"><span class="LW_CollapsibleArea_Title">Syntax</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div id='Syntax' class="sectionblock">
+										<div class="codeSnippetContainer">  	  
+											<div class="codeSnippetContainerTabs">
+												<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+													<a>VB</a>
+												</div>
+											</div>
+											<div class="codeSnippetContainerCodeContainer">
+												<div class="codeSnippetToolBar">
+												</div>
+												<div class="codeSnippetContainerCode">
+													<div style="color: Black;">
+														<pre><span style="color: Green;">'Declaration</span></pre>
+														<pre><span style="color: Blue;">Public Sub New</span>( _</pre>
+														<pre>        strName<span style="color: Blue;"> As String</span> _</pre>
+														<pre>)</pre>
+														<pre><span style="color: Blue;">Public Sub New</span>( _</pre>
+														<pre>        strFirst<span style="color: Blue;"> As String</span>, _</pre>
+														<pre>        strLast<span style="color: Blue;"> As String</span> _</pre>
+														<pre>)</pre>
+														<pre><span style="color: Blue;">Public Sub New</span>( _</pre>
+														<pre>        chrDelimiter<span style="color: Blue;"> As Char</span>, _</pre>
+														<pre>        strName<span style="color: Blue;"> As String</span> _</pre>
+														<pre>)</pre>
+													</div>				
+												</div>
+											</div>
+										</div>
+										<div id="parameters">
+											<h4 class="subHeading">Parameters</h4>
+												<dl><dt><span class="parameter">strName</span></dt>
+													<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string.aspx">System.String</a><br><span><span>Full name.</span><br></span></dd>
+												</dl>
+												<dl><dt><span class="parameter">strFirst</span></dt>
+													<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string.aspx">System.String</a><br><span><span>First name.</span><br></span></dd>
+												</dl>
+												<dl><dt><span class="parameter">strLast</span></dt>
+													<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string.aspx">System.String</a><br><span><span>Last name.</span><br></span></dd>
+												</dl>
+												<dl><dt><span class="parameter">chrDelimiter</span></dt>
+													<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.char">System.Char</a><br><span><span>Character separating the first name from the last.</span><br></span></dd>
+												</dl>
+										</div>							
+									</div>
+									
+								</div>
+							</div>
+									
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>Use the first option if the first and last names are separated by a space ("John Maher").</p>
+									<p>Use the second option if the first and last names are already separated.</p>
+									<p>Use the third option if the first and last names are separated by anything other than a space ("John-Maher").</p>
+			
+								</div>
+							</div>
+
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<img src="Graphics/minus.png" name="Example" onclick="CollapseExpand('Example')"><span class="LW_CollapsibleArea_Title">Example</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>This example shows all three constructor calls.</p>
+								
+								</div>
+							</div>
+
+							<div id='Example' class="sectionblock">
+								<div class="codeSnippetContainer">  	  
+									<div class="codeSnippetContainerTabs">
+										<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+											<a>VB</a>
+										</div>
+									</div>
+									<div class="codeSnippetContainerCodeContainer">
+										<div class="codeSnippetToolBar">
+										</div>
+										<div class="codeSnippetContainerCode">
+											<div style="color: Black;">												        
+												<br>
+												<pre><span style="color: Blue;">Dim</span> ThisName <span style="color: Blue;">As</span> PersonName</pre>
+												<br>
+												<pre>ThisName = <span style="color: Blue;">New</span> PersonName(<span style="color: Red;">"John Maher"</span>)</pre>
+												<pre>ThisName = <span style="color: Blue;">New</span> PersonName(<span style="color: Red;">"John"</span>, <span style="color: Red;">"Maher"</span>)</pre>
+												<pre>ThisName = <span style="color: Blue;">New</span> PersonName(<span style="color: Red;">"-"</span>, <span style="color: Red;">"John-Maher"</span>)</pre>
+												<br>
+											</div>																	
+										</div>
+									</div>
+								</div>				
+								
+							</div>	
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

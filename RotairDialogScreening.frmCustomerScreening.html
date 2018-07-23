@@ -1,0 +1,362 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairDialog_Screening - Converted and extremely enhanced from VBA by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<div class="searchcontainer">
+	
+					<form id="SearchForm" action="http://social.msdn.microsoft.com/search/en-us" method="get" style="margin: 0pt; padding: 0pt;" onsubmit="return checkSearchBox()">
+						<div class="searchBoxContainer" style="">
+							<table class="searchBox" border="0" cellpadding="0" cellspacing="0">
+								<tbody>
+									<tr>
+										<td class="searchTextBoxTd">
+											<input value="Search MSDN with Bing" id="SearchInput" maxlength="200" class="searchTextBox" name="query" type="text">        
+										</td>
+										<td class="searchButtonTd">
+											<input src="Graphics/Search.gif" style="position: relative;" title="Search " type="image">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</form>
+					
+					<script type="text/javascript">
+					//<![CDATA[
+						if (!MTPS) var MTPS = {};
+						if (!MTPS.Watermarks) MTPS.Watermarks = {};
+						MTPS.Watermarks.SearchInput = {
+							"control": "SearchInput",
+							"defaultValue": "Search MSDN with Bing",
+							"defaultCSS": "searchTextBox",
+							"focusCSS": "searchTextBoxTrue"
+						};
+						function checkSearchBox() {
+							if (document.getElementById("SearchInput").value == MTPS.Watermarks.SearchInput.defaultValue) {
+								document.getElementById("SearchInput").value = "";
+							}
+						}
+					 //]]>
+					</script>
+				</div>
+
+				<div class="navcontainer">
+			  
+					<div class="nav">
+			
+						<div id="tocnav">
+			
+							<div class="toclevel0 ancestry">
+							
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/ms123401.aspx">MSDN Library</a>
+								</div>
+            
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>								
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/ff361664%28v=vs.110%29.aspx">.NET Development</a>
+								</div>
+            
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>            
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/w0x726c2.aspx">.NET Framework 4</a>
+								</div>
+            
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>								
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/gg145045.aspx">.NET Framework Class Library</a>
+								</div>
+								
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="ERP Custom Namespaces.html">ERP Customized Namespaces</a>
+								</div>						
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Base Classes.html">Custom Base Classes</a>
+								</div>
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Classes.html">Custom Classes</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Controls.html">Custom Controls</a>
+								</div>
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Classes Derived.html">Custom Derived from rotAppObject</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Forms Derived from imsForms.html">Custom Forms Derived from imsForm</a>
+								</div>
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Customized Intuitive AppObjects.html">Customized Intuitive imsAppObjects</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Customized Intuitive Forms.html">Customized Intuitive imsForms</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Printing Classes.html">Printing Classes</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Windows Custom Dialog Forms.html">Windows Custom Dialog Forms</a>
+								</div>
+								
+								<div class="clip13x9 nav_dots_current">
+									<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+								</div>					
+								<div class="toclevel">
+									<a href="RotairDialogScreening.html">RotairDialog_Screening</a>
+								</div>
+
+								<div class="toclevel2 ancestry">
+								
+									<div class="clip13x9 nav_dots_current">
+										<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+									</div>					
+									<div class="current">
+										<a href='RotairDialogScreening.frmCustomerScreening.html'>frmCustomerScreening</a>
+									</div>						
+									
+								</div>
+								
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="External Programs.html">External Programs</a>
+								</div>						
+							
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Stored Procedures.html">Stored Procedures</a>
+								</div>						
+								
+							</div>
+														
+						</div>
+
+					</div>
+
+				</div>
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">frmCustomerScreening Form</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Launches <a href='RotairDialogScreening.frmDialogScreening.html'>frmDialogScreening</a> for a customer.</p>
+							
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Inheritance Hierarchy</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">								
+										<a href="http://msdn.microsoft.com/en-us/library/system.object.aspx">System.Object</a>
+										<br>&nbsp;&nbsp;<a href='http://msdn.microsoft.com/en-us/library/system.windows.forms.form.aspx'>System.Windows.Forms.Form</a>
+									</div>							
+								</div><p></p>
+							
+								<strong>Namespace:</strong>&nbsp;<a href="RotairEmail.html">RotairDialog_Screening</a><br>
+								<strong>Assembly:</strong>&nbsp;RotairDialog_Screening.dll
+	
+								<p>The <span class="selflink">frmCustomerScreening</span> form doesn't expose any members.</p>
+								<p>This form is used because the intuitive framework doesn't provide a way to pass a parameter to a windows form, doesn't 
+								return a usable reference to the form it launched from the menu nor does it make it clear how to show an imsForm as a dialog.<p>
+	
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Handled Events</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<table id="memberList1" class="members" width='100%'>
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter23">
+															<img src="Graphics/Graphics.png" class='event_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairDialogScreening.frmCustomerScreening.tmrDisposeMe_Tick.html">tmrDisposeMe.Tick</a>
+													</td>
+													<td>
+														Fires immediately (almost) after loading to load <a href='RotairDialogScreening.frmDialogScreening.html'>frmDialogScreening</a> 
+														with the <a href='RotairDialogScreening.frmDialogScreening.PartyType.html'>PartyType</a> set to customer.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										<a href="#mainBody">Top</a>
+								
+									</div>
+								</div>
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>This form is used because when a form is launched from the menu the intuitive framework doesn't provide a way to pass a parameter to a windows form, 
+										doesn't return a usable reference nor does it make it clear how to show an imsForm as a dialog.</p>
+																
+										<p>The screening form needs to be shown as a modal dialog mainly to avoid extra complications.  If the user can launch another screening dialog then it
+										would either have to check if another is running on launch and stop itself from showing.  This can confuse the user if they can't find the original 
+										which can happen in an MDI application.  Another option would be for the form to reload itself when it receives the focus.  This can cause problems depending 
+										on how the user changes focus because sometimes the mdichild got focus event fires and sometimes the mdiparent event fires.  If no checks are done
+										then the user can add a record in one form and not see it in the other.  Deletes cause similiar problems.  Making it a modal dialog solves these problems.</p>
+										
+									</div>
+
+									<div xmlns="">
+										<div class="LW_CollapsibleArea_TitleDiv">
+											<div>
+												<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+												<span class="LW_CollapsibleArea_Title">Example</span></a>
+												<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+											</div>
+										</div>
+										<div class="sectionblock">
+										
+											<p>This is how to add the party screening form for customers to a menu item called 'Denied Party Screen (Customers)'.</p>
+										
+										</div>
+									</div>
+
+									<div class="sectionblock">
+										<div class="codeSnippetContainer">  	  
+											<div class="codeSnippetContainerTabs">
+												<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+													<a>SQL</a>
+												</div>
+											</div>
+											<div class="codeSnippetContainerCodeContainer">
+												<div class="codeSnippetToolBar">
+												</div>
+												<div class="codeSnippetContainerCode">
+													<div style="color: Black;">
+														<pre><span style="color: Blue;">EXEC </span>sp_IMS_CreateMenuItemHeader</pre>
+														<pre>	@ItemKey = <span style="color: Red;">'PartyScreenCustomer'</span>,</pre>
+														<pre>	@MenuItemGroup = <span style="color: Red;">'SalesOrderProcessing'</span>,</pre>
+														<pre>	@MenuType = <span style="color: Red;">'Form'</span>,</pre>
+														<pre>	@DataType = <span style="color: Red;">'Custom'</span>,</pre>
+														<pre>	@Parameter = <span style="color: Red;">'Customer'</span>,</pre>
+														<pre>	@Caption = <span style="color: Red;">'Denied Party Screen (Customers)'</span>,</pre>
+														<pre>	@LanguageID = 1,</pre>
+														<pre>	@Assembly = <span style="color: Red;">'RotairDialog_Screening'</span>,</pre>
+														<pre>	@Type = <span style="color: Red;">'RotairDialog_Screening.frmCustomerScreening'</span>,</pre>
+														<pre>	@Custom = 0,</pre>
+														<pre>	@AccessMDB = NULL,</pre>
+														<pre>	@AccessObject = NULL,</pre>
+														<pre>	@AccessFunction = NULL,</pre>
+														<pre>	@ProcessType = 1,</pre>
+														<pre>	@ExternalAppPath = NULL,</pre>
+														<pre>	@DotNetMethod = NULL</pre>
+														<br>
+													</div>																	
+												</div>
+											</div>
+										</div>
+
+									</div>	
+								</div>	
+								
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

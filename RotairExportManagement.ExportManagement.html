@@ -1,0 +1,380 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairExportManagement - Built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairExportManagement'
+					Source[2] = 'ExportManagement'
+					document.write(Menu(Source));
+				</script> 			
+
+			</div>
+			
+			<div class="content">
+
+				<div class="topicContainer">
+			
+					<div class="topic">
+	
+						<h1 class="title">ExportManagement Class</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>All functions are shared since there is no benefit in creating an instance of this class and fully qualifying the call improves self-documentation.</p>
+							
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Inheritance Hierarchy</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">								
+										<a href="http://msdn.microsoft.com/en-us/library/system.object.aspx">System.Object</a>
+									</div>							
+								</div><p></p>
+							
+								<strong>Namespace:</strong>&nbsp;<a href="RotairExportManagement.html">RotairExport_Management</a><br>
+								<strong>Assembly:</strong>&nbsp;RotairExport_Management.dll
+	
+								<p>The <span class="selflink">ExportManmagement</span> class exposes the following members.</p>
+	
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Properties" onclick="CollapseExpand('Properties')"><span class="LW_CollapsibleArea_Title">Properties</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+									<div id='Properties' class="sectionblock">
+									
+										<table id="memberList1" class="members">
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairExportManagement.ExportManagement.LastError.html">LastError</a>
+													</td>
+													<td>
+														Read-Only.  Returns the last error encountered in routines that have error handling.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										<a href="#mainBody">Top</a>
+								
+									</div>
+								</div>
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Methods" onclick="CollapseExpand('Methods')"><span class="LW_CollapsibleArea_Title">Methods</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div id='Methods' class="sectionblock">
+									
+										<table id="memberList1" class="members">
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairExportManagement.ExportManagement.CheckSalesOrderExportLicense.html">CheckSalesOrderExportLicense</a>(String)
+													</td>
+													<td>
+														Returns an <a href="RotairTypes.Enumerations.eSalesOrderExportLicense.html">eSalesOrderExportLicense</a> enumeration indicating the status of the export license related to the passed in sales order.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairExportManagement.ExportManagement.CustomerTypeScreen.html">CustomerTypeScreen</a>(CustomerKey)
+													</td>
+													<td>
+														Returns an <a href="RotairTypes.Enumerations.eCustomerTypeScreenResult.html">eCustomerTypeScreenResult</a> enumeration indicating the customer type.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairExportManagement.ExportManagement.ForeignCountry.html">ForeignCountry</a>(String)
+													</td>
+													<td>
+														Returns FALSE if the passed in country is NULL (USA assumed), "US", "USA", "United States" or "United States of America".
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairExportManagement.ExportManagement.ForeignCustomerScreen.html">ForeignCustomerScreen</a>(CustomerKey)
+													</td>
+													<td>
+														Returns FALSE if we do not have any information that indicates this customer has any foreign assocaitions.  Returns TRUE if they do or may have foreign associations.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairExportManagement.ExportManagement.ForeignVendorScreen.html">ForeignVendorScreen</a>(VendorKey)
+													</td>
+													<td>
+														Returns FALSE if we do not have any information that indicates this vendor has any foreign assocaitions.  Returns TRUE if they do or may have foreign associations.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairExportManagement.ExportManagement.ScreenCustomer.html">ScreenCustomer</a>(CustomerKey, <a href='RotairTypes.Enumerations.eScreenAction.html'>eScreenAction</a>, <a href="RotairAOScreening.rotAOScreening.html">rotAO_Screening</a>)
+													</td>
+													<td>
+														Returns an <a href='RotairTypes.Enumerations.eScreeningRC.html'>eScreeningRC</a> enumeration indicating the result of the latest customer screening.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairExportManagement.ExportManagement.ScreenEndUserCheckExportLicense.html">ScreenEndUserCheckExportLicense</a>(String, String, String)
+													</td>
+													<td>
+														Returns an <<a href='RotairTypes.Enumerations.eScreeningRC.html'>eScreeningRC</a> enumeration indicating the result of the latest end user screening and also the status
+														of the export license.  If the end user fails the screening then the export license isn't checked.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairExportManagement.ExportManagement.ScreenVendor.html">ScreenVendor</a>(VendorKey, <a href='RotairTypes.Enumerations.eScreenAction.html'>eScreenAction</a>, <a href="RotairAOScreening.rotAOScreening.html">rotAO_Screening</a>)
+													</td>
+													<td>
+														Returns an <a href='RotairTypes.Enumerations.eScreeningRC.html'>eScreeningRC</a> enumeration indicating the result of the latest vendor screening.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>	
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Private Constants" onclick="CollapseExpand('Private Constants')"><span class="LW_CollapsibleArea_Title">Private Constants</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+									<div id='Private Constants' class="sectionblock">
+									
+										<table id="memberList" class="members">
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconCustomerTypeGovernment
+													</td>
+													<td>
+														the text used for customer type to indicate the goverment.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Private Variables" onclick="CollapseExpand('Private Variables')"><span class="LW_CollapsibleArea_Title">Private Variables</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								
+									<div id='Private Variables' class="sectionblock">
+									
+										<table id="memberList" class="members">
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='variable_pic'>
+														</div>
+													</td>
+													<td>
+														mstrLastError
+													</td>
+													<td>
+														Text description of the last error.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Private Methods" onclick="CollapseExpand('Private Methods')"><span class="LW_CollapsibleArea_Title">Private Methods</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div id='Private Methods' class="sectionblock">
+									
+										<table id="memberList1" class="members">
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairExportManagement.ExportManagement.ForeignCountryScreen.html">ForeignCountryScreen</a>(DataSet)
+													</td>
+													<td>
+														Determines if a foriegn country is in the dataset of countries.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairExportManagement.ExportManagement.GetScreenDays.html">GetScreenDays</a>(<a href='RotairTypes.Enumerations.eScreenAction.html'>eScreenAction</a>)
+													</td>
+													<td>
+														Returns the number of days permitted before a screening is considered out of date.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairExportManagement.ExportManagement.ScreenParty.html">ScreenParty</a>(<a href='RotairTypes.Enumerations.ePartyType.html'>ePartyType</a>, <a href='RotairTypes.Enumerations.eScreenAction.html'>eScreenAction</a>, <a href="RotairAOScreening.rotAOScreening.html">rotAO_Screening</a>)
+													</td>
+													<td>
+														Screens a customer or vendor.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>
+

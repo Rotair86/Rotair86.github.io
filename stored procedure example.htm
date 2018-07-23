@@ -1,0 +1,1451 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head id="ctl00_Head1">
+
+
+<link rel="canonical" href="http://msdn.microsoft.com/en-us/library/ms178602.aspx"><title>
+	
+  sp_releaseapplock (Transact-SQL)
+
+</title>
+
+
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+<meta name="DCS.dcsuri" content="/en-us/library/ms178602(d=lightweight,l=en-us,v=sql.110).aspx">
+
+<meta name="NormalizedUrl" content="http://msdn.microsoft.com/en-us/library/ms178602(d=lightweight,l=en-us,v=sql.110).aspx">
+
+<meta name="VotingContextUrl" content="http://msdn.microsoft.com/en-us/library/ms178602(d=lightweight,l=en-us,v=sql.110).aspx">
+
+<meta name="MN" content="64D89135-2:43:20 PM">
+
+<meta name="Search.ShortId" content="ms178602">
+
+<meta name="Ms.Locale" content="en-us">
+<link rel="stylesheet" type="text/css" href="stored%20procedure%20example_files/Combined.css" xmlns="http://www.w3.org/1999/xhtml"><link rel="stylesheet" type="text/css" href="stored%20procedure%20example_files/printview.css" media="print" title="printonly"><link rel="alternate" media="print" href="http://msdn.microsoft.com/en-us/library/ms178602%28d=printer%29.aspx"><script src="stored%20procedure%20example_files/ms2.js" async="" type="text/javascript"></script><script src="stored%20procedure%20example_files/broker.js"></script></head><body>
+    
+        
+        
+  <div class="header">
+    
+
+<table class="headerBar cl_lightweight_topnav_slice" border="0" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td class="leftSection cl_lightweight_header_leftSection_wave leftSectionImageClusterOverride">
+        <div class="tabContainer">
+          <a href="http://msdn.microsoft.com/en-us/default.aspx" title="Home" class=" headerTab">Home</a>
+          <a href="http://msdn.microsoft.com/en-us/library/default.aspx" title="Library" class="headerTabSelected cl_lightweight_selected_tab_repeatX ">Library</a>
+          <a href="http://msdn.microsoft.com/en-us/bb188199.aspx" title="Learn" class=" headerTab">Learn</a>
+          <a href="http://msdn.microsoft.com/en-us/aa570309.aspx" title="Downloads" class=" headerTab">Downloads</a>
+          <a href="http://msdn.microsoft.com/en-us/hh361695.aspx" title="Support" class=" headerTab">Support</a>
+          <a href="http://msdn.microsoft.com/en-us/aa497440.aspx" title="Community" class=" headerTab">Community</a>
+          
+        </div>
+      </td>
+			<td class="rightSection cl_lightweight_header_rightSection_wave rightSectionImageClusterOverride">
+        <div class="tabContainer">
+            
+            <a href="https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=11&amp;ct=1335883400&amp;rver=6.0.5276.0&amp;wp=MCLBI&amp;wlcxt=msdn%24msdn%24msdn&amp;wreply=http%3a%2f%2fmsdn.microsoft.com%2fen-us%2flibrary%2fms178602.aspx&amp;lc=1033&amp;id=254354&amp;mkt=en-US" title="Sign in" rel="nofollow">Sign in </a>
+            <span class="pipe">|</span>
+            <a href="http://msdn.microsoft.com/en-us/library/preferences/locale/?returnurl=%252fen-us%252flibrary%252fms178602.aspx" title="United States - English" rel="nofollow">United States - English </a>
+            <span class="pipe">|</span>
+            <a class="dispinline clip15x15" href="http://msdn.microsoft.com/en-us/library/preferences/experience/?returnurl=%252fen-us%252flibrary%252fms178602.aspx" title="Preferences" rel="nofollow"><img class="head_gear" src="stored%20procedure%20example_files/Msdn_ImageSprite.png" alt=""></a>
+            <span class="pipe">|</span>
+            <a id="exportPrintLink" class="dispinline clip30x15 moveToDown" href="http://msdn.microsoft.com/en-us/library/ms178602%28d=printer%29.aspx" title="Print/Export"><img class="head_print_noarrow" src="stored%20procedure%20example_files/Msdn_ImageSprite.png" alt=""></a>
+            
+            <div id="exportPrintLinkArrowDiv" class="exportPrintLinkArrow">
+            <a id="exportPrintLinkArrow" class="dispinline clip30x15 moveToDown" href="javascript:void(0);" title="Print/Export"><img class="head_print_arrow" src="stored%20procedure%20example_files/Msdn_ImageSprite.png" alt=""></a>
+            </div>
+            
+        </div>
+			</td>
+	</tr>
+</tbody></table>
+
+  </div>
+  <div class="contentPlaceHolder">
+    
+    
+  <div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+    <div class="searchcontainer">
+      
+<form id="SearchForm" action="http://social.msdn.microsoft.com/search/en-us" method="get" style="margin: 0pt; padding: 0pt;" onsubmit="return checkSearchBox()">
+<div class="searchBoxContainer" style="">
+  <table class="searchBox" border="0" cellpadding="0" cellspacing="0">
+    <tbody><tr>
+      <td class="searchTextBoxTd">
+        <input value="Search MSDN with Bing" id="SearchInput" maxlength="200" class="searchTextBox" name="query" type="text">
+        
+      </td>
+      <td class="searchButtonTd">
+          <input src="stored%20procedure%20example_files/search_icon.gif" style="position: relative;" title="Search " type="image">
+      </td>
+    </tr>
+  </tbody></table>
+</div>
+</form>
+<script type="text/javascript">
+//<![CDATA[
+    if (!MTPS) var MTPS = {};
+    if (!MTPS.Watermarks) MTPS.Watermarks = {};
+    MTPS.Watermarks.SearchInput = {
+        "control": "SearchInput",
+        "defaultValue": "Search MSDN with Bing",
+        "defaultCSS": "searchTextBox",
+        "focusCSS": "searchTextBoxTrue"
+    };
+    function checkSearchBox() {
+        if (document.getElementById("SearchInput").value == MTPS.Watermarks.SearchInput.defaultValue) {
+            document.getElementById("SearchInput").value = "";
+        }
+    }
+ //]]>
+</script>
+
+
+    </div>
+    <div class="navcontainer">
+      
+<div class="nav">
+    
+    <div id="tocnav">
+        
+        <div class="toclevel0 ancestry">
+            
+            <div class="clip5x9 nav_root">
+                <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_bullet" alt="">
+            </div>
+            
+            <div class="nav_div_currentroot">
+                <a data-tochassubtree="true" href="http://msdn.microsoft.com/en-us/library/ms123401.aspx" id="ms310241_MSDN.10_en-us" title="MSDN Library">MSDN Library</a>
+            </div>
+            
+            <div class="clip5x9 nav_arrows">
+                <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_arrow" alt="">
+            </div>
+            
+            <div class="nav_div_currentroot">
+                <a data-tochassubtree="true" href="http://msdn.microsoft.com/en-us/library/aa155072.aspx" id="aa155072_MSDN.10_en-us" title="Servers and Enterprise Development">Servers and Enterprise Development</a>
+            </div>
+            
+            <div class="clip5x9 nav_arrows">
+                <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_arrow" alt="">
+            </div>
+            
+            <div class="nav_div_currentroot">
+                <a data-tochassubtree="true" href="http://msdn.microsoft.com/en-us/library/bb545450.aspx" id="bb418431_SQL.10_en-us" title="SQL Server">SQL Server</a>
+            </div>
+            
+            <div class="clip5x9 nav_arrows">
+                <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_arrow" alt="">
+            </div>
+            
+            <div class="nav_div_currentroot">
+                <a data-tochassubtree="true" href="http://msdn.microsoft.com/en-us/library/bb418432%28v=sql.10%29.aspx" id="bb418432_SQL.10_en-us" title="SQL Server 2012">SQL Server 2012</a>
+            </div>
+            
+            <div class="clip5x9 nav_arrows">
+                <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_arrow" alt="">
+            </div>
+            
+            <div class="nav_div_currentroot">
+                <a data-tochassubtree="true" href="http://msdn.microsoft.com/en-us/library/bb418433%28v=sql.10%29.aspx" id="bb418433_SQL.10_en-us" title="Product Documentation">Product Documentation</a>
+            </div>
+            
+            <div class="clip5x9 nav_arrows">
+                <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_arrow" alt="">
+            </div>
+            
+            <div class="nav_div_currentroot">
+                <a data-tochassubtree="true" href="http://msdn.microsoft.com/en-us/library/ms130214.aspx" id="ee679654_SQL.110_en-us" title="Books Online for SQL Server 2012">Books Online for SQL Server 2012</a>
+            </div>
+            
+            <div class="clip5x9 nav_arrows">
+                <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_arrow" alt="">
+            </div>
+            
+            <div class="nav_div_currentroot">
+                <a data-tochassubtree="true" href="http://msdn.microsoft.com/en-us/library/ms187875.aspx" id="hh921403_SQL.110_en-us" title="Database Engine">Database Engine</a>
+            </div>
+            
+            <div class="clip5x9 nav_arrows">
+                <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_arrow" alt="">
+            </div>
+            
+            <div class="nav_div_currentroot">
+                <a data-tochassubtree="true" href="http://msdn.microsoft.com/en-us/library/bb510741.aspx" id="hh921391_SQL.110_en-us" title="Transact-SQL Reference (Database Engine)">Transact-SQL Reference (Database Engine)</a>
+            </div>
+            
+            <div class="clip5x9 nav_arrows">
+                <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_arrow" alt="">
+            </div>
+            
+            <div class="nav_div_currentroot">
+                <a data-tochassubtree="true" href="http://msdn.microsoft.com/en-us/library/ms187961.aspx" id="hh909890_SQL.110_en-us" title="System Stored Procedures (Transact-SQL)">System Stored Procedures (Transact-SQL)</a>
+            </div>
+            
+            <div class="clip13x9 nav_arrows">
+                <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+            </div>
+            
+            <div class="nav_div_currentroot">
+                <a data-tochassubtree="true" href="http://msdn.microsoft.com/en-us/library/ms176007.aspx" id="hh909822_SQL.110_en-us" title="Database Engine Stored Procedures (Transact-SQL)">Database Engine Stored Procedures (Transact-SQL)</a>
+            </div>
+            
+        </div>
+        
+        <div class="toclevel1 children" style="border-bottom: 1px solid rgb(187, 187, 187);">
+            
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms188065.aspx" title="sp_add_data_file_recover_suspect_db (Transact-SQL)">sp_add_data_file_recover_suspect_db (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms188379.aspx" title="sp_addextendedproc (Transact-SQL)">sp_addextendedproc (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms180047.aspx" title="sp_addextendedproperty (Transact-SQL)">sp_addextendedproperty (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms188052.aspx" title="sp_add_log_file_recover_suspect_db (Transact-SQL)">sp_add_log_file_recover_suspect_db (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms178649.aspx" title="sp_addmessage (Transact-SQL)">sp_addmessage (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms189784.aspx" title="sp_addtype (Transact-SQL)">sp_addtype (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms188409.aspx" title="sp_addumpdevice (Transact-SQL)">sp_addumpdevice (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms175094.aspx" title="sp_altermessage (Transact-SQL)">sp_altermessage (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms179877.aspx" title="sp_attach_db (Transact-SQL)">sp_attach_db (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms174385.aspx" title="sp_attach_single_file_db (Transact-SQL)">sp_attach_single_file_db (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms188775.aspx" title="sp_autostats (Transact-SQL)">sp_autostats (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms186230.aspx" title="sp_batch_params (Transact-SQL)">sp_batch_params (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms177503.aspx" title="sp_bindefault (Transact-SQL)">sp_bindefault (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms176063.aspx" title="sp_bindrule (Transact-SQL)">sp_bindrule (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms174403.aspx" title="sp_bindsession (Transact-SQL)">sp_bindsession (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms188785.aspx" title="sp_certify_removable (Transact-SQL)">sp_certify_removable (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/dd408732.aspx" title="sp_clean_db_free_space (Transact-SQL)">sp_clean_db_free_space (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/dd408731.aspx" title="sp_clean_db_file_free_space (Transact-SQL)">sp_clean_db_file_free_space (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms188787.aspx" title="sp_configure (Transact-SQL)">sp_configure (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms188733.aspx" title="sp_control_plan_guide (Transact-SQL)">sp_control_plan_guide (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms179880.aspx" title="sp_create_plan_guide (Transact-SQL)">sp_create_plan_guide (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/bb964726.aspx" title="sp_create_plan_guide_from_handle (Transact-SQL)">sp_create_plan_guide_from_handle (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms173585.aspx" title="sp_create_removable (Transact-SQL)">sp_create_removable (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms186834.aspx" title="sp_createstats (Transact-SQL)">sp_createstats (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms173819.aspx" title="sp_datatype_info (Transact-SQL)">sp_datatype_info (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/hh204563.aspx" title="sp_db_increased_partitions">sp_db_increased_partitions</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/bb326653.aspx" title="sp_db_vardecimal_storage_format (Transact-SQL)">sp_db_vardecimal_storage_format (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms178653.aspx" title="sp_dbcmptlevel (Transact-SQL)">sp_dbcmptlevel (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms403582.aspx" title="sp_dbmmonitoraddmonitoring (Transact-SQL)">sp_dbmmonitoraddmonitoring (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms365376.aspx" title="sp_dbmmonitorchangealert (Transact-SQL)">sp_dbmmonitorchangealert (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms365375.aspx" title="sp_dbmmonitorchangemonitoring (Transact-SQL)">sp_dbmmonitorchangemonitoring (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms366341.aspx" title="sp_dbmmonitordropalert (Transact-SQL)">sp_dbmmonitordropalert (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms365810.aspx" title="sp_dbmmonitordropmonitoring (Transact-SQL)">sp_dbmmonitordropmonitoring (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms365405.aspx" title="sp_dbmmonitorhelpalert (Transact-SQL)">sp_dbmmonitorhelpalert (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms403828.aspx" title="sp_dbmmonitorhelpmonitoring (Transact-SQL)">sp_dbmmonitorhelpmonitoring (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms366320.aspx" title="sp_dbmmonitorresults (Transact-SQL)">sp_dbmmonitorresults (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms403827.aspx" title="sp_dbmmonitorupdate (Transact-SQL)">sp_dbmmonitorupdate (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms187980.aspx" title="sp_dbremove (Transact-SQL)">sp_dbremove (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms188328.aspx" title="sp_delete_backuphistory (Transact-SQL)">sp_delete_backuphistory (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms178645.aspx" title="sp_delete_database_backuphistory (Transact-SQL)">sp_delete_database_backuphistory (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms189487.aspx" title="sp_depends (Transact-SQL)">sp_depends (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ff878602.aspx" title="sp_describe_first_result_set (Transact-SQL)">sp_describe_first_result_set (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ff878260.aspx" title="sp_describe_undeclared_parameters (Transact-SQL)">sp_describe_undeclared_parameters (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms188031.aspx" title="sp_detach_db (Transact-SQL)">sp_detach_db (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms188903.aspx" title="sp_dropdevice (Transact-SQL)">sp_dropdevice (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms189506.aspx" title="sp_dropextendedproc (Transact-SQL)">sp_dropextendedproc (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms178595.aspx" title="sp_dropextendedproperty (Transact-SQL)">sp_dropextendedproperty (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms174369.aspx" title="sp_dropmessage (Transact-SQL)">sp_dropmessage (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms189765.aspx" title="sp_droptype (Transact-SQL)">sp_droptype (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/cc280574.aspx" title="sp_estimate_data_compression_savings (Transact-SQL)">sp_estimate_data_compression_savings (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/bb153752.aspx" title="sp_estimated_rowsize_reduction_for_vardecimal (Transact-SQL)">sp_estimated_rowsize_reduction_for_vardecimal (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms188001.aspx" title="sp_executesql (Transact-SQL)">sp_executesql (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms180061.aspx" title="sp_getbindtoken (Transact-SQL)">sp_getbindtoken (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms189823.aspx" title="sp_getapplock (Transact-SQL)">sp_getapplock (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms186908.aspx" title="sp_get_query_template (Transact-SQL)">sp_get_query_template (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms187335.aspx" title="sp_help (Transact-SQL)">sp_help (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms176038.aspx" title="sp_helpconstraint (Transact-SQL)">sp_helpconstraint (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms178568.aspx" title="sp_helpdb (Transact-SQL)">sp_helpdb (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms174966.aspx" title="sp_helpdevice (Transact-SQL)">sp_helpdevice (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms186854.aspx" title="sp_helpextendedproc (Transact-SQL)">sp_helpextendedproc (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms174307.aspx" title="sp_helpfile (Transact-SQL)">sp_helpfile (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms181454.aspx" title="sp_helpfilegroup (Transact-SQL)">sp_helpfilegroup (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms188771.aspx" title="sp_helpindex (Transact-SQL)">sp_helpindex (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms187357.aspx" title="sp_helplanguage (Transact-SQL)">sp_helplanguage (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms189804.aspx" title="sp_helpserver (Transact-SQL)">sp_helpserver (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms175986.aspx" title="sp_helpsort (Transact-SQL)">sp_helpsort (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms173416.aspx" title="sp_helpstats (Transact-SQL)">sp_helpstats (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms176112.aspx" title="sp_helptext (Transact-SQL)">sp_helptext (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms189836.aspx" title="sp_helptrigger (Transact-SQL)">sp_helptrigger (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms186253.aspx" title="sp_indexoption (Transact-SQL)">sp_indexoption (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms189468.aspx" title="sp_invalidate_textptr (Transact-SQL)">sp_invalidate_textptr (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms187749.aspx" title="sp_lock (Transact-SQL)">sp_lock (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms188912.aspx" title="sp_monitor (Transact-SQL)">sp_monitor (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms181720.aspx" title="sp_procoption (Transact-SQL)">sp_procoption (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms181647.aspx" title="sp_recompile (Transact-SQL)">sp_recompile (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/bb326754.aspx" title="sp_refreshsqlmodule (Transact-SQL)">sp_refreshsqlmodule (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms187821.aspx" title="sp_refreshview (Transact-SQL)">sp_refreshview (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div class="toclevel1 current">
+                    <a href="http://msdn.microsoft.com/en-us/library/ms178602.aspx" title="sp_releaseapplock (Transact-SQL)">sp_releaseapplock (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms188351.aspx" title="sp_rename (Transact-SQL)">sp_rename (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms186217.aspx" title="sp_renamedb (Transact-SQL)">sp_renamedb (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms188424.aspx" title="sp_resetstatus (Transact-SQL)">sp_resetstatus (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ff878352.aspx" title="sp_sequence_get_range (Transact-SQL)">sp_sequence_get_range (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ff878233.aspx" title="sp_server_diagnostics (Transact-SQL)">sp_server_diagnostics (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms190318.aspx" title="sp_setnetname (Transact-SQL)">sp_setnetname (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms186762.aspx" title="sp_settriggerorder (Transact-SQL)">sp_settriggerorder (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms188776.aspx" title="sp_spaceused (Transact-SQL)">sp_spaceused (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms173530.aspx" title="sp_tableoption (Transact-SQL)">sp_tableoption (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms188913.aspx" title="sp_unbindefault (Transact-SQL)">sp_unbindefault (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms190354.aspx" title="sp_unbindrule (Transact-SQL)">sp_unbindrule (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms186885.aspx" title="sp_updateextendedproperty (Transact-SQL)">sp_updateextendedproperty (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms173804.aspx" title="sp_updatestats (Transact-SQL)">sp_updatestats (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms189525.aspx" title="sp_validname (Transact-SQL)">sp_validname (Transact-SQL)</a>
+                </div>
+                
+                <div class="clip13x9 nav_dots_current">
+                    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="cl_nav_dots" alt="">
+                </div>
+                
+                <div>
+                    <a href="http://msdn.microsoft.com/en-us/library/ms174313.aspx" title="sp_who (Transact-SQL)">sp_who (Transact-SQL)</a>
+                </div>
+                
+        </div>
+        
+    </div>
+    <img src="stored%20procedure%20example_files/clear.gif" alt="Separator" class="communityContentNavigationSeparator cl_lt_cc_line_top">
+    
+    <div class="communityContentNavigation">
+        <div class="communityContentNavigationHeader">
+            Community Content</div>
+        
+        <div class="communityContentNavigationPost">
+            <div class="communityContentNavigationAvatarContainer">
+                <a class="communityContentNavigationLinkAvatar" href="#CommunityContent" title="User"><img alt="Avatar" class="cl_default_avatar" src="stored%20procedure%20example_files/clear.gif"></a>
+            </div>
+            
+            <div class="communityContentNavigationLinkAbstractAdvertisement">
+                <ul>
+                    <li>
+                        Add code samples and tips to enhance this topic.</li>
+                </ul>
+            </div>
+            
+        </div>
+        
+        <div class="communityContentNavigationMoreLink">
+            <a href="#CommunityContent" title="More...">More...</a></div>
+    </div>
+    
+</div>
+
+<script type="text/javascript"> 
+  //<![CDATA[
+  if (!MTPS) var MTPS = {};
+  MTPS.TopicNodes= {
+  
+            "_last": ''
+    };
+  //]]>
+</script>
+
+    </div>
+    
+  </div>
+  <div id="tocResizeContainer" style="visibility: visible;">
+  <a href="javascript:void(0)" class="tocResize" id="TocResize" style="left: 280px;">
+    <img id="ResizeImageIncrease" class="cl_nav_resize_open" src="stored%20procedure%20example_files/Msdn_ImageSprite.png" title="Expand" alt="Expand">
+      <img id="ResizeImageReset" class="cl_nav_resize_close" src="stored%20procedure%20example_files/Msdn_ImageSprite.png" style="display: none;" title="Minimize" alt="Minimize">
+  </a>
+  </div>
+  <div class="content">
+    
+    
+
+<div class="clip117x31 logo">
+  <a href="http://msdn.microsoft.com/en-us/default.aspx">
+    <img src="stored%20procedure%20example_files/Msdn_ImageSprite.png" class="msdn_body_logo" alt="MSDN" title="MSDN">
+  </a>
+</div>
+
+    <div class="topicContainer">
+        
+            <div id="FeedbackCounterContainer">
+                
+
+
+
+
+
+
+            </div>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+<div class="topic" xmlns="http://www.w3.org/1999/xhtml" xmlns:mtps="http://msdn2.microsoft.com/mtps" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:cs="http://msdn.microsoft.com/en-us/">
+  
+  <h1 class="title">sp_releaseapplock (Transact-SQL)</h1><div class="lw_vs"><div id="curversion"><strong>
+            SQL Server 2012</strong></div><div id="versionclick" style="visibility: visible;"><div id="vsseperator" class="cl_lw_vs_seperator"></div><div id="versionclick_c1"></div><div id="versionclick_c2"><div class=""><a id="vsLink" href="javascript:;">
+                    Other Versions
+                </a></div><div class="cl_vs_arrow clip10x10"><img class="cl_lw_vs_arrow" id="vsArrow" alt="" src="stored%20procedure%20example_files/Msdn_ImageSprite.png"></div></div><div id="versionclick_c3"></div></div><ul id="vsPanel"><li><a href="http://msdn.microsoft.com/en-us/library/ms178602%28v=sql.105%29.aspx" title="">SQL Server 2008 R2</a></li><li><a href="http://msdn.microsoft.com/en-us/library/ms178602%28v=sql.100%29.aspx" title="">SQL Server 2008</a></li><li><a href="http://msdn.microsoft.com/en-us/library/ms178602%28v=sql.90%29.aspx" title="">SQL Server 2005</a></li></ul><div id="ratingCounterSeperator" class="cl_lw_vs_seperator" style="visibility: visible;"></div><div style="margin: 0px 0px 0px 13px;" id="ratingCounter">
+    <span id="rcA" class="ratingText">
+        This topic has not yet been rated <a id="rateThisTopic" href="#feedback" title="Rate this topic">-&nbsp;Rate this topic</a>
+        
+    </span>
+</div></div><div style="clear: both;"></div>
+  
+  <div id="mainSection">
+    <div id="mainBody">
+      <div class="introduction">
+        <p>Releases a lock on an application resource.</p>
+        <p>
+          <img id="Topic_Link" alt="Topic link icon" src="stored%20procedure%20example_files/IC128933.gif" title="Topic link icon" xmlns=""> <a href="http://msdn.microsoft.com/en-us/library/ms177563.aspx">Transact-SQL Syntax Conventions</a></p>
+      </div>
+      <div xmlns=""><script type="text/javascript">if (!MTPS) var MTPS = {};if (!MTPS.LocalizedStrings) MTPS.LocalizedStrings = {}; 
+              MTPS.LocalizedStrings.ExpandButtonTooltip = 'Expand'; 
+              MTPS.LocalizedStrings.CollapseButtonTooltip = 'Collapse';</script><div class="LW_CollapsibleArea_TitleDiv"><div><a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><img src="stored%20procedure%20example_files/clear.gif" class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"><span class="LW_CollapsibleArea_Title">Syntax</span></a><div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div></div></div><div class="sectionblock">
+        <a id="syntaxToggle" xmlns="http://www.w3.org/1999/xhtml">
+          
+        </a>
+        
+
+<div class="codeSnippetContainer" xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+    <div class="codeSnippetContainerTabs">
+        
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" title="Copy to clipboard." href="javascript:CodeSnippet_CopyCode('CodeSnippetContainerCode_67fa4e10-db52-462f-a2ce-7f412dbab06e');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_67fa4e10-db52-462f-a2ce-7f412dbab06e" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color: Black;"><pre>
+          
+
+sp_releaseapplock [ @Resource = ] 'resource_name' 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ , [ @LockOwner = ] 'lock_owner' ]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ , [ @DbPrincipal = ] 'database_principal' ]
+[ ; ]
+        
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+
+      </div></div>
+      <div xmlns=""><div class="LW_CollapsibleArea_TitleDiv"><div><a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><img src="stored%20procedure%20example_files/clear.gif" class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"><span class="LW_CollapsibleArea_Title">Arguments</span></a><div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div></div></div><div class="sectionblock">
+        <a id="sectionToggle0" xmlns="http://www.w3.org/1999/xhtml">
+          
+        </a>
+        <dl class="authored" xmlns="http://www.w3.org/1999/xhtml">
+          <dt>
+            <span>[ @Resource= ] '<span class="parameter">resource_name</span>'</span>
+          </dt>
+          <dd>
+            <p>Is a lock resource name specified by the client 
+application. The application must ensure that the resource is unique. 
+The specified name is hashed internally into a value that can be stored 
+in the SQL Server lock manager. <span class="parameter">resource_name</span> is <span><span class="input">nvarchar(255)</span></span> with no default. <span class="parameter">resource_name</span> is binary compared, thus is case-sensitive regardless of the collation settings of the current database.</p>
+          </dd>
+          <dt>
+            <span>[ @LockOwner= ] '<span class="parameter">lock_owner</span>'</span>
+          </dt>
+          <dd>
+            <p>Is the owner of the lock, which is the <span class="parameter">lock_owner</span> value when the lock was requested. <span class="parameter">lock_owner</span> is <span><span class="input">nvarchar(32)</span></span>. The value can be <span><span class="input">Transaction</span></span> (the default) or <span><span class="input">Session</span></span>. When the <span class="parameter">lock_owner</span> value is <span><span class="input">Transaction</span></span>, by default or specified explicitly, sp_getapplock must be executed from within a transaction.</p>
+          </dd>
+          <dt>
+            <span>[ @DbPrincipal= ] '<span class="parameter">database_principal</span>'</span>
+          </dt>
+          <dd>
+            <p>Is the user, role, or application role that has 
+permissions to an object in a database. The caller of the function must 
+be a member of <span class="parameter">database_principal</span>, dbo, or the db_owner fixed database role in order to call the function successfully. The default is public. </p>
+          </dd>
+        </dl>
+      </div></div>
+      <div xmlns=""><div class="LW_CollapsibleArea_TitleDiv"><div><a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><img src="stored%20procedure%20example_files/clear.gif" class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"><span class="LW_CollapsibleArea_Title">Return Code Values</span></a><div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div></div></div><div class="sectionblock">
+        <a id="sectionToggle1" xmlns="http://www.w3.org/1999/xhtml">
+          
+        </a>
+        <p xmlns="http://www.w3.org/1999/xhtml">&gt;= 0 (success), or &lt; 0 (failure)</p>
+        <div class="caption" xmlns="http://www.w3.org/1999/xhtml">
+          
+        </div>
+        <div class="tableSection" xmlns="http://www.w3.org/1999/xhtml">
+          <table>
+            <tbody><tr>
+              <th>
+                <p>Value</p>
+              </th>
+              <th>
+                <p>Result</p>
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <p>0</p>
+              </td>
+              <td>
+                <p>Lock was successfully released.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>-999</p>
+              </td>
+              <td>
+                <p>Indicates parameter validation or other call error.</p>
+              </td>
+            </tr>
+          </tbody></table>
+        </div>
+      </div></div>
+      <div xmlns=""><div class="LW_CollapsibleArea_TitleDiv"><div><a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><img src="stored%20procedure%20example_files/clear.gif" class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"><span class="LW_CollapsibleArea_Title">Remarks</span></a><div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div></div></div><div class="sectionblock">
+        <a id="languageReferenceRemarksToggle" xmlns="http://www.w3.org/1999/xhtml">
+          
+        </a>
+        <p xmlns="http://www.w3.org/1999/xhtml">When an application 
+calls sp_getapplock multiple times for the same lock resource, 
+sp_releaseapplock must be called the same number of times to release the
+ lock.</p>
+        <p xmlns="http://www.w3.org/1999/xhtml">When the server shuts down for any reason, the locks are released.</p>
+      </div></div>
+      <div xmlns=""><div class="LW_CollapsibleArea_TitleDiv"><div><a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><img src="stored%20procedure%20example_files/clear.gif" class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"><span class="LW_CollapsibleArea_Title">Permissions</span></a><div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div></div></div><div class="sectionblock">
+        <a id="sectionToggle2" xmlns="http://www.w3.org/1999/xhtml">
+          
+        </a>
+        <p xmlns="http://www.w3.org/1999/xhtml">Requires membership in the public role.</p>
+      </div></div>
+      <div xmlns=""><div class="LW_CollapsibleArea_TitleDiv"><div><a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><img src="stored%20procedure%20example_files/clear.gif" class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"><span class="LW_CollapsibleArea_Title">Examples</span></a><div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div></div></div><div class="sectionblock">
+        <a id="sectionToggle3" xmlns="http://www.w3.org/1999/xhtml">
+          
+        </a>
+        <p xmlns="http://www.w3.org/1999/xhtml">The following example releases the lock associated with the current transaction on the resource <span class="code">Form1</span> in the <span class="code">AdventureWorks2012</span> database.</p>
+        
+
+<div class="codeSnippetContainer" xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+    <div class="codeSnippetContainerTabs">
+        
+    </div>
+    <div class="codeSnippetContainerCodeContainer">
+        <div class="codeSnippetToolBar">
+            <div class="codeSnippetToolBarText">
+                <a name="CodeSnippetCopyLink" title="Copy to clipboard." href="javascript:CodeSnippet_CopyCode('CodeSnippetContainerCode_e999eec7-ded8-4f60-bc83-4271df4c6d4e');">Copy</a>
+            </div>
+        </div>
+        <div id="CodeSnippetContainerCode_e999eec7-ded8-4f60-bc83-4271df4c6d4e" class="codeSnippetContainerCode" dir="ltr">
+            <div style="color: Black;"><pre>USE AdventureWorks2012;
+GO
+EXEC sp_getapplock @DbPrincipal = 'dbo', @Resource = 'Form1', 
+     @LockMode = 'Shared';
+EXEC sp_releaseapplock @DbPrincipal = 'dbo', @Resource = 'Form1';
+GO
+</pre></div>
+            
+        </div>
+    </div>
+</div>
+
+      </div></div>
+      <div xmlns=""><div class="LW_CollapsibleArea_TitleDiv"><div><a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><img src="stored%20procedure%20example_files/clear.gif" class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"><span class="LW_CollapsibleArea_Title">See Also</span></a><div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div></div></div><div class="sectionblock">
+        <a id="seeAlsoToggle" xmlns="http://www.w3.org/1999/xhtml">
+          
+        </a>
+        <h4 class="subHeading" xmlns="http://www.w3.org/1999/xhtml">Reference</h4>
+        <div class="seeAlsoStyle" xmlns="http://www.w3.org/1999/xhtml">
+          <span>
+            <a href="http://msdn.microsoft.com/en-us/library/ms189749.aspx">APPLOCK_MODE (Transact-SQL)</a>
+          </span>
+        </div>
+        <div class="seeAlsoStyle" xmlns="http://www.w3.org/1999/xhtml">
+          <span>
+            <a href="http://msdn.microsoft.com/en-us/library/ms178647.aspx">APPLOCK_TEST (Transact-SQL)</a>
+          </span>
+        </div>
+        <div class="seeAlsoStyle" xmlns="http://www.w3.org/1999/xhtml">
+          <span>
+            <a href="http://msdn.microsoft.com/en-us/library/ms189823.aspx">sp_getapplock (Transact-SQL)</a>
+          </span>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</div></div>
+
+        
+
+
+
+<div id="contentFeedback">
+    <form method="post" action="/en-us/library/feedback/add/ms178602.aspx">
+        <input name="__RequestVerificationToken" value="pA3hCJ3T0x/Q5G3y4eK1IrUGYYKQAqYdi0wPR7DItckSlhSS6xjFuASbcgGNJzKiQEu1TlB964+hMwdH3QWyrSbCvBrp7mbvRH3PmdLXCpYKSLRm0A98GZ2aWthxQCE7b5P2fA==" type="hidden">
+    <div id="contentFeedbackContainer">
+        <div class="FeedbackTitleContainer">
+            <a name="feedback"></a>
+        Did you find this helpful?
+            <input id="rdIsUsefulYes" name="rdIsUseful" value="1" onclick="toggleContentFeedback('Yes');" type="radio"><label for="rdIsUsefulYes">Yes</label>
+            <input id="rdIsUsefulNo" name="rdIsUseful" value="0" onclick="toggleContentFeedback('No');" type="radio"><label for="rdIsUsefulNo">No</label>
+        
+        </div>
+        
+            <div id="contentFeedbackQAContainer">
+                
+                    <div id="feedbackListNoContainer" class="FeedbackListContainer">
+                        
+                            <div>
+                                <input id="chkbxNo201" name="chkbxNo" value="201" type="checkbox">
+                                <label for="chkbxNo201">Not accurate</label>
+                            </div>
+                        
+                            <div>
+                                <input id="chkbxNo202" name="chkbxNo" value="202" type="checkbox">
+                                <label for="chkbxNo202">Not enough depth</label>
+                            </div>
+                        
+                            <div>
+                                <input id="chkbxNo203" name="chkbxNo" value="203" type="checkbox">
+                                <label for="chkbxNo203">Need more code examples</label>
+                            </div>
+                        
+                    </div>
+                
+                <div class="FeedbackTellUsMoreContainer">
+                    <textarea id="feedbackText" name="feedbackText" class="TellUsMoreTextBoxSearchLoaded" onfocus="WatermarkFocus(this, 'Tell us more...', 'TellUsMoreTextBoxSearch')" onblur="WatermarkBlur(this, 'Tell us more...', 'TellUsMoreTextBoxSearchLoaded')" onkeydown="TextBoxCharactersCounter(this, document.getElementById('feedbackTextCounter'), 1500)" onkeyup="TextBoxCharactersCounter(this, document.getElementById('feedbackTextCounter'), 1500)">Tell us more...</textarea>
+                </div>
+                <span class="counter">(<span id="feedbackTextCounter">1500</span> characters remaining)</span>
+                <input id="returnUrl" name="returnUrl" value="http://msdn.microsoft.com/en-us/library/ms178602.aspx" type="hidden">
+                <input id="submit" value="Submit" title="Click to Submit Feedback" onclick="WatermarkOnSubmit(document.getElementById('feedbackText'), 'Tell us more...', 'TellUsMoreTextBoxSearch')" type="submit">
+                <div style="clear: both;"></div>
+            </div>  
+        
+    </div>
+    </form>
+</div>
+
+    </div>
+    
+    <div class="topicEndLine">
+    </div>
+    <div id="CommunityContent" class="CommunityContent">
+      
+<div class="CommunityContentContainer">
+    <div id="CommunityContentHeader" class="CommunityContentHeader">
+      <div class="CommunityContentHeaderTitleContainer">
+        <span class="CommunityContentHeaderTitle h1">Community Content</span>
+          
+        <a href="http://msdn.microsoft.com/en-us/library/community/add/ms178602.aspx" title="Add" rel="nofollow">Add</a>
+          
+        </div>
+        <div class="CommunityContentFaq">
+            <a href="http://msdn.microsoft.com/en-us/library/community-edits.rss?topic=ms178602%7Cen-us%7CSQL.110" title="Annotations" rel="nofollow"><img class="cl_rss_button" alt="Annotations" src="stored%20procedure%20example_files/clear.gif"></a>
+            <a href="http://msdn.microsoft.com/en-us/library/community-msdnwikifaq.aspx" title="FAQ" rel="nofollow">FAQ</a>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    
+    
+
+</div>
+    </div>
+    
+  </div>
+        
+  </div>
+  <div class="footer">
+    
+
+<div id="footer" class="msdn footerContainer cl_footer_slice">
+  <div class="footerLogoContainer">
+    <div class="footerContent">
+    <div class="copyright">
+      © 2012 Microsoft. All rights reserved.</div>
+    <div class="footerLogo cl_footer_logo"></div>
+    <a href="http://msdn.microsoft.com/cc300389.aspx">Terms of Use</a><span class="pipe"> | </span>
+    <a href="http://www.microsoft.com/library/toolbar/3.0/trademarks/en-us.mspx">Trademarks</a><span class="pipe"> | </span>
+    <a href="http://www.microsoft.com/info/privacy.mspx">Privacy Statement</a>
+    <span class="pipe">| </span>
+    <span class="FeedbacklinkDisabled" id="FeedbacklinkDisabled">Site Feedback</span>
+    <a id="Feedbacklink" title="Site Feedback" class="FeedbackLink" href="javascript:void(0)">
+      Site Feedback
+        <span class="FeedbackButton clip20x21" id="FeedbackButton">
+          <img id="feedBackImg" class="cl_footer_feedback_icon" src="stored%20procedure%20example_files/Msdn_ImageSprite.png" alt="Site Feedback">
+        </span>
+      </a>
+    
+  <div id="FeedbackContainer" class="FeedbackContainer">
+    <form id="siteFeedbackForm" method="post" action="/en-us/library/feedback/add/ms178602.aspx">
+        <input name="__RequestVerificationToken" value="LvLYeYHpLLTjnhAmXpNKZvjiIJefg5Ka0Mo5V/Vcy4G/p1RplPbV7baOM5G2wbwEZmFZYxRD6gbGFUmHcLVtZDGVn2YZf61HaiYLOlSOXWqHpks8vYyVc9M7jGncNwDvGDnuXQ==" type="hidden">
+    <div class="FeedbackTitleContainer">
+        <div class="FeedbackTitle">
+            Site Feedback</div>
+        <div class="FeedbackCancel">
+            <a href="javascript:;" onclick="document.getElementById('FeedbackContainer').style.display = 'none';">x</a>
+            </div>
+    </div>
+    <div class="FeedbackData">
+        <div class="FeedbackInfoText">
+            Tell us about your experience...
+        </div>
+        <div class="QuestionText">
+            Did the page load quickly?
+        </div>
+        <div class="AnswerText">
+            
+            <span>
+                Yes<span>
+                    <input id="searchBox" name="searchBox" value="1" type="radio"></span></span>
+            
+            <span>
+                No<span>
+                    <input id="searchBox" name="searchBox" value="0" type="radio"></span></span>
+            
+        </div>
+        <div class="QuestionText">
+            Do you like the page design?
+        </div>
+        <div class="AnswerText">
+            
+            <span>
+                Yes<span>
+                    <input id="tabbedCode" name="tabbedCode" value="1" type="radio"></span></span>
+            
+            <span>
+                No<span>
+                    <input id="tabbedCode" name="tabbedCode" value="0" type="radio"></span></span>
+            
+        </div>
+        <div class="QuestionText">
+            Tell us more
+        </div>
+        <div class="FeedbackTextAreaContainer">
+            <textarea id="feedbackText" data-maxlength="4000" name="feedbackText" cols="25" rows="5" class="FeedbackTextArea"></textarea>
+            
+            <textarea id="feedbackDescription" name="feedbackDescription" cols="25" rows="10" style="display: none;">Enter description here.</textarea>
+            <input id="feedbackPriority" name="feedbackPriority" value="" type="hidden">
+            <input id="feedbackSourceUrl" name="feedbackSourceUrl" value="" type="hidden">
+            <input id="ClientIP" name="ClientIP" value="" type="hidden">
+            <input id="ClientOS" name="ClientOS" value="" type="hidden">
+            <input id="ClientBrowser" name="ClientBrowser" value="" type="hidden">
+            <input id="ClientTime" name="ClientTime" value="" type="hidden">
+            <input id="ClientTimeZone" name="ClientTimeZone" value="" type="hidden">
+            
+            
+        </div>
+        <div>
+            <input id="siteFeedbackSubmit" value="Send" class="FeedbackSubmit" onclick="submitSiteFeedback('-1');" type="submit">
+        </div>
+    </div>
+    <input id="returnUrl" name="returnUrl" value="http://msdn.microsoft.com/en-us/library/ms178602.aspx" type="hidden">
+    
+    
+    <input id="feedBackVersion" name="feedBackVersion" value="1" type="hidden">
+    
+  </form> 
+</div>
+
+    </div>
+  </div>
+</div>
+
+  </div>
+
+    
+        <div class="MetricsContainer">
+            
+    <div class="WebtrendsContainer">
+      
+
+<script type="text/javascript">
+//<![CDATA[
+  var literalNormalizedUrl = '/en-us/library/ms178602(d=lightweight,l=en-us,v=sql.110).aspx';
+  var wt_nvr_ru = 'WT_NVR_RU';
+  var wt_fpcdom = '.microsoft.com';
+  var wt_domlist = 'msdn.microsoft.com';
+  var wt_pathlist = '';
+  var wt_paramlist = 'DCSext.mtps_devcenter';
+  var wt_siteid = 'MSDN';
+  var gDomain = 'm.webtrends.com';
+  var gDcsId = 'dcsmgru7m99k7mqmgrhudo0k8_8c6m';
+  var gFpc = 'WT_FPC';
+  if (document.cookie.indexOf(gFpc + "=") == -1) {
+    var wtidJs = document.createElement("script");
+    wtidJs.src = "//" + gDomain + "/" + gDcsId + "/wtid.js";
+    document.getElementsByTagName("head")[0].appendChild(wtidJs);
+  }
+  var detectedLocale = 'en-us';
+  var wtsp = '_msdn_library_sqlserver_';
+  var gTrackEvents = '0';
+/*]]>*/
+</script>
+<noscript><div><img alt="DCSIMG" id="Img1" width="1" height="1" src="http://m.webtrends.com/dcsmgru7m99k7mqmgrhudo0k8_8c6m/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" /></div></noscript>
+
+
+    </div>
+    
+    <div class="OmnitureContainer">
+      
+
+
+
+<script type="text/javascript">
+  var omni_guid = 'a3061df5-02f1-410a-9539-c0d64fb2314c'; 
+</script>
+
+
+
+<noscript>
+    <a href="http://www.omniture.com" title="Web Analytics">
+        <img src="//msstonojsmsdn.112.2o7.net/b/ss/msstonojsmsdn/1/H.20.2--NS/0" height="1" width="1" border="0" alt="" /></a>
+</noscript>
+
+
+    </div>
+    
+        </div>
+        
+<script type="text/javascript">
+    //<![CDATA[
+    var brokerJs = document.createElement("script");
+    brokerJs.src = "//js.microsoft.com/library/svy/sto/broker.js";
+    document.getElementsByTagName("head")[0].appendChild(brokerJs);
+    /*]]>*/
+</script>
+
+<!--[CDATA[ Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code, not by Microsoft.  See ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx. ]]-->
+<script type="text/javascript" src="stored%20procedure%20example_files/Combined.js" xmlns="http://www.w3.org/1999/xhtml"></script><script src="stored%20procedure%20example_files/broker-config.js"></script><div id="_WEDCSInsertedData" style="display: none;"><iframe id="_msnFrame" src="stored%20procedure%20example_files/Sync.htm" style="z-index: -1; height: 1px; width: 1px; display: none; visibility: hidden;" onload="javascript:MscomBeacon();"></iframe></div></body></html>

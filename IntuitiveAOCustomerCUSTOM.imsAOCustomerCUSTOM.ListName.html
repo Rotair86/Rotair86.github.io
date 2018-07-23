@@ -1,0 +1,179 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			IntuitiveAO_Customer_CUSTOM - Customizations by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomizedAppObjects'
+					Source[1] = 'IntuitiveAOCustomerCUSTOM'
+					Source[2] = 'imsAOCustomerCUSTOM'
+					Source[3] = 'ListName'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">ListName Function</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Retrieves customer's names.</p>
+																																									
+								<div class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">
+													<pre><span style="color: Green;">'Declaration</span></pre>
+													<pre><span style="color: Blue;">Public Function</span> ListName( _</pre>
+													<pre>    ) <span style="color: Blue;">As</span> DataSet</pre>
+												</div>				
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>Returns a data set with customer's names and ids.  A sample is provided below.</p>
+										
+										<table id="example" class="members">
+											<tbody>
+												<tr>
+													<!--<th class="nameColumn">ID</th>
+													<th class="descriptionColumn">Name</th>-->
+													<th class="idColumn">ID</th>
+													<th class="nameColumn">Name</th>
+												</tr>
+												<tr>									
+													<td>
+														000006
+													</td>
+													<td>
+														O/H - I.P.
+													</td>
+												<tr>									
+												</tr>
+													<td>
+														000010
+													</td>
+													<td>
+														A-1 AIR & MARINE SUPPLY
+													</td>
+												<tr>									
+												</tr>
+													<td>
+														000011
+													</td>
+													<td>
+														Shop
+													</td>
+												</tr>
+											</tbody>
+										</table>
+
+									</div>
+
+								</div>	
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Example</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>Populates an Intuitive combobox with the customer names.  The combobox must already have its ListView set up
+										for 2 columns and the display, key and value members set.</p>
+									
+									</div>
+								</div>
+
+								<div class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">
+													<pre><span style="color: Blue;">Private Sub</span> PopulateCustomers( _</pre>
+													<pre>    )</pre>
+													<br>
+													<pre>    <span style="color: Blue;">Dim </span>DS<span style="color: Blue;"> As </span>DataSet</pre>
+													<pre>    <span style="color: Blue;">Dim </span>DT<span style="color: Blue;"> As </span>DataTable</pre>
+													<br>
+													<br>
+													<pre>    DS = imsAO_Customer_CUSTOM.<b>ListName</b>()</pre>
+													<pre>    DT = DS.Tables(<span style="color: Gray;">0</span>)</pre>
+													<pre>    ImsCombo1.ListView.DataSource = DT</pre>
+													<br>
+													<pre><span style="color: Blue;">End Sub</span></pre>
+												</div>																	
+											</div>
+										</div>
+									</div>				
+									
+								</div>	
+
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

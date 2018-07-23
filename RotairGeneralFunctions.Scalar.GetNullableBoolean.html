@@ -1,0 +1,162 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairGeneralFunctions - Build and installed from VBA by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairGeneralFunctions'
+					Source[2] = 'Scalar'
+					Source[3] = 'GetNullableBoolean'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">GetNullableBoolean Method</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Returns a value supplying a default for nothing.</p>						
+	
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<img src="Graphics/minus.png" name="Syntax" onclick="CollapseExpand('Syntax')"><span class="LW_CollapsibleArea_Title">Syntax</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div id='Syntax' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">
+													<pre><span style="color: Green;">'Declarations</span></pre>
+														<pre><span style="color: Blue;">Public Function </span>GetNullableBoolean( _</pre>
+														<pre>        value<span style="color: Blue;"> As Boolean?</span> _</pre>
+														<pre>) <span style="color: Blue;">As Boolean</span></pre>
+													<br>
+												</div>				
+											</div>
+										</div>
+									</div>
+									<div id="parameters">
+										<h4 class="subHeading">Parameters</h4>
+											<dl><dt><span class="parameter">value</span></dt>
+												<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/b3h38hb0.aspx">Nullable</a><br><span><span>A boolean that can be nothing.</span><br></span></dd>
+											</dl>
+									</div>							
+
+									<div id="returnvalue">
+										<h4 class="subHeading">Return Value</h4>
+											<dl>
+												<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.boolean">System.Boolean</a><br><span><span>The passed in value or FALSE if nothing was passed in.</span><br></span></dd>
+											</dl>
+
+									</div>							
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>Pass this function a nullable boolean and it will return the boolean value if it is not nothing.  If the
+										passed in value is nothing then it will return FALSE.</p>
+																										
+									</div>
+
+								</div>	
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Example" onclick="CollapseExpand('Example')"><span class="LW_CollapsibleArea_Title">Example</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>The example will set a variable.  But we may not have data, that is why the variable is defined as nullable.
+										So we call the function that will assign a default value if nothing was assigned to the variable.</p>
+									
+									</div>
+								</div>
+
+								<div id='Example' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">													
+													<pre><span style="color: Blue;">Dim</span> bSomeBoolean <span style="color: Blue;">As Boolean?</span></pre>
+													<pre><span style="color: Blue;">Dim</span> bAnotherBoolean <span style="color: Blue;">As Boolean</span></pre>
+													<br>
+													<br>
+													<pre><span style="color: Green;">'Let's load the boolean bSomeBoolean.</span></pre>
+													<pre>LoadData(bSomeBoolean)</pre>
+													<pre><span style="color: Green;">'Now we need to convert bSomeBoolean (which may or may not have been set) to bAnotherBoolean.</span></pre>
+													<pre>bAnotherBoolean = Rotair_GeneralFunctions.<b>GetNullableBoolean</b>(bSomeBoolean)</pre>
+													<br>
+												</div>																	
+											</div>
+										</div>
+									</div>													                    
+
+								</div>	
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

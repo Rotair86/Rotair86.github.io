@@ -1,0 +1,633 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			Derived Custom Classes - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<div class="searchcontainer">
+	
+					<form id="SearchForm" action="http://social.msdn.microsoft.com/search/en-us" method="get" style="margin: 0pt; padding: 0pt;" onsubmit="return checkSearchBox()">
+						<div class="searchBoxContainer" style="">
+							<table class="searchBox" border="0" cellpadding="0" cellspacing="0">
+								<tbody>
+									<tr>
+										<td class="searchTextBoxTd">
+											<input value="Search MSDN with Bing" id="SearchInput" maxlength="200" class="searchTextBox" name="query" type="text">        
+										</td>
+										<td class="searchButtonTd">
+											<input src="Graphics/Search.gif" style="position: relative;" title="Search " type="image">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</form>
+					
+					<script type="text/javascript">
+					//<![CDATA[
+						if (!MTPS) var MTPS = {};
+						if (!MTPS.Watermarks) MTPS.Watermarks = {};
+						MTPS.Watermarks.SearchInput = {
+							"control": "SearchInput",
+							"defaultValue": "Search MSDN with Bing",
+							"defaultCSS": "searchTextBox",
+							"focusCSS": "searchTextBoxTrue"
+						};
+						function checkSearchBox() {
+							if (document.getElementById("SearchInput").value == MTPS.Watermarks.SearchInput.defaultValue) {
+								document.getElementById("SearchInput").value = "";
+							}
+						}
+					 //]]>
+					</script>
+				</div>
+
+				<div class="navcontainer">
+			  
+					<div class="nav">
+			
+						<div id="tocnav">
+			
+							<div class="toclevel0 ancestry">
+							
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/ms123401.aspx">MSDN Library</a>
+								</div>
+            
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>								
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/ff361664%28v=vs.110%29.aspx">.NET Development</a>
+								</div>
+            
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>            
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/w0x726c2.aspx">.NET Framework 4</a>
+								</div>
+            
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>								
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/gg145045.aspx">.NET Framework Class Library</a>
+								</div>
+
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="ERP Custom Namespaces.html">ERP Customized Namespaces</a>
+								</div>						
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Base Classes.html">Custom Base Classes</a>
+								</div>
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Classes.html">Custom Classes</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Controls.html">Custom Controls</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Classes Derived.html">Custom Derived from rotAppObject</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Forms Derived from imsForms.html">Custom Forms Derived from imsForm</a>
+								</div>
+							
+							</div>
+							
+							<div class="clip13x9 nav_dots_current">
+								<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+							</div>					
+							<div class="toclevel">
+								<a href="RotairUICageCode.html">RotairUI_CageCode</a>
+							</div>
+
+							<div class="clip13x9 nav_dots_current">
+								<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+							</div>					
+							<div class="toclevel">
+								<a href="RotairUICommon.html">RotairUI_Common</a>
+							</div>
+
+							<div class="clip13x9 nav_dots_current">
+								<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+							</div>					
+							<div class="toclevel">
+								<a href="RotairUINote.html">RotairUI_Note</a>
+							</div>
+
+							<div class="clip13x9 nav_dots_current">
+								<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+							</div>					
+							<div class="toclevel">
+								<a href="RotairUIStockToXL.html">RotairUI_StockToXL</a>
+							</div>
+
+							<div class="toclevel0">
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Customized Intuitive AppObjects.html">Customized Intuitive imsAppObjects</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Customized Intuitive Forms.html">Customized Intuitive imsForms</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Printing Classes.html">Printing Classes</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Windows Custom Dialog Forms.html">Windows Custom Dialog Forms</a>
+								</div>
+								
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="External Programs.html">External Programs</a>
+								</div>						
+							
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Stored Procedures.html">Stored Procedures</a>
+								</div>						
+							
+							</div>
+							
+						</div>
+
+					</div>
+
+				</div>
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">Derived Custom Classes</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								Derived Custom Classes refers to classes that are derived from a custom class.
+								<br>
+								<br>
+								Our namespaces are analogous with our DLLs in that there is one logical task per.  The DLLs are simple enough not to warrant an additional namespace.
+								Folowing is a list of all the DLLs grouped by type in alphabetical order.
+								
+								Naming conventions used: modified form of hungarian notation.  
+								<ul>
+								<li>AO: A namespace representing data in the database.</li>
+								<li>UI: A MDI form inheriting from imsForm.</li>
+								<li>Dialog: A windows form displayed as a dialog .</li>
+								<li>HC: A namespace that handles printing (hard copy).</li>
+								</ul>
+
+							</div>
+							
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Application Object Namespaces</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+										</div>
+									</div>
+								</div>
+								
+								<p>These are objects that inherit from rotAppObject and represent data in the databasse.</p>
+								
+								<div class="sectionblock">
+								
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>
+													<a href="RotairAOEmail.html">RotairAO_Email</a>
+												</td>
+												<td>
+													Used to read from tblEmailType and tblEmailRecipient.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<a href="RotairAOExportLicense.html">RotairAO_ExportLicense</a>
+												</td>
+												<td>
+													Used to read from tblExLicense, tblExLicenseItem and tblExLicenseTrans.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<a href="RotairAOPartyScreen.html">RotairAO_PartyScreen</a>
+												</td>
+												<td>
+													Used to read and write to tblExDPScreen.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<a href="RotairAOSOMExportData.html">RotairAO_SOMExportData</a>
+												</td>
+												<td>
+													Used to read and write to tblSOMExportData.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<a href="RotairAOCageCode.html">RotairAO_CageCode</a>
+												</td>
+												<td>
+													Used to read and write to tblCAGECode.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<a href="RotairAOPhrases.html">RotairAO_Phrases</a>
+												</td>
+												<td>
+													Used to read and write to tblPhrase, tblPhraseForm and tblPhraseUsage.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<a href="RotairAONote.html">RotairAO_Note</a>
+												</td>
+												<td>
+													Used to read and write to tblRI_NoteType and tblRI_Note.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<a href="RotairAOCertificate.html">RotairAO_Certificate</a>
+												</td>
+												<td>
+													Used to read and write to tblCertHeader, tblCertItemDetail and tblCertSignature.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<a href="RotairAOReport.html">RotairAO_Report</a>
+												</td>
+												<td>
+													Used to read from tblReport, tblReportTable, tblReportHeader, tblReportFooter, tblReportColumn, tblReportColumnText, tblReportDetail
+													and tblReportHorizontalRule.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<a href="#mainBody">Top</a>
+								</div>
+							</div>
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">User Interfce Namespaces</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+										</div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>These are objects that inherit from imsForm and are mdi forms intended to take up the client area.</p>
+									
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>
+													<a href="RotairUICageCode.html">RotairUI_CageCode</a>
+												</td>
+												<td>
+													Form to edit, add or delete cagecodes.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<a href="RotairUINote.html">RotairUI_Note</a>
+												</td>
+												<td>
+													Form to add or view notes.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<a href="RotairUIStockToXL.html">RotairUI_StockToXL</a>
+												</td>
+												<td>
+													Form to display, print or export to Excel stock reports.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<a href="#mainBody">Top</a>
+								</div>
+							</div>
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Dialog Namespaces</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+										</div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>These are Windows forms intended to be used as dialogs.</p>
+									
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>
+													<a href="RotairDialogPhrases.html">RotairDialog_Phrases</a>
+												</td>
+												<td>
+													Form to edit, add or select phrases.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<a href="RotairDialogScreening.html">RotairDialog_Screening</a>
+												</td>
+												<td>
+													Form to enter and/or delete screening information.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<a href="#mainBody">Top</a>
+								</div>
+							</div>
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Printing Namespaces</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+										</div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>Namespaces used for printing.</p>
+									
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>
+													<a href="RotairHCReport.html">RotairHC_Report</a>
+												</td>
+												<td>
+													Talks to the printer.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<a href="#mainBody">Top</a>
+								</div>
+							</div>
+							
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Helper Namespaces</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+										</div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>The only thing in common with these namespaces is that they do not have anything in common.</p>
+									
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>
+													<a href="RotairTypes.html">Rotair_Types</a>
+												</td>
+												<td>
+													Constants, enumerations and structures that need to be shared accross namespaces.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<a href="RotairGeneralFunctions.html">Rotair_GeneralFunctions</a>
+												</td>
+												<td>
+													Function repository.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<a href="RotairDataAccess.html">RotairDataAccess</a>
+												</td>
+												<td>
+													The data access layer.  The only namespaces that should reference this are the application objects; namespaces prefixed with AO 
+													and the wrapper.  This is the only namespace that should interact with SQL server.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<a href="RotairDataAccessWrapper.html">RotairDataAccess_Wrapper</a>
+												</td>
+												<td>
+													Used as a bridge between non-AO namespaces and the data access layer.  Ideally these functions should be move to their respective
+													AOs and this namespace eliminated.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<a href="RotairSecurity.html">Rotair_Security</a>
+												</td>
+												<td>
+													Checking of menu item permissions lives here.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<a href="RotairEmail.html">Rotair_Email</a>
+												</td>
+												<td>
+													This namespace is used to send out emails.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<a href="RotairExportManagement.html">Rotair_ExportManagement</a>
+												</td>
+												<td>
+													Mainly used for screening.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<a href="RotairReport.html">Rotair_Report</a>
+												</td>
+												<td>
+													Prints out reports using data from RotairAO_Report and sending it to RotairHC_Report.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<a href="RotairExcel.html">Rotair_Excel</a>
+												</td>
+												<td>
+													Talks to Excel.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<a href="RotairUICommon.html">RotairUI_Common</a>
+												</td>
+												<td>
+													Messageboxes and forms used in more than one place.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<a href="#mainBody">Top</a>
+								</div>
+							</div>
+							
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Notes</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>All events should have basic error trapping.  Below is an example of the minimum recommended.  It uses Intuitive's form to display errors and also writes out the error to the database
+									including the class and function where the error was trapped.</p>
+								
+								</div>
+							</div>
+
+							<div class="sectionblock">
+								<div class="codeSnippetContainer">  	  
+									<div class="codeSnippetContainerTabs">
+										<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+											<a>VB</a>
+										</div>
+									</div>
+									<div class="codeSnippetContainerCodeContainer">
+										<div class="codeSnippetToolBar">
+										</div>
+										<div class="codeSnippetContainerCode">
+											<div style="color: Black;">
+												<pre><span style="color: Blue;">Try</span></pre>
+												<br>
+												<pre>    <span style="color: Green;">'Code goes here.</span></pre>
+												<br>
+												<pre><span style="color: Blue;">Catch </span>ex<span style="color: Blue;"> As </span>Exception</pre>
+												<pre>    HandleException(ex)</pre>
+												<pre>    RotairDataAccess_Wrapper.Database.WriteToErrorTable(ex.TargetSite.ReflectedType.Name, _</pre>
+												<pre>                ex.TargetSite.Name, ex.Message)</pre>
+												<br>
+												<pre><span style="color: Blue;">End Try</span></pre>
+											</div>																	
+										</div>
+									</div>
+								</div>
+
+							</div>	
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

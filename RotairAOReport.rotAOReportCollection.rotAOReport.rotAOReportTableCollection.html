@@ -1,0 +1,516 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairAO_Report - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<div class="searchcontainer">
+	
+					<form id="SearchForm" action="http://social.msdn.microsoft.com/search/en-us" method="get" style="margin: 0pt; padding: 0pt;" onsubmit="return checkSearchBox()">
+						<div class="searchBoxContainer" style="">
+							<table class="searchBox" border="0" cellpadding="0" cellspacing="0">
+								<tbody>
+									<tr>
+										<td class="searchTextBoxTd">
+											<input value="Search MSDN with Bing" id="SearchInput" maxlength="200" class="searchTextBox" name="query" type="text">        
+										</td>
+										<td class="searchButtonTd">
+											<input src="Graphics/Search.gif" style="position: relative;" title="Search " type="image">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</form>
+					
+					<script type="text/javascript">
+					//<![CDATA[
+						if (!MTPS) var MTPS = {};
+						if (!MTPS.Watermarks) MTPS.Watermarks = {};
+						MTPS.Watermarks.SearchInput = {
+							"control": "SearchInput",
+							"defaultValue": "Search MSDN with Bing",
+							"defaultCSS": "searchTextBox",
+							"focusCSS": "searchTextBoxTrue"
+						};
+						function checkSearchBox() {
+							if (document.getElementById("SearchInput").value == MTPS.Watermarks.SearchInput.defaultValue) {
+								document.getElementById("SearchInput").value = "";
+							}
+						}
+					 //]]>
+					</script>
+				</div>
+
+				<div class="navcontainer">
+			  
+					<div class="nav">
+			
+						<div id="tocnav">
+			
+							<div class="toclevel0 ancestry">
+							
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/ms123401.aspx">MSDN Library</a>
+								</div>
+            
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>								
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/ff361664%28v=vs.110%29.aspx">.NET Development</a>
+								</div>
+            
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>            
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/w0x726c2.aspx">.NET Framework 4</a>
+								</div>
+            
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>								
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/gg145045.aspx">.NET Framework Class Library</a>
+								</div>
+								
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="ERP Custom Namespaces.html">ERP Customized Namespaces</a>
+								</div>						
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Base Classes.html">Custom Base Classes</a>
+								</div>
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Classes.html">Custom Classes</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Controls.html">Custom Controls</a>
+								</div>
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Classes Derived.html">Custom Derived from rotAppObject</a>
+								</div>
+								
+							</div>
+							
+							<div class="clip13x9 nav_dots_current">
+								<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+							</div>					
+							<div class="toclevel">
+								<a href="RotairAOCageCode.html">RotairAO_CageCode</a>
+							</div>
+
+							<div class="clip13x9 nav_dots_current">
+								<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+							</div>					
+							<div class="toclevel">
+								<a href="RotairAOCertificate.html">RotairAO_Certificate</a>
+							</div>
+						
+							<div class="clip13x9 nav_dots_current">
+								<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+							</div>					
+							<div class="toclevel">
+								<a href="RotairAOEmail.html">RotairAO_Email</a>
+							</div>
+
+							<div class="clip13x9 nav_dots_current">
+								<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+							</div>					
+							<div class="toclevel">
+								<a href="RotairAOExportLicense.html">RotairAO_ExportLicense</a>
+							</div>
+
+							<div class="clip13x9 nav_dots_current">
+								<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+							</div>					
+							<div class="toclevel">
+								<a href="RotairAONote.html">RotairAO_Note</a>
+							</div>
+
+							<div class="clip13x9 nav_dots_current">
+								<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+							</div>					
+							<div class="toclevel">
+								<a href="RotairAOPhrases.html">RotairAO_Phrases</a>
+							</div>
+
+							<div class="clip13x9 nav_dots_current">
+								<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+							</div>					
+							<div class="toclevel">
+								<a href="RotairAOReport.html">RotairAO_Report</a>
+							</div>
+
+							<div class='toclevel2'>
+							
+								<div class="clip13x9 nav_dots_current">
+									<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+								</div>					
+								<div class="toclevel">
+									<a href="RotairAOReport.rotAOReportCollection.html">rotAO_Report_Collection</a>
+								</div>
+								
+								<div class='toclevel2'>
+								
+									<div class="clip13x9 nav_dots_current">
+										<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+									</div>					
+									<div class="toclevel">
+										<a href="RotairAOReport.rotAOReportCollection.rotAOReport.html">rotAO_Report</a>
+									</div>
+									
+									<div class='toclevel2'>
+
+										<div class="clip13x9 nav_dots_current">
+											<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+										</div>					
+										<div class="toclevel">
+											<a href="RotairAOReport.rotAOReportCollection.rotAOReport.rotAOReportFooterCollection.html">rotAO_ReportFooter_Collection</a>
+										</div>
+																				
+										<div class="clip13x9 nav_dots_current">
+											<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+										</div>					
+										<div class="toclevel">
+											<a href="RotairAOReport.rotAOReportCollection.rotAOReport.rotAOReportHeaderCollection.html">rotAO_ReportHeader_Collection</a>
+										</div>
+																				
+										<div class="clip13x9 nav_dots_current">
+											<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+										</div>					
+										<div class="toclevel current">
+											<a href="RotairAOReport.rotAOReportCollection.rotAOReport.rotAOReportTableCollection.html">rotAO_ReportTable_Collection</a>
+										</div>
+										
+										<div class='toclevel2'>
+										
+											<div class="clip13x9 nav_dots_current">
+												<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+											</div>					
+											<div class="toclevel">
+												<a href="RotairAOReport.rotAOReportCollection.rotAOReport.rotAOReportTableCollection.LoadList.html">LoadList</a>
+											</div>
+											
+											<div class="clip13x9 nav_dots_current">
+												<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+											</div>					
+											<div class="toclevel">
+												<a href="RotairAOReport.rotAOReportCollection.rotAOReport.rotAOReportTableCollection.LoadListWithChildren.html">LoadListWithChildren</a>
+											</div>
+											
+											<div class="clip13x9 nav_dots_current">
+												<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+											</div>					
+											<div class="toclevel">
+												<a href="RotairAOReport.rotAOReportCollection.rotAOReport.rotAOReportTableCollection.MemberFactory.html">MemberFactory</a>
+											</div>
+
+											<div class="clip13x9 nav_dots_current">
+												<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+											</div>					
+											<div class="toclevel">
+												<a href="RotairAOReport.rotAOReportCollection.rotAOReport.rotAOReportTableCollection.rotAOReportTable.html">rotAO_ReportTable</a>
+											</div>																																							
+											
+											<div class="clip13x9 nav_dots_current">
+												<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+											</div>					
+											<div class="toclevel">
+												<a href="RotairAOReport.rotAOReportCollection.rotAOReport.rotAOReportTableCollection.ToString.html">ToString</a>
+											</div>
+											
+										</div>
+								
+									</div>
+									
+								</div>
+								
+							</div>
+																				
+							<div class="clip13x9 nav_dots_current">
+								<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+							</div>					
+							<div class="toclevel">
+								<a href="RotairAOScreening.html">RotairAO_Screening</a>
+							</div>
+
+							<div class="clip13x9 nav_dots_current">
+								<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+							</div>					
+							<div class="toclevel">
+								<a href="RotairAOSOMExportData.html">RotairAO_SOMExportData</a>
+							</div>
+
+							<div class="toclevel0">
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Forms Derived from imsForms.html">Custom Forms Derived from imsForm</a>
+								</div>
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Customized Intuitive AppObjects.html">Customized Intuitive imsAppObjects</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Customized Intuitive Forms.html">Customized Intuitive imsForms</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Printing Classes.html">Printing Classes</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Windows Custom Dialog Forms.html">Windows Custom Dialog Forms</a>
+								</div>
+								
+							</div>
+							
+						</div>
+
+					</div>
+
+				</div>
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">rotAO_ReportTable_Collection Class</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Collection of rows from <a href='Tables/tblReportTable.png'>tblReportTable</a>.</p>
+							
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Inheritance Hierarchy</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">								
+										<a href="http://msdn.microsoft.com/en-us/library/system.object.aspx">System.Object</a>
+										<br>&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/system.collections.objectmodel.aspx">System.Collections.ObjectModel.Collection</a>
+										<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="RotairObject.rotAppObjectCollection.html">rotAppObjectCollection</a>
+									</div>							
+								</div><p></p>
+							
+								<strong>Namespace:</strong>&nbsp;<a href="RotairAOReport.html">RotairAO_Report</a><br>
+								<strong>Assembly:</strong>&nbsp;RotairAO_Report.dll
+							
+								<p>The <span class="selflink">rotAO_ReportTable_Collection</span> class exposes the following members.</p>
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Classes</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="sectionblock">
+								
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="iconColumn">&nbsp;</th>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairAOReport.rotAOReportCollection.rotAOReport.rotAOReportTableCollection.rotAOReportTable.html">rotAO_ReportTable</a>
+												</td>
+												<td>
+													Relates to a resultset (table) for a table driven report.  A report can have a number of tables.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<a href="#mainBody">Top</a>
+								</div>
+																			
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Methods</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="sectionblock">
+
+									<p>In addition to <a href='RotairObject.rotAppObjectCollection.html#Methods'>Methods</a> supported by the base.</p>
+								
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="iconColumn">&nbsp;</th>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="function_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairAOReport.rotAOReportCollection.rotAOReport.rotAOReportTableCollection.LoadList.html">LoadList</a>
+												</td>
+												<td>
+													Populates the collection.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="function_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairAOReport.rotAOReportCollection.rotAOReport.rotAOReportTableCollection.LoadListWithChildren.html">LoadListWithChildren</a>
+												</td>
+												<td>
+													Populates the collection and also the column and detail collections.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="function_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairAOReport.rotAOReportCollection.rotAOReport.rotAOReportTableCollection.MemberFactory.html">MemberFactory</a>
+												</td>
+												<td>
+													Creates a member of the collection without a reference.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="function_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairAOReport.rotAOReportCollection.rotAOReport.rotAOReportTableCollection.MemberFactory.html">MemberFactory(Boolean, Boolean)</a>
+												</td>
+												<td>
+													Creates a member of the collection without a reference setting the read-only and exists flags.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="function_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairAOReport.rotAOReportCollection.rotAOReport.rotAOReportTableCollection.ToString.html">ToString</a>
+												</td>
+												<td>
+													Returns the object type and number of members in this collection.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<a href="#mainBody">Top</a>
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>rotAO_ReportTable_Collection contains 
+										<a href="RotairAOReport.rotAOReportCollection.rotAOReport.rotAOReportTableCollection.rotAOReportTable.html">rotAO_ReportTable</a>.</p>
+				
+									</div>
+								</div>
+								
+							</div>
+									
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

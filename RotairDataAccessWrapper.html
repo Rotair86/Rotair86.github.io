@@ -1,0 +1,264 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairDataAccessWrapper - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Links.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairDataAccessWrapper'
+					document.write(Menu(Source));
+				</script> 			
+												
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<font face="Garamond" size=24 color=red>DEPRECIATED</font>
+						<p>We will be putting all the calls to the DAL in the AOs even if we need to create one just for this purpose.</p>
+						<p>There can even be AOs derived from thier intuitive counterparts that do <b>not</b> have the corresponding bit set
+						in the table.  They will exist solely to encapsulate function calls relating to the AO for which they are named.</p>
+
+						<h1 class="title">RotairDataAccessWrapper Namespace</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Wrapper to eliminate any dependencies between the UI and DAL (User Interface and Data Access Layer).</p>
+							
+								<strong>Assembly:</strong>&nbsp;RotairDataAccessWrapper.dll
+							
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Dependancies</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<p>Explicitly referenced Intuitive dlls are included with the custom dependencies below.  Only the custom assemblies are displayed in the chart.  All others are ignored.</p>
+								
+								<table>
+									<tbody>
+										<col width='400'>
+										<col width='200'>
+										<tr>
+											<th class="nameColumn">Name</th>
+											<th class="referencedColumn">Explicitly Referenced</th>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairDynamicEnums", ".dll"));
+												</script> 			
+											</td><td></td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairGeneralFunctions", ".dll"));
+												</script> 			
+											</td><td></td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairTypes", ".dll"));
+												</script> 			
+											</td><td>X</td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairDataAccess", ".dll"));
+												</script> 			
+											</td><td>X</td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairObject", ".dll"));
+												</script> 			
+											</td><td></td>
+										</tr>
+									</tbody>
+								</table>
+
+								<p style="overflow:auto;">
+									<img id='Dependancy Chart' src='Dependancy Charts/RotairDataAccessWrapper.png' onclick='ImageToggle(this)'>
+								</p>
+								<script type="text/javascript">
+									ImageToggle(document.getElementById('Dependancy Chart'));
+								</script> 			
+								<br>
+														
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Classes</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="sectionblock">
+
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="iconColumn">&nbsp;</th>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>		
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccessWrapper.DataSetCustom"));
+													</script> 																
+												</td>
+												<td>
+													Wrapper for some of the functions in
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.DataSetCustom"));
+													</script> 																
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccessWrapper.PurchaseOrder"));
+													</script> 																
+												</td>
+												<td>
+													Wrapper for some of the functions in
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.PurchaseOrder"));
+													</script> 																
+												</td>
+											</tr>
+
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccessWrapper.Quote"));
+													</script> 																
+												</td>
+												<td>
+													Wrapper for some of the functions in
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.Quote"));
+													</script> 																
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccessWrapper.Scalar"));
+													</script> 																
+												</td>
+												<td>
+													Wrapper for some of the functions in
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.Scalar"));
+													</script> 																
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccessWrapper.Shipping"));
+													</script> 																
+												</td>
+												<td>
+													Wrapper for some of the functions in
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.Shipping"));
+													</script> 																
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<a href="#mainBody">Top</a>
+								</div>
+							</div>
+					
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>The only purpose of this class is to allow data access to the UI where there aren't any application objects.  
+									The reasons there aren't any application objects are that at least one doesn't logically exist (DAtabase), others
+									weren't created and may not be (creating an app object for a small amount of functions and no rules may not be nmore
+									beneficial than a wrapper) and lastly some functions are not clearly suited for one domain as opposed to another.</p>
+			
+								</div>
+							</div>
+					
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,76 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			ERP Customized Namespaces - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+			
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'TopLevel'
+					document.write(Menu(Source));
+				</script> 			
+
+			</div>
+				
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">Why have a RotairAO_[Object] and a RotairimsAO_[Object]</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								Why is there a RotairAO_Screening and a RotairimsAO_Screening?  Same with the Note business rules.
+								<br>
+								<br>
+								In the original code we had "change tracking."  This was a protocol developed by the consultant that worked well.  During the
+								save of an object a copy of the original record would get written to a changes table.  So now we had a history of all the
+								changes made to a table.  It was, however, thought that it could not work with the new object design since the actual
+								save method was buried deep in the framework and was inaccessible.  A suggestion to use triggers to capture the changes was not
+								accepted.  So our own object model was created.  This consisted of rotAppObject, rotAppObjectCollection and rotAppLockingObject.
+								An example of one of these objects is RotairAO_Screening.  It was then decided to use triggers for the change tracking.  I called
+								this process "history tracking" to differentiate between the two co-existing protocols.  In order to remove the original model I 
+								needed to start using the newer objects along with the older objects until I could remove all references to the prior design.  
+								So RotairimsAO_Screening is the new design and will eventually replace RotairAO_Screening.  When all references to the older design 
+								are gone RotairAO_Screening should be deleted and RotairimsAO_Screening should be renamed to RotairAO_Screening.
+								<br>
+								<br>
+								After working with the vendor's objects for awhile I learned that we may be able use the original change tracking and the vendor
+								supplied objects.  But we already have two versions of change/history tracking objects, I see no reason to introduce a third.  Plus I 
+								still believe the triggers are the way to go even though we have had some problems with the product not using our custom objects.  It has
+								not been determined if the problems would go away with my latest possible solution.
+								<br>
+																
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

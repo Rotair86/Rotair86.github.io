@@ -1,0 +1,159 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairUICommon - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairUICommon'
+					Source[2] = 'frmDisplayAO'
+					Source[3] = 'DisplayMember'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">DisplayMember Property</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Information about what fields to display.</p>						
+	
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<img src="Graphics/minus.png" name="Syntax" onclick="CollapseExpand('Syntax')"><span class="LW_CollapsibleArea_Title">Syntax</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div id='Syntax' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">
+													<pre><span style="color: Green;">'Declaration</span></pre>
+													<pre><span style="color: Blue;">Public Property</span> DisplayMember <span style="color: Blue;">As String</span>()</pre>
+													<br>
+												</div>				
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>Set this property to an array of strings that will represent the fields that are to be displayed.</p>
+										<p>The string is formatted as follows: NString1-String2</p>
+										<ul><li>N - The nesting level where this field can be found.  Multiple digits supported (like level 10) but I do not think any AOs go that deep.</li>
+										<li>String1 - The string to display to the user</li>
+										<li>- (dash) - This is required.  This is where the string will get split</li>
+										<li>String2 - Field name passed to the value of the AppObject.  Must be match the actual field name.</li></ul>
+																										
+									</div>
+
+								</div>	
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Example" onclick="CollapseExpand('Example')"><span class="LW_CollapsibleArea_Title">Example</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>This example displays the sales order from the Sales Order Card.  It will display a field from the master (parent) and
+										2 fields from the line and 2 from the delivery.</p>
+									
+									</div>
+								</div>
+
+								<div id='Example' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">												        
+													<pre><span style="color: Blue;">Dim</span> frmAO <span style="color: Blue;">As New</span> frmDisplayAO</pre>
+													<pre><span style="color: Blue;">Dim</span> SalesOrderFields() <span style="color: Blue;">As String</span></pre>
+													<br>					
+													<br>					
+													<pre><span style="color: Blue;">ReDim</span> SalesOrderFields(<span style="color: Gray;">4</span>)</pre>
+													<br>		
+													<pre>strFields(<span style="color: Gray;">0</span>) = <span style="color: Red;">"1AlphaID-SOM_SalesOrderID"</span></pre>
+													<pre>strFields(<span style="color: Gray;">1</span>) = <span style="color: Red;">"2Line-SOI_SOLineNbr"</span></pre>
+													<pre>strFields(<span style="color: Gray;">2</span>) = <span style="color: Red;">"2Item ID-SOI_IMA_ItemID"</span></pre>
+													<pre>strFields(<span style="color: Gray;">3</span>) = <span style="color: Red;">"3Quantity-SOD_RequiredQty"</span></pre>
+													<pre>strFields(<span style="color: Gray;">4</span>) = <span style="color: Red;">"3Date-SOD_RequiredDate"</span></pre>
+													<br>		
+													<pre><span style="color: Blue;">With</span> frmAO</pre>
+													<pre>    .AO = bdrSalesOrder.AO</pre>
+													<pre>    .<b>DisplayMember</b> = strFields</pre>
+													<pre>    .TitlePrefix = <span style="color: Red;">"Sales Order"</span></pre>
+													<pre>    .ShowAO()</pre>
+													<pre><span style="color: Blue;">End With</span></pre>
+												</div>																	
+											</div>
+										</div>
+									</div>				
+									
+								</div>	
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

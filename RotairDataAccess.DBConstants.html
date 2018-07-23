@@ -1,0 +1,278 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairDataAccess - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairDataAccess'
+					Source[2] = 'DBConstants'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">DBConstants Module</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Constants local to the <a href='RotairDataAccess.html'>RotairDataAccess</a> namespace.</p>
+														
+								<strong>Namespace:</strong>&nbsp;<a href="RotairDataAccess.html">RotairDataAccess</a><br>
+								<strong>Assembly:</strong>&nbsp;RotairDataAccess.dll
+							
+								<p>The <span class="selflink">DBConstants</span> module isn't exposed and doesn't expose any members.</p>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Constants</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="sectionblock">
+
+									<p>There are many more constants than are listed here; the following is just an example.</p>
+								
+									<p>The constants are grouped by table or domain.  A domain is further grouped by table.  A domain may or may not coorespond to an intuitive domain.</p>
+									<p>Inside each group can be further groupings of parameters, change tracking fields, values and/or logical fields.</p>
+				
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Example 1</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>The CageCode group represents a single table; <a href='Tables/tblCAGECode.png'>tblCageCode</a>.  Comments separate the stored procedure from the tables and fields.  There is
+										a grouping inside this group to contain the parameters.  When a table has parameters for all fields that usually means inserting 
+										of new rows is done via the RotairDataAccess namespace.</p>
+
+									</div>
+								</div>
+
+								<div class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">
+													<pre><span style="color: Blue;">#Region</span><span style="color: Red;">"�פפפפפפפפפפפפפפפפפ CageCode �פפפפפפפפפפפפפפפפפ"</span></pre>
+													<pre>    <span style="color: Green;">'Stored Procedure</span></pre>
+													<pre>    <span style="color: Blue;">Friend Const</span> gconStoredProcedure_CageCode <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"Rotair_CageCode"</span></pre>
+													<pre>    <span style="color: Green;">'Tables</span></pre>
+													<pre>    <span style="color: Blue;">Friend Const</span> gconCageCodeTempTable <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"##tmpCageCode"</span></pre>
+													<pre>    <span style="color: Blue;">Friend Const</span> gconCageCodeTable <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"tblCageCode"</span></pre>
+													<pre>    <span style="color: Green;">'Fields</span></pre>
+													<pre>    <span style="color: Blue;">Friend Const</span> gconCageCode_CageCode <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"CageCode"</span></pre>
+													<pre>    <span style="color: Blue;">Friend Const</span> gconCageCode_ID <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"CageCodeID"</span></pre>
+													<pre>    <span style="color: Blue;">Friend Const</span> gconCageCode_DeletedBy <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"DeletedBy"</span></pre>
+													<pre>    <span style="color: Blue;">Friend Const</span> gconCageCode_DeletedDate <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"DeletedDate"</span></pre>
+													<pre>    <span style="color: Blue;">Friend Const</span> gconCageCode_LastRevBy <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"LastRevBy"</span></pre>
+													<pre>    <span style="color: Blue;">Friend Const</span> gconCageCode_LastRevDate <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"LastRevDate"</span></pre>
+													<pre>    <span style="color: Blue;">Friend Const</span> gconCageCode_RecType <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"RecType"</span></pre>
+													<pre>    <span style="color: Blue;">Friend Const</span> gconCageCode_RevNbr <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"RevNbr"</span></pre>
+													<pre>    <span style="color: Blue;">Friend Const</span> gconCageCode_SupplierName <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"SupplierName"</span></pre>
+													<br>
+													<pre><span style="color: Blue;">#Region</span><span style="color: Red;">"�פפפפפפפפפפפפפפפ Parameters:CageCode �פפפפפפפפפפפפפפפ"</span></pre>
+													<pre>    <span style="color: Blue;">Friend Const</span> gconParameter_CageCode_CageCode <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"@CageCode"</span></pre>
+													<pre>    <span style="color: Blue;">Friend Const</span> gconParameter_CageCode_CageCodeID <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"@CageCodeID"</span></pre>
+													<pre>    <span style="color: Blue;">Friend Const</span> gconParameter_CageCode_DeletedBy <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"@DeletedBy"</span></pre>
+													<pre>    <span style="color: Blue;">Friend Const</span> gconParameter_CageCode_DeletedDate <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"@DeletedDate"</span></pre>
+													<pre>    <span style="color: Blue;">Friend Const</span> gconParameter_CageCode_LastRevBy <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"@LastRevBy"</span></pre>
+													<pre>    <span style="color: Blue;">Friend Const</span> gconParameter_CageCode_LastRevDate <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"@LastRevDate"</span></pre>
+													<pre>    <span style="color: Blue;">Friend Const</span> gconParameter_CageCode_RecType <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"@RecType"</span></pre>
+													<pre>    <span style="color: Blue;">Friend Const</span> gconParameter_CageCode_RevNbr <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"@RevNbr"</span></pre>
+													<pre>    <span style="color: Blue;">Friend Const</span> gconParameter_CageCode_SupplierName <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"@SupplierName"</span></pre>
+													<pre><span style="color: Blue;">#End Region</span></pre>		
+													<br>
+													<pre><span style="color: Blue;">#End Region</span></pre>		
+												</div>	
+												
+											</div>
+										</div>
+									</div>
+
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Example 2</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>The Screening group represents a single table; <a href='Tables/tblExDPScreen.png'>tblExDPScreen</a>.  Many constants have
+										been omitted (indicated by an ellipsis) mainly to display the change tracking and logical fields.</p>
+
+									</div>
+
+									<div class="sectionblock">
+										<div class="codeSnippetContainer">  	  
+											<div class="codeSnippetContainerTabs">
+												<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+													<a>VB</a>
+												</div>
+											</div>
+											<div class="codeSnippetContainerCodeContainer">
+												<div class="codeSnippetToolBar">
+												</div>
+												<div class="codeSnippetContainerCode">
+													<div style="color: Black;">
+														<pre><span style="color: Blue;">#Region</span><span style="color: Red;">"�פפפפפפפפפפפפפפפפ Screening �פפפפפפפפפפפפפפפפ"</span></pre>
+														<pre>    <span style="color: Green;">'Stored Procedure</span></pre>
+														<pre>    <span style="color: Blue;">Friend Const</span> gconStoredProcedure_ExDPScreen <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"LOHCo_DPScreen"</span></pre>
+														<pre>    <span style="color: Green;">'Tables</span></pre>
+														<pre>    <span style="color: Blue;">Friend Const</span> gconExDPScreenTempTable <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"##tmpExDPScreen"</span></pre>
+														<pre>    <span style="color: Blue;">Friend Const</span> gconExDPScreenTable <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"tblExDPScreen"</span></pre>
+														<pre>    <span style="color: Green;">'Fields</span></pre>
+														<pre>    <span style="color: Blue;">Friend Const</span> gconExDPScreen_CalledFrom <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"CalledFrom"</span></pre>
+														<pre>                               <img src='Graphics/Ellipsis.png'></pre
+														<pre>    <span style="color: Blue;">Friend Const</span> gconExDPScreen_SetDPStatus <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"SetDPStatus"</span></pre>
+														<pre>    <span style="color: Green;">'Logical Fields</span></pre>
+														<pre>    <span style="color: Blue;">Friend Const</span> gconExDPScreen_DeniedByName <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"DeniedByName"</span></pre>
+														<pre>    <span style="color: Blue;">Friend Const</span> gconExDPScreen_PriorComments <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"PriorComments"</span></pre>
+														<pre>    <span style="color: Blue;">Friend Const</span> gconExDPScreen_ScreenByName <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"ScreenByName"</span></pre>
+														<br>
+														<pre><span style="color: Blue;">#Region</span><span style="color: Red;">"�פפפפפפפפפפפפפפ Screening Changes �פפפפפפפפפפפפפפ"</span></pre>
+														<pre>    <span style="color: Green;">'Tables</span></pre>
+														<pre>    <span style="color: Blue;">Friend Const</span> gconExDPScreenChangesTable <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"tblExDPScreenChanges"</span></pre>
+														<pre>    <span style="color: Green;">'Fields</span></pre>
+														<pre>    <span style="color: Blue;">Friend Const</span> gconExDPScreenChanges_Comments <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"Comments"</span></pre>
+														<pre>    <span style="color: Blue;">Friend Const</span> gconExDPScreenChanges_LastRevBy <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"LastRevBy"</span></pre>
+														<pre>    <span style="color: Blue;">Friend Const</span> gconExDPScreenChanges_LastRevDate <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"LastRevDate"</span></pre>
+														<pre><span style="color: Blue;">#End Region</span></pre>		
+														<br>
+														<pre><span style="color: Blue;">#Region</span><span style="color: Red;">"�פפפפפפפפפפפפפפפ Parameters:Screening �פפפפפפפפפפפפפפפ"</span></pre>
+														<pre>    <span style="color: Blue;">Friend Const</span> gconParameter_ExDPScreen_CalledFrom <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"@CalledFrom"</span></pre>
+														<pre>                               <img src='Graphics/Ellipsis.png'></pre
+														<pre>    <span style="color: Blue;">Friend Const</span> gconParameter_ExDPScreen_SetDPStatus <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"@SetDPStatus"</span></pre>
+														<pre><span style="color: Blue;">#End Region</span></pre>		
+														<br>
+														<pre><span style="color: Blue;">#End Region</span></pre>		
+													</div>	
+													
+												</div>
+											</div>
+										</div>
+									</div>
+																																				<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Example 3</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>The RFQs group represents a domain consisting of the tables <a href='Tables/tblRFQMaster.png'>tblRFQMaster</a> and <a href='Tables/tblRFQVendor.png'>tblRFQVendor</a>.  
+										Four other tables will be in this domain (<a href='Tables/tblRFQItem.png'>tblRFQItem</a>, <a href='Tables/tblRFQItemQty.png'>tblRFQItemQty</a>, 
+										<a href='Tables/tblRFQVendorCharge.png'>tblRFQVendorCharge</a> and <a href='Tables/tblRFQVendorQuote.png'>tblRFQVendorQuote</a>) when the code updating 
+										these tables is moved over to .NET.  Since these tables are still updated in Access only a subset of fields are needed.  The RFQs group is presented to show how a domain 
+										is represented and also to show the value constants.  These represent data that needs to be hard-coded.</p>
+
+									</div>
+
+									<div class="sectionblock">
+										<div class="codeSnippetContainer">  	  
+											<div class="codeSnippetContainerTabs">
+												<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+													<a>VB</a>
+												</div>
+											</div>
+											<div class="codeSnippetContainerCodeContainer">
+												<div class="codeSnippetToolBar">
+												</div>
+												<div class="codeSnippetContainerCode">
+													<div style="color: Black;">
+														<pre><span style="color: Blue;">#Region</span><span style="color: Red;">"�פפפפפפפפפפפפפפפפפ RFQs �פפפפפפפפפפפפפפפפפ"</span></pre>
+														<br>
+														<pre><span style="color: Blue;">#Region</span><span style="color: Red;">"�פפפפפפפפפפפפפפפפ RFQMaster �פפפפפפפפפפפפפפפפ"</span></pre>
+														<pre>    <span style="color: Green;">'Tables</span></pre>
+														<pre>    <span style="color: Blue;">Friend Const</span> gconRFQMasterTable <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"tblRFQMaster"</span></pre>
+														<pre>    <span style="color: Green;">'Fields</span></pre>
+														<pre>    <span style="color: Blue;">Friend Const</span> gconRFQMaster_DateIssued <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"DateIssued"</span></pre>
+														<pre>                               <img src='Graphics/Ellipsis.png'></pre>
+														<pre>    <span style="color: Blue;">Friend Const</span> gconRFQMaster_Status <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"Status"</span></pre>
+														<pre><span style="color: Blue;">#End Region</span></pre>		
+														<br>
+														<pre><span style="color: Blue;">#Region</span><span style="color: Red;">"�פפפפפפפפפפפפפפפפ RFQVendor �פפפפפפפפפפפפפפפפ"</span></pre>
+														<pre>    <span style="color: Green;">'Tables</span></pre>
+														<pre>    <span style="color: Blue;">Friend Const</span> gconRFQVendorTable <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"tblRFQVendor"</span></pre>
+														<pre>    <span style="color: Green;">'Fields</span></pre>
+														<pre>    <span style="color: Blue;">Friend Const</span> gconRFQVendor_RecordID <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"VendorRecordID"</span></pre>
+														<pre>                               <img src='Graphics/Ellipsis.png'></pre>
+														<pre>    <span style="color: Blue;">Friend Const</span> gconRFQVendor_VendorID <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"VendorID"</span></pre>
+														<br>
+														<pre><span style="color: Blue;">#Region</span><span style="color: Red;">"�פפפפפפפפפפפפפפ Parameters:RFQVendor �פפפפפפפפפפפפפפ"</span></pre>
+														<pre>    <span style="color: Blue;">Friend Const</span> gconParameter_RFQVendor_VendorID <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"@VendorID"</span></pre>
+														<pre>                               <img src='Graphics/Ellipsis.png'></pre>
+														<pre>    <span style="color: Blue;">Friend Const</span> gconParameter_RFQVendor_Status_InProgress <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"@InProgress"</span></pre>
+														<pre><span style="color: Blue;">#End Region</span></pre>		
+														<br>
+														<pre><span style="color: Blue;">#Region</span><span style="color: Red;">"�פפפפפפפפפפפפפפפפ Values:RFQVendor �פפפפפפפפפפפפפפפפ"</span></pre>
+														<pre>    <span style="color: Blue;">Friend Const</span> gconValue_RFQVendor_Status_Pending <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"Pending"</span></pre>
+														<pre>    <span style="color: Blue;">Friend Const</span> gconValue_RFQVendor_Status_InProgress <span style='color: Blue;'>As String</span> = <span style='color: Red;'>"In Progress"</span></pre>
+														<pre><span style="color: Blue;">#End Region</span></pre>		
+														<br>
+														<pre><span style="color: Blue;">#End Region</span></pre>		
+														<br>
+														<pre><span style="color: Blue;">#End Region</span></pre>		
+													</div>	
+																																
+												</div>
+											</div>
+										</div>
+									</div>
+																											
+								</div>
+							</div>
+					
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

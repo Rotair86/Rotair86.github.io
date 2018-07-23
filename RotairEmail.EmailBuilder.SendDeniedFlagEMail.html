@@ -1,0 +1,178 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			Rotair_Email - Built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairEmail'
+					Source[2] = 'rotEmailBuilder'
+					Source[3] = 'SendDeniedFlagEMail'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">SendDeniedFlagEMail Method</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  								
+								<p>Sends an e-mail when a customer or vendor gets "denied".</p>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Syntax" onclick="CollapseExpand('Syntax')"><span class="LW_CollapsibleArea_Title">Syntax</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div id="Syntax">
+										<div class="codeSnippetContainer">  	  
+											<div class="codeSnippetContainerTabs">
+												<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+													<a>VB</a>
+												</div>
+											</div>
+											<div class="codeSnippetContainerCodeContainer">
+												<div class="codeSnippetToolBar">
+												</div>
+												<div class="codeSnippetContainerCode">
+													<div style="color: Black;">
+														<pre><span style="color: Green;">'Declaration</span></pre>
+														<pre><span style="color: Blue;">Public Shared Function</span> SendDeniedFlagEMail(<span style="color: Blue;">Of </span>PartyKey)( _</pre>
+														<pre>        ePartyType<span style="color: Blue;"> As </span>ePartyType, _</pre>
+														<pre>        PartyID<span style="color: Blue;"> As </span>PartyKey, _</pre>
+														<pre>        strEmailTypeID<span style="color: Blue;"> As String</span> _</pre>
+														<pre>)<span style="color: Blue;"> As Boolean</span></pre>
+													</div>				
+												</div>
+											</div>
+										</div>
+										<div id="typeparameters">
+											<h4 class="subHeading">Type Parameters</h4>
+												<dl><dt><span class="parameter">PartyKey</span></dt>
+													<dd><span><span>The type of key used.  Can be a string or guid.</span><br></span></dd>
+												</dl>
+										</div>							
+
+										<div id="parameters">
+											<h4 class="subHeading">Parameters</h4>
+												<dl><dt><span class="parameter">ePartyType</span></dt>
+													<dd>Type: <a href='RotairTypes.Enumerations.ePartyType.html'>ePartyType</a><br><span><span>The specific type which can be customer or vendor.</span><br></span></dd>
+												</dl>
+												<dl><dt><span class="parameter">PartyID</span></dt>
+													<dd>Type: PartyKey<br><span><span>Key for the customer or vendor.</span><br></span></dd>
+												</dl>
+												<dl><dt><span class="parameter">strEmailTypeID</span></dt>
+													<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string">System.String</a><br><span><span>The specific type of mail, primary key on tblEmailType.</span><br></span></dd>
+												</dl>
+										</div>							
+
+										<div id="returnvalue">
+											<h4 class="subHeading">Return Value</h4>
+												<dl>
+													<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.boolean">System.Boolean</a><br><span><span>TRUE if no problems were found.</span><br></span></dd>
+												</dl>
+
+										</div>							
+									</div>
+									
+								</div>
+							</div>
+
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>Sets all the placeholders needed for setting the denied flag mail then calls the 
+									<a href="RotairEmail.rotEmailBuilder.SendClassBasedEmail.html">SendClassBasedEmail</a> function.</p>
+			
+								</div>
+							</div>
+
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<img src="Graphics/minus.png" name="Example" onclick="CollapseExpand('Example')"><span class="LW_CollapsibleArea_Title">Example</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>The example assumes we have already populated the various variables.  If we did not get an e-mail address
+									then an e-mail is sent to the administrator, otherwise the e-mail destined for the employee goes out.</p>
+									
+								</div>
+							</div>
+
+							<div id="Example" class="sectionblock">
+								<div class="codeSnippetContainer">  	  
+									<div class="codeSnippetContainerTabs">
+										<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+											<a>VB</a>
+										</div>
+									</div>
+									<div class="codeSnippetContainerCodeContainer">
+										<div class="codeSnippetToolBar">
+										</div>
+										<div class="codeSnippetContainerCode">
+											<div style="color: Black;">
+												<pre><span style="color: Green;">'Send an e-mail when marking a customer as a denied party.</span></pre>
+												<pre><span style="color: Blue;">If</span> <b>SendDeniedFlagEMail</b>(Enumerations.ePartyType.Customer, strCustomerID, <span style="color: Red;">"DPSetCustomer"</span>)<span style="color: Blue;"> Then</span></pre>
+												<pre>    <span style="color: Green;">'Success.</span></pre>
+												<pre>    MessageBox.Show(<span style="color: Red;">"E-mail sent."</span>)</pre>
+												<pre><span style="color: Blue;">Else</span></pre>
+												<pre>    <span style="color: Green;">'Possible failure.</span></pre>
+												<pre>    MessageBox.Show(<span style="color: Red;">"E-mail indicating a customer was denied may not have went out."</span>)</pre>
+												<pre><span style="color: Blue;">End If</span></pre>
+											</div>				
+										</div>
+									</div>
+								</div>
+							</div>						
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

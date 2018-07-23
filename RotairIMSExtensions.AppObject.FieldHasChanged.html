@@ -1,0 +1,162 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			Rotair_Types - Built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairIMSExtensions'
+					Source[2] = 'AppObject'
+					Source[3] = 'FieldHasChanged'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">FieldHasChanged Method</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Returns TRUE if the passed in field has had its value changed.</p>						
+	
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<img src="Graphics/minus.png" name="Syntax" onclick="CollapseExpand('Syntax')"><span class="LW_CollapsibleArea_Title">Syntax</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div id='Syntax' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">
+													<pre><span style="color: Green;">'Declaration</span></pre>
+														<pre><span style="color: Blue;">Public Function </span>FieldHasChanged( _</pre>
+														<pre>        AO<span style="color: Blue;"> As </span>imsAppObject, _</pre>
+														<pre>        Field<span style="color: Blue;"> As String</span> _</pre>
+														<pre>) <span style="color: Blue;">As Boolean</span></pre>
+													<br>
+												</div>				
+											</div>
+										</div>
+									</div>
+										<div id="parameters">
+											<h4 class="subHeading">Parameters</h4>
+												<dl><dt><span class="parameter">AO</span></dt>
+													<dd>Type: imsAppObject<br><span><span>Not passed in by the caller.  This identifies what object the function is applicable to.</span><br></span></dd>
+												</dl>
+												<dl><dt><span class="parameter">Field</span></dt>
+													<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string">System.String</a><br><span><span>The field to check for changes.</span><br></span></dd>
+												</dl>
+										</div>							
+
+										<div id="returnvalue">
+											<h4 class="subHeading">Return Value</h4>
+												<dl>
+													<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.boolean">System.Boolean</a><br><span><span>True if the value represented by the field is not the same as the value originally set.</span><br></span></dd>
+												</dl>
+
+										</div>							
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Remarks" onclick="CollapseExpand('Remarks')"><span class="LW_CollapsibleArea_Title">Remarks</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div id="Remarks" class="sectionblock">
+									
+										<p>Allows for cleaner code when using any object that derives from imsAppObject.</p>
+																										
+									</div>
+
+								</div>	
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Example" onclick="CollapseExpand('Example')"><span class="LW_CollapsibleArea_Title">Example</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>The example displays a messagebox if the customer was changed.</p>
+									
+									</div>
+								</div>	
+
+								<div id='Example' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">												        
+													<br>
+													<pre><span style="color: Blue;">Dim</span> aoSalesOrder <span style="color: Blue;">As</span> imsAO_SalesOrder</pre>
+													<br>
+													<pre><span style="color: Blue;">If</span> aoSalesOrder.FieldHasChanged(<span style="color: Red;">"SOM_CUS_RecordID"</span>) <span style="color: Blue;">Then</span></pre>
+													<pre>    Messagebox.Show(<span style="color: Red;">"Customer has been changed"</span>)</pre>
+													<pre><span style="color: Blue;">End If</span></pre>
+													<br>
+												</div>																	
+											</div>
+										</div>
+									</div>				
+									
+								</div>	
+												
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

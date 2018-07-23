@@ -1,0 +1,267 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairGeneralFunctions - Build and installed from VBA by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairGeneralFunctions'
+					Source[2] = 'Scalar'
+					Source[3] = 'GetDBNull'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">GetDBNull Method</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Returns a value or DBNull.</p>						
+	
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<img src="Graphics/minus.png" name="Syntax" onclick="CollapseExpand('Syntax')"><span class="LW_CollapsibleArea_Title">Syntax</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div id='Syntax' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">
+													<pre><span style="color: Green;">'Declarations</span></pre>
+														<pre><span style="color: Blue;">Public Function </span>GetDBNull( _</pre>
+														<pre>        value<span style="color: Blue;"> As Boolean?</span> _</pre>
+														<pre>) <span style="color: Blue;">As</span> Object</pre>
+														<br>
+														<pre><span style="color: Blue;">Public Function </span>GetDBNull( _</pre>
+														<pre>        value<span style="color: Blue;"> As Byte?</span> _</pre>
+														<pre>) <span style="color: Blue;">As</span> Object</pre>
+														<br>
+														<pre><span style="color: Blue;">Public Function </span>GetDBNull( _</pre>
+														<pre>        value<span style="color: Blue;"> As Char?</span> _</pre>
+														<pre>) <span style="color: Blue;">As</span> Object</pre>
+														<br>
+														<pre><span style="color: Blue;">Public Function </span>GetDBNull( _</pre>
+														<pre>        value<span style="color: Blue;"> As Date?</span> _</pre>
+														<pre>) <span style="color: Blue;">As</span> Object</pre>
+														<br>
+														<pre><span style="color: Blue;">Public Function </span>GetDBNull( _</pre>
+														<pre>        value<span style="color: Blue;"> As Decimal?</span> _</pre>
+														<pre>) <span style="color: Blue;">As</span> Object</pre>
+														<br>
+														<pre><span style="color: Blue;">Public Function </span>GetDBNull( _</pre>
+														<pre>        value<span style="color: Blue;"> As Double?</span> _</pre>
+														<pre>) <span style="color: Blue;">As</span> Object</pre>
+														<br>
+														<pre><span style="color: Blue;">Public Function </span>GetDBNull( _</pre>
+														<pre>        value<span style="color: Blue;"> As Integer?</span> _</pre>
+														<pre>) <span style="color: Blue;">As</span> Object</pre>
+														<br>
+														<pre><span style="color: Blue;">Public Function </span>GetDBNull( _</pre>
+														<pre>        value<span style="color: Blue;"> As Long?</span> _</pre>
+														<pre>) <span style="color: Blue;">As</span> Object</pre>
+														<br>
+														<pre><span style="color: Blue;">Public Function </span>GetDBNull( _</pre>
+														<pre>        value<span style="color: Blue;"> As </span>Guid? _</pre>
+														<pre>) <span style="color: Blue;">As</span> Object</pre>
+														<br>
+														<pre><span style="color: Blue;">Public Function </span>GetDBNull( _</pre>
+														<pre>        value<span style="color: Blue;"> As SByte?</span> _</pre>
+														<pre>) <span style="color: Blue;">As</span> Object</pre>
+														<br>
+														<pre><span style="color: Blue;">Public Function </span>GetDBNull( _</pre>
+														<pre>        value<span style="color: Blue;"> As Short?</span> _</pre>
+														<pre>) <span style="color: Blue;">As</span> Object</pre>
+														<br>
+														<pre><span style="color: Blue;">Public Function </span>GetDBNull( _</pre>
+														<pre>        value<span style="color: Blue;"> As Single?</span> _</pre>
+														<pre>) <span style="color: Blue;">As</span> Object</pre>
+														<br>
+														<pre><span style="color: Blue;">Public Function </span>GetDBNull( _</pre>
+														<pre>        value<span style="color: Blue;"> As UInteger?</span> _</pre>
+														<pre>) <span style="color: Blue;">As</span> Object</pre>
+														<br>
+														<pre><span style="color: Blue;">Public Function </span>GetDBNull( _</pre>
+														<pre>        value<span style="color: Blue;"> As ULong?</span> _</pre>
+														<pre>) <span style="color: Blue;">As</span> Object</pre>
+														<br>
+														<pre><span style="color: Blue;">Public Function </span>GetDBNull( _</pre>
+														<pre>        value<span style="color: Blue;"> As UShort?</span> _</pre>
+														<pre>) <span style="color: Blue;">As</span> Object</pre>
+														<br>
+													<br>
+												</div>				
+											</div>
+										</div>
+									</div>
+									<div id="parameters">
+										<h4 class="subHeading">Parameters</h4>
+											<dl><dt><span class="parameter">value</span></dt>
+												<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.boolean">System.Boolean</a></dd>
+												<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.byte">System.Byte</a></dd>
+												<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.char">System.Char</a></dd>
+												<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.date">System.Date</a></dd>
+												<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.decimal">System.Decimal</a></dd>
+												<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.double">System.Double</a></dd>
+												<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.int32">System.Integer</a></dd>
+												<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.int64">System.Long</a></dd>
+												<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.guid">System.Guid</a></dd>
+												<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.sbyte">System.SByte</a></dd>
+												<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.int16">System.Short</a></dd>
+												<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.uint32">System.UInteger</a></dd>
+												<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.uint64">System.ULong</a></dd>
+												<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.uint16">System.UShort</a></dd>
+												<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/b3h38hb0.aspx">Nullable</a><br><span><span>Data to test to see if it has a valid value.</span><br></span></dd>
+											</dl>
+									</div>							
+
+									<div id="returnvalue">
+										<h4 class="subHeading">Return Value</h4>
+											<dl>
+												<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.object">System.Object</a><br><span><span>A valid value matching the passed in parameter or DBNull.</span><br></span></dd>
+											</dl>
+
+									</div>							
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>Returns a valid value based on the data type of the passed in parameter if one exists, otherwise returns a DBNull.  Useful
+										for handling fields that can be "null" in the database.  Since a variable can not be null but can be nothing (if it is nullable)
+										we use this nothing = null algorithim to retain nulls.  This function converts the nothing to DBNull which will be converted 
+										to null by the database engine.</p>
+																										
+									</div>
+
+								</div>	
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Example" onclick="CollapseExpand('Example')"><span class="LW_CollapsibleArea_Title">Example</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>The example will show how to preserve a null in a column.  It is concerned about two fields only.  A LastName field that can not be null
+										and a data of birth field which can be null.  Also we do not know the initial state of anything except the LastName can not be null.  So
+										we must . . .</p>
+										<ol><li>Assume a form has already been presented to the user and they have made any changes desired.</li>
+										<li>The form prohibits the user from completely clearing the name field.</li>
+										<li>The code reads in the fields from the database.  If a null is found for the DOB field then Nothing gets stuffed in the variable.</li>
+										<li>The form fields get stuffed in the variables.  The dtmBirthDate variable will only get updated if a valid date was entered.</li>
+										<li>An Update query is built with parameters.</li>
+										<li>When the @DOB parameter is replaced, the <b>GetDBNull</b> function is called.  If dtmBirthDate is nothing, then a DBNull will be used.
+										If dtmBirthDate contains a valid date then that date will be used.  This will preserve a null in that column if no valid data is supplied.</li></ol>
+									
+									</div>
+								</div>
+
+								<div id='Example' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">													
+													<pre><span style="color: Blue;">Dim</span> dtmBirthDate <span style="color: Blue;">As</span> DateTime?</pre>
+													<pre><span style="color: Blue;">Dim</span> cmd <span style="color: Blue;">As</span> imsCommand</pre>
+													<pre><span style="color: Blue;">Dim</span> strLastName <span style="color: Blue;">As String</span></pre>
+													<pre><span style="color: Blue;">Dim</span> Reader <span style="color: Blue;">As</span> SqlDataReader</pre>
+													<br>
+													<br>
+													<pre><span style="color: Green;">'Read from the database.</span></pre>
+													<pre>cmd = <span style="color: Blue;">New</span> imsCommand</pre>
+													<pre>cmd.CommandText = <span style="color: Red;">"SELECT EMP_LastName, EMP_BirthDate FROM EMP WHERE EMP_EmployeeID = '943'"</span></pre>
+													<br>
+													<pre><span style="color: Blue;">Using</span> DataServices <span style="color: Blue;">As New</span>imsDataServices</pre>
+													<pre>    Reader = DataServices.OpenDataReader(cmd)</pre>
+													<pre>    strLastName = Reader(<span style="color: Red;">"EMP_LastName"</span>)</pre>
+													<pre>    <span style="color: Green;">'Convert a DBNull to nothing if necessary.</span></pre>
+													<pre>    <span style="color: Blue;">If</span> IsDBNull(Reader(<span style="color: Red;">"EMP_BirthDate"</span>))<span style="color: Blue;"> Then</span></pre>
+													<pre>        dtmBirthDate = <span style="color: Blue;">Nothing</span></pre>
+													<pre>    <span style="color: Blue;">Else</span></pre>
+													<pre>        dtmBirthDate = Reader(<span style="color: Red;">"EMP_BirthDate"</span>)</pre>
+													<pre>    <span style="color: Blue;">End If</span></pre>
+													<pre><span style="color: Blue;">End Using</span></pre>
+													<br>
+													<pre><span style="color: Green;">'Copy the values from the form to the variables.</span></pre>
+													<pre>strLastName = txtLastName.Text</pre>
+													<pre><span style="color: Blue;">If</span> IsDate(txtDOB.Text)<span style="color: Blue;"> Then</span></pre>
+													<pre>    dtmBirthDate = <span style="color: Blue;">CDate</span>(txtDOB.Text)</pre>
+													<pre><span style="color: Blue;">End If</span></pre>
+													<br>
+													<pre><span style="color: Green;">'Update the table.</span></pre>
+													<pre>cmd = <span style="color: Blue;">New</span> imsCommand(<span style="color: Red;">"UPDATE Employee SET EMP_LastName = @LastName, EMP_BirthDate = @DOB WHERE EMP_EmployeeID = '943'"</span>)</pre>
+													<pre>cmd.AddParameter(<span style="color: Red;">"@LastName"</span>, strLastName)</pre>
+													<pre>cmd.AddParameter(<span style="color: Red;">"@DOB"</span>, Rotair_GeneralFunctions.<b>GetDBNull</b>(dtmBirthDate))</pre>
+													<pre>imsDataServicesHelper.ExecuteNonQuery(cmd)</pre>
+													<br>
+												</div>																	
+											</div>
+										</div>
+									</div>													                    
+
+								</div>	
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

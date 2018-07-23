@@ -1,0 +1,801 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairObject - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+			
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomBase'
+					Source[1] = 'RotairObject'
+					Source[2] = 'rotAppObject'
+					document.write(Menu(Source));
+				</script> 			
+							 
+			</div>			 
+			
+			<div class="content">
+
+				<div class="topicContainer">
+			
+					<div class="topic">
+	
+						<h1 class="title">rotAppObject Class</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Base class all other custom classes derive.  The application layer (business rules) extends from here.</p>
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Inheritance Hierarchy</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">								
+										<a href="http://msdn.microsoft.com/en-us/library/system.object.aspx">System.Object</a>
+									</div>							
+								</div><p></p>
+							
+								<strong>Namespace:</strong>&nbsp;<a href="RotairObject.html">RotairObject</a><br>
+								<strong>Assembly:</strong>&nbsp;RotairObjects.dll
+	
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Syntax</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+										<div class="codeSnippetContainer">  	  
+											<div class="codeSnippetContainerTabs">
+												<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+													<a>VB</a>
+												</div>
+											</div>
+											<div class="codeSnippetContainerCodeContainer">
+												<!--Left, right and bottom border-->
+												<div class="codeSnippetToolBar">
+													<!--Top border-->
+												</div>
+												<div class="codeSnippetContainerCode">
+													<div style="color: Black;">
+														<pre><span style="color: Green;">'The class rotAO_Domain will be derived from rotAppObject</span></pre>
+														<pre><span style="color: Blue;">Public Class</span> rotAO_Domain</pre>
+														<pre><span style="color: Blue;">    Inherits</span> RotairObject.rotAppObject</pre>												
+													</div>				
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<p>The <span class="selflink">rotAppObject</span> type exposes the following members.</p>
+	
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Constructors</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<table id="memberList" class="members">
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic" alt="">
+														</div>
+													</td>
+													<td>
+														<a href='RotairObject.rotAppObject.Constructor.html'>rotAppObject(String)</a>
+													</td>
+													<td>
+														Initializes a new instance of a rotAppObject for the specified domain.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic" alt="">
+														</div>
+													</td>
+													<td>
+														<a href='RotairObject.rotAppObject.Constructor.html'>rotAppObject(String, Boolean)</a>
+													</td>
+													<td>
+														Initializes a new instance of a rotAppObject for the specified domain indicating whether 
+														change tracking is used.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic" alt="">
+														</div>
+													</td>
+													<td>
+														<a href='RotairObject.rotAppObject.Constructor.html'>rotAppObject(String, Boolean, Boolean)</a>
+													</td>
+													<td>
+														Initializes a new instance of a rotAppObject for the specified domain indicating whether 
+														change tracking is used and if the object is read-only.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic" alt="">
+														</div>
+													</td>
+													<td>
+														<a href='RotairObject.rotAppObject.Constructor.html'>rotAppObject(String, Boolean, Boolean, Boolean)</a>
+													</td>
+													<td>
+														Initializes a new instance of a rotAppObject for the specified domain indicating whether 
+														change tracking is used and if the object is read-only and if it already exists in the database.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>
+	
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div id='Properties'>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Properties</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<table id="memberList1" class="members">
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairObject.rotAppObject.DeletedBy.html">DeletedBy</a>
+													</td>
+													<td>
+														Employee ID who preformed the delete.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairObject.rotAppObject.DeletedDate.html">DeletedDate</a>
+													</td>
+													<td>
+														Date delete was done.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairObject.rotAppObject.DeleteLink.html">DeleteLink</a>
+													</td>
+													<td>
+														Write-Only.  Provided by the derived class, a dynamic link (at run time) to the data manager accessable by the base class to perform deletes.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairObject.rotAppObject.DeleteStatus.html">DeleteStatus</a>
+													</td>
+													<td>
+														Read-Only.  Returns TRUE if the last call to the Delete function succedes, otherwise returns FALSE.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairObject.rotAppObject.Domain.html">Domain</a>
+													</td>
+													<td>
+														Read-Only.  Returns the string used to identify this "domain", table or relation (for example: NoteType and Note both belong to the Note domain).
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairObject.rotAppObject.Field.html">Field(String)</a>
+													</td>
+													<td>
+														Accesses a field by passed in name.
+													</td>
+												</tr>												
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairObject.rotAppObject.GetExceptionLink.html">GetExceptionLink</a>
+													</td>
+													<td>
+														Write-Only.  Provided by the derived class, a dynamic link (at run time) to the data manager accessable by the base class to retrieve exceptions stored in the database.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairObject.rotAppObject.HasData.html">HasData</a>
+													</td>
+													<td>
+														Read-Only.  Returns TRUE if the <a href="RotairObject.rotAppObject.load.html">load</a> function does not return an error and does not return NoData.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairObject.rotAppObject.LastError.html">LastError</a>
+													</td>
+													<td>
+														Read-Only.  Returns the last error encountered.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairObject.rotAppObject.LastRevBy.html">LastRevBy</a>
+													</td>
+													<td>
+														Employee ID who preformed the latest update or insert.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairObject.rotAppObject.LastRevDate.html">LastRevDate</a>
+													</td>
+													<td>
+														Date of the latest update or insert.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairObject.rotAppObject.LoadLink.html">LoadLink</a>
+													</td>
+													<td>
+														Write-Only.  Provided by the derived class, a dynamic link (at run time) to the data manager accessable by the base class to load data.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairObject.rotAppObject.LoadStatus.html">LoadStatus</a>
+													</td>
+													<td>
+														Read-Only.  Returns an enumeration <a href="Broke.html">(eLoadResultType)</a> returned from the last call to the <a href="Broke.html">load</a> function.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairObject.rotAppObject.RecType.html">RecType</a>
+													</td>
+													<td>
+														Indicates if the record was ever updated after it was inserted.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairObject.rotAppObject.RevNbr.html">RevNbr</a>
+													</td>
+													<td>
+														Counter for updates.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairObject.rotAppObject.SaveLink.html">SaveLink</a>
+													</td>
+													<td>
+														Write-Only.  Provided by the derived class, a dynamic link (at run time) to the data manager accessable by the base class to perform save data.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairObject.rotAppObject.SaveStatus.html">SaveStatus</a>
+													</td>
+													<td>
+														Read-Only.  Returns a boolean returned from the last call to the <a href="RotairObject.rotAppObject.save.html">save</a> function.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairObject.rotAppObject.SetDirty.html">SetDirty</a>
+													</td>
+													<td>
+														Write-Only.  Updates the dirty flag.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairObject.rotAppObject.SetLastError.html">SetLastError</a>
+													</td>
+													<td>
+														Write-Only.  Stores an error message.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairObject.rotAppObject.SetLoadStatus.html">SetLoadStatus</a>
+													</td>
+													<td>
+														Write-Only.  Updates the load status flag.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairObject.rotAppObject.SetReadOnly.html">SetReadOnly</a>
+													</td>
+													<td>
+														Write-Only.  Updates the read only flag.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairObject.rotAppObject.UsesChangeTracking.html">UsesChangeTracking</a>
+													</td>
+													<td>
+														Read-Only.  Returns a boolean indicating if <a href="Broke.html">change tracking</a> is to be used.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div id='Methods'>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Methods</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<table id="memberList2" class="members">
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="Broke.html">Clear</a>
+													</td>
+													<td>
+														Resets variables to their default values based on their type.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="Broke.html">Copy</a>
+													</td>
+													<td>
+														Returns a shallow copy of the object.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="Broke.html">CopyOf(rotAppObject)</a>
+													</td>
+													<td>
+														Makes the object a shallow copy of the passed in object.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="Broke.html">Delete</a>
+													</td>
+													<td>
+														Calls the delete function in the data manager if the object is in a deletable state.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="Broke.html">ExistsInDB</a>
+													</td>
+													<td>
+														Returns TRUE if the object represents data in the database.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="Broke.html">GetPropertyLength</a>
+													</td>
+													<td>
+														Returns the field length of the passed in field name.  Valid only for character fields.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="Broke.html">IsDirty</a>
+													</td>
+													<td>
+														Returns TRUE if the object is dirty.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="Broke.html">IsNewRecord</a>
+													</td>
+													<td>
+														Returns TRUE if the object has never been saved to the database.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="Broke.html">IsReadOnly</a>
+													</td>
+													<td>
+														Returns TRUE if the Read-Only flag is set.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="Broke.html">KeyComposite(String())</a>
+													</td>
+													<td>
+														Returns a string with the elements of the passed in array concatenated with a delimiter.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="Broke.html">KeySingles(String)</a>
+													</td>
+													<td>
+														Parses a passed in string creating an array separating elements at a prefefined delimiter.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="Broke.html">Load</a>
+													</td>
+													<td>
+														Loads the object from the database.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="Broke.html">NewSetup</a>
+													</td>
+													<td>
+														Sets the variables to their default values or a specific value if the object should have a default for any field(s).
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="Broke.html">OKToDelete</a>
+													</td>
+													<td>
+														Returns TRUE if the object is in a state where deletes are allowed.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="Broke.html">OKToSave</a>
+													</td>
+													<td>
+														Returns TRUE if the object is in a state where saves are allowed.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="Broke.html">Save</a>
+													</td>
+													<td>
+														Saves the object to the database.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock" id='AppObjectBenefits'>
+									
+										A <b>rotAppObject</b> is a base class to streamline data access so any object that gets populated with data from the database either wholly or
+										partially should inherit this class.  This class has five main purposes:
+										<ol type='1'>
+										<li>Provide a consistent interface.</li>
+										<li>Eliminate tight coupling between the business objects and the data manager.</li>
+										<li>Abolish redundant code.</li>
+										<li>Encapsulate <a href='Broke.html'>change tracking</a>.</li>
+										<li>Allow the use of polymorphic functions</li>
+										</ol>
+										<br>
+				
+										<h3>1. Consistent Interface</h3>
+										Every object that inherits from rotAppObject will behave exactly the same for all the predefined functions.  Functions to work on any of the objects based on
+										rotAppObject can seamlessly handle any and all of them including new ones without needing a recompile as long the input parameter's type is the base class and not the derived.
+										<br>
+										<br>
+										
+										<h3>2. Data Manager oblivious to specific objects</h3>
+										The data manager (data access layer) can populate every application object that uses this as its base without any reference to any other object than rotAppObject.
+										<br>
+										<br>
+										
+										<h3>3. Code reuse</h3>
+										Housekeeping and other basic tasks are all done here and done once.  Create a new object and it automatically does some of the basics.  Also existing functions
+										that take a rotAppObject as a parameter can be used with a new object.  See #5 below.
+										<br>
+										<br>
+										
+										<h3>4. Encapsulate Change Tracking</h3>
+										If the flag is set for <a href='Broke.html'>change tracking</a> then this class will handle all the client side duties, the server still needs to be properly set up.
+										Having all the change tracking code in one place greatly assists in maintenance, removes repeated code from the derived objects making the code specific to each object or domain
+										easier to read and modify.
+										<br>
+										<br>
+										
+										<h3>5. Polymorphic functions</h3>
+										One function can handle an unlimited number of object types, even objects that did not exist when the namespace containing the function was
+										compiled as long as they all derive from the same base class.
+										<br>
+										<br>
+										
+										All summed up it equals lower maintenance cost and quicker development time.													
+										
+									</div>
+
+									<div xmlns="">
+										<div class="LW_CollapsibleArea_TitleDiv">
+											<div>
+												<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+												<span class="LW_CollapsibleArea_Title">Example</span></a>
+												<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+											</div>
+										</div>
+										<div class="sectionblock">
+										
+											To use just inherit like the example in the syntax section above.
+										
+										</div>
+									</div>
+								</div>	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>
+

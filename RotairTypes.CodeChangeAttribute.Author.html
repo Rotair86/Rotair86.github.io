@@ -1,0 +1,152 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			Rotair_Types - Built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairTypes'
+					Source[2] = 'CodeChangeAttribute'
+					Source[3] = 'Author'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">Author Property</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Programmer making the change.</p>						
+	
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<img src="Graphics/minus.png" name="Syntax" onclick="CollapseExpand('Syntax')"><span class="LW_CollapsibleArea_Title">Syntax</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div id='Syntax' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">
+													<pre><span style="color: Green;">'Declarations</span></pre>
+													<pre><span style="color: Blue;">Public Shared Property</span> Author <span style="color: Blue;">As String</span></pre>
+													<br>
+												</div>				
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>This property is not really usable by the programmer due to the nature of the attributes.</p>
+																										
+									</div>
+
+								</div>	
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Example" onclick="CollapseExpand('Example')"><span class="LW_CollapsibleArea_Title">Example</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>This example adds a function to charge a different sales tax depending on the region.  Since this happens behind the scenes, 
+										we put a code change attribute on the dll so we can verify that the changes are in effect because we do not have a visual 
+										representation of it.  The <b>Author</b> is the first argument.</p>
+									
+									</div>
+								</div>
+
+								<div id='Example' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">												        
+												<pre>&ltCodeChange(<span style="color: Red;"><b>"JPM"</b></span>, <span style="color: Red;">"03/25/2013"</span>, Rotair_Types.ChangeType.Enhancement_User, Comments:=<span style="color: Red;">"Change the sales tax for a specific region."</span>)&gt _</pre>
+												<pre><span style="color: Blue;">Public Class</span> imsAO_RegionalInvoice</pre>
+												<br>
+												<pre>    <span style="color: Blue;">Public Sub</span> CalculateSalesTax()</pre>
+												<br>
+												<pre>       <span style="color: Blue;">If</span> mstrRegion &lt&gt <span style="color: Red;">"2"</span><span style="color: Blue;"> Then</span></pre>
+												<pre>           mdblTotal = mdblCost * mconTaxRate1</pre>
+												<pre>        <span style="color: Blue;">Else</span></pre>
+												<pre>           mdblTotal = mdblCost * mconTaxRate2</pre>
+												<pre>       <span style="color: Blue;">End If</span></pre>
+												<br>
+												<pre>    <span style="color: Blue;">End Sub</span></pre>
+												<br>
+												<pre><span style="color: Blue;">End Class</span></pre>
+												<br>
+												</div>																	
+											</div>
+										</div>
+									</div>				
+									
+								</div>	
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

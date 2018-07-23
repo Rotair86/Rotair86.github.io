@@ -1,0 +1,299 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairDataAccess - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairDataAccess'
+					Source[2] = 'RFQ'
+					Source[3] = 'Master'
+					Source[4] = 'Item'
+					Source[5] = 'Vendor'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">Vendor Class</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Retrieves data from table <a href='Tables/tblRFQVendor.png'>tblRFQVendor</a>.</p>
+							
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Inheritance Hierarchy</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">								
+										<a href="http://msdn.microsoft.com/en-us/library/system.object.aspx">System.Object</a>
+									</div>							
+								</div><p></p>
+							
+								<strong>Namespace:</strong>&nbsp;<a href="RotairDataAccess.html">RotairDataAccess</a><br>
+								<strong>Assembly:</strong>&nbsp;RotairDataAccess.dll
+							
+								<p>The <span class="selflink">Vendor</span> class exposes the following members.</p>																	
+										
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Classes</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="sectionblock">
+								
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="iconColumn">&nbsp;</th>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairDataAccess.RFQ.Master.Item.Vendor.VendorCharge.html">VendorCharge</a>
+												</td>
+												<td>
+													Class of shared members allowing data access to the <a href='Tables/tblRFQVendorCharge.png'>tblRFQVendorCharge</a> table. 
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairDataAccess.RFQ.Master.Item.Vendor.VendorQuote.html">VendorQuote</a>
+												</td>
+												<td>
+													Class of shared members allowing data access to the <a href='Tables/tblRFQVendorQuote.png'>tblRFQVendorQuote</a> table. 
+												</td>
+											</tr>
+										</tbody>
+									</table>
+										
+									<a href="#mainBody">Top</a>
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Methods</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="sectionblock">
+
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="iconColumn">&nbsp;</th>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="function_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairDataAccess.RFQ.Master.Item.Vendor.AddVendorIfNeeded.html">AddVendorIfNeeded</a>(Integer, Integer, String, Boolean)
+												</td>
+												<td>
+													Shared function adds a vendor.  [Used when a vendor replies to a quote that does not exist in the table.]
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="function_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairDataAccess.RFQ.Master.Item.Vendor.ByVendor.html">ByVendor</a>
+												</td>
+												<td>
+													Shared function returns a dataset of RFQs for a vendor.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="function_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairDataAccess.RFQ.Master.Item.Vendor.Exists.html">Exists</a>(Integer, Integer, String)
+												</td>
+												<td>
+													Shared function to check the existance of a vendor specific to an RFQ.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="function_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairDataAccess.RFQ.Master.Item.Vendor.Load.html">Load</a>(rotAppObject)
+												</td>
+												<td>
+													Shared function retrieves a rfq vendor record from the database.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="function_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairDataAccess.RFQ.Master.Item.Vendor.OpenByVendor.html">OpenByVendor</a>(String)
+												</td>
+												<td>
+													Shared function returns a list of open RFQs for a vendor.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="function_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairDataAccess.RFQ.Master.Item.Vendor.SetStatus.html">SetStatus</a>
+													(Integer, Integer, String, <a href="RotairTypes.Enumerations.eRFQStatus.html">eRFQStatus</a>)
+												</td>
+												<td>
+													Shared function updates the status field of a specific line for a vendor for an RFQ.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="function_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairDataAccess.RFQ.Master.Item.Vendor.SetStatusAll.html">SetStatusAll</a>
+													(Integer, String, <a href="RotairTypes.Enumerations.eRFQStatus.html">eRFQStatus</a>)
+												</td>
+												<td>
+													Shared function updates the status field of a specific vendor for an RFQ.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="function_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairDataAccess.RFQ.Master.Item.Vendor.VendorByRFQ.html">VendorByRFQ</a>(Integer)
+												</td>
+												<td>
+													Shared function returns a datatable of vendors for a specific RFQ.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="function_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairDataAccess.RFQ.Master.Item.Vendor.VendorByRFQandItem.html">VendorByRFQandItem</a>(Integer, String)
+												</td>
+												<td>
+													Shared function returns a datatable of vendors for a specific item on an RFQ.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="function_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairDataAccess.RFQ.Master.Item.Vendor.VendorList.html">VendorList</a>
+												</td>
+												<td>
+													Shared function returns a datatable of vendors that have been issued RFQs.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="function_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairDataAccess.RFQ.Master.Item.Vendor.VendorListActive.html">VendorListActive</a>
+												</td>
+												<td>
+													Shared function returns a datatable of vendors that have been issued RFQs and are not "inactive".
+												</td>
+											</tr>
+										</tbody>
+									</table>
+										
+									<a href="#mainBody">Top</a>
+								</div>	
+								
+							</div>
+										
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,1236 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairEmail - Converted and enhanced from VBA by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairEmail'
+					Source[2] = 'rotEmailBuilder'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			
+			<div class="content">
+
+				<div class="topicContainer">
+			
+					<div class="topic">
+	
+						<h1 class="title">rotEmailBuilder Class</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Sends out table based email.  The functions are shared to eliminate the need for instantiating an object and also to self-document.</p>
+								<p>This module has many ways to test.
+								<ol><li>There is a constant which can be set to TRUE.  This is used by Skip House on his laptop and requires a re-compile to put in effect.  This will cause messages to be displayed in a message box.</li>
+								<li>There is a TestFlag property which can be set to TRUE.  This can be done in code to switch back and forth between test mode and production.  This will cause messages to be displayed in a message box.</li>
+								<li>A TestRecipient property allows the recipient list to be overridden with a single test recipient.</li>
+								<li>If the function <a href='RotairSystem.System.IsProduction.html'>IsProduction</a> returns FALSE then e-mails are automatically routed to the logged in user and the recipient list is ignored.</li>
+								<li>If the logged in user is equal to the constant mconLeadDeveloper then e-mails are automatically routed to the logged in user and the recipient list is ignored.</li></ol></p>
+								<p>To use this class it requires certain tables to be populated.  See <a href='RotairEmail.rotEmailBuilder(Usage).html'>Usage</a> for details.
+								<p>[Stored in a constant is the value localSMTP.corp.rotair.com which is the FQDN (Fully Qualified Domain Name) the host resolves in the internal DNS.]</p>
+								<p>To use this class see <a href='RotairEmail.rotEmailBuilder(Usage).html'>Usage</a> for instructions.</p>
+							
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Inheritance Hierarchy</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">								
+										<a href="http://msdn.microsoft.com/en-us/library/system.object.aspx">System.Object</a>
+									</div>							
+								</div><p></p>
+							
+								<strong>Namespace:</strong>&nbsp;<a href="RotairEmail.html">Rotair_Email</a><br>
+								<strong>Assembly:</strong>&nbsp;Rotair_Email.dll
+	
+								<p>The <span class="selflink">rotEmailBuilder</span> class exposes the following members.</p>
+	
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Public Classes" onclick="CollapseExpand('Public Classes')"><span class="LW_CollapsibleArea_Title">Public Classes</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								</div>																				
+
+								<div id='Public Classes' class="sectionblock">
+								
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="iconColumn">&nbsp;</th>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href='RotairEmail.rotEmailBuilder.rotPlaceholders.html'>rotPlaceholders</a>
+												</td>
+												<td>
+													A collection used for substitution in the e-mail.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Properties" onclick="CollapseExpand('Properties')"><span class="LW_CollapsibleArea_Title">Properties</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+									<div id='Properties' class="sectionblock">
+									
+										<table id="memberList1" class="members">
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairEmail.rotEmailBuilder.LastError.html">LastError</a>
+													</td>
+													<td>
+														Read-Only.  Returns the last error encountered in routines that have error handling.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairEmail.rotEmailBuilder.TestFlag.html">TestFlag</a>
+													</td>
+													<td>
+														Allows the e-mails to be displayed in a message box for testing.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairEmail.rotEmailBuilder.TestRecipient.html">TestRecipient</a>
+													</td>
+													<td>
+														Overrides the recipient list for testing.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										<a href="#mainBody">Top</a>
+								
+									</div>
+								</div>
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Public Methods" onclick="CollapseExpand('Public Methods')"><span class="LW_CollapsibleArea_Title">Public Methods</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div id='Public Methods' class="sectionblock">
+									
+										<table id="memberList1" class="members">
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairEmail.rotEmailBuilder.ClearLastError.html">ClearLastError</a>
+													</td>
+													<td>
+														Resets the LastError regardless if there was one.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairEmail.rotEmailBuilder.SendAdministratorEMail.html">SendAdministratorEMail</a>(<a href="RotairTypes.Enumerations.eEmailForAdministration.html">eEmailForAdministration</a>)
+													</td>
+													<td>
+														Sends an e-mail to the administrator.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairEmail.rotEmailBuilder.SendClassBasedEmail.html">SendClassBasedEmail</a>(String, <a href='RotairEmail.rotEmailBuilder.rotPlaceholders.html'>rotPlaceholders</a>)
+													</td>
+													<td>
+														Sends e-mail.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairEmail.rotEmailBuilder.SendClassBasedEmail.html">SendClassBasedEmail</a>(String, <a href='RotairEmail.rotEmailBuilder.rotPlaceholders.html'>rotPlaceholders</a>, Boolean)
+													</td>
+													<td>
+														Sends e-mail optionally testing to a msgbox if the third parameter is TRUE.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairEmail.rotEmailBuilder.SendClassBasedEmail.html">SendClassBasedEmail</a>(String, <a href='RotairEmail.rotEmailBuilder.rotPlaceholders.html'>rotPlaceholders</a>, String)
+													</td>
+													<td>
+														Sends e-mail optionally testing to a specific user if the third parameter is used.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairEmail.rotEmailBuilder.SendDeniedFlagEMail.html">SendDeniedFlagEMail</a>(<a href="RotairTypes.Enumerations.ePartyType.html">ePartyType</a>, PartyKey, String)
+													</td>
+													<td>
+														Sends e-mail when a customer or vendor is denied.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairEmail.rotEmailBuilder.SendDeniedVendorEMail.html">SendDeniedVendorEMail</a>(Guid, String, String)
+													</td>
+													<td>
+														Sends an e-mail because of an unsuccessfully screened vendor.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairEmail.rotEmailBuilder.SendPurchaseOrderEMail.html">SendPurchaseOrderEMail</a>(<a href="RotairTypes.Enumerations.eEmailForPurchaseOrder.html">eEmailForPurchaseOrder</a>, Guid, String)
+													</td>
+													<td>
+														General function for e-mail relating to a purchase order.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairEmail.rotEmailBuilder.SendSalesOrderRelated.html">SendSalesOrderRelated</a>(<a href="RotairTypes.Enumerations.eEmailForSalesOrder.html">eEmailForSalesOrder</a>, String, String)
+													</td>
+													<td>
+														General function for e-mail relating to a sales order.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairEmail.rotEmailBuilder.SendScreeningEMail.html">SendScreeningEMail</a>(<a href="RotairTypes.Enumerations.ePartyType.html">ePartyType</a>, PartyKey, <a href='RotairTypes.Enumerations.eScreenAction.html'>eScreenAction</a>, String)
+													</td>
+													<td>
+														General function for e-mail relating to screening.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairEmail.rotEmailBuilder.SendShipmentRelatedEmail.html">SendShipmentRelatedEmail</a>(<a href="RotairTypes.Enumerations.eScreeningRC.html">eScreeningRC</a>, String, String, String)
+													</td>
+													<td>
+														General function for e-mail relating to a shipment order.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>	
+									
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Private Constants" onclick="CollapseExpand('Private Constants')"><span class="LW_CollapsibleArea_Title">Private Constants</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+									<div id='Private Constants' class="sectionblock">
+									
+										<table id="memberList" class="members">
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconCustomer
+													</td>
+													<td>
+														This is part of the key to indicate if the party is a customer for screening purposes.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconCustomerAdd
+													</td>
+													<td>
+														Identifies a message to be sent if a customer is referenced that is a denied party.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconCustomerView
+													</td>
+													<td>
+														Identifies a message to be sent if a customer is referenced that is a denied party.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconDeniedParty
+													</td>
+													<td>
+														Value for a token.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconDeniedPartyScreening
+													</td>
+													<td>
+														Value for a token.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconDeniedVendor
+													</td>
+													<td>
+														Identifies a message to be sent out when a vendor becomes denied.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconEmailDelimiter
+													</td>
+													<td>
+														Separates the reipients when displayed in the body of the message during testing.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconEmailMissing
+													</td>
+													<td>
+														Identifies a message to be sent out when a recipient's e-mail does not exist in the Empluyee table.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconEmployeeLogIn
+													</td>
+													<td>
+														Token.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconERPUserName
+													</td>
+													<td>
+														Token.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconErrorParsing
+													</td>
+													<td>
+														If this test is found in the message body then there was a problem parsing the placeholders.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconExportOrderExistingApplicationNotSubmitted
+													</td>
+													<td>
+														Identifies a message to be sent out when a sales order has been changed in a way that may affect
+														the export license and the application for the license has not been submitted.  This allows the 
+														application to be changed if necessary.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconExportOrderExistingApplicationSubmitted
+													</td>
+													<td>
+														Identifies a message to be sent out when a change to a sales order was prohibited because the export
+														license has already been submitted.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconExportOrderExistingDefenseArticles
+													</td>
+													<td>
+														Identifies a message to be sent out when a defense article has been added to an existing sales  
+														order for export.  This allows the application to be changed if necessary.
+													</td>
+												</tr>
+ 												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconExportOrderExistingDualUse
+													</td>
+													<td>
+														Identifies a message to be sent out when a dual use item has been added to an existing sales  
+														order for export.  This allows the application to be changed if necessary.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconExportOrderNewDefenseArticle
+													</td>
+													<td>
+														Identifies a message to be sent out when a defense article item has been added to a new sales  
+														order for export.  This will inform users that an export license may be required.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconExportOrderNewDualUse
+													</td>
+													<td>
+														Identifies a message to be sent out when a dual use item has been added to a new sales  
+														order for export.  This will inform users that an export license may be required.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconIncompletePOs
+													</td>
+													<td>
+														Value for a placeholder indicating the number of outstanding POs.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconIncompleteRFQs
+													</td>
+													<td>
+														Value for a placeholder indicating the number of outstanding RFQs.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconLeadDeveloper
+													</td>
+													<td>
+														If this is the user generating the e-mails then all messages will be redirected to the e-mail
+														address in the employee table associated with this user id.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconLogInUserName
+													</td>
+													<td>
+														Token.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconMachineName
+													</td>
+													<td>
+														Token.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconObjectID
+													</td>
+													<td>
+														Token.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconPartyID
+													</td>
+													<td>
+														Token.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconPartyName
+													</td>
+													<td>
+														Token.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconPOCount
+													</td>
+													<td>
+														Token.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconPOExistingForeignVendorWithNewDefenseArticle
+													</td>
+													<td>
+														Identifies a message to be sent out when a purchase order going out to a foriegn vendor that
+														may import a defense article.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconPOExistingNewForeignVendor
+													</td>
+													<td>
+														Identifies a message to be sent out when a vendor is changed and the new vendor is a foriegn
+														vendor.  This may lead to technical data export.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconPOExistingNewForeignVendorWithNewDefenseArticle
+													</td>
+													<td>
+														Identifies a message to be sent out when a vendor is changed and the new vendor is a foriegn
+														vendor.  This may lead to technical data export and defense article import.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconPONewForeignVendor
+													</td>
+													<td>
+														Identifies a message to be sent out when a new purchase order is created and the vendor is a foriegn
+														vendor.  This may lead to technical data export.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconPONewForeignVendorWithDefenseArticle
+													</td>
+													<td>
+														Identifies a message to be sent out when a new purchase order is created, the vendor is a foriegn
+														vendor and one or more items are defense articles.  This may lead to technical data export and defense article import.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconRFQCount
+													</td>
+													<td>
+														Token.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconShipmentExportLicenseExpired
+													</td>
+													<td>
+														Identifies a message to be sent out when a shipment is attempted when the export license has expired.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconShipmentExportLicenseNotApproved
+													</td>
+													<td>
+														Identifies a message to be sent out when the export license transactions do not indicate a valid
+														license exists.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconShipmentExportLicenseNotClearedForFMS
+													</td>
+													<td>
+														Identifies a message to be sent out when the export license checkbox has not been cleared.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconShipmentEndUserScreenRequired
+													</td>
+													<td>
+														Identifies a message to be sent out when a shipment is attempted and the end user needs to be screened.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconSMTPHost
+													</td>
+													<td>
+														Fully Qualified Domain Name for the SMTP host.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconSMTPFrom
+													</td>
+													<td>
+														Text to be displayed in the from field for the auto-generated e-mails.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconSMTPPort
+													</td>
+													<td>
+														Port used for SMTP.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconString1
+													</td>
+													<td>
+														Token.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconString2
+													</td>
+													<td>
+														Token.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconTestFlag
+													</td>
+													<td>
+														If TURE then messages will be sent to a message box.  Requires a re-compile to change.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconVendorAdd
+													</td>
+													<td>
+														Identifies a message to be sent if a vendor is referenced that is a denied party.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconVendorView
+													</td>
+													<td>
+														Identifies a message to be sent if a vendor is referenced that is a denied party.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Private Variables" onclick="CollapseExpand('Private Variables')"><span class="LW_CollapsibleArea_Title">Private Variables</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								
+									<div id='Private Variables' class="sectionblock">
+									
+										<table id="memberList" class="members">
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='variable_pic'>
+														</div>
+													</td>
+													<td>
+														mstrLastError
+													</td>
+													<td>
+														Text description of the last error.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='variable_pic'>
+														</div>
+													</td>
+													<td>
+														mbSendAdministratorEMail
+													</td>
+													<td>
+														A problem can cause looping, for example, if the administrator's email is not in the table
+														when a user has a problem with their e-mail.  A mail will be attempted to be sent to the 
+														administrator, which will fail because there is no administrator e-mail.  This will try to 
+														alert the administrator, ect.  This flag prevents this situation.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='variable_pic'>
+														</div>
+													</td>
+													<td>
+														mbTestFlag
+													</td>
+													<td>
+														If TRUE then messages will be displayed in a message box.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='variable_pic'>
+														</div>
+													</td>
+													<td>
+														mstrTestRecipient
+													</td>
+													<td>
+														If TRUE then the recipient list will be ignored and all messages will go to this value.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>
+							
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Private Classes" onclick="CollapseExpand('Private Classes')"><span class="LW_CollapsibleArea_Title">Private Classes</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								</div>																				
+
+								<div id='Private Classes' class="sectionblock">
+								
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="iconColumn">&nbsp;</th>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href='RotairEmail.rotEmailBuilder.rotPlaceholder.html'>rotPlaceholder</a>
+												</td>
+												<td>
+													Used for substitution in the e-mail.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+								</div>
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Private Methods" onclick="CollapseExpand('Private Methods')"><span class="LW_CollapsibleArea_Title">Private Methods</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div id='Private Methods' class="sectionblock">
+									
+										<table id="memberList1" class="members">
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairEmail.rotEmailBuilder.CheckForTesting.html">CheckForTesting</a>(String, String, <a href="RotairAO_Email.rotAO_Email.rotAO_EmailRecipient_Collection.html">rotAO_EmailRecipient_Collection</a>, <a href="RotairAO_Email.rotAO_Email.rotAO_EmailRecipient_Collection.html">rotAO_EmailRecipient_Collection</a>)
+													</td>
+													<td>
+														Determines if any testing options are in effect and prepares accordingly.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairEmail.rotEmailBuilder.ReplacePlaceholders.html">ReplacePlaceholders</a>(String, rotPlaceholders)
+													</td>
+													<td>
+														Replaces tokens in the message body with the values in the collection.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairEmail.rotEmailBuilder.SampleEmailCode.html">SampleEmailCode</a>
+													</td>
+													<td>
+														Example on how to use this class.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairEmail.rotEmailBuilder.SetUpEmailPlaceholders.html">SetUpEmailPlaceholders</a>(rotPlaceholders)
+													</td>
+													<td>
+														Builds some token / value pairs common to the e-mails.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairEmail.rotEmailBuilder.SetUpEmailPlaceholdersWithCustomerID.html">SetUpEmailPlaceholdersWithCustomerID</a>(rotPlaceholders, CustomerKey)
+													</td>
+													<td>
+														Handles the customer id when adding it as a value.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairEmail.rotEmailBuilder.SetUpEmailPlaceholdersWithVendorID.html">SetUpEmailPlaceholdersWithVendorID</a>(rotPlaceholders, VendorKey)
+													</td>
+													<td>
+														Handles the vendor id when adding it as a value.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairEmail.rotEmailBuilder.SendIndividualEmail.html">SendIndividualEmail</a>(String, String, <a href="RotairAO_Email.rotAO_Email.rotAO_EmailRecipient_Collection.html">rotAO_EmailRecipient_Collection</a>)
+													</td>
+													<td>
+														Prepares to send out an e-mail.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairEmail.rotEmailBuilder.SendGroupEmail.html">SendGroupEmail</a>(String, String, <a href="RotairAO_Email.rotAO_Email.rotAO_EmailRecipient_Collection.html">rotAO_EmailRecipient_Collection</a>)
+													</td>
+													<td>
+														Prepares to send out many e-mails.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairEmail.rotEmailBuilder.SendSMTPEmail.html">SendSMTPEmail</a>(String, String, String)
+													</td>
+													<td>
+														Actual sending occurs here.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairEmail.rotEmailBuilder.SendSMTPGroupEmail.html">SendSMTPGroupEmail</a>(<a href="RotairAO_Email.rotAO_Email.rotAO_EmailRecipient_Collection.html">rotAO_EmailRecipient_Collection</a>, String, String)
+													</td>
+													<td>
+														Actual sending to many recipients occurs here.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>
+

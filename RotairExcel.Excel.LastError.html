@@ -1,0 +1,154 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			rotExcel - Built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairExcel'
+					Source[2] = 'rotExcel'
+					Source[3] = 'LastError'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">LastError Property</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Provides access to error text.</p>						
+	
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<img src="Graphics/minus.png" name="Syntax" onclick="CollapseExpand('Syntax')"><span class="LW_CollapsibleArea_Title">Syntax</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div id='Syntax' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">
+													<pre><span style="color: Green;">'Declarations</span></pre>
+													<pre><span style="color: Blue;">Public Shared Property</span> LastError <span style="color: Blue;">As String</span></pre>
+													<br>
+												</div>				
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>Holds the last error that was trapped. An error can be stored here that happened in a much earlier function. So it is 
+										recommended to check this property to ensure it is clear before calling any functions where an error may be expected.</p>
+																										
+									</div>
+
+								</div>	
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Example" onclick="CollapseExpand('Example')"><span class="LW_CollapsibleArea_Title">Example</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>This example saves the last error and checks it after saving the document.  If the LastError property does not match
+										what it was previously then some type of error occured.  Not all the data may have been copied from the datasource to the 
+										spreadsheet.  Note there is no error handling in the SaveFile function so we know an error that occured happened in
+										the ShowData function.  Also note if this same object was re-used and an error occurred in the ShowData function the first time
+										it will persist in the re-use.  So the LastError property can be updated with the same text it held before the call and cause
+										a false success since strError will equal XL.LastError even though LastError was updated.  There haven't been any problems
+										with this dll so that is why the error handling has not been improved.</p>
+									
+									</div>
+								</div>
+
+								<div id='Example' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">												        
+
+													<pre><span style="color: Blue;">Dim</span> strError <span style="color: Blue;">As String</span></pre>
+													<pre><span style="color: Blue;">Dim</span> XL <span style="color: Blue;">As</span> rotExcel</pre>
+													<br>
+													<pre>strError = XL.LastError</pre>
+													<pre>XL =<span style="color: Blue;"> New </span>rotExcel(<span style="color: Red;">"C:\My Documents\Spreadsheet.xls"</span>)</pre>
+													<pre>XL.ShowData(Enumerations.eExcelReport.Booking, Grid.DataSource)</pre>
+													<pre>XL.SaveFile()</pre>
+													<pre><span style="color: Blue;">If</span> strError <> XL.LastError <span style="color: Blue;">Then</span>)</pre>
+													<pre>    Messagebox>Show(<span style="color: Red;">"Document may not have displayed all the data."</span>)</pre>
+													<pre><span style="color: Blue;">End If</span></pre>
+													<br>
+												</div>																	
+											</div>
+										</div>
+									</div>				
+									
+								</div>	
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

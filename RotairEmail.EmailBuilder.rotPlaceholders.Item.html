@@ -1,0 +1,179 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			Rotair_Email - Built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairEmail'
+					Source[2] = 'rotEmailBuilder'
+					Source[3] = 'rotPlaceholders'
+					Source[4] = 'Item'
+					document.write(Menu(Source));
+				</script> 			
+
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">Item Method</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Returns the value of a token.</p>
+							
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Syntax" onclick="CollapseExpand('Syntax')"><span class="LW_CollapsibleArea_Title">Syntax</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div id='Syntax' class="sectionblock">
+										<div class="codeSnippetContainer">  	  
+											<div class="codeSnippetContainerTabs">
+												<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+													<a>VB</a>
+												</div>
+											</div>
+											<div class="codeSnippetContainerCodeContainer">
+												<div class="codeSnippetToolBar">
+												</div>
+												<div class="codeSnippetContainerCode">
+													<div style="color: Black;">
+														<pre><span style="color: Green;">'Declaration</span></pre>
+														<pre><span style="color: Blue;">Public Function </span>Item( _</pre>
+														<pre>        strName<span style="color: Blue;"> As String</span> _</pre>
+														<pre>) <span style="color: Blue;">As String</span></pre>
+													</div>				
+												</div>
+											</div>
+										</div>
+										<div id="parameters">
+											<h4 class="subHeading">Parameters</h4>
+												<dl><dt><span class="parameter">strName</span></dt>
+													<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string">System.String</a><br><span><span>The token whose cooresponding value we wish to retrieve.</span><br></span></dd>
+												</dl>
+										</div>							
+
+										<div id="returnvalue">
+											<h4 class="subHeading">Return Value</h4>
+												<dl>
+													<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string">System.String</a><br><span><span>The value associated with the passed in token.</span><br></span></dd>
+												</dl>
+
+										</div>							
+									</div>
+									
+								</div>
+							</div>
+									
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>Pass this function a name of a token and it returns the value.  If the token was not set then will return an error
+									string.  For example, if a token called <b>Name</b> has its value requested and it has not been set then the string 
+									<i>"!!!Error:!!! Placeholder 'Name' is undefined."</i> will be returned.</p>
+			
+								</div>
+							</div>
+
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<img src="Graphics/minus.png" name="Example" onclick="CollapseExpand('Example')"><span class="LW_CollapsibleArea_Title">Example</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>The example will try to retrieve the value for the token <i>"LogInUserName"</i> and display the result in a message box.  We assume a PlaceHolders collection called
+									<b>mcolPH</b> has been instantiated.</p>
+								
+								</div>
+							</div>
+
+							<div id='Example' class="sectionblock">
+								<div class="codeSnippetContainer">  	  
+									<div class="codeSnippetContainerTabs">
+										<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+											<a>VB</a>
+										</div>
+									</div>
+									<div class="codeSnippetContainerCodeContainer">
+										<div class="codeSnippetToolBar">
+										</div>
+										<div class="codeSnippetContainerCode">
+											<div style="color: Black;">												        
+												<pre><span style="color: Blue;">Private Sub</span> Main()</pre>
+												<br>
+												<pre>    RetrieveTokensValue(<span style="color: Red;">"LogInUserName"</span>)</pre>
+												<br>
+												<pre><span style="color: Blue;">End Sub</span></pre>
+												<br>
+												<br>
+												<br>
+												<pre><span style="color: Blue;">Private Sub</span> RetrieveTokensValue(strToken <span style="color: Blue;">As String</span>)</pre>
+												<br>
+												<pre>    <span style="color: Blue;">Dim</span> strFound <span style="color: Blue;">As String</span></pre>
+												<br>
+												<br>
+												<pre>    strFound = mcolPH.<b>Item</b>(strToken)</pre>
+												<pre>    <span style="color: Blue;">If </span>strFound = <span style="color: Red;">"!!!Error:!!! Placeholder '"</span> & strName & <span style="color: Red;">"' is undefined."</span><span style="color: Blue;"> Then</span></pre>
+												<pre>        MessageBox.Show(<span style="color: Red;">"Token "</span> & strToken & <span style="color: Red;">" has the value of "</span> & strFound</pre>
+												<pre>    <span style="color: Blue;">Else</span></pre>
+												<pre>        MessageBox.Show(<span style="color: Red;">"Token "</span> & strToken & <span style="color: Red;">" has not been set."</span></pre>
+												<pre>    <span style="color: Blue;">End If</span></pre>
+												<br>
+												<pre><span style="color: Blue;">End Sub</span></pre>
+											</div>																	
+										</div>
+									</div>
+								</div>				
+								
+							</div>	
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

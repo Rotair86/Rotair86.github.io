@@ -1,0 +1,191 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			IntuitiveAppObjectFramework2 - Supplied by the vendor
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'imsBaseClasses'
+					Source[1] = 'imsAppObject'
+					Source[2] = 'Constructor'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">imsAppObject Constructor</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Creates a new instance of an imsAppObject.</p>
+								
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Syntax</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">
+													<pre><span style="color: Green;">'Declaration</span></pre>
+													<pre><span style="color: Blue;">Public Sub New</span>( _</pre>
+													<pre>    Domain<span style='color: Blue;'> As String</span>,</pre>
+													<pre>    InstantiatedBy<span style='color: Blue;'> As </span><a href='IntuitiveAppObjectFramework2.aoInstantiatedBy.html'>aoInstantiatedBy</a>,</pre>
+													<pre>    InstantiatedAs<span style='color: Blue;'> As </span><a href='IntuitiveAppObjectFramework2.aoInstantiatedAs.html'>aoInstantiatedAs</a></pre>
+													<pre>    HandleToParent<span style='color: Blue;'> As </span><a href='IntuitiveAppObjectFramework2.imsAppObject.html'>imsAppObject</a></pre>
+													<pre>    )</pre>
+												</div>				
+											</div>
+										</div>
+									</div>
+								</div>
+																																	
+								<div id="parameters">
+									<h4 class="subHeading">Parameters</h4>
+										<dl><dt><span class="parameter">Domain</span></dt>
+											<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string">System.String</a><br><span><span>The name of the domain ("Customer").</span><br></span></dd>
+										</dl>
+										<dl><dt><span class="parameter">InstantiatedBy</span></dt>
+											<dd>Type: <a href='IntuitiveAppObjectFramework2.aoInstantiatedBy.html'>aoInstantiatedBy</a><br><span><span></span><br></span></dd>
+										</dl>
+										<dl><dt><span class="parameter">InstantiatedAs</span></dt>
+											<dd>Type: <a href='IntuitiveAppObjectFramework2.aoInstantiatedAs.html'>aoInstantiatedAs</a><br><span><span></span><br></span></dd>
+										</dl>
+										<dl><dt><span class="parameter">HandleToParent</span></dt>
+											<dd>Type: <a href='IntuitiveAppObjectFramework2.imsAppObject.html'>imsAppObject</a><br><span><span>Can also be an explicitly derived object (imsAO_PurchaseOrder).</span><br></span></dd>
+										</dl>
+								</div>							
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>Creates a new object loading metadata from AppObj_MetadataHeader.</p>
+										
+									</div>
+
+								</div>	
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Example</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>This function calls <a href="IntuitiveAOItemCUSTOM.imsAOItemSupplementalCollection.GetParentKeyFields.html">GetParentKeyFields</a>.</p>
+									
+									</div>
+								</div>
+
+								<div class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">
+													<pre><span style="color: Blue;">Public Sub New</span>( _</pre>
+													<pre>    <span style='color: Blue;'>Optional ByVal</span> processNow <span style='color: Blue;'> As Boolean = True</span></pre>
+													<pre>    )<span style='color: Blue;'> As </span>imsReturnData</pre>
+													<br>
+													<pre>    <span style='color: Blue;'> Dim </span>intRevisionNumber<span style="color: Blue;"> As Integer</span>() { _</pre>
+													<pre>    <span style='color: Blue;'> Dim </span>r2d2<span style="color: Blue;"> As </span>imsReturnData</pre>
+													<br>
+													<br>
+													<pre>    <span style="color: Green;">'Only set any change tracking if any fields were edited.</span></pre>
+													<pre>    <span style="color: Blue;">If Me</span>.DocumentChanged <span style="color: Blue;">Then</span></pre>
+													<pre>        <span style="color: Green;">'Set the last change date for change tracking.</span></pre>
+													<pre>        r2d2.Merge(SetValue(<span style="color: Blue;">True</span>, fLastRevDate, Now))</pre>
+													<pre>        <span style="color: Green;">'It is bad form to return in the middle of a function.</span></pre>
+													<pre>        <span style="color: Green;">'    It was done here only because this is the technique Intuitive uses.</span></pre>
+													<pre>        <span style="color: Green;">'    To deviate from the 'standard' set by the vendor would introduce</span></pre>
+													<pre>        <span style="color: Green;">'    more uncertaintity into a product which was past its uncertainity quota.</span></pre>
+													<pre>        <span style="color: Blue;">If</span> r2d2.AnyAppErrs <span style="color: Blue;">Then Return</span> r2d2</pre>
+													<br>
+													<pre>        <span style="color: Green;">'Update the revision number and set the type of record to 'Changed' only if this.</span></pre>
+													<pre>        <span style="color: Green;">'    is not a new record.</span></pre>
+													<pre>        <span style="color: Blue;">If Me</span>.DocumentChanged <> aoObjectState.NEW_DOCUMENT <span style="color: Blue;">Then</span></pre>
+													<pre>            r2d2.Merge(SetValue(<span style="color: Blue;">True</span>, fRecType, Constants.RecType_ChangedRecord))</pre>
+													<pre>            intRevisionNumber = GetInt32(fRevNbr)</pre>
+													<pre>            r2d2.Merge(SetValue(<span style="color: Blue;">True</span>, fRevNbr, intRevisionNumber + <span style="color: Red;">1</span>))</pre>
+													<pre>        <span style="color: Blue;">End If</span></pre>
+													<br>
+													<pre>        <span style="color: Green;">'Call the base where actual saving is done.</span></pre>
+													<pre>        r2d2.Merge(<span style="color: Blue;">MyBase</span>.Save(processNow))</pre>
+													<br>
+													<pre>    <span style="color: Blue;">End If</span></pre>
+													<br>
+													<pre>    <span style="color: Blue;">Return</span> r2d2</pre>
+													<br>
+													<pre><span style="color: Blue;">End Function</span></pre>
+												</div>																	
+											</div>
+
+										</div>
+									</div>				
+									
+								</div>	
+
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

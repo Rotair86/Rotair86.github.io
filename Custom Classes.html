@@ -1,0 +1,223 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			Custom Classes - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Links.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					document.write(Menu(Source));
+				</script> 			
+												
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">Custom Classes</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>These namespaces contain custom classes for a variety of tasks.</p>
+
+							</div>
+							
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Namespaces containing Custom Classes</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+										</div>
+									</div>
+								</div>
+								<div>
+						
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairDataAccess"));
+													</script> 			
+												</td>
+												<td>
+													The data access layer.  The only namespaces that should reference this are the application objects; namespaces prefixed with AO 
+													and the wrapper.  This is the only namespace that should interact with SQL server.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairDataAccessWrapper"));
+													</script> 			
+												</td>
+												<td>
+													Used as a bridge between non-AO namespaces and the data access layer.  Ideally these functions should be move to their respective
+													AOs and this namespace eliminated.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairDebugger"));
+													</script> 			
+												</td>
+												<td>
+													Home for functions that assist debugging efforts.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairDynamicEnums"));
+													</script> 			
+												</td>
+												<td>
+													Created at build time based on table values..
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairEmail"));
+													</script> 			
+												</td>
+												<td>
+													This namespace is used to send out emails.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairExcel"));
+													</script> 			
+												</td>
+												<td>
+													Talks to Excel.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairExportManagement"));
+													</script> 			
+												</td>
+												<td>
+													Mainly used for screening.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairGeneralFunctions"));
+													</script> 			
+												</td>
+												<td>
+													Function repository.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairIMSExtensions"));
+													</script> 			
+												</td>
+												<td>
+													Methods to extend intuitive objects.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairReport"));
+													</script> 			
+												</td>
+												<td>
+													Prints out reports using data from RotairAO_Report and sending it to RotairHC_Report.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairSecurity"));
+													</script> 			
+												</td>
+												<td>
+													Checking of menu item permissions lives here.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairSystem"));
+													</script> 			
+												</td>
+												<td>
+													System related functions.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairTypes"));
+													</script> 			
+												</td>
+												<td>
+													Constants, enumerations and structures that need to be shared across namespaces.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairUICommon"));
+													</script> 			
+												</td>
+												<td>
+													Functions relating to the UI used across assemblies.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

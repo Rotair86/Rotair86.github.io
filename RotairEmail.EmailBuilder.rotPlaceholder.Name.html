@@ -1,0 +1,153 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			Rotair_Email - Built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairEmail'
+					Source[2] = 'rotEmailBuilder'
+					Source[3] = 'rotPlaceholder'
+					Source[4] = 'Name'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">Name Property</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Provides access to a token placeholder.</p>						
+	
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<img src="Graphics/minus.png" name="Syntax" onclick="CollapseExpand('Syntax')"><span class="LW_CollapsibleArea_Title">Syntax</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div id='Syntax' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">
+													<pre><span style="color: Green;">'Declarations</span></pre>
+													<pre><span style="color: Blue;">Public Property</span> Name <span style="color: Blue;">As String</span></pre>
+													<br>
+												</div>				
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>This property returns the token which is replaced by its partner, <a href="RotairEmail.rotEmailBuilder.rotPlaceholder.Value.html">Value</a>, 
+										in the text where the token is found.</p>
+																										
+									</div>
+
+								</div>	
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Example" onclick="CollapseExpand('Example')"><span class="LW_CollapsibleArea_Title">Example</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>The example will return TRUE if there is a <b>Zip Code</b> token in the collection.</p>
+									
+									</div>
+								</div>
+
+								<div id='Example' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">												        
+													<pre><span style="color: Blue;">Private Function</span> CheckForZip() <span style="color: Blue;">As Boolean</span></pre>
+													<br>
+													<pre>    <span style="color: Blue;">Dim</span> bFound <span style="color: Blue;">As Boolean</span></pre>
+													<pre>    <span style="color: Blue;">Dim</span> PH <span style="color: Blue;">As</span> rotPlaceholder</pre>
+													<br>
+													<br>
+													<pre>    <span style="color: Blue;">For Each </span>PH<span style="color: Blue;"> In </span>mcolPH</pre>
+													<pre>        <span style="color: Blue;">If </span>PH.<b>Name</b> = <span style="color: Red;">"ZipCode"</span><span style="color: Blue;"> Then</span></pre>
+													<pre>            bFound = <span style="color: Blue;">True</span></pre>
+													<pre>            <span style="color: Blue;">Exit For</span></pre>
+													<pre>        <span style="color: Blue;">End If</span></pre>
+													<pre>    <span style="color: Blue;">Next</span></pre>
+													<br>
+													<pre>    <span style="color: Blue;">Return</span> bFound</pre>
+													<br>
+													<pre><span style="color: Blue;">End Function</span></pre>
+												</div>																	
+											</div>
+										</div>
+									</div>				
+									
+								</div>	
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

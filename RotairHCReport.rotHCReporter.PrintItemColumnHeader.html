@@ -1,0 +1,642 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairHC_Report Namespace - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<div class="searchcontainer">
+	
+					<form id="SearchForm" action="http://social.msdn.microsoft.com/search/en-us" method="get" style="margin: 0pt; padding: 0pt;" onsubmit="return checkSearchBox()">
+						<div class="searchBoxContainer" style="">
+							<table class="searchBox" border="0" cellpadding="0" cellspacing="0">
+								<tbody>
+									<tr>
+										<td class="searchTextBoxTd">
+											<input value="Search MSDN with Bing" id="SearchInput" maxlength="200" class="searchTextBox" name="query" type="text">        
+										</td>
+										<td class="searchButtonTd">
+											<input src="Graphics/Search.gif" style="position: relative;" title="Search " type="image">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</form>
+					
+					<script type="text/javascript">
+					//<![CDATA[
+						if (!MTPS) var MTPS = {};
+						if (!MTPS.Watermarks) MTPS.Watermarks = {};
+						MTPS.Watermarks.SearchInput = {
+							"control": "SearchInput",
+							"defaultValue": "Search MSDN with Bing",
+							"defaultCSS": "searchTextBox",
+							"focusCSS": "searchTextBoxTrue"
+						};
+						function checkSearchBox() {
+							if (document.getElementById("SearchInput").value == MTPS.Watermarks.SearchInput.defaultValue) {
+								document.getElementById("SearchInput").value = "";
+							}
+						}
+					 //]]>
+					</script>
+				</div>
+
+				<div class="navcontainer">
+			  
+					<div class="nav">
+			
+						<div id="tocnav">
+			
+							<div class="toclevel0 ancestry">
+							
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/ms123401.aspx">MSDN Library</a>
+								</div>
+            
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>								
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/ff361664%28v=vs.110%29.aspx">.NET Development</a>
+								</div>
+            
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>            
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/w0x726c2.aspx">.NET Framework 4</a>
+								</div>
+            
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>								
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/gg145045.aspx">.NET Framework Class Library</a>
+								</div>
+
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="ERP Custom Namespaces.html">ERP Customized Namespaces</a>
+								</div>						
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Base Classes.html">Custom Base Classes</a>
+								</div>
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Classes.html">Custom Classes</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Controls.html">Custom Controls</a>
+								</div>
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Classes Derived.html">Custom Derived from rotAppObject</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Forms Derived from imsForms.html">Custom Forms Derived from imsForm</a>
+								</div>
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Customized Intuitive AppObjects.html">Customized Intuitive imsAppObjects</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Customized Intuitive Forms.html">Customized Intuitive imsForms</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Printing Classes.html">Printing Classes</a>
+								</div>
+								
+								<div class="clip13x9 nav_dots_current">
+									<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+								</div>					
+								<div class="toclevel">
+									<a href="RotairHCReport.html">RotairHC_Report</a>
+								</div>
+
+								<div class="toclevel0">
+							
+									<div class="clip13x9 nav_dots_current">
+										<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+									</div>					
+									<div class="toclevel">
+										<a href="RotairHCReport.rotHCReporter.html">rotHC_Reporter</a>
+									</div>
+								
+									<div class="toclevel0">
+														
+										<div class="clip13x9 nav_dots_current">
+											<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+										</div>					
+										<div class="toclevel current">
+											<a href="RotairHCReport.rotHCReporter.PrintItemColumnHeader.html">PrintItemColumnHeader</a>
+										</div>
+		
+										<div class="toclevel0">
+															
+											<div class="clip13x9 nav_dots_current">
+												<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+											</div>					
+											<div class="toclevel">
+												Align
+											</div>
+										
+											<div class="clip13x9 nav_dots_current">
+												<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+											</div>					
+											<div class="toclevel">
+												<a href="RotairHCReport.rotHCReporter.PrintItemColumnHeader.Constructor.html">Constructor</a>
+											</div>
+										
+											<div class="clip13x9 nav_dots_current">
+												<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+											</div>					
+											<div class="toclevel">
+												<a href="RotairHCReport.rotHCReporter.PrintItemColumnHeader.DefaultAppearance.html">DefaultAppearance</a>
+											</div>
+										
+											<div class="clip13x9 nav_dots_current">
+												<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+											</div>					
+											<div class="toclevel">
+												<a href="RotairHCReport.rotHCReporter.PrintItemColumnHeader.IsBlank.html">IsBlank</a>
+											</div>
+										
+											<div class="clip13x9 nav_dots_current">
+												<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+											</div>					
+											<div class="toclevel">
+												Left
+											</div>
+										
+											<div class="clip13x9 nav_dots_current">
+												<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+											</div>					
+											<div class="toclevel">
+												<a href="RotairHCReport.rotHCReporter.PrintItemColumnHeader.LongestColumnLine.html">LongestColumnLine</a>
+											</div>
+										
+											<div class="clip13x9 nav_dots_current">
+												<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+											</div>					
+											<div class="toclevel">
+												PadLeft
+											</div>
+										
+											<div class="clip13x9 nav_dots_current">
+												<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+											</div>					
+											<div class="toclevel">
+												PadRight
+											</div>
+										
+											<div class="clip13x9 nav_dots_current">
+												<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+											</div>					
+											<div class="toclevel">
+												<a href="RotairHCReport.rotHCReporter.PrintItemColumnHeader.TextLine.html">TextLine</a>
+											</div>
+										
+											<div class="clip13x9 nav_dots_current">
+												<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+											</div>					
+											<div class="toclevel">
+												<a href="RotairHCReport.rotHCReporter.PrintItemColumnHeader.TextLines.html">TextLines</a>
+											</div>
+										
+											<div class="clip13x9 nav_dots_current">
+												<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+											</div>					
+											<div class="toclevel">
+												<a href="RotairHCReport.rotHCReporter.PrintItemColumnHeader.ToString.html">ToString</a>
+											</div>
+										
+											<div class="clip13x9 nav_dots_current">
+												<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+											</div>					
+											<div class="toclevel">
+												Width
+											</div>
+										
+										</div>
+
+									</div>
+									
+								</div>
+																
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Windows Custom Dialog Forms.html">Windows Custom Dialog Forms</a>
+								</div>
+								
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="External Programs.html">External Programs</a>
+								</div>						
+							
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Stored Procedures.html">Stored Procedures</a>
+								</div>						
+							
+							</div>
+							
+						</div>
+
+					</div>
+
+				</div>
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">PrintItemColumnHeader Class</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Used to hold some text and attributes used for a column header.</p>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Inheritance Hierarchy</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">								
+										<a href="http://msdn.microsoft.com/en-us/library/system.object.aspx">System.Object</a>
+										<br>&nbsp;&nbsp;<a href="RotairHCReport.rotHCReporter.PrintItemBase.html">PrintItemBase</a>
+									</div>							
+								</div><p></p>
+							
+								<strong>Namespace:</strong>&nbsp;<a href="RotairEmail.html">RotairHC_Report</a><br>
+								<strong>Assembly:</strong>&nbsp;RotairHC_Report.dll
+											
+								<p>The <span class="selflink">PrintItemColumnHeader</span> class exposes the following members.</p>
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Constructor</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<table id="memberList" class="members" width='100%'>
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic" alt="">
+														</div>
+													</td>
+													<td>
+														<a href='RotairHCReport.rotHCReporter.PrintItemColumnHeader.Constructor.html'>New PrintItemColumnHeader(Integer, String, DefaultTextAppearance)</a>
+													</td>
+													<td>
+														Initializes a new instance of a PrintItemColumnHeader setting some default text attributes and maybe some text.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Conversions</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<table id="memberList" class="members" width='100%'>
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic" alt="">
+														</div>
+													</td>
+													<td>
+														Widening
+													</td>
+													<td>
+														Casts to <a href="RotairHCReport.rotHCReporter.PrintItem.html">PrintItem</a>.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>	
+														
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Public Variables</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<table id="memberList1" class="members" width='100%'>
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='variable_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														Align
+													</td>
+													<td>
+														<a href="RotairHCReport.rotHCReporter.Alignment.html">Alignment</a> of the text within the column.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='variable_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														Left
+													</td>
+													<td>
+														Designates where the column is to begin relative to the printable area.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='variable_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														PadLeft
+													</td>
+													<td>
+														May not be implemented.  Since this tool is going away, I see no need to confirm or deny this property.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='variable_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														PadRight
+													</td>
+													<td>
+														May not be implemented.  Since this tool is going away, I see no need to confirm or deny this property.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='variable_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														Width
+													</td>
+													<td>
+														Size of the column.  Left + Width = right border absolute position.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										<a href="#mainBody">Top</a>
+
+									</div>
+								</div>
+												
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Properties</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<table id="memberList1" class="members" width='100%'>
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairHCReport.rotHCReporter.PrintItemColumnHeader.DefaultAppearance.html">DefaultAppearance</a>
+													</td>
+													<td>
+														Used in the widening conversion.  Can probably do without, but we will not be using this tool much if at all, so it will be left alone.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairHCReport.rotHCReporter.PrintItemColumnHeader.LongestColumnLine.html">LongestColumnLine</a>
+													</td>
+													<td>
+														Returns the longest line of the column header.  Useful only with a multi-line header.  Possible problem because the length is determined
+														by characters and not actual width, so in rare cases it could be incorrect.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairHCReport.rotHCReporter.PrintItemColumnHeader.TextLine.html">TextLine</a>(Integer)
+													</td>
+													<td>
+														Returns a text line of the header.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairHCReport.rotHCReporter.PrintItemColumnHeader.TextLines.html">TextLines</a>
+													</td>
+													<td>
+														Returns how many lines of text are in the header.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										<a href="#mainBody">Top</a>
+								
+									</div>
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Methods</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<table id="memberList1" class="members" width='100%'>
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairHCReport.rotHCReporter.PrintItemColumnHeader.IsBlank.html">IsBlank</a>
+													</td>
+													<td>
+														Returns TRUE if no text has been specified.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairHCReport.rotHCReporter.PrintItemColumnHeader.ToString.html">ToString</a>
+													</td>
+													<td>
+														Returns all text lines.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>		
+
+							</div>							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

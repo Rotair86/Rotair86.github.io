@@ -1,0 +1,825 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairimsAO_Note - Built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomimsAppObjects'
+					Source[1] = 'RotairimsAONote'
+					Source[2] = 'imsAONote'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">imsAO_Note Class</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Class to access <a href='Tables/tblRI_Note.png'>tblRI_Note</a>.</p>
+								<br>
+														
+								<strong>Namespace:</strong>&nbsp;<a href="RotairAOScreening.html">RotairimsAO_Note</a><br>
+								<strong>Assembly:</strong>&nbsp;RotairimsAO_Note.dll
+	
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="AOUsage" onclick="CollapseExpand('AOUsage')"><span class="LW_CollapsibleArea_Title">Usage in an AO</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+									<div id="AOUsage" class="sectionblock">
+									
+										<p>To use the Note class as a subdomain the following steps need to be completed in the parent AO:</p>
+										<p>Note: The parent domain needs to be custom or have the custom bit flipped.</p>
+										<ol>
+										<li>A reference to <a href="RotairimsAONote.html">RotairimsAO_Note</a> needs to be added.</li>
+										<li>Optional: Import the namespace.</li>
+										<li>Override / edit the <b>DefineSubdomains</b> method to define the subdomain.</li>
+										<li>Create a <b>ReLoadNotes</b> method.</li>
+										<li>Override / edit the <b>SubdomainDeleteSQL</b> method.</li>
+										<li>Override / edit the <b>SubdomainLoadSQL</b> method.</li>
+										<li>Add a <b>LastNote</b> property.</li>
+										<li>Optional: Add a <b>HasNotes</b> property.</li>
+										<li>Optional: Add a <b>NoteCount</b> property.</li>
+										</ol>
+
+									</div>
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="AOSteps" onclick="CollapseExpand('AOSteps')"><span class="LW_CollapsibleArea_Title">Steps</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+									<div id="AOSteps" class="sectionblock">
+										
+										<p>This example will add a note record as a subdomain to the vendor AO.</p>
+									
+										<h3>1) Add a reference</h3>
+										
+										<p>Add a reference to <a href="RotairimsAONote.html">RotairimsAO_Note.dll</a>.  Other
+										assemblies may need to be referenced.  The IDE will inform of any missing dlls.</p>
+										<br>
+									
+										<h3>2) Importing the namespace</h3>
+										
+										<p>It can make the code more readable adding an imports statement to the top of the parent AO.</p>
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Imports</span> RotairimsAO_Note</pre>
+															<br>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+
+										<h3>3) Define the subdomain</h3>
+										
+										<p>The parent AO must be informed of the new subdomain.</p>
+										
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Protected Overrides Sub</span> DefineSubdomains()</pre>
+															<br>
+															<pre>    <span style="color: Blue;">MyBase</span>.DefineSubdomains()</pre>
+															<pre>    <span style="color: Blue;">MyBase</span>.SubdomainDefs.Add(imsAO_Note.Domain, relationshipToParent:=imsRelationshipToParent.OneToMany)</pre>
+															<br>
+															<pre><span style="color: Blue;">End Sub</span></pre>
+															<br>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+
+										<h3>4) Create a <b>ReLoadNotes</b> method</h3>
+										
+										<p>This method will reload the notes records.  This is needed since the last note is often displayed.  If the user
+										adds notes they would expect the last note to change.</p>
+										
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Public Sub</span> ReLoadNotes()</pre>
+															<br>
+															<pre>    SubdomainInactivate(imsAO_Note.Domain)</pre>
+															<pre>    SubdomainActivate(imsAO_Note.Domain)</pre>
+															<br>
+															<pre><span style="color: Blue;">End Sub</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+
+										<h3>5) Ensure <b>SubdomainDeleteSQL</b> returns nothing</h3>
+										
+										<p>We do not wish to delete notes.  If the parent AO gets deleted we wish to orphan
+										the existing notes.  We do this by returning nothing from the <b>SubdomainDeleteSQL</b> method.</p>
+										<p>May need to import IntuitiveAppObjectFramework2 and / or IntuitiveSystem.</p>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Public Overrides Function</span> SubdomainDeleteSQL(<span style="color: Blue;">ByVal</span> collectionClass <span style="color: Blue;">As</span> imsAppObjects) <span style="color: Blue;">As</span> imsCommand</pre>
+															<br>
+															<pre>    <span style="color: Blue;">Dim</span> cmd <span style="color: Blue;">As</span> imsCommand = <span style="color: Blue;">Nothing</span></pre>
+															<br>
+															<br>
+															<pre>    <span style="color: Blue;">Select Case</span> collectionClass.Domain</pre>
+															<pre>        <span style="color: Blue;">Case</span> imsAO_Note.Domain</pre>
+															<pre>            <span style="color: Green;">'NOP - we do not delete notes.</span></pre>
+															<pre>        <span style="color: Blue;">Case Else</span></pre>
+															<pre>            cmd = <span style="color: Blue;">MyBase</span>.SubdomainDeleteSQL(collectionClass)</pre>
+															<pre>    <span style="color: Blue;">End Select</span></pre>
+															<br>
+															<pre>    <span style="color: Blue;">Return</span> cmd</pre>
+															<br>
+															<pre><span style="color: Blue;">End Function</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+										
+										<h3>6) Build the WHERE clause in <b>SubdomainLoadSQL</b></h3>
+										
+										<p>The <b>SubdomainLoadSQL</b> method is where the WHERE clause is built.</p>
+										<p>May need to add properties to the DataAccess class to return the field names.</p>
+										<p>May need to import IntuitiveAppObjectFramework2, IntuitiveSystem and / or System.Text.</p>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Public Overrides Function</span> SubdomainLoadSQL(<span style="color: Blue;">ByVal</span> collectionClass <span style="color: Blue;">As</span> imsAppObjects) <span style="color: Blue;">As</span> imsCommand</pre>
+															<br>
+															<pre>    <span style="color: Blue;">Dim</span> cmd <span style="color: Blue;">As</span> imsCommand</pre>
+															<pre>    <span style="color: Blue;">Dim</span> strParameter <span style="color: Blue;">As String</span></pre>
+															<pre>    <span style="color: Blue;">Dim</span> SQL <span style="color: Blue;">As</span> StringBuilder</pre>
+															<br>
+															<br>
+															<pre>    <span style="color: Blue;">Select Case</span> collectionClass.Domain</pre>
+															<pre>        <span style="color: Blue;">Case</span> imsAO_Note.Domain</pre>
+															<pre>            cmd = <span style="color: Blue;">New</span> imsCommand</pre>
+															<pre>            SQL = <span style="color: Blue;">New</span> StringBuilder</pre>
+															<pre>            strParameter = DataAccess.DataBase.VendorTableRecordIDParameter</pre>
+															<pre>            SQL.AppendFormat(<span style="color: Red;">"SELECT * FROM {0}"</span>, DataAccess.DataBase.NoteTable)</pre>
+															<pre>            SQL.AppendFormat(<span style="color: Red;">" WHERE {0} = {1} AND {2} = '{3}'"</span>, DataAccess.DataBase.NoteTableParentRecordIDField, _</pre>
+															<pre>                            strParameter, DataAccess.DataBase.NoteTableNoteTypeField, imsAO_Note.eNoteType.Vendor.ToString)</pre>
+															<pre>            cmd.CommandText = SQL.ToString</pre>
+															<pre>            cmd.AddParameter(strParameter, GetGuid(DataAccess.DataBase.VendorTableRecordIDField))</pre>                
+															<pre>        <span style="color: Blue;">Case Else</span></pre>
+															<pre>            cmd = <span style="color: Blue;">MyBase</span>.SubdomainLoadSQL(collectionClass)</pre>
+															<pre>    <span style="color: Blue;">End Select</span></pre>
+															<br>
+															<pre>    <span style="color: Blue;">Return</span> cmd</pre>
+															<br>
+															<pre><span style="color: Blue;">End Function</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+
+										<h3>7) Add a <b>LastNote</b> property</h3>
+										
+										<p>Although technically this property is not needed, it doesn't make sense to add the notes as a 
+										subdomain without displaying anything.  So normally some property will need to be added.  This
+										property could be skipped and one of the following can be added or a new one.  This property is
+										used for displaying the last entered note.</p>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Public ReadOnly Property</span> LastNote() <span style="color: Blue;">As String</span></pre>
+															<br>
+															<pre>    <span style="color: Blue;">Get</span></pre>
+															<br>
+															<pre>        <span style="color: Blue;">Dim</span> strLastNote <span style="color: Blue;">As String</span></pre>
+															<pre>        <span style="color: Blue;">Dim</span> colNotes <span style="color: Blue;">As</span> imsAppObjects</pre>
+															<pre>        <span style="color: Blue;">Dim</span> Note <span style="color: Blue;">As</span> imsAO_Note = <span style="color: Blue;">Nothing</span></pre>
+															<br>
+															<br>
+															<pre>        SubdomainActivate(imsAO_Note.Domain)</pre>
+															<pre>        colNotes = <span style="color: Blue;">CType</span>(Subdomains(imsAO_Note.Domain), imsAppObjects)</pre>
+															<pre>        <span style="color: Blue;">If</span> colNotes.Count > <span style="color: Gray;">0</span><span style="color: Blue;"> Then</span></pre>
+															<pre>            Note = <span style="color: Blue;">CType</span>(colNotes(<span style="color: Gray;">0</span>), imsAO_Note)</pre>
+															<pre>            strLastNote = Note.GetString(DataAccess.DataBase.NoteTableNoteBodyField)</pre>
+															<pre>        <span style="color: Blue;">End If</span></pre>
+															<br>
+															<pre>        <span style="color: Blue;">Return</span> strLastNote</pre>
+															<br>
+															<pre>    <span style="color: Blue;">End Get</span></pre>
+															<br>
+															<pre><span style="color: Blue;">End Property</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+										
+										<h3>8) Add a <b>HasNotes</b> property</h3>
+										
+										<p>This property is useful to toggle the notes button in the footer.</p>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Public ReadOnly Property</span> HasNotes() <span style="color: Blue;">As Boolean</span></pre>
+															<br>
+															<pre>    <span style="color: Blue;">Get</span></pre>
+															<br>
+															<pre>        <span style="color: Blue;">Dim</span> bHasNotes <span style="color: Blue;">As Boolean</span></pre>
+															<pre>        <span style="color: Blue;">Dim</span> colNotes <span style="color: Blue;">As</span> imsAppObjects</pre>
+															<pre>        <span style="color: Blue;">Dim</span> Note <span style="color: Blue;">As</span> imsAO_Note = <span style="color: Blue;">Nothing</span></pre>
+															<br>
+															<br>
+															<pre>        SubdomainActivate(imsAO_Note.Domain)</pre>
+															<pre>        colNotes = <span style="color: Blue;">CType</span>(Subdomains(imsAO_Note.Domain), imsAppObjects)</pre>
+															<pre>        <span style="color: Blue;">If</span> colNotes.Count > <span style="color: Gray;">0</span><span style="color: Blue;"> Then</span></pre>
+															<pre>            bHasNotes = <span style="color: Blue;">True</span></pre>
+															<pre>        <span style="color: Blue;">End If</span></pre>
+															<br>
+															<pre>        <span style="color: Blue;">Return</span> bHasNotes</pre>
+															<br>
+															<pre>    <span style="color: Blue;">End Get</span></pre>
+															<br>
+															<pre><span style="color: Blue;">End Property</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>	
+																				
+										<h3>9) Add a <b>NoteCount</b> property</h3>
+										
+										<p>This property is used to inform the user how many notes have been entered.</p>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Public ReadOnly Property</span> NoteCount() <span style="color: Blue;">As Integer</span></pre>
+															<br>
+															<pre>    <span style="color: Blue;">Get</span></pre>
+															<br>
+															<pre>        <span style="color: Blue;">Dim</span> intNoteCount <span style="color: Blue;">As Integer</span></pre>
+															<pre>        <span style="color: Blue;">Dim</span> colNotes <span style="color: Blue;">As</span> imsAppObjects</pre>
+															<pre>        <span style="color: Blue;">Dim</span> Note <span style="color: Blue;">As</span> imsAO_Note = <span style="color: Blue;">Nothing</span></pre>
+															<br>
+															<br>
+															<pre>        SubdomainActivate(imsAO_Note.Domain)</pre>
+															<pre>        colNotes = <span style="color: Blue;">CType</span>(Subdomains(imsAO_Note.Domain), imsAppObjects)</pre>
+															<pre>        <span style="color: Blue;">If</span> colNotes.Count > <span style="color: Gray;">0</span><span style="color: Blue;"> Then</span></pre>
+															<pre>            intNoteCount = colNotes.Count</pre>
+															<pre>        <span style="color: Blue;">End If</span></pre>
+															<br>
+															<pre>        <span style="color: Blue;">Return</span> intNoteCount</pre>
+															<br>
+															<pre>    <span style="color: Blue;">End Get</span></pre>
+															<br>
+															<pre><span style="color: Blue;">End Property</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>	
+																				
+									</div>
+								</div>
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="UIUsage" onclick="CollapseExpand('UIUsage')"><span class="LW_CollapsibleArea_Title">Usage in an UI</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+									<div id="UIUsage" class="sectionblock">
+									
+										To use the Note class in an Intuitive form the following steps need to be completed:
+										<ol>
+										<li>A reference needs to be added for <a href="RotairimsAONote.html">RotairimsAO_Note</a></li>
+										<li>Optional: A references needs to be added for <a href="RotairUI_Note.html">RotairUI_Note</a> if
+										adding of new notes is to be allowed.</li>
+										<li>Optional: Import the namespaces.</li>
+										<li>Optional: Add a variable to trap the <b>NewNote</b> event.</li>
+										<li>Optional: Add a <b>BuildXMLforNotes</b> method.</li>
+										<li>Optional: Add a <b>ShowNotes</b> method for displaying the Notes UI.</li>
+										<li>Optional: Add a <b>ShowNotes</b> method for the button.</li>
+										<li>Optional: Add an <b>EnableNotesFromFooter</b> method.</li>
+										<li>Add controls to display any notes information.</li>
+										<li>Create a <b>DisplayNoteInformation</b> to display note stuff.</li>
+										<li>Optional: Trap the NewNote event.</li>
+										<li>Optional: Add a Notes link label to the task list.</li>
+										<li>Optional: Create a <b>DisableNotesFromFooter</b> method.</li>
+										<li>Override / edit the <b>ClearForm</b> or <b>ResetForm</b> or whatever it may be called.</li>
+										</ol>
+
+									</div>
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="UISteps" onclick="CollapseExpand('UISteps')"><span class="LW_CollapsibleArea_Title">Steps</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+									<div id="UISteps" class="sectionblock">
+										
+										This example will utilize the screening subdomain added to the vendor AO.
+									
+										<h3>1) Add a reference for the AO</h3>
+										
+										<p>Add a reference to <a href="RotairimsAONote.html">RotairimsAO_Note.dll</a>.</p>
+										<p>Other assemblies may need to be referenced.  The IDE will inform of any missing dlls.</p>
+										<br>
+										
+										<h3>2) If adding new notes then add a reference for the UI</h3>
+										
+										<p>Add a reference to <a href="RotairUI_Note.html">RotairUI_Note.dll</a>.</p>
+										<p>Other assemblies may need to be referenced.  The IDE will inform of any missing dlls.</p>
+										<br>
+									
+										<h3>3) Importing the namespaces</h3>
+										
+										<p>It can make the code more readable adding imports statements to the top of the UI.</p>
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Imports</span> RotairimsAO_Note</pre>
+															<pre><span style="color: Blue;">Imports</span> RotairUI_Note</pre>
+															<br>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+
+										<h3>4) Reference to the form.</h3>
+										
+										<p>This is only needed if allowing to add new notes.  It will be a reference to the form that accepts new notes.</p>
+										
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<br>
+															<pre><span style="color: Blue;">Private WithEvents</span> mfrmNote <span style="color: Blue;">As</span> imsUI_Note</pre>
+															<br>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+
+										<h3>5) Add a <b>BuildXMLforNotes</b>.</h3>
+										
+										<p>This method will build the XML required to pass to the notes form so it starts in the right context.</p>
+										<p>This method requires a method in <a href="RotairimsAONote.imsAONote.html">imsAO_Note</a> since we wish
+										to encapsulate all the note related code in the note AO.</p>
+										
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Private Function</span> BuildXMLforNotes() <span style="color: Blue;">As</span> XmlDocument</pre>
+															<br>
+															<pre>    <span style="color: Blue;">Dim</span> Vendor <span style="color: Blue;">As</span> imsAO_Vendor_CUSTOM</pre>
+															<pre>    <span style="color: Blue;">Dim</span> xmlDoc <span style="color: Blue;">As</span> XmlDocument</pre>
+															<br>
+															<br>
+															<pre>    Vendor = <span style="color: Blue;">CType</span>(MainAO.AO, imsAO_Vendor_CUSTOM)</pre>
+															<pre>    xmlDoc = imsAO_Note.BuildVendorXML(Vendor.GetString(imsAO_Vendor_CUSTOM.FieldNames.ID), _</pre>
+															<pre>                                        Vendor.GetString(imsAO_Vendor_CUSTOM.FieldNames.RecordID))</pre>
+															<br>
+															<pre>    <span style="color: Blue;">Return</span> xmlDoc</pre>
+															<br>
+															<pre><span style="color: Blue;">End Function</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+
+										<h3>6) Add a <b>ShowNotes</b> method.</h3>
+										
+										<p>This method is only required if we wish to allow the user to add notes.</p>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Private Sub</span> ShowNotes(<span style="color: Blue;">ByVal</span> xmlDoc <span style="color: Blue;">As</span> XmlDocument)</pre>
+															<br>
+															<pre>    LaunchMenuItem(imsAO_Note.LaunchKey, <span style="color: Blue;">DirectCast</span>(xmlDoc, <span style="color: Blue;">Object</span>))</pre>
+															<br>
+															<pre><span style="color: Blue;">End Sub</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+										
+										<h3>7) Add a <b>ShowNotes</b> event.</h3>
+										
+										<p>This step is needed only if we wish to display a button oin the footer that will allow adding of notes.</p>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Private Sub</span> ShowNotes(<span style="color: Blue;">ByVal</span> sender <span style="color: Blue;">As Object, ByVal</span> e <span style="color: Blue;">As</span> System.EventArgs)</pre>
+															<br>
+															<pre>    ShowNotes(BuildXMLforNotes())</pre>
+															<br>
+															<pre><span style="color: Blue;">End Sub</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+
+										<h3>8) Add an event enabler.</h3>
+										
+										<p>This step can be skipped if we are not allowing a button on the footer.  It removes the handler first since if the user added a note
+										then closed the note form if notes already existed for that party then a subsequent, although unlikely, clicking of the notes button would
+										display the notes form twice.  Removing the handler first eliminates this possibility.</p>
+										
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Private Sub</span> EnableNotesFromFooter()</pre>
+															<br>
+															<pre>    DisableNotesFromFooter()</pre>
+															<pre>    <span style="color: Blue;">AddHandler Me</span>.Controls(mconFooterName).Controls(UI.StatusButtonWarning).Click, <span style="color: Blue;">AddressOf</span> ShowNotes</pre>
+															<br>
+															<pre><span style="color: Blue;">End Sub</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+
+										<h3>9) Add any controls.</h3>
+										
+										<p>While not technically required, most times adding the notes subdomain would be to display something from it.</p>
+										<p>Textboxes need the <i>ReadOnly</i> property set to <b>True</b>.</p>
+										<br>
+
+										<h3>10) Create a <b>DisplayNoteInformation</b> method.</h3>
+										
+										<p>This method must be called whenever the parent AO is loaded and, if allowing the user to add notes,
+										needs to be called after a new note is added.</p>
+										<p>This method can also display the button (and enabling the event) on the footer if desired.</p>
+										<p>This example will display the last note and enable the button.</p>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Priavte Sub</span> DisplayNoteInformation()</pre>
+															<br>
+															<pre>    <span style="color: Blue;">Dim</span> Vendor <span style="color: Blue;">As</span> imsAO_Vendor_CUSTOM</pre>
+															<br>
+															<br>
+															<pre>    Vendor = <span style="color: Blue;">CType</span>(MainAO.AO, imsAO_Vendor_CUSTOM)</pre>
+															<br>
+															<pre>    <span style="color: Blue;">If</span> Vendor.HasNotes <span style="color: Blue;">Then</span></pre>
+															<pre>        UI.ShowStatusButtons(pnlFooter, UI.eShowStatus.NotesExist)</pre>
+															<pre>        EnableNotesFromFooter()</pre>
+															<pre>        txtNotes.Text = Vendor.LastNote</pre>
+															<pre>    <span style="color: Blue;">End If</span></pre>
+															<br>
+															<pre><span style="color: Blue;">End Sub</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+										
+										<h3>11) Trap the <b>NewNote</b> event.</h3>
+										
+										<p>If we are allowing the user to add notes we need to trap this event to update any note information
+										displayed after we reload the notes subdomain.</p>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Private Sub</span> mfrmNote_NewNote() <span style="color: Blue;">Handles</span> mfrmNote.NewNote</pre>
+															<br>
+															<pre>    <span style="color: Blue;">Dim</span> Vendor <span style="color: Blue;">As</span> imsAO_Vendor_CUSTOM</pre>
+															<br>
+															<br>
+															<pre>    Vendor = <span style="color: Blue;">CType</span>(MainAO.AO, imsAO_Vendor_CUSTOM)</pre>
+															<pre>    Vendor.ReLoadNotes()</pre>
+															<pre>    DisplayNoteInformation()</pre>
+															<br>
+															<pre><span style="color: Blue;">End Sub</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+										
+										<h3>12) Add a link label to the task shade.</h3>
+										
+										<p>If allowing the user to enter notes an ideal place to incorporate this is the task shade.  What works about this location is that the footer
+										button is primarily used to inform the user that notes exist and should not appear if the AO in question does not have any notes.  The problem 
+										lies on creating a new note if none exist.  Thats an ideal use for the link label.</p>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Private Sub</span> lnkNotes_LinkClicked(<span style="color: Blue;">ByVal</span> sender <span style="color: Blue;">As Object, ByVal</span> e <span style="color: Blue;">As</span> System.Windows.Forms.LinkLabelLinkClickedEventArgs) <span style="color: Blue;">Handles</span> lnkNotes.LinkClicked</pre>
+															<br>
+															<pre>    ShowNotes(BuildXMLforNotes())</pre>
+															<br>
+															<pre><span style="color: Blue;">End Sub</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+										
+										<h3>13) Add a <b>DisableNotesFromFooter</b> method.</h3>
+										
+										<p>This method will remove the event that brings up the notes form from the footer button.</p>										
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Private Sub</span> DisableNotesFromFooter()</pre>
+															<br>
+															<pre>    ctl = <span style="color: Blue;">Me</span>.Controls(mconFooterName).Controls(UI.StatusButtonWarning)</pre>
+															<pre>    <span style="color: Blue;">If</span> ctl <span style="color: Blue;">IsNot Nothing Then</span></pre>
+															<pre>        <span style="color: Blue;">RemoveHandler</span> ctl.Click, <span style="color: Blue;">AddressOf</span> ShowNotes</pre>
+															<pre>    <span style="color: Blue;">End If</span></pre>
+															<br>
+															<pre><span style="color: Blue;">End Sub</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+										
+										<h3>14) Restore the form</h3>
+										
+										<p>The form needs to clean up any note information displayed.  If we are using the button on the footer we need to remove it
+										and its event handler as well.</p>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Protected Overrides Sub</span> ResetForm()</pre>
+															<br>
+															<pre>    UI.ClearStatus(pnlFooter, UI.eShowStatus.All)</pre>
+															<pre>    txtNotes.Text = <span style="color: Blue;">String</span>.Empty</pre>
+															<pre>    lnkNotes.Enabled = <span style="color: Blue;">False</span></pre>
+															<pre>    DisableNotesFromFooter()</pre>
+															<br>
+															<pre><span style="color: Blue;">End Sub</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+																				
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

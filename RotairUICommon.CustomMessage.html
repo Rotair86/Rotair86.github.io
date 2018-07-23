@@ -1,0 +1,438 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairUICommon - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairUICommon'
+					Source[2] = 'CustomMessage'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">CustomMessage Class</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Used for custom message processing.</p>
+								<p>The functions are shared to eliminate the need for instantiating an object and also to self-document.</p>
+							
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Inheritance Hierarchy</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">								
+										<a href="http://msdn.microsoft.com/en-us/library/system.object.aspx">System.Object</a>
+									</div>							
+								</div><p></p>
+							
+								<strong>Namespace:</strong>&nbsp;<a href="RotairEmail.html">RotairUI_Common</a><br>
+								<strong>Assembly:</strong>&nbsp;RotairUI_Common.dll
+	
+								<p>The <span class="selflink">CustomMessage</span> class exposes the following members.</p>
+	
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Public Functions" onclick="CollapseExpand('Public Functions')"><span class="LW_CollapsibleArea_Title">Public Functions</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div id='Public Functions' class="sectionblock">
+									
+										<table id="memberList1" class="members" width='100%'>
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairUICommon.CustomMessage.DisplayEMailFailure.html">DisplayEMailFailure</a>
+													</td>
+													<td>
+														Puts up a message indicating that e-mail may not have gone out when it should've.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairUICommon.CustomMessage.DisplayEMailFailure.html">DisplayEMailFailure</a>(String)
+													</td>
+													<td>
+														Puts up a message indicating that e-mail may not have gone out when it should've adding some text to the end
+														of the message.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairUICommon.CustomMessage.DisplayScreeningFailure.html">DisplayScreeningFailure</a>(eScreeningRC)
+													</td>
+													<td>
+														For a denied party displays a generic denied party message.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairUICommon.CustomMessage.DisplayScreeningFailure.html">DisplayScreeningFailure</a>(eScreeningRC, eScreenAction)
+													</td>
+													<td>
+														Puts up a message indicating the reason for not passing the screening test relative to the action the user was
+														taking to cause the screening to be validated.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairUICommon.CustomMessage.DisplayScreeningFailure.html">DisplayScreeningFailure</a>(eScreeningRC, eScreenAction, String)
+													</td>
+													<td>
+														Puts up a message indicating the reason for not passing the screening test relative to the action the user was
+														taking to cause the screening to be validated adding some text to the end of the message.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairUICommon.CustomMessage.DisplayScreeningFailure.html">DisplayScreeningFailure</a>(eScreeningRC, eScreenAction, String, String())
+													</td>
+													<td>
+														Puts up a message indicating the reason for not passing the screening test relative to the action the user was
+														taking to cause the screening to be validated adding some text to the end of the message and parameters that are to replace tokens in the message.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairUICommon.CustomMessage.DisplayScreeningFailure.html">DisplayScreeningFailure</a>(eScreeningRC, eScreenAction, String, String(), MessageBoxButtons)
+													</td>
+													<td>
+														Puts up a message indicating the reason for not passing the screening test relative to the action the user was
+														taking to cause the screening to be validated adding some text to the end of the message, parameters that are to replace tokens in the message and
+														indicating what kind of buttons to display to the user.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairUICommon.CustomMessage.DisplayWillNotSaveReason.html">DisplayWillNotSaveReason</a>(eScreeningRC, ePartyType)
+													</td>
+													<td>
+														A domain associated with a customer or vendor that has not passed the screening test can not be changed.  This function will display a message with
+														a little detail indicating the reason the screening failed.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>								
+
+								<br>
+								<p>The following are private members.</p>
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Private Constants" onclick="CollapseExpand('Private Constants')"><span class="LW_CollapsibleArea_Title">Private Constants</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								
+									<div id='Private Constants' class="sectionblock">
+									
+										<table id="memberList" class="members" width=100%>
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>												
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconMessageCantSaveDeniedParty
+													</td>
+													<td>
+														Message ID for a generic message indicating saving of a domain associated with a denied party is not allowed.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconMessageCantSaveNeverScreened
+													</td>
+													<td>
+														Message ID for a message indicating saving of a domain not allowed if the associated party has never been 
+														screened.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconMessageCantSaveScreeningOutOfDate
+													</td>
+													<td>
+														Message ID for a message indicating saving of a domain not allowed if the associated party's screening is out
+														of date.  The number of days required for the screening to be current are stored as MMTS values.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconMessageCantSaveUnknownProblem
+													</td>
+													<td>
+														Message ID for a message indicating saving of a domain may not be allowed but it is uncertain what the problem is.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconMessageDeniedParty
+													</td>
+													<td>
+														Message ID for a message indicating saving of a domain not allowed if the associated party is marked as a denied
+														party.
+													</td>
+												</tr>
+												<tr>															
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconMessageDeniedPartyReadOnly
+													</td>
+													<td>
+														Message ID for a message indicating a domain is read only since the associated party is marked as a denied party.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconMessageEMailFailure
+													</td>
+													<td>
+														Message ID for the message indicating an e-mail that was supposed to go out may have failed.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconMessageEndUserNeverScreened
+													</td>
+													<td>
+														Message ID for a message indicating the end user needs to be screened.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconMessageEndUserScreeningOutOfDate
+													</td>
+													<td>
+														Message ID for a message indicating the end user's screening is out of date.  The number of days required for 
+														the screening to be current are stored as MMTS values.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconMessageExportLicenseNotApproved
+													</td>
+													<td>
+														Message ID for a message indicating the export license needs to be approved.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconMessageExportLicenseExpired
+													</td>
+													<td>
+														Message ID for a message indicating the export license expired.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconMessageNeverScreened
+													</td>
+													<td>
+														Message ID for a message indicating that a party was never screened.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconMessageScreeningOutOfDate
+													</td>
+													<td>
+														Message ID for a message indicating that a party's screening is out of date.  The number of days required for 
+														the screening to be current are stored as MMTS values.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconMessageUnknownScreeningError
+													</td>
+													<td>
+														Message ID for a geneeric message when the screening could not be verified.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconMessageTitleEMailFailure
+													</td>
+													<td>
+														Title for the e-mail faliure message.
+													</td>
+												</tr>
+											</tbody>
+										</table>										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

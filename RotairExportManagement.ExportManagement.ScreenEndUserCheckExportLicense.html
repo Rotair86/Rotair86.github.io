@@ -1,0 +1,179 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairExportManagement - Built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairExportManagement'
+					Source[2] = 'ExportManagement'
+					Source[3] = 'ScreenEndUserCheckExportLicense'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">ScreenEndUserCheckExportLicense Method</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Checks an end user's screening.</p>						
+	
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<img src="Graphics/minus.png" name="Syntax" onclick="CollapseExpand('Syntax')"><span class="LW_CollapsibleArea_Title">Syntax</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div id='Syntax' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">
+													<pre><span style="color: Green;">'Declarations</span></pre>
+														<pre><span style="color: Blue;">Public Function </span>ScreenEndUserCheckExportLicense( _</pre>
+														<pre>        strSalesOrderID<span style="color: Blue;"> As String</span>, _</pre>
+														<pre>        strEndUser<span style="color: Blue;"> As String</span>, _</pre>
+														<pre>        strExLicenseID<span style="color: Blue;"> As String</span> _</pre>
+														<pre>) <span style="color: Blue;">As</span> eScreeningRC</pre>
+													<br>
+												</div>				
+											</div>
+										</div>
+										<div id="parameters">
+											<h4 class="subHeading">Parameters</h4>
+												<dl><dt><span class="parameter">strSalesOrderID</span></dt>
+													<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string">System.String</a><br><span><span>Sales Order ID for this end user.</span><br></span></dd>
+												</dl>
+												<dl><dt><span class="parameter">strEndUser</span></dt>
+													<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string">System.String</a><br><span><span>End User as entered on the Sales Order.</span><br></span></dd>
+												</dl>
+												<dl><dt><span class="parameter">strExLicenseID</span></dt>
+													<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string">System.String</a><br><span><span>Export License ID.</span><br></span></dd>
+												</dl>
+										</div>							
+
+										<div id="returnvalue">
+											<h4 class="subHeading">Return Value</h4>
+												<dl>
+													<dd>Type: <a href='RotairTypes.Enumerations.eScreeningRC.html'>eScreeningRC</a><br><span><span>Results of the screening.</span><br></span></dd>
+												</dl>
+
+										</div>							
+									</div>
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>Returns the results of an end user screening.</p>
+																										
+									</div>
+
+								</div>	
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Example" onclick="CollapseExpand('Example')"><span class="LW_CollapsibleArea_Title">Example</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>The example will display a message depending on the results of an end user screening.</p>
+									
+									</div>
+								</div>
+
+								<div id='Example' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">												        
+													<pre>strEndUser<span style="color: Blue;"> As String</span></pre>
+													<pre>strExLicenseID<span style="color: Blue;"> As String</span></pre>
+													<pre>eRC<span style="color: Blue;"> As </span>Enumerations.eScreeningRC</pre>
+													<br>
+													<pre>eRC = ExportManagement.<b>ScreenEndUserCheckExportLicense</b>( _</pre>
+													<pre>        <span style="color: Red;">"623454"</span>, _</pre>
+													<pre>        strEndUser, _</pre>
+													<pre>        strExLicenseID)</pre>
+													<pre><span style="color: Blue;">Select Case</span> eRC</pre>
+													<pre>    <span style="color: Blue;">Case</span> Enumerations.eScreeningRC.End_User_Never_Screened</pre>
+													<pre>        Messagebox.Show(<span style="color: Red;">"End user needs to be screened."</span>)</pre>
+													<pre>    <span style="color: Blue;">Case</span> Enumerations.eScreeningRC.End_User_Screening_Out_of_Date </pre>
+													<pre>        Messagebox.Show(<span style="color: Red;">"End user needs a current screening."</span>)</pre>
+													<pre>    <span style="color: Blue;">Case</span> Enumerations.eScreeningRC.Export_License_Expired</pre>
+													<pre>        Messagebox.Show(<span style="color: Red;">"Need to apply for a new export license."</span>)</pre>
+													<pre>    <span style="color: Blue;">Case</span> Enumerations.eScreeningRC.Export_License_Not_Approved</pre>
+													<pre>        Messagebox.Show(<span style="color: Red;">"Waiting for the export license to be approved."</span>)</pre>
+													<pre>    <span style="color: Blue;">Case</span> Enumerations.eScreeningRC.Screened_OK</pre>
+													<pre>        Messagebox.Show(<span style="color: Red;">"Ready to ship."</span>)</pre>
+													<pre><span style="color: Blue;">End Select</span></pre>
+												</div>																	
+											</div>
+										</div>
+									</div>				
+									
+								</div>	
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

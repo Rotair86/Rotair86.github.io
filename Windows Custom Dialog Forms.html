@@ -1,0 +1,153 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			Customized dialog forms - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Links.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomWindowsDialogs'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">Assemblies containing windows forms used as a dialog</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								These are the assemblies that use windows forms as opposed to the imsForms.
+
+							</div>
+								
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Assemblies containing windows forms</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+										</div>
+									</div>
+								</div>
+								
+								<div class="sectionblock">
+								
+									<table id="memberList" class="members" width='100%'>
+										<tbody>
+											<tr>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairDialogPhrases"));
+													</script>
+												</td>
+												<td>
+													Allows adding phrases to various objects.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairDialogScreening"));
+													</script>
+												</td>
+												<td>
+													Used to enter or delete a screening record.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Notes</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>To use an imsForm as a dialog an imsAppObject must be used to pass data back and forth.  These forms should eventually be changed to imsForms.  To display an imsForm as
+										a dialog you must use the imsLaunchProcessCommand object.</p>
+										<p>All events should have basic error trapping.  Below is an example of the minimum recommended.  It uses Intuitive's form to display errors and also writes out the error to 
+										the database including the class and function where the error was trapped.</p>
+										<p>In order to use Intuitive's error form in a windows form an imsForm must be declared.  This is not necessary when using an imsForm because the function is intrinsic to the 
+										form.</p>
+									
+									</div>
+								</div>
+
+								<div class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">
+													<pre><span style="color: Blue;">Try</span></pre>
+													<br>
+													<pre>    <span style="color: Green;">'Code goes here.</span></pre>
+													<br>
+													<pre><span style="color: Blue;">Catch </span>ex<span style="color: Blue;"> As </span>Exception</pre>
+													<pre>    <span style="color: Blue;">Dim</span> ErrorForm <span style="color: Blue;">As New</span> imsForm</pre>
+													<pre>    ErrorForm.HandleException(ex)</pre>
+													<pre>    RotairDataAccess_Wrapper.Database.WriteToErrorTable(ex.TargetSite.ReflectedType.Name, _</pre>
+													<pre>                ex.TargetSite.Name, ex.Message)</pre>
+													<br>
+													<pre><span style="color: Blue;">End Try</span></pre>
+												</div>																	
+											</div>
+										</div>
+									</div>
+
+								</div>	
+
+							</div>
+										
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

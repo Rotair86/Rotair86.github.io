@@ -1,0 +1,208 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			Rotair_Email - Built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairEmail'
+					Source[2] = 'rotEmailBuilder'
+					Source[3] = 'SendClassBasedEmail'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">SendClassBasedEmail Method</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  								
+								<p>Sends out e-mail based on predefined messages and recipient lists.</p>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Syntax" onclick="CollapseExpand('Syntax')"><span class="LW_CollapsibleArea_Title">Syntax</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div id="Syntax">
+										<div class="codeSnippetContainer">  	  
+											<div class="codeSnippetContainerTabs">
+												<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+													<a>VB</a>
+												</div>
+											</div>
+											<div class="codeSnippetContainerCodeContainer">
+												<div class="codeSnippetToolBar">
+												</div>
+												<div class="codeSnippetContainerCode">
+													<div style="color: Black;">
+														<pre><span style="color: Green;">'Declaration</span></pre>
+														<pre><span style="color: Blue;">Public Shared Sub</span> SendClassBasedEmail( _</pre>
+														<pre>        strMessageType<span style="color: Blue;"> As String</span>, _</pre>
+														<pre>        PlaceHolders<span style="color: Blue;"> As </span>rotPlaceHolders _</pre>
+														<pre>)<span style="color: Blue;"> As Boolean</span></pre>
+														<br>
+														<pre><span style="color: Blue;">Public Shared Sub</span> SendClassBasedEmail( _</pre>
+														<pre>        strMessageType<span style="color: Blue;"> As String</span>, _</pre>
+														<pre>        PlaceHolders<span style="color: Blue;"> As </span>rotPlaceHolders, _</pre>
+														<pre>        strUserIDTest<span style="color: Blue;"> As String</span> _</pre>
+														<pre>)<span style="color: Blue;"> As Boolean</span></pre>
+														<br>
+														<pre><span style="color: Blue;">Public Shared Sub</span> SendClassBasedEmail( _</pre>
+														<pre>        strMessageType<span style="color: Blue;"> As String</span>, _</pre>
+														<pre>        PlaceHolders<span style="color: Blue;"> As </span>rotPlaceHolders, _</pre>
+														<pre>        bMessageBoxTest<span style="color: Blue;"> As Boolean</span> _</pre>
+														<pre>)<span style="color: Blue;"> As Boolean</span></pre>
+														<br>
+													</div>				
+												</div>
+											</div>
+										</div>
+										<div id="parameters">
+											<h4 class="subHeading">Parameters</h4>
+												<dl><dt><span class="parameter">strMessageType</span></dt>
+													<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string">System.String</a><br><span><span>Message type is a key used to get a specific e-mail.</span><br></span></dd>
+												</dl>
+												<dl><dt><span class="parameter">PlaceHolders</span></dt>
+													<dd>Type: <a href='RotairEmail.rotEmailBuilder.rotPlaceholders.html'>rotPlaceholders</a><br><span><span>Collection of token / value pairs used in the e-mail.</span><br></span></dd>
+												</dl>
+												<dl><dt><span class="parameter">strUserIDTest</span></dt>
+													<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string">System.String</a><br><span><span>If this parameter is not null then the recipient list is ignored and the value in this variable is used as the recipient.</span><br></span></dd>
+												</dl>
+												<dl><dt><span class="parameter">bMessageBoxTest</span></dt>
+													<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.boolean">System.Boolean</a><br><span><span>If TRUE then the mail goes to a message box instead.</span><br></span></dd>
+												</dl>
+										</div>							
+
+										<div id="returnvalue">
+											<h4 class="subHeading">Return Value</h4>
+												<dl>
+													<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.boolean">System.Boolean</a><br><span><span>TRUE if no problems were found.</span><br></span></dd>
+												</dl>
+
+										</div>							
+									</div>
+									
+								</div>
+							</div>
+
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>Sets all the placeholders needed for administrator mail then calls the 
+									<a href="RotairEmail.rotEmailBuilder.SendClassBasedEmail.html">SendClassBasedEmail</a> function.</p>
+									<p>Note: in order to find out that an e-mail address is missing the function SendClassBasedEmail would have already
+									been called once.  If the administrator's e-mail address is not in the database we would end up with a loop untill we
+									got a stack overflow.  The flag mbSendAdministratorEMail ensures that this down not happen.</p>
+			
+								</div>
+							</div>
+
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<img src="Graphics/minus.png" name="Example" onclick="CollapseExpand('Example')"><span class="LW_CollapsibleArea_Title">Example</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>The example assumes we have already popualted the various variables.  If we did not get an e-mail address
+									then an e-mail is sent to the administrator, otherwise the e-mail destined for the employee goes out.</p>
+									
+								</div>
+							</div>
+
+							<div id="Example" class="sectionblock">
+								<div class="codeSnippetContainer">  	  
+									<div class="codeSnippetContainerTabs">
+										<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+											<a>VB</a>
+										</div>
+									</div>
+									<div class="codeSnippetContainerCodeContainer">
+										<div class="codeSnippetToolBar">
+										</div>
+										<div class="codeSnippetContainerCode">
+											<div style="color: Black;">
+												<pre><span style="color: Blue;">Private Function</span> SendEmailForNewSalesOrder() <span style="color: Blue;">As Boolean</span></pre>
+												<br>
+												<pre>    <span style="color: Blue;">Dim</span> Placeholders <span style="color: Blue;">As</span> rotPlaceholders</pre>
+												<pre>    <span style="color: Blue;">Dim</span> rc <span style="color: Blue;">As Boolean</span></pre>
+												<br>
+												<br>
+												<pre>    <span style="color: Green;">' Instantiate placeholders.</span></pre>
+												<pre>    Placeholders =<span style="color: Blue;"> New </span>rotPlaceholders</pre>
+												<br>
+												<pre>    <span style="color: Green;">' Add login user name to placeholders collection.</span></pre>
+												<pre>    PlaceHolders.Add(<span style="color: Red;">"LogInUserName"</span>, imsApplication.CurrentUser.LogonName)</pre>
+												<pre>    <span style="color: Green;">' Add machine name to placeholders collection.</span></pre>
+												<pre>    PlaceHolders.Add(<span style="color: Red;">"MachineName"</span>, Environment.MachineName)</pre>
+												<br>
+												<pre>    <span style="color: Green;">'Send the email.</span></pre>
+												<pre>    rc = <b>SendClassBasedEmail</b>(<span style="color: Red;">"NewSalesOrder"</span>, Placeholders)</pre>
+												<pre>    <span style="color: Blue;">If</span> rc <span style="color: Blue;">Then</span></pre>
+												<pre>        <span style="color: Green;">'Success.</span></pre>
+												<pre>        MessageBox.Show(<span style="color: Red;">"Email sent."</span>)</pre>
+												<pre>    <span style="color: Blue;">Else</span></pre>
+												<pre>        <span style="color: Green;">'Possible failure.</span></pre>
+												<pre>        MessageBox.Show(<span style="color: Red;">"Email may not have gone out."</span>)</pre>
+												<pre>    <span style="color: Blue;">End If</span></pre>
+												<br>
+												<pre>    <span style="color: Blue;">Return</span> rc</pre>
+												<br>
+												<pre><span style="color: Blue;">End Function</span></pre>
+											</div>				
+										</div>
+									</div>
+								</div>
+							</div>						
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

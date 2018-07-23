@@ -1,0 +1,162 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairGeneralFunctions - Build and installed from VBA by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairGeneralFunctions'
+					Source[2] = 'Scalar'
+					Source[3] = 'SetNullableShort'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">SetNullableShort Method</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Returns a value or nothing for a null.</p>						
+	
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<img src="Graphics/minus.png" name="Syntax" onclick="CollapseExpand('Syntax')"><span class="LW_CollapsibleArea_Title">Syntax</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div id='Syntax' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">
+													<pre><span style="color: Green;">'Declarations</span></pre>
+														<pre><span style="color: Blue;">Public Function </span>SetNullableShort( _</pre>
+														<pre>        value<span style="color: Blue;"> As Object</span> _</pre>
+														<pre>) <span style="color: Blue;">As Short?</span></pre>
+													<br>
+												</div>				
+											</div>
+										</div>
+									</div>
+									<div id="parameters">
+										<h4 class="subHeading">Parameters</h4>
+											<dl><dt><span class="parameter">value</span></dt>
+												<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.object">System.Object</a><br><span><span>A value from the database that can be nothing.</span><br></span></dd>
+											</dl>
+									</div>							
+
+									<div id="returnvalue">
+										<h4 class="subHeading">Return Value</h4>
+											<dl>
+												<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.int16">System.Short</a><br><span><span>The passed in value or nothing if no valid data was passed in.</span><br></span></dd>
+											</dl>
+
+									</div>							
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>Pass this function an object and it will convert it to a short if possible.  If not, then it will return nothing.  Use it for
+										nullable types that can expect nulls from the database.</p>
+																										
+									</div>
+
+								</div>	
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Example" onclick="CollapseExpand('Example')"><span class="LW_CollapsibleArea_Title">Example</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>The example calls a function that will return a field from the database.  This field can be null so passing it to the function
+										will either convert the value (if valid data was returned) or assign nothing.</p>
+									
+									</div>
+								</div>
+
+								<div id='Example' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">													
+													<pre><span style="color: Blue;">Dim</span> SomeData <span style="color: Blue;">As Object</span></pre>
+													<pre><span style="color: Blue;">Dim</span> shtNullableShort <span style="color: Blue;">As Short?</span></pre>
+													<br>
+													<br>
+													<pre><span style="color: Green;">'Let's get a possible short.  No data can be returned from the following function.</span></pre>
+													<pre>LoadData(SomeData)</pre>
+													<pre><span style="color: Green;">'Now we assign to the nullable variable.</span></pre>
+													<pre>shtNullableShort = Rotair_GeneralFunctions.<b>SetNullableShort</b>(SomeData)</pre>
+													<br>
+												</div>																	
+											</div>
+										</div>
+									</div>													                    
+
+								</div>	
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

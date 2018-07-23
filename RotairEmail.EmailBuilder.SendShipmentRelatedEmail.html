@@ -1,0 +1,174 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			Rotair_Email - Built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairEmail'
+					Source[2] = 'rotEmailBuilder'
+					Source[3] = 'SendShipmentRelatedEmail'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">SendShipmentRelatedEmail Method</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  								
+								<p>Sends various e-mails including mails relating to screening and the export license.</p>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Syntax" onclick="CollapseExpand('Syntax')"><span class="LW_CollapsibleArea_Title">Syntax</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div id="Syntax">
+										<div class="codeSnippetContainer">  	  
+											<div class="codeSnippetContainerTabs">
+												<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+													<a>VB</a>
+												</div>
+											</div>
+											<div class="codeSnippetContainerCodeContainer">
+												<div class="codeSnippetToolBar">
+												</div>
+												<div class="codeSnippetContainerCode">
+													<div style="color: Black;">
+														<pre><span style="color: Green;">'Declaration</span></pre>
+														<pre><span style="color: Blue;">Public Shared Function</span> SendShipmentRelatedEmail( _</pre>
+														<pre>        eEmailType<span style="color: Blue;"> As </span>eScreeningRC, _</pre>
+														<pre>        strSalesOrderID<span style="color: Blue;"> As String</span>, _</pre>
+														<pre>        strEndUser<span style="color: Blue;"> As String</span>, _</pre>
+														<pre>        strCustomerID<span style="color: Blue;"> As String</span> _</pre>
+														<pre>)<span style="color: Blue;"> As Boolean</span></pre>
+													</div>				
+												</div>
+											</div>
+										</div>
+
+										<div id="parameters">
+											<h4 class="subHeading">Parameters</h4>
+												<dl><dt><span class="parameter">eEmailType</span></dt>
+													<dd>Type: <a href='RotairTypes.Enumerations.eEmailForAdministration.html'>RotairTypes.Enumerations.eScreeningRC</a><br><span><span>The screening results determine what kind of mail gets sent.</span><br></span></dd>
+												</dl>
+												<dl><dt><span class="parameter">strSalesOrderID</span></dt>
+													<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string">System.String</a><br><span><span>The sales order id associated with this shipment.</span><br></span></dd>
+												</dl>
+												<dl><dt><span class="parameter">strEndUser</span></dt>
+													<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string">System.String</a><br><span><span>The end user this shipment is destined for.</span><br></span></dd>
+												</dl>
+												<dl><dt><span class="parameter">strCustomerID</span></dt>
+													<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string">System.String</a><br><span><span>The customer who is initially getting this shipment.</span><br></span></dd>
+												</dl>
+										</div>							
+
+										<div id="returnvalue">
+											<h4 class="subHeading">Return Value</h4>
+												<dl>
+													<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.boolean">System.Boolean</a><br><span><span>TRUE if no problems were found.</span><br></span></dd>
+												</dl>
+
+										</div>							
+									</div>
+									
+								</div>
+							</div>
+
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>Sets all the placeholders needed and determines the e-mail type then calls the 
+									<a href="RotairEmail.rotEmailBuilder.SendClassBasedEmail.html">SendClassBasedEmail</a> function.</p>
+			
+								</div>
+							</div>
+
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<img src="Graphics/minus.png" name="Example" onclick="CollapseExpand('Example')"><span class="LW_CollapsibleArea_Title">Example</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>This example checks the screening result and if it is not OK then passes it to the function which will use it to
+									determine what kind of mial to send.</p>
+									
+								</div>
+							</div>
+
+							<div id="Example" class="sectionblock">
+								<div class="codeSnippetContainer">  	  
+									<div class="codeSnippetContainerTabs">
+										<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+											<a>VB</a>
+										</div>
+									</div>
+									<div class="codeSnippetContainerCodeContainer">
+										<div class="codeSnippetToolBar">
+										</div>
+										<div class="codeSnippetContainerCode">
+											<div style="color: Black;">
+												<br>
+												<pre><span style="color: Green;">'Check to see if we need to send a screening e-mail.</span></pre>
+												<pre><span style="color: Blue;">If</span> meScreenStatus <> Screened_OK <span style="color: Blue;">Then</span></pre>
+												<pre>    <span style="color: Green;">'Some type of screening issue the functions will interpet and send the appropriate mail.</span></pre>
+												<pre>    <b>SendShipmentRelatedEmail</b>(meScreenStatus, strSalesOrderID, strEndUser, strCustomerID)</pre>
+												<pre><span style="color: Blue;">End If</span></pre>
+											</div>				
+										</div>
+									</div>
+								</div>
+							</div>						
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

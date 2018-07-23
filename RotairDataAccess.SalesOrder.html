@@ -1,0 +1,268 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairDataAccess - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairDataAccess'
+					Source[2] = 'SalesOrder'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">SalesOrder Class</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Retrieves data from or for table <a href='Tables/SalesOrder.png'>SalesOrder</a>.</p>
+							
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Inheritance Hierarchy</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">								
+										<a href="http://msdn.microsoft.com/en-us/library/system.object.aspx">System.Object</a>
+									</div>							
+								</div><p></p>
+							
+								<strong>Namespace:</strong>&nbsp;<a href="RotairDataAccess.html">RotairDataAccess</a><br>
+								<strong>Assembly:</strong>&nbsp;RotairDataAccess.dll
+							
+								<p>The <span class="selflink">SalesOrder</span> class exposes the following members.</p>
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Classes</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="sectionblock">
+								
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="iconColumn">&nbsp;</th>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairDataAccess.SalesOrder.SalesOrderLine.html">SalesOrderLine</a>
+												</td>
+												<td>
+													Class of shared members allowing data access to the <a href='Tables/tblSOMExportData.png'>tblSOMExportData</a> table. 
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairDataAccess.SalesOrder.SOMExportData.html">SOMExportData</a>
+												</td>
+												<td>
+													Class of shared members allowing data access to the <a href='Tables/tblSOMExportData.png'>tblSOMExportData</a> table. 
+												</td>
+											</tr>
+										</tbody>
+									</table>
+										
+									<a href="#mainBody">Top</a>
+								</div>
+										
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Methods</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="sectionblock">
+
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="iconColumn">&nbsp;</th>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="function_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairDataAccess.SalesOrder.CompleteSalesOrders.html">CompleteSalesOrders</a>(Guid)
+												</td>
+												<td>
+													Shared function to update all sales orders to complete for a customer.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="function_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairDataAccess.SalesOrder.CustomerRecordID.html">CustomerRecordID</a>(SalesOrderKey)
+												</td>
+												<td>
+													Shared function to retrieve the customer record id for a sales order.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="function_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairDataAccess.SalesOrder.CustomerSalesOrders.html">CustomerSalesOrders</a>(CustomerKey, Dataset)
+												</td>
+												<td>
+													Shared function returns a dataset of a customer's sales orders.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="function_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairDataAccess.SalesOrder.Exists.html">Exists</a>(SalesOrderKey)
+												</td>
+												<td>
+													Shared function checks for the existence of a sales order.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="function_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairDataAccess.SalesOrder.IDByRecordID.html">IDByRecordID</a>(Guid)
+												</td>
+												<td>
+													Shared function retrieves the sales order id based on the record id.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="function_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairDataAccess.SalesOrder.IsForeignMilitaryShipment.html">IsForeignMilitaryShipment</a>(String)
+												</td>
+												<td>
+													Shared function check a sales order to see if it is a Foreign Military Shipment (FMS).
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="function_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairDataAccess.SalesOrder.RecordIDByID.html">RecordIDByID</a>(String)
+												</td>
+												<td>
+													Shared function retrieves the record id based on the sales order id.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="function_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairDataAccess.SalesOrder.SalesOrderIDByPicklistID.html">SalesOrderIDByPicklistID</a>(String)
+												</td>
+												<td>
+													Shared function retrieves the sales order id based on the picklist id.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="function_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href="RotairDataAccess.SalesOrder.SaveQuoteID.html">SaveQuoteID</a>(SalesOrderKey, String)
+												</td>
+												<td>
+													Shared function to save the quote reference.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+										
+									<a href="#mainBody">Top</a>
+								</div>	
+								
+							</div>
+										
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

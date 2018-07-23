@@ -1,0 +1,194 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairObject - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomBase'
+					Source[1] = 'RotairObject'
+					Source[2] = 'rotAppLockingObject'
+					Source[3] = 'Constructor'
+					document.write(Menu(Source));
+				</script> 			
+							 
+			</div>			 
+							 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">rotAppLockingObject Constructor</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								Initializes a new instance of a class derived from rotAppLockingObject since this class is not creatable directly (declared MustInherit).
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Inheritance Hierarchy</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">								
+										<a href="http://msdn.microsoft.com/en-us/library/system.object.aspx">System.Object</a>
+										<br>&nbsp;&nbsp;<a href="Broke.html">rotAppObject</a>
+										<br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="Broke.html">rotAppLockingObject</a>
+									</div>							
+								</div><p></p>
+							
+								<strong>Namespace:</strong>&nbsp;<a href="broke.html">RotairObject</a><br>
+								<strong>Assembly:</strong>&nbsp;RotairObjects.dll
+							
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Syntax</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+										<div class="codeSnippetContainer">  	  
+											<div class="codeSnippetContainerTabs">
+												<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+													<a>VB</a>
+												</div>
+											</div>
+											<div class="codeSnippetContainerCodeContainer">
+												<div class="codeSnippetToolBar">
+												</div>
+												<div class="codeSnippetContainerCode">
+													<div style="color: Black;">
+														<pre><span style="color: Green;">'Instantiating from a base class.</span></pre>
+														<pre><span style="color: Blue;">MyBase</span>.<span style="color: Blue;">New</span>(strDomain)</pre>
+														<pre><span style="color: Blue;">MyBase</span>.<span style="color: Blue;">New</span>(strDomain, bUsesChangeTracking)</pre>
+														<pre><span style="color: Blue;">MyBase</span>.<span style="color: Blue;">New</span>(strDomain, bUsesChangeTracking, bReadonly)</pre>
+														<pre><span style="color: Blue;">MyBase</span>.<span style="color: Blue;">New</span>(strDomain, bUsesChangeTracking, bReadonly, bExists)</pre>
+													</div>				
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<div id="parameters">
+										<h4 class="subHeading">Parameters</h4>
+											<dl><dt><span class="parameter">strDomain</span></dt>
+												<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string.aspx">System<span xmlns="">.</span>String</a><br><span><span>The string that identifies this table or relation.</span><br></span></dd>
+											</dl>
+											<dl><dt><span class="parameter">bUsesChangeTracking</span></dt>
+												<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.boolean.aspx">System<span xmlns="">.</span>Boolean</a><br><span><span>If TRUE then enables <a href='Broke.html'>change tracking</a>.</span><br></span></dd>
+											</dl>
+											<dl><dt><span class="parameter">bReadonly</span></dt>
+												<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.boolean.aspx">System<span xmlns="">.</span>Boolean</a><br><span><span>Used to set the <i>Read-Only</i> flag. </span><br></span></dd>
+											</dl>
+											<dl><dt><span class="parameter">bExists</span></dt>
+												<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.boolean.aspx">System<span xmlns="">.</span>Boolean</a><br><span><span>Used to set the <i>Exists flag.</i></span><br></span></dd>
+											</dl>
+									</div>
+									
+								</div>
+							</div>
+
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>A rotAppLockingObject is not directly creatable.  It must be created by the derived class.  Either during or right after creation the delegates need to be set.
+									They allow communication from the base to the data access layer while keeping the data access layer decoupled from the base class.></p>
+			
+								</div>
+							</div>
+
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Examples</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>Below is an example of a constructor for a derived class.  Note that after the call to <b>MyBase</b> the delegates get set.  
+									The delegates from rotAppObject need to be set along with the locking delegates.  The text "Domain" has been substituted for the actual domain name.</p>
+			
+									<p>While setting the delegates is not part of the constructor and is not required for the class to be created it is required for communication to the 
+									data access layer.  This makes it mandatory 99% of the time.  The delegates weren't added to the constructor because the number of them would make the 
+									code more difficult to read.</p>
+									
+								</div>
+							</div>
+
+							<div class="sectionblock">
+								<div class="codeSnippetContainer">  	  
+									<div class="codeSnippetContainerTabs">
+										<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+											<a>VB</a>
+										</div>
+									</div>
+									<div class="codeSnippetContainerCodeContainer">
+										<div class="codeSnippetToolBar">
+										</div>
+										<div class="codeSnippetContainerCode">
+											<div style="color: Black;">
+												<pre><span style="color: Green;">'A derived class instantiating the parent.</span></pre>
+												<pre><span style="color: Blue;">Public Sub New</span>(<span style="color: Blue;">ByVal</span> bReadonly<span style="color: Blue;"> As Boolean</span>, <span style="color: Blue;">ByVal</span> bExists<span style="color: Blue;"> As Boolean</span>)</pre>
+												<br>
+												<pre>    <span style="color: Blue;">MyBase</span>.<span style="color: Blue;">New</span>(<span style="color: Red;">"Domain"</span>, False, bReadonly, bExists)</pre>
+												<pre>    RequestingDomain = <span style="color: Red;">"Domain"</span></pre>
+												<pre>    DeleteLink = <span style="color: Blue;">AddressOf</span> DataAccess.Domain.Delete</pre>
+												<pre>    GetExceptionLink = <span style="color: Blue;">AddressOf</span> DataAccess.Scalar.GetException</pre>
+												<pre>    IsLockedLink = <span style="color: Blue;">AddressOf</span> DataAccess.Locking.IsLocked</pre>
+												<pre>    LoadLink = <span style="color: Blue;">AddressOf</span> DataAccess.Domain.Load</pre>
+												<pre>    LockLink = <span style="color: Blue;">AddressOf</span> DataAccess.Locking.AddLockExclusive</pre>
+												<pre>    RemovelockLink = <span style="color: Blue;">AddressOf</span> DataAccess.Locking.RemoveLock</pre>
+												<pre>    SaveLink = <span style="color: Blue;">AddressOf</span> DataAccess.Domain.Save</pre>
+												<pre>    UnlockIfOwnedLink = <span style="color: Blue;">AddressOf</span> DataAccess.Locking.UnlockIfOwned</pre>
+												<br>
+												<pre><span style="color: Blue;">End Sub</span></pre>		
+											</div>				
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

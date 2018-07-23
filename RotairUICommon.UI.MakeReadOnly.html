@@ -1,0 +1,182 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairUICommon - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairUICommon'
+					Source[2] = 'UI'
+					Source[3] = 'MakeReadOnly'
+					document.write(Menu(Source));
+				</script> 			
+
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">MakeReadOnly Method</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Toggles controls between read only and editable.</p>
+							
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Syntax" onclick="CollapseExpand('Syntax')"><span class="LW_CollapsibleArea_Title">Syntax</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div id='Syntax' class="sectionblock">
+										<div class="codeSnippetContainer">  	  
+											<div class="codeSnippetContainerTabs">
+												<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+													<a>VB</a>
+												</div>
+											</div>
+											<div class="codeSnippetContainerCodeContainer">
+												<div class="codeSnippetToolBar">
+												</div>
+												<div class="codeSnippetContainerCode">
+													<div style="color: Black;">
+														<pre><span style="color: Green;">'Declaration</span></pre>
+														<pre><span style="color: Blue;">Public Sub</span> MakeReadOnly( _</pre>
+														<pre>        frm <span style="color: Blue;">As</span> imsForm, _</pre>
+														<pre>        bReadOnly <span style="color: Blue;">As Boolean</span> _</pre>
+														<pre>)</pre>
+													</div>				
+												</div>
+											</div>
+											<div id="parameters">
+												<h4 class="subHeading">Parameters</h4>
+													<dl><dt><span class="parameter">frm</span></dt>
+														<dd>Type: <a href="IntuitiveForms.imsForm.html">imsForm</a><br><span><span>The form that owns the controls to toggle.</span><br></span></dd>
+													</dl>
+													<dl><dt><span class="parameter">bReadOnly</span></dt>
+														<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.boolean">System.Boolean</a><br><span><span>If TRUE the controls will be read only, otherwise their previous state is restored.</span><br></span></dd>
+													</dl>
+											</div>							
+										</div>
+									</div>
+									
+								</div>
+							</div>
+									
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>Only works if the first call has the ReadOnly flag set to TRUE.  Then it will make most of the controls
+									read only right after storing their prior state.  Then when called again with the ReadOnly flag set to FALSE
+									it will restore the controls prior read only state.</p>
+			
+								</div>
+							</div>
+
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<img src="Graphics/minus.png" name="Example" onclick="CollapseExpand('Example')"><span class="LW_CollapsibleArea_Title">Example</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>This method works best with a helper method in the host form.  This helper method (called MakeFormReadOnly) will
+									ensure that <b>MakeReadOnly</b> will not be called first with a bReadOnly parameter of FALSE.  It will also ensure
+									that <b>MakeReadOnly</b> does not get called twice with the same value since this will overwrite the stored settings
+									of the controls if called twice in a row with the bReadOnly parmeter set to TRUE.</p>
+									<p>You simply call this helper method passing in the desired state of read only and it will handle the rest.</p>
+								
+								</div>
+							</div>
+
+							<div id='Example' class="sectionblock">
+								<div class="codeSnippetContainer">  	  
+									<div class="codeSnippetContainerTabs">
+										<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+											<a>VB</a>
+										</div>
+									</div>
+									<div class="codeSnippetContainerCodeContainer">
+										<div class="codeSnippetToolBar">
+										</div>
+										<div class="codeSnippetContainerCode">
+											<div style="color: Black;">												        
+												<pre><span style="color: Blue;">Private</span> mbMarkedReadOnly <span style="color: Blue;">As Boolean</span>? = <span style="color: Blue;">Nothing</span></pre>
+												<br>
+												<br>
+												<pre><span style="color: Blue;">Private Sub</span> MakeFormReadOnly(<span style="color: Blue;">ByVal</span> bReadOnly <span style="color: Blue;">As Boolean</span> )</pre>
+												<br>												
+												<pre>    <span style="color: Blue;">Dim</span> bToggleOK <span style="color: Blue;">As Boolean</span></pre>
+												<br>												
+												<br>												
+												<pre>    <span style="color: Blue;">Select Case</span> bReadOnly</pre>
+												<pre>        <span style="color: Blue;">Case True</span></pre>
+												<pre>            <span style="color: Blue;">If</span> mbMarkedReadOnly <span style="color: Blue;">Is Nothing OrElse Not</span> mbMarkedReadOnly <span style="color: Blue;">Then</span></pre>
+												<pre>                bToggleOK = <span style="color: Blue;">True</span></pre>
+												<pre>            <span style="color: Blue;">End If</span></pre>
+												<pre>        <span style="color: Blue;">Case False</span></pre>
+												<pre>            <span style="color: Blue;">If</span> mbMarkedReadOnly <span style="color: Blue;">IsNot Nothing AndAlso</span> mbMarkedReadOnly <span style="color: Blue;">Then</span></pre>
+												<pre>                bToggleOK = <span style="color: Blue;">True</span></pre>
+												<pre>            <span style="color: Blue;">End If</span></pre>
+												<pre>    <span style="color: Blue;">End Select</span></pre>
+												<br>
+												<pre>    <span style="color: Blue;">If</span> bToggleOK <span style="color: Blue;">Then</span></pre>
+												<pre>        UI.MakeReadOnly(<span style="color: Blue;">Me</span>, bReadOnly)</pre>
+												<pre>        mbMarkedReadOnly = bReadOnly</pre>
+												<pre>    <span style="color: Blue;">End If</span></pre>
+												<br>
+												<pre><span style="color: Blue;">End Sub</span></pre>
+												<br>
+											</div>												
+										</div>
+									</div>
+								</div>				
+								
+							</div>	
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

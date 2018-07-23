@@ -1,0 +1,153 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairUICommon - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairUICommon'
+					Source[2] = 'UI'
+					Source[3] = 'InvalidHandle'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">InvalidHandle Property</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Constant for a row without an underlying object.</p>						
+	
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<img src="Graphics/minus.png" name="Syntax" onclick="CollapseExpand('Syntax')"><span class="LW_CollapsibleArea_Title">Syntax</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div id='Syntax' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">
+													<pre><span style="color: Green;">'Declarations</span></pre>
+													<pre><span style="color: Blue;">Public Property</span> InvalidHandle <span style="color: Blue;">As Integer</span></pre>
+													<br>
+												</div>				
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>Rowhandle for a new row without a corresponding object.  This is returned when the first field of a row is being edited.  Until
+										the value is accepted there is no object assicaited with this row.  Once the first value is accepted (by pressing enter, tab or
+										any other method to accept the value) an object is instantiated and a valid row handle will be returned on subsequent actions.</p>
+																										
+									</div>
+
+								</div>	
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Example" onclick="CollapseExpand('Example')"><span class="LW_CollapsibleArea_Title">Example</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>This example shows how this property is used.  Since a note needs a parent id and a parent id isn't created until the underlying object
+										is created a note can't be created until a grid row is created which will in turn create the underlying object (which will create its id).
+										This means that a note can be added anytime EXCEPT as the first field.  So when the Notes button is pressed we check the rowhandle.  If
+										the row has not been created, we get a constant that matches the <b>InvalidHandle</b> property and we display a message instead of
+										creating the note.</p>
+									
+									</div>
+								</div>
+
+								<div id='Example' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">												        
+													<pre><span style="color: Blue;">Private Sub</span> GridView_Notes_ButtonPressed( _</pre>
+													<pre>            <span style="color: Blue;">ByVal</span> sender <span style="color: Blue;">As Object</span>,</pre>
+													<pre>            <span style="color: Blue;">ByVal</span> e <span style="color: Blue;">As</span> DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) _</pre>
+													<pre>            <span style="color: Blue;">Handles</span> mNotesButton.ButtonPressed</pre>
+													<br>
+													<pre>    <span style="color: Blue;">If</span> GridView.FocusedRowHandle <> UI.<b>InvalidHandle</b> <span style="color: Blue;">Then</span></pre>
+													<pre>        <span style="color: Green;">'Process the Note</span></pre>
+													<pre>    <span style="color: Blue;">Else</span></pre>
+													<pre>        MessageBox.Show(<span style="color: Red;">"Can not add a note until the grid row is created"</span>)</pre>
+													<pre>    <span style="color: Blue;">End If</span></pre>
+													<br>
+													<pre><span style="color: Blue;">End Sub</span></pre>
+												</div>																	
+											</div>
+										</div>
+									</div>				
+									
+								</div>	
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

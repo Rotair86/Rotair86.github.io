@@ -1,0 +1,142 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			Stored procedures - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Links.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'StoredProcedures'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">Stored Procedures</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>These are stored procedures directly related to ERP.</p>
+
+							</div>
+
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Stored Procedures</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+										</div>
+									</div>
+								</div>
+																
+								<div class="sectionblock">
+								
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(StoredProceduresLink("CreateHistoryTrigger"));
+													</script>
+												</td>
+												<td>
+													Easiest way to implement <a href="Change - History Tracking.html">history tracking</a>.  Run this proc passing in the table name.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(StoredProceduresLink("GetFindTypeSQL"));
+													</script>
+												</td>
+												<td>
+													Returns the SQL for a find type.  Does not work with all Find Types.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(StoredProceduresLink("RestoreLatest"));
+													</script>
+												</td>
+												<td>
+													Restores the latest backup to a sandbox database.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(StoredProceduresLink("RestoreLatestToDev"));
+													</script>
+												</td>
+												<td>
+													Restores the latest backup to the development database.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(StoredProceduresLink("RestoreLatestToTest"));
+													</script>
+												</td>
+												<td>
+													Restores the latest backup to the test database.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(StoredProceduresLink("ToggleCustom"));
+													</script>
+												</td>
+												<td>
+													Turns customizations on or off.  Running without passing a parameter prints instructions along with the current count of customizations.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

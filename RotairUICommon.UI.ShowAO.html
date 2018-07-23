@@ -1,0 +1,180 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairUICommon - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairUICommon'
+					Source[2] = 'UI'
+					Source[3] = 'ShowAO'
+					document.write(Menu(Source));
+				</script> 			
+
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">ShowAO Method</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Calls up a <a href='RotairUICommon.UI.frmDisplayAO.html'>frmDisplayAO</a> to display an imsAppObject.</p>
+							
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Syntax" onclick="CollapseExpand('Syntax')"><span class="LW_CollapsibleArea_Title">Syntax</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div id='Syntax' class="sectionblock">
+										<div class="codeSnippetContainer">  	  
+											<div class="codeSnippetContainerTabs">
+												<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+													<a>VB</a>
+												</div>
+											</div>
+											<div class="codeSnippetContainerCodeContainer">
+												<div class="codeSnippetToolBar">
+												</div>
+												<div class="codeSnippetContainerCode">
+													<div style="color: Black;">
+														<pre><span style="color: Green;">'Declarations</span></pre>
+														<pre><span style="color: Blue;">Public Sub</span> ShowAO( _</pre>
+														<pre>        strTitle<span style="color: Blue;"> As String</span>, _</pre>
+														<pre>        AO<span style="color: Blue;"> As </span>imsAppObject _</pre>
+														<pre>)</pre>
+														<br>
+														<pre><span style="color: Blue;">Public Sub</span> ShowAO( _</pre>
+														<pre>        strTitle<span style="color: Blue;"> As String</span>, _</pre>
+														<pre>        AO<span style="color: Blue;"> As </span>imsAppObject, _</pre>
+														<pre>        strucFields()<span style="color: Blue;"> As </span>strucDisplayField _</pre>
+														<pre>)</pre>
+														<br>
+														<pre><span style="color: Blue;">Public Sub</span> ShowAO( _</pre>
+														<pre>        strTitle<span style="color: Blue;"> As String</span>, _</pre>
+														<pre>        AO<span style="color: Blue;"> As </span>imsAppObject, _</pre>
+														<pre>        strIDField()<span style="color: Blue;"> As String</span> _</pre>
+														<pre>)</pre>
+														<br>
+													</div>				
+												</div>
+											</div>
+											<div id="parameters">
+												<h4 class="subHeading">Parameters</h4>
+													<dl><dt><span class="parameter">strTitle</span></dt>
+														<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string">System.String</a><br><span><span>Form's title.</span><br></span></dd>
+													</dl>
+													<dl><dt><span class="parameter">AO</span></dt>
+														<dd>Type: imsAppObject<br><span><span>The object to display.</span><br></span></dd>
+													</dl>
+													<dl><dt><span class="parameter">strucFields</span></dt>
+														<dd>Type: <a href='RotairUICommon.UI.frmDisplayAO.strucDisplayField.html'>strucDisplayField</a><br><span><span>A structure of fields to display.</span><br></span></dd>
+													</dl>
+													<dl><dt><span class="parameter">strIDField</span></dt>
+														<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string">System.String</a><br><span><span>A string with field display information.</span><br></span></dd>
+													</dl>
+											</div>							
+										</div>
+									</div>
+									
+								</div>
+							</div>
+									
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>Displays an AO and its subdomains in a tree optionally displaying select fields and values.</p>
+			
+								</div>
+							</div>
+
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<img src="Graphics/minus.png" name="Example" onclick="CollapseExpand('Example')"><span class="LW_CollapsibleArea_Title">Example</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>This example displays the sales order from the Sales Order Card.  It will display a field from the master (parent) and
+									2 fields from the line and 2 from the delivery.</p>
+								
+								</div>
+							</div>
+
+							<div id='Example' class="sectionblock">
+								<div class="codeSnippetContainer">  	  
+									<div class="codeSnippetContainerTabs">
+										<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+											<a>VB</a>
+										</div>
+									</div>
+									<div class="codeSnippetContainerCodeContainer">
+										<div class="codeSnippetToolBar">
+										</div>
+										<div class="codeSnippetContainerCode">
+											<div style="color: Black;">												        
+												<pre><span style="color: Blue;">Dim</span> strFields() <span style="color: Blue;">As String</span></pre>
+												<br>					
+												<pre><span style="color: Blue;">ReDim</span> strFields(<span style="color: Gray;">4</span>)</pre>
+												<pre>strFields(<span style="color: Gray;">0</span>) = <span style="color: Red;">"1AlphaID-SOM_SalesOrderID"</span></pre>
+												<pre>strFields(<span style="color: Gray;">1</span>) = <span style="color: Red;">"2Line-SOI_SOLineNbr"</span></pre>
+												<pre>strFields(<span style="color: Gray;">2</span>) = <span style="color: Red;">"2Item ID-SOI_IMA_ItemID"</span></pre>
+												<pre>strFields(<span style="color: Gray;">3</span>) = <span style="color: Red;">"3Quantity-SOD_RequiredQty"</span></pre>
+												<pre>strFields(<span style="color: Gray;">4</span>) = <span style="color: Red;">"3Date-SOD_RequiredDate"</span></pre>
+												<br>
+												<pre>RotairUI_Common.UI.<b>ShowAO</b>(<span style="color: Red;">"Current Sales Order"</span>, bdrSalesOrder.AO, strFields)</pre>
+											</div>																	
+										</div>
+									</div>
+								</div>				
+								
+							</div>	
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

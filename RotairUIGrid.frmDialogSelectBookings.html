@@ -1,0 +1,538 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			imsUI_Grid - Customizations by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomimsForms'
+					Source[1] = 'RotairUIGrid'
+					Source[2] = 'frmDialogSelectBookings'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">frmDialog_SelectBookings Form</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Used for filter the data to be displayed in the grid.</p>
+																
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Inheritance Hierarchy</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">								
+										<a href="http://msdn.microsoft.com/en-us/library/system.object.aspx">System.Object</a>
+									</div>							
+								</div><p></p>
+
+								<strong>Namespace:</strong>&nbsp;<a href="IntuitiveUICustomerCUSTOM.html">RotairUI_Grid</a><br>
+								<strong>Assembly:</strong>&nbsp;RotairUI_Grid.dll
+												
+								<p>The <span class="selflink">frmDialog_SelectBookings</span> class exposes the following members.</p>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Events</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<table id="memberList" class="members" width='100%'>
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter23">
+															<img src="Graphics/Graphics.png" class="event_pic" alt="">
+														</div>
+													</td>
+													<td>
+														<a href='RotairUIGrid.frmDialogSelectBookings.ReturnData.html'>ReturnData</a>
+													</td>
+													<td>
+														Fired when the select form has gathered the requested data.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter23">
+															<img src="Graphics/Graphics.png" class="event_pic" alt="">
+														</div>
+													</td>
+													<td>
+														<a href='RotairUIGrid.frmDialogSelectBookings.Cancel.html'>Cancel</a>
+													</td>
+													<td>
+														Fired when the select form is cancelled.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>								
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Private Constants</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								
+									<div class="sectionblock">
+									
+										<table id="memberList" class="members" width=100%>
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconScreenSource
+													</td>
+													<td>
+														Type of <a href='RotairTypes.Enumerations.eScreenAction.html'>eScreenAction</a>; member <font face='Courier'>Open_A_Customer</font>.  Used for screening and email purposes.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconSourceForm
+													</td>
+													<td>
+														Used in an email to indicate the email originated from the Customer Card.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconXMLFile
+													</td>
+													<td>
+														Name of the file where the XML that is passed to the <a href="RotairUINote.imsUINoteMaster.html">Notes</a> form is stored.  For debugging purposes.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Private Variables</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								
+									<div class="sectionblock">
+									
+										<table id="memberList" class="members">
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='variable_pic'>
+														</div>
+													</td>
+													<td>
+														meScreenStatus
+													</td>
+													<td>
+														Type of <a href='RotairTypes.Enumerations.eScreeningRC.html'>eScreeningRC</a> to hold the return code of the screening function.  Used in messages and also
+														to prohibit saving an existing customer if their screening did not return successful.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Overridden Functions</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<table id="memberList1" class="members" width='100%'>
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="IntuitiveUICustomerCUSTOM.imsUICustomerCUSTOM.ClearForm.html">ClearForm</a>
+													</td>
+													<td>
+														Clears some added controls.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="IntuitiveUICustomerCUSTOM.imsUICustomerCUSTOM.CloseCustomer.html">CloseCustomer</a>
+													</td>
+													<td>
+														Disables the notes linklabel.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="IntuitiveUICustomerCUSTOM.imsUICustomerCUSTOM.CreateNewCustomer.html">CreateNewCustomer</a>
+													</td>
+													<td>
+														Disables the notes linklabel.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="IntuitiveUICustomerCUSTOM.imsUICustomerCUSTOM.DeleteCustomer.html">DeleteCustomer</a>
+													</td>
+													<td>
+														Disables the notes linklabel.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="IntuitiveUICustomerCUSTOM.imsUICustomerCUSTOM.DestroyAOs.html">DestroyAOs</a>
+													</td>
+													<td>
+														Disables the notes linklabel.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="IntuitiveUICustomerCUSTOM.imsUICustomerCUSTOM.DisplayCustomerInstance.html">DisplayCustomerInstance</a>
+													</td>
+													<td>
+														Screens the customer and displays some information.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>	
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Private Functions</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<table id="memberList1" class="members" width='100%'>
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="IntuitiveUICustomerCUSTOM.imsUICustomerCUSTOM.GetScreeningInfo.html">GetScreeningInfo</a>
+													</td>
+													<td>
+														Screens the customer.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="IntuitiveUICustomerCUSTOM.imsUICustomerCUSTOM.ShowNotes.html">ShowNotes</a>
+													</td>
+													<td>
+														Displays the <a href="RotairUINote.rotUINoteMAster.html">Notes</a> form.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>	
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Handled Events</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+
+									<div class="sectionblock">
+										<div class="LW_CollapsibleArea_TitleDiv">
+											<div>
+												<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+												<span class="LW_CollapsibleArea_Title">Binder Events</span></a>
+												<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+											</div>
+										</div>
+										<div class="sectionblock">
+										
+											<table id="memberList1" class="members" width='100%'>
+												<tbody>
+													<tr>
+														<th class="iconColumn">&nbsp;</th>
+														<th class="nameColumn">Name</th>
+														<th class="descriptionColumn">Description</th>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="event_pic">
+															</div>
+														</td>
+														<td>
+															<a href="IntuitiveUICustomerCUSTOM.imsUICustomerCUSTOM.aocCustomer_Saving.html">aocCustomer.Saving</a>
+														</td>
+														<td>
+															Prohibits saving a customer if they have not passed the screening test.
+														</td>
+													</tr>
+												</tbody>
+											</table>
+											
+											<a href="#mainBody">Top</a>
+										</div>
+
+										<div class="LW_CollapsibleArea_TitleDiv">
+											<div>
+												<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+												<span class="LW_CollapsibleArea_Title">Miscellaneous Events</span></a>
+												<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+											</div>
+										</div>
+										<div class="sectionblock">
+										
+											<table id="memberList1" class="members" width='100%'>
+												<tbody>
+													<tr>
+														<th class="iconColumn">&nbsp;</th>
+														<th class="nameColumn">Name</th>
+														<th class="descriptionColumn">Description</th>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="event_pic">
+															</div>
+														</td>
+														<td>
+															<a href="IntuitiveUICustomerCUSTOM.imsUICustomerCUSTOM.lnkNotes_LinkClicked.html">lnkNotes.LinkClicked</a>
+														</td>
+														<td>
+															Displays the <a href="RotairUINote.imsUINote.html">Notes</a> form.
+														</td>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="event_pic">
+															</div>
+														</td>
+														<td>
+															<a href="IntuitiveUICustomerCUSTOM.imsUICustomerCUSTOM.txtCollectionNotes_DoubleClick.html">txtCollectionNotes.DoubleClick</a>
+														</td>
+														<td>
+															Displays the <a href="RotairUINote.imsUINote.html">Notes</a> form.
+														</td>
+													</tr>
+												</tbody>
+											</table>
+											
+											<a href="#mainBody">Top</a>
+										</div>																		
+																				
+									</div>	
+
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Customizations</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+
+									<h3>Custom Fields</h3>
+									<p>Added controls for:
+									<ul><li><i>RI_NoQuote</i> and <i>RI_DD250Reqd</i>.</li>
+									<li>From <a href='Tables\tblExDpScreen.png'>tblExDpScreen</a> added <i>DeniedParty</i>, <i>ScreenBy</i> and <i>ScreenDate</i>.</li>
+									<li>From <a href='Tables\tblRI_Note.PNG'>tblRI_Note</a> displays <i>Note_Body</i> from the latest record, if there is one.</li>
+									</ul>
+									<br>
+
+									<h3>Informational Footer</h3>
+									<p>The footer has been transitioned to a display of certain key information that is normally visible on a specific tab so that it is always visible.</p>
+									<p>A label gets displayed for the following:</p>
+									<ul>
+									<li><i>RI_NoQuote</i> is TRUE; displays "No Quoting".</li>
+									<li><i>DeniedParty</i> is TRUE; displays "DP Stop".</li>
+									<li>Records exist in <a href='Tables\tblRI_Note.PNG'>tblRI_Note</a>; displays "Notes Exist".</li>
+									</ul>
+									<br>
+
+									<h3>Notes</h3>
+									<p>The last note entered, if there is one, is displayed in the <i>Collection Worksheet Notes</i> textbox, which was for field <i>CUS_CollectionNotes</i>, has been renamed to <i>Last Note</i>.</p>
+									<p>Notes for a customer can be added by clicking on the <i>Notes</i> link label in the task shade.  They also can be entered by double-clicking on the <i>Last Note</i> textbox.</p>
+									<br>
+
+									<h3>Screening</h3>
+									<p>A customer can only be edited if they have a successful screening. This is determined by calling <a href="RotairExportManagement.ExportManagement.ScreenCustomer.html">ScreenCustomer</a>.  
+									If the customer fails to pass the screening the user is presented with the option to screen the customer via the <a href='RotairDialogScreening.frmDialogScreening.html'>Screening dialog</a>.</p>
+									<br>
+
+									<h3>Debugging</h3>
+									<p>When the <a href="RotairUINote.imsUINoteMaster.html">notes</a> form is displayed the xml that gets passed gets written out to a file.</p>
+									<br>
+
+									<div xmlns="">
+										<div class="LW_CollapsibleArea_TitleDiv">
+											<div>
+												<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+												<span class="LW_CollapsibleArea_Title">Notes</span></a>
+												<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+											</div>
+										</div>
+										<div class="sectionblock">
+										
+											<p>When the user opens the notes form the XML that is passed to the form is written to a file.</p>
+										
+										</div>
+									</div>
+
+								</div>
+
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

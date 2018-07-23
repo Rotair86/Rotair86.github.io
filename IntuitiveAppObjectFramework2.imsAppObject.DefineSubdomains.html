@@ -1,0 +1,155 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			IntuitiveAO_Item_CUSTOM - Customizations by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomAppObjects'
+					Source[1] = 'IntuitiveAOItem'
+					Source[2] = 'imsAOItem'
+					Source[3] = 'DefineSubdomains'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">DefineSubdomains Method</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Required for an AppObject to load child data defined in the <i>AppObject_MetadataHeader</i>.</p>
+								See <a href='IntuitiveAppObjectFramework2.imsAppObject.DefineSubdomains'>DefineSubdomains</a> in the base.
+								
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Syntax</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">
+													<pre><span style="color: Green;">'Declaration</span></pre>
+												<pre><span style="color: Blue;">Protected Overrides Sub</span> DefineSubdomains()</pre>
+												</div>				
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>Required to load a custom subdomain automatically when the parent loads.  Instructions on creating a subdomain can be found 
+										<a href="../Snippets +/Step by step/Adding a Subdomain.htm">here</a>.</p>
+										
+									</div>
+
+								</div>	
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Example</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>Here is the DefineSubdomains method overridden to add two children, one is '<i>ItemSupplemental</i>'
+										and the other '<i>ItemUseClass</i>.</p>
+									
+									</div>
+								</div>
+
+								<div class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">												        
+													<pre><span style="color: Blue;">Protected Overrides Sub</span> DefineSubdomains()</pre>
+													<br>
+													<pre>    <span style="color: Green;">'Add the supplemental subdomain.</span></pre>
+													<pre>    <span style="color: Blue;">MyBase</span>.SubdomainDefs.Add(<span style="color: Red;">"ItemSupplemental"</span>, _</pre>
+													<pre>            requiredForDelete:=<span style="color: Blue;">True</span>, _</pre>
+													<pre>            requiredForAdd:=<span style="color: Blue;">True</span>, _</pre>
+													<pre>            relationshipToParent:=<a href='IntuitiveAppObjectFramework2.imsRelationshipToParent'>imsRelationshipToParent</a>.OneToOne)</pre>
+													<pre>    <span style="color: Green;">'Add the use class subdomain.</span></pre>
+													<pre>    <span style="color: Blue;">MyBase</span>.SubdomainDefs.Add(<span style="color: Red;">"ItemUseClass"</span>, _</pre>
+													<pre>            requiredForDelete:=<span style="color: Blue;">True</span>, _</pre>
+													<pre>            requiredForAdd:=<span style="color: Blue;">True</span>, _</pre>
+													<pre>            relationshipToParent:=<a href='IntuitiveAppObjectFramework2.imsRelationshipToParent'>imsRelationshipToParent</a>.OneToOne)</pre>
+													<pre>    <span style="color: Green;">'Call the base so it can add any subdomains that it needs to.</span></pre>
+													<pre>    <span style="color: Blue;">MyBase</span>.DefineSubdomains()</pre>
+													<br>
+													<pre><span style="color: Blue;">End Sub</span></pre>
+												</div>																	
+											</div>
+										</div>
+									</div>				
+									
+								</div>	
+
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

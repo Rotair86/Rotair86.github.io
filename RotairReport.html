@@ -1,0 +1,243 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairReport - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Links.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairReport'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">Rotair_Report Namespace</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Report manager.</p>
+							
+								<strong>Assembly:</strong>&nbsp;Rotair_Report.dll
+							
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Dependancies</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<p>Explicitly referenced Intuitive dlls are included with the custom dependencies below.  Only the custom assemblies are displayed in the chart.  All others are ignored.</p>
+								
+								<table>
+									<tbody>
+										<col width='400'>
+										<col width='200'>
+										<tr>
+											<th class="nameColumn">Name</th>
+											<th class="referencedColumn">Explicitly Referenced</th>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairAOReport", ".dll"));
+												</script> 			
+											</td><td>X</td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairDataAccess", ".dll"));
+												</script> 			
+											</td><td>X</td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairDynamicEnums", ".dll"));
+												</script> 			
+											</td><td></td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairGeneralFunctions", ".dll"));
+												</script> 			
+											</td><td>X</td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairHCReport", ".dll"));
+												</script> 			
+											</td><td>X</td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairObject", ".dll"));
+												</script> 			
+											</td><td>X</td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairTypes", ".dll"));
+												</script> 			
+											</td><td>X</td>
+										</tr>
+									</tbody>
+								</table>								
+
+								<p style="overflow:auto;">
+									<img id='Dependancy Chart' src='Dependancy Charts/RotairReport.png' onclick='ImageToggle(this)'>
+								</p>
+
+								<script type="text/javascript">
+									ImageToggle(document.getElementById('Dependancy Chart'));
+								</script> 		
+														
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Classes</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="sectionblock">
+								
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="iconColumn">&nbsp;</th>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">
+														document.write(ClassLink("RotairReport.rotReport"));
+													</script> 																
+												</td>
+												<td>
+													Report manager.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+								</div>
+							</div>
+					
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>This report manager can produce table driven reports or produce a report based on a dataset.</p>
+									<p>It works with 
+									<script type="text/javascript">
+										document.write(ClassLink("RotairAOReport.rotAOReportCollection.rotAOReport"));
+									</script> for table driven reports and 
+									<script type="text/javascript">
+										document.write(ClassLink("RotairHCReport.rotHCReporter"));
+									</script> to produce the output.</p>
+			
+								</div>
+							</div>
+					
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Examples</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>Below is an example of a creating a report for purchases made by a customer in a preview window. This report has 
+									already been defined in the database.</p>
+			
+								</div>
+							</div>
+
+							<div class="sectionblock">
+								<div class="codeSnippetContainer">  	  
+									<div class="codeSnippetContainerTabs">
+										<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+											<a>VB</a>
+										</div>
+									</div>
+									<div class="codeSnippetContainerCodeContainer">
+										<div class="codeSnippetToolBar">
+										</div>
+										<div class="codeSnippetContainerCode">
+											<div style="color: Black;">
+												<pre><span style="color: Green;">'A report named "CustomerPurchses" is assumed to be created in the database.</span></pre>
+												<pre><span style="color: Blue;">Dim </span>Report<span style="color: Blue;"> As </span>Rotair_Report.rotReport</pre>
+												<pre><span style="color: Green;">'Parameters for the SQL are passed in after the report name.  They are substituted in the order that they are passed.</span></pre>
+												<pre><span style="color: Green;">'     There isn't a limit to the number of parameters as long as they are handled by RotairDataAccess.DataSetCustom.Generic.</span></pre>
+												<pre>Report = <span style="color: Blue;">New</span> Rotair_Report.rotReport(<span style="color: Red;">"CustomerPurchses"</span>, strCustomerID)</pre>
+												<pre><span style="color: Blue;">With </span>Report</pre>
+												<pre>    .PopulateData()<span style="color: Green;">'Calls RotairDataAccess.DataSetCustom.Generic to populate the dataset.</span></pre>
+												<pre>    .CopyDataToReporter()<span style="color: Green;">'Copies data from rotAO_Report to rotHC_Report.</span></pre>
+												<pre>    .PrintPreview()<span style="color: Green;">'Opens a window with a preview and the option to print.</span></pre>
+												<pre><span style="color: Blue;">End With</span></pre>
+											</div>				
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

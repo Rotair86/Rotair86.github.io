@@ -1,0 +1,379 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairObject - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomBase'
+					Source[1] = 'RotairObject'
+					Source[2] = 'rotAppObjectCollection'
+					document.write(Menu(Source));
+				</script> 			
+							 
+			</div>
+			 			
+			<div class="content">
+
+				<div class="topicContainer">
+			
+					<div class="topic">
+	
+						<h1 class="title">rotAppObjectCollection Class</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Base class to derive custom collections from.</p>
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Inheritance Hierarchy</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">								
+										<a href="http://msdn.microsoft.com/en-us/library/system.object.aspx">System.Object</a>
+										<br>&nbsp;&nbsp;<a href="http://msdn.microsoft.com/en-us/library/system.collections.objectmodel.aspx">System.Collections.ObjectModel.Collection</a>
+									</div>							
+								</div><p></p>
+							
+								<strong>Namespace:</strong>&nbsp;<a href="RotairObject.html">RotairObject</a><br>
+								<strong>Assembly:</strong>&nbsp;RotairObjects.dll
+	
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Syntax</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+										<div class="codeSnippetContainer">  	  
+											<div class="codeSnippetContainerTabs">
+												<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+													<a>VB</a>
+												</div>
+											</div>
+											<div class="codeSnippetContainerCodeContainer">
+												<div class="codeSnippetToolBar">
+												</div>
+												<div class="codeSnippetContainerCode">
+													<div style="color: Black;">
+														<pre><span style="color: Green;">'The class rotAO_Collection will hold rotAppObjects</span></pre>
+														<pre><span style="color: Blue;">Public Class</span> rotAO_Collection</pre>
+														<pre><span style="color: Blue;">    Inherits</span> RotairObject.rotAppObjectCollection</pre>												
+													</div>				
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<p>The <span class="selflink">rotAppObjectCollection</span> type exposes the following members.</p>
+	
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Constructors</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<table id="memberList" class="members">
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic" alt="">
+														</div>
+													</td>
+													<td>
+														<a href='RotairObject.rotAppObjectCollection.Constructor.html'>rotAppObjectCollection()</a>
+													</td>
+													<td>
+														Initializes a new instance of a rotAppObjectCollection.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic" alt="">
+														</div>
+													</td>
+													<td>
+														<a href='RotairObject.rotAppObjectCollection.Constructor.html'>rotAppObjectCollection(Boolean)</a>
+													</td>
+													<td>
+														Initializes a new instance of a rotAppObjectCollection indicating whether it is read-only.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>
+	
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div id="Properties">
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Properties</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>In addition to <a href='http://msdn.microsoft.com/en-us/library/ms132397.aspx#propertyTableToggle'>Properties</a> supported by the base.</p>
+										
+										<table id="memberList1" class="members">
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairObject.rotAppObjectCollection.DirtyAny.html">DirtyAny</a>
+													</td>
+													<td>
+														Read-Only.  Returns true if any object in the collection is dirty.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairObject.rotAppObjectCollection.LastError.html">LastError</a>
+													</td>
+													<td>
+														Read-Only.  Returns the last error that occurred in this instance.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairObject.rotAppObjectCollection.SetLastError.html">SetLastError</a>
+													</td>
+													<td>
+														Write-Only.  Used to store the last error.  This is used by the Data Access layer to return errors.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										<a href="#mainBody">Top</a>								
+									</div>
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div id="Methods">
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Methods</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>In addition to <a href='http://msdn.microsoft.com/en-us/library/ms132397.aspx#methodTableToggle'>Methods</a> supported by the base.</p>
+																				
+										<table id="memberList2" class="members">
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairObject.rotAppObjectCollection.MemberFactory.html">MemberFactory</a>
+													</td>
+													<td>
+														Returns a rotAppObject.  Each derived class needs to override this method to return the specific type of object.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairObject.rotAppObjectCollection.SaveList.html">SaveList</a>
+													</td>
+													<td>
+														Saves all the objects in the collection.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										A <b>rotAppObjectCollection</b> is a collection of rotAppObjects.
+																													
+									</div>
+
+									<div xmlns="">
+										<div class="LW_CollapsibleArea_TitleDiv">
+											<div>
+												<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+												<span class="LW_CollapsibleArea_Title">Example</span></a>
+												<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+											</div>
+										</div>
+										<div class="sectionblock">
+										
+											To use just inherit like the example in the syntax section above.  Then in the client you can add objects to the collection.  In the examples the derived class
+											is rotCustomer and the collection is rotCustomerCollection.  The first example shows the simplest way to add an object (customer) to the collection.
+										
+										</div>
+									</div>
+
+									<div class="sectionblock">
+										<p>Example 1</p>
+										<div class="codeSnippetContainer">  	  
+											<div class="codeSnippetContainerTabs">
+												<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+													<a>VB</a>
+												</div>
+											</div>
+											<div class="codeSnippetContainerCodeContainer">
+												<div class="codeSnippetToolBar">
+												</div>
+												<div class="codeSnippetContainerCode">
+													<div style="color: Black;">
+														<pre><span style="color: Green;">'Creating a new customer and adding it to the collection.</span></pre>
+														<pre><span style="color: Blue;">Private Sub </span>ProcessNewRecord()</pre>
+														<pre>    <span style="color: Blue;">Private </span>NewCustomer<span style="color: Blue;"> As New </span>rotCustomer</pre>
+														<pre>    <span style="color: Blue;">Private </span>CustomerCollection<span style="color: Blue;"> As New </span>rotCustomerCollection</pre>
+														<br>
+														<pre>    NewCustomer.Name = <span style="color: Red;">"Joe"</span></pre>
+														<pre>    CustomerCollection.Add(NewCustomer)</pre>
+														<pre>    <span style="color: Green;">'Do some processing</span></pre>
+														<br>
+														<pre><span style="color: Blue;">End Sub</span></pre>
+														<br>
+													</div>																	
+												</div>
+											</div>
+										</div>
+
+											The second example demonstates polymorphic behavior.  The second function can be in the same assembly or it can be in a different assembly that doesn't 
+											have a reference to rotCustomer or rotCustomerCollection.  Instead it has
+											references to rotAppObject and rotAppObjectCollection.  Yet it can still create a new rotCustomer, alter a property and add it to the collection.  
+											Note that the properties need to be referenced by a sring.  You typically wouldn't set properties this way, a property like customer name is too specific for
+											such a general fucntion.  It is only there to demonstrate how to set properties when you don't have access to the interface.
+
+										<p>Example 2</p>
+										<div class="codeSnippetContainer">  	  
+											<div class="codeSnippetContainerTabs">
+												<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+													<a>VB</a>
+												</div>
+											</div>
+											<div class="codeSnippetContainerCodeContainer">
+												<div class="codeSnippetToolBar">
+												</div>
+												<div class="codeSnippetContainerCode">
+													<div style="color: Black;">
+														<pre><span style="color: Green;">'Creating a new customer and adding it to the collection without references.</span></pre>
+														<pre><span style="color: Blue;">Private Sub </span>ProcessNewRecord()</pre>
+														<pre>    <span style="color: Blue;">Private </span>NewCustomer<span style="color: Blue;"> As </span>rotCustomer</pre>
+														<pre>    <span style="color: Blue;">Private </span>CustomerCollection<span style="color: Blue;"> As New </span>rotCustomerCollection</pre>
+														<br>
+														<pre>    NewCustomer = AddNewRecord(CustomerCollection)</pre>
+														<pre>    <span style="color: Green;">'Do some processing</span></pre>
+														<br>
+														<pre><span style="color: Blue;">End Sub</span></pre>
+														<br>
+														<br>
+														<pre><span style="color: Blue;">Private Function </span>AddNewRecord(AnyCollection<span style="color: Blue;"> As </span>rotAppObjectCollection)<span style="color: Blue;"> As </span>rotAppObject</pre>
+														<pre>    <span style="color: Blue;">Private </span>NewRecord<span style="color: Blue;"> As </span>rotAppObject</pre>
+														<br>
+														<pre>    NewRecord = AnyCollection.MemberFactory</pre>
+														<pre>    NewRecord.Field(<span style="color: Red;">"Name"</span>) = <span style="color: Red;">"Joe"</span></pre>
+														<pre>    <span style="color: Blue;">Return  </span>NewRecord</pre>
+														<br>
+														<pre><span style="color: Blue;">End Function</span></pre>
+														<br>
+													</div>																	
+												</div>
+											</div>
+										</div>
+
+									</div>	
+								</div>	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>
+

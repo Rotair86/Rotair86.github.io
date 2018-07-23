@@ -1,0 +1,236 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			Derived Custom Classes - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Links.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomrotAppObjects'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">Assemblies containing Custom Classes Derived from a custom base</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								These are the assemblies we built that contain custom classes with rotAppObject as the base.  The namespaces are named identically to the assemblies and 
+								can be considered as one since we do not introduce additional namespaces.
+								<br>
+								<br>
+								Following is a list of the assemblies in alphabetical order.
+								
+							</div>
+							
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Custom ROT Application Objects Assemblies</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+										</div>
+									</div>
+								</div>
+																
+								<div class="sectionblock">
+								
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairAOCageCode"));
+													</script> 			
+												</td>
+												<td>
+													Reads from and writes to 
+													<script type="text/javascript">														
+														document.write(TableLink("tblCAGECode"));
+													</script>.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairAOCertificate"));
+													</script> 			
+												</td>
+												<td>
+													Reads from and writes to 
+													<script type="text/javascript">														
+														document.write(TableLink("tblCertHeader"));
+													</script>, 
+													<script type="text/javascript">														
+														document.write(TableLink("tblCertItemDetail"));
+													</script> and 
+													<script type="text/javascript">														
+														document.write(TableLink("tblCertSignature"));
+													</script>.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairAOExportLicense"));
+													</script> 			
+												</td>
+												<td>
+													Reads from 
+													<script type="text/javascript">														
+														document.write(TableLink("tblExLicense"));
+													</script>, 
+													<script type="text/javascript">														
+														document.write(TableLink("tblExLicenseItem"));
+													</script> and 
+													<script type="text/javascript">														
+														document.write(TableLink("tblExLicenseTrans"));
+													</script>.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairAONote"));
+													</script> 			
+												</td>
+												<td>
+													Used to read and write to 
+													<script type="text/javascript">														
+														document.write(TableLink("tblRI_NoteType"));
+													</script> and 
+													<script type="text/javascript">														
+														document.write(TableLink("tblRI_Note"));
+													</script>.  *** Deprecated. ***
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairAOPhrase"));
+													</script> 			
+												</td>
+												<td>
+													Reads and writes to
+													<script type="text/javascript">														
+														document.write(TableLink("tblPhrase"));
+													</script>, 
+													<script type="text/javascript">														
+														document.write(TableLink("tblPhraseForm"));
+													</script> and 
+													<script type="text/javascript">														
+														document.write(TableLink("tblPhraseUsage"));
+													</script>.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairAOReport"));
+													</script> 			
+												</td>
+												<td>
+													Reads from 
+													<script type="text/javascript">														
+														document.write(TableLink("tblReport"));
+													</script>, 
+													<script type="text/javascript">														
+														document.write(TableLink("tblReportTable"));
+													</script>, 
+													<script type="text/javascript">														
+														document.write(TableLink("tblReportHeader"));
+													</script>, 
+													<script type="text/javascript">														
+														document.write(TableLink("tblReportFooter"));
+													</script>, 
+													<script type="text/javascript">														
+														document.write(TableLink("tblReportColumn"));
+													</script>, 
+													<script type="text/javascript">														
+														document.write(TableLink("tblReportColumnText"));
+													</script>, 
+													<script type="text/javascript">														
+														document.write(TableLink("tblReportDetail"));
+													</script> and 
+													<script type="text/javascript">														
+														document.write(TableLink("tblReportHorizontalRule"));
+													</script>.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairAOScreening"));
+													</script> 			
+												</td>
+												<td>
+													Used to read and write to 
+													<script type="text/javascript">														
+														document.write(TableLink("tblExDPScreen"));
+													</script>.  *** Deprecated. ***
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<a href="#mainBody">Top</a>
+								</div>
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Notes</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>Eventually all these objects should be converted to objects inheriting from imsAppObject.</p>
+									
+									</div>
+								</div>
+																
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,197 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			Rotair_Email - Built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairEmail'
+					Source[2] = 'rotEmailBuilder'
+					Source[3] = 'SendDeniedVendorEMail'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">SendDeniedVendorEMail Method</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  								
+								<p>Sends an e-mail when a vendor gets "denied" if they have open purchase orders or RFQs.</p>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Syntax" onclick="CollapseExpand('Syntax')"><span class="LW_CollapsibleArea_Title">Syntax</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div id="Syntax">
+										<div class="codeSnippetContainer">  	  
+											<div class="codeSnippetContainerTabs">
+												<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+													<a>VB</a>
+												</div>
+											</div>
+											<div class="codeSnippetContainerCodeContainer">
+												<div class="codeSnippetToolBar">
+												</div>
+												<div class="codeSnippetContainerCode">
+													<div style="color: Black;">
+														<pre><span style="color: Green;">'Declaration</span></pre>
+														<pre><span style="color: Blue;">Public Shared Function</span> SendDeniedVendorEMail( _</pre>
+														<pre>        guidVendorRecordID<span style="color: Blue;"> As </span>guid, _</pre>
+														<pre>        strPOCount<span style="color: Blue;"> As String</span>, _</pre>
+														<pre>        strRFQCount<span style="color: Blue;"> As String</span>, _</pre>
+														<pre>        strPOList<span style="color: Blue;"> As String</span>, _</pre>
+														<pre>        strRFQList<span style="color: Blue;"> As String</span> _</pre>
+														<pre>)<span style="color: Blue;"> As Boolean</span></pre>
+													</div>				
+												</div>
+											</div>
+										</div>
+
+										<div id="parameters">
+											<h4 class="subHeading">Parameters</h4>
+												<dl><dt><span class="parameter">guidVendorRecordID</span></dt>
+													<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.guid">System.Guid</a><br><span><span>The record id for a vendor.  Not a primary key, but a unique value that can be used as one.</span><br></span></dd>
+												</dl>
+												<dl><dt><span class="parameter">strPOCount</span></dt>
+													<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string">System.String</a><br><span><span>The number of open purchase orders for a specific vendor.</span><br></span></dd>
+												</dl>
+												<dl><dt><span class="parameter">strRFQCount</span></dt>
+													<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string">System.String</a><br><span><span>The number of open RFQs for a specific vendor.</span><br></span></dd>
+												</dl>
+												<dl><dt><span class="parameter">strPOList</span></dt>
+													<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string">System.String</a><br><span><span>The open purchase order list.</span><br></span></dd>
+												</dl>
+												<dl><dt><span class="parameter">strRFQList</span></dt>
+													<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string">System.String</a><br><span><span>The open RFQ list.</span><br></span></dd>
+												</dl>
+										</div>							
+
+										<div id="returnvalue">
+											<h4 class="subHeading">Return Value</h4>
+												<dl>
+													<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.boolean">System.Boolean</a><br><span><span>TRUE if no problems were found.</span><br></span></dd>
+												</dl>
+
+										</div>							
+									</div>
+									
+								</div>
+							</div>
+
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>Sets all the placeholders needed building the string of open purchase orders and RFQs including a list
+									of them along with the count then calls the <a href="RotairEmail.rotEmailBuilder.SendClassBasedEmail.html">SendClassBasedEmail</a> 
+									function.</p>
+			
+								</div>
+							</div>
+
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<img src="Graphics/minus.png" name="Example" onclick="CollapseExpand('Example')"><span class="LW_CollapsibleArea_Title">Example</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>The example send out an e-mail indication the a vendor has been denied.  Then retrieves the number of open purchase orders
+									and open RFQs.  If there are any then sends out an e-mail containing this information.</p>
+									
+								</div>
+							</div>
+
+							<div id="Example" class="sectionblock">
+								<div class="codeSnippetContainer">  	  
+									<div class="codeSnippetContainerTabs">
+										<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+											<a>VB</a>
+										</div>
+									</div>
+									<div class="codeSnippetContainerCodeContainer">
+										<div class="codeSnippetToolBar">
+										</div>
+										<div class="codeSnippetContainerCode">
+											<div style="color: Black;">
+												<pre><span style="color: Blue;">Private Function</span> SendEmailForDeniedVendor(<span style="color: Blue;">ByVal</span> guidVendorRecordID <span style="color: Blue;">As </span>Guid) <span style="color: Blue;">As Boolean</span></pre>
+												<br>
+												<pre>    <span style="color: Blue;">Dim</span> intPOCount <span style="color: Blue;">As Integer</span></pre>
+												<pre>    <span style="color: Blue;">Dim</span> strPOList <span style="color: Blue;">As String</span></pre>
+												<pre>    <span style="color: Blue;">Dim</span> intRFQCount <span style="color: Blue;">As Integer</span></pre>
+												<pre>    <span style="color: Blue;">Dim</span> strRFQList <span style="color: Blue;">As String</span></pre>
+												<pre>    <span style="color: Blue;">Dim</span> rc <span style="color: Blue;">As Boolean</span></pre>
+												<br>
+												<br>
+												<pre>    <span style="color: Green;">'Send an email for denying the vendor.</span></pre>
+												<pre>    rc = SendDeniedFlagEMail(Rotair_Types.Enumerations.ePartyType.Vendor, guidVendorRecordID, <span style="color: Red;">"DPSetVendor"</span>)</pre>
+												<br>
+												<pre>    <span style="color: Green;">'Get the PO and RFQ counts and lists.</span></pre>
+												<pre>    GetOpenPOsAndRFQs(intPOCount, strPOList, intRFQCount, strRFQList)</pre>
+												<br>
+												<pre>    <span style="color: Green;">'Check to see if we need to send an email.</span></pre>
+												<pre>    <span style="color: Blue;">If</span> intPOCount + intRFQCount > <span style="color: Gray;">0 </span><span style="color: Blue;">Then</span></pre>
+												<pre>        <span style="color: Green;">'Send the mail.</span></pre>
+												<pre>        rc = rc <span style="color: Blue;">Or</span> <b>SendDeniedVendorEMail</b>(guidVendorRecordID, intPOCount.ToString, intRFQCount.ToString, strPOList, strRFQList)</pre>
+												<pre>    <span style="color: Blue;">End If</span></pre>
+												<br>
+												<pre>    <span style="color: Blue;">Return</span> rc</pre>
+												<br>
+												<pre><span style="color: Blue;">End Function</span></pre>
+											</div>				
+										</div>
+									</div>
+								</div>
+							</div>						
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

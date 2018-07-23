@@ -1,0 +1,165 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairObject - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Links.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomBase'
+					Source[1] = 'RotairObject'
+					document.write(Menu(Source));
+				</script> 			
+							 
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<font face="Garamond" size=24 color=red>DEPRECIATED</font>
+						<p>We will be using the <a href="IntuitiveAppObjectFramework2.imsAppObject.html">imsAppObject</a> and will not be
+						using our custom base class once all objects that derive from this class and its siblings are converted.</p>
+
+						<h1 class="title">RotairObject Namespace</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Base class many other custom classes derive.</p>
+							
+								<strong>Assembly:</strong>&nbsp;RotairObjects.dll
+							
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Dependancies</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<p>Only the custom dependencies are listed below.  Intuitive dlls are included in the chart.  All others are ignored.</p>
+								
+								<a href='RotairTypes.html'>RotairTypes.dll</a><br>
+								<a href='RotairGeneralFunctions.html'>RotairGeneralFunctions.dll</a><br>
+								<img src='Dependancy Charts/RotairObjects.png'>
+								<br>
+						
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Must Inherit</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="sectionblock">
+								
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="iconColumn">&nbsp;</th>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("rotAppObject"));
+													</script> 																
+												</td>
+												<td>
+													Base class for a custom object intended to represent data in the database.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("rotAppLockingObject"));
+													</script> 																
+												</td>
+												<td>
+													Same as rotAppObject except requires logical locking.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("rotAppObjectCollection"));
+													</script> 																
+												</td>
+												<td>
+													A collection of rotAppObject or rotAppLockingObject.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<a href="#mainBody">Top</a>
+								</div>
+							</div>
+					
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>All these classes can not be instantiated on their own.  They can be used as parameters to functions.</p>
+			
+								</div>
+							</div>
+					
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

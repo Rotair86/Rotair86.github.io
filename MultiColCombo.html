@@ -1,0 +1,230 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			MultiColCombo - Built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomControls'
+					Source[1] = 'MultiColCombo'
+					document.write(Menu(Source));
+				</script> 			
+
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">MultiColCombo Namespace</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Independant member of the presentation layer.</p>
+							
+								<strong>Assembly:</strong>&nbsp;MultiColCombo.dll
+							
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Dependancies</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<p>No custom dependencies.</p>
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Classes</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="sectionblock">
+								
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="iconColumn">&nbsp;</th>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href='MultiColCombo.DropDownForm.html'>DropDownForm</a>
+												</td>
+												<td>
+													Class for a custom object intended to represent CageCode data in the database.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<a href='MultiColCombo.MultiColumnComboBox.html'>MultiColumnComboBox</a>
+												</td>
+												<td>
+													Class for a custom object intended to represent CageCode data in the database.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+								</div>
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>To use the Multi-column combo first you need to add it to the toolbax</p>
+										<ol><li>Right click on the toolbox and select <i>Choose Items...</i> you will get the following window.</li>
+										<img src='Graphics/ChooseToolboxItems.png'/>
+										<li>Select <i>Browse</i> and browse to MultiColCombo.dll</li></ol>
+										
+										<p>Now add it to the form and size it appropriately.</p>
+										<p>Following is a code sample to demo populating this control.</p>
+										
+										<div id='Example' class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">												        
+															<pre><span style="color: Blue;">Dim</span> Col <span style="color: Blue;">As</span> MultiColCombo.MultiColumnComboBox.ColumnCollection.Column</pre>
+															<br>
+															<br>
+															<pre><span style="color: Green;">'Not necessary unless the combo is populated when this code is run.</span></pre>
+															<pre>MultiColumnComboBox1.ClearColumns()</pre>
+															<br>
+															<pre><span style="color: Green;">'Column 1</span></pre>
+															<pre>Col = MultiColumnComboBox1.AddColumn()</pre>
+															<pre><span style="color: Blue;">With</span> Col</pre>
+															<pre>    .Caption = <span style="color: Red;">"ID"</span></pre>
+															<pre>    .Width = <span style="color: Gray;">50</span></pre>
+															<pre><span style="color: Blue;">End With</span></pre>
+															<pre><span style="color: Green;">'Column 2</span></pre>
+															<pre>Col = MultiColumnComboBox1.AddColumn()</pre>
+															<pre><span style="color: Blue;">With</span> Col</pre>
+															<pre>    .Caption = <span style="color: Red;">"Name"</span></pre>
+															<pre>    .Width = <span style="color: Gray;">175</span></pre>
+															<pre><span style="color: Blue;">End With</span></pre>
+															<pre><span style="color: Green;">'Column 3</span></pre>
+															<pre>Col = MultiColumnComboBox1.AddColumn()</pre>
+															<pre><span style="color: Blue;">With</span> Col</pre>
+															<pre>    .Caption = <span style="color: Red;">"City"</span></pre>
+															<pre>    .Width = <span style="color: Gray;">100</span></pre>
+															<pre><span style="color: Blue;">End With</span></pre>
+															<pre><span style="color: Green;">'Column 4</span></pre>
+															<pre>Col = MultiColumnComboBox1.AddColumn()</pre>
+															<pre><span style="color: Blue;">With</span> Col</pre>
+															<pre>    .Caption = <span style="color: Red;">"ST"</span></pre>
+															<pre>    .Width = <span style="color: Gray;">35</span></pre>
+															<pre><span style="color: Blue;">End With</span></pre>
+															<pre><span style="color: Green;">'Column 4</span></pre>
+															<pre>Col = MultiColumnComboBox1.AddColumn()</pre>
+															<pre><span style="color: Blue;">With</span> Col</pre>
+															<pre>    .Caption = <span style="color: Red;">"Country"</span></pre>
+															<pre>    .Width = <span style="color: Gray;">100</span></pre>
+															<pre><span style="color: Blue;">End With</span></pre>
+															<br>
+															<pre><span style="color: Green;">'Populate a dataset</span></pre>
+															<pre><span style="color: Blue;">Dim</span> DR <span style="color: Blue;">As</span> DataRow</pre>
+															<pre><span style="color: Blue;">Dim</span> DT <span style="color: Blue;">As New</span> DataTable</pre>
+															<pre>DT.Columns.Add(<span style="color: Red;">"ID"</span>, <span style="color: Blue;">GetType</span>(<span style="color: Blue;">String</span>))</pre>
+															<pre>DT.Columns.Add(<span style="color: Red;">"Name"</span>, <span style="color: Blue;">GetType</span>(<span style="color: Blue;">String</span>))</pre>
+															<pre>DT.Columns.Add(<span style="color: Red;">"City"</span>, <span style="color: Blue;">GetType</span>(<span style="color: Blue;">String</span>))</pre>
+															<pre>DT.Columns.Add(<span style="color: Red;">"ST"</span>, <span style="color: Blue;">GetType</span>(<span style="color: Blue;">String</span>))</pre>
+															<pre>DT.Columns.Add(<span style="color: Red;">"Country"</span>, <span style="color: Blue;">GetType</span>(<span style="color: Blue;">String</span>))</pre>
+															<pre>DR = DT.Rows.Add</pre>
+															<pre>DR.Item(<span style="color: Gray;">0</span>) = <span style="color: Red;">"1"</span></pre>
+															<pre>DR.Item(<span style="color: Gray;">1</span>) = <span style="color: Red;">"Al"</span></pre>
+															<pre>DR.Item(<span style="color: Gray;">2</span>) = <span style="color: Red;">"Agustine"</span></pre>
+															<pre>DR.Item(<span style="color: Gray;">3</span>) = <span style="color: Red;">"Alabama"</span></pre>
+															<pre>DR.Item(<span style="color: Gray;">4</span>) = <span style="color: Red;">"Australia"</span></pre>
+															<pre>DR = DT.Rows.Add</pre>
+															<pre>DR.Item(<span style="color: Gray;">0</span>) = <span style="color: Red;">"2"</span></pre>
+															<pre>DR.Item(<span style="color: Gray;">1</span>) = <span style="color: Red;">"Betty"</span></pre>
+															<pre>DR.Item(<span style="color: Gray;">2</span>) = <span style="color: Red;">"Berlin"</span></pre>
+															<pre>DR.Item(<span style="color: Gray;">3</span>) = <span style="color: Red;">"Delaware"</span></pre>
+															<pre>DR.Item(<span style="color: Gray;">4</span>) = <span style="color: Red;">"Borneo"</span></pre>
+															<pre>DR = DT.Rows.Add</pre>
+															<pre>DR.Item(<span style="color: Gray;">0</span>) = <span style="color: Red;">"3"</span></pre>
+															<pre>DR.Item(<span style="color: Gray;">1</span>) = <span style="color: Red;">"Charlie"</span></pre>
+															<pre>DR.Item(<span style="color: Gray;">2</span>) = <span style="color: Red;">"Carson City"</span></pre>
+															<pre>DR.Item(<span style="color: Gray;">3</span>) = <span style="color: Red;">"Connecticut"</span></pre>
+															<pre>DR.Item(<span style="color: Gray;">4</span>) = <span style="color: Red;">"Canary Islands"</span></pre>
+															<br>
+															<pre>MultiColumnComboBox1.DataList = DT</pre>
+															<pre>MultiColumnComboBox1.DropDownWidth = <span style="color: Gray;">500</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>				
+											
+										</div>
+										
+										<p>Notice if you run this demo code that the state column was sized for an abbreviation but a full name was used.  This was
+										done to demonstrate the ellipses that appear if the text does not fit in the column.</p>
+										
+									</div>
+								</div>					
+
+							</div>
+					
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,504 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairAO_RFQ - Built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Links.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomimsAppObjects'
+					Source[1] = 'RotairAORFQ'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">RotairAO_RFQ Namespace</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Maps data from the tblRFQMaster, tblRFQItem, tblRFQItemQty, tblRFQVendor, tblRFQVendorCharge, tblRFQVendorQuote, tblRFQsEmailed and tblRFQIMaging tables. Also encapsulates RFQ functions and business rules.</p>
+							
+								<strong>Assembly:</strong>&nbsp;RotairAO_RFQ.dll
+							
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Dependancies</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<p>Explicitly referenced Intuitive dlls are included with the custom dependencies below.  Only the custom assemblies are displayed in the chart.  All others are ignored.</p>
+
+								<table>
+									<tbody>
+										<col width='400'>
+										<col width='200'>
+										<tr>
+											<th class="nameColumn">Name</th>
+											<th class="referencedColumn">Explicitly Referenced</th>
+										</tr>
+										<tr>									
+											<td>
+												IntuitiveAO_Customer.dll<br>
+											</td><td>X</td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("IntuitiveAOCustomerCUSTOM", ".dll"));
+												</script> 			
+											</td><td>X</td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("IntuitiveAppObjectFramework2", ".dll"));
+												</script> 			
+											</td><td>X</td>
+										</tr>
+										<tr>									
+											<td>
+												IntuitiveSystem.dll<br>
+											</td><td>X</td>
+										</tr>
+										<tr>									
+											<td>
+												IntuitiveSystemOpenTypes.dll<br>
+											</td><td>X</td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairDebugger", ".dll"));
+												</script> 			
+											</td><td></td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairDynamicEnums", ".dll"));
+												</script> 			
+											</td><td>X</td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairEmail", ".dll"));
+												</script> 			
+											</td><td>X</td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairExportManagement", ".dll"));
+												</script> 			
+											</td><td>X</td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairGeneralFunctions", ".dll"));
+												</script> 			
+											</td><td></td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairSystem", ".dll"));
+												</script> 			
+											</td><td></td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairTypes", ".dll"));
+												</script> 			
+											</td><td>X</td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairAOEmail", ".dll"));
+												</script> 			
+											</td><td></td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairAOExportLicense", ".dll"));
+												</script> 			
+											</td><td></td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairAOScreening", ".dll"));
+												</script> 			
+											</td><td></td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairDataAccess", ".dll"));
+												</script> 			
+											</td><td>X</td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairimsAONote", ".dll"));
+												</script> 			
+											</td><td></td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairimsAOScreening", ".dll"));
+												</script> 			
+											</td><td>X</td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairObject", ".dll"));
+												</script> 			
+											</td><td></td>
+										</tr>
+									</tbody>
+								</table>
+								*<a href='Why have a RotairAO_[Object] and a RotairimsAO_[Object].html'>Why have a RotairAO_Screening and a RotairimsAO_Screening?</a>
+								
+								<p style="overflow:auto;">
+									<img id='Dependancy Chart' src='Dependancy Charts/RotairAORFQ.png' onclick='ImageToggle(this)'>
+								</p>
+								<script type="text/javascript">
+									ImageToggle(document.getElementById('Dependancy Chart'));
+								</script> 			
+								<br>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Classes</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="sectionblock">
+
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="iconColumn">&nbsp;</th>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairAORFQ.imsAORFQImaging"));
+													</script> 																
+												</td>
+												<td>
+													Retrieves data for displaying RFQs from 
+													<script type="text/javascript">
+														document.write(TableLink("viewRFQImaging"));
+													</script>.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairAORFQ.imsAORFQImagingCollection"));
+													</script> 																
+												</td>
+												<td>
+													Holds one or more 
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairAORFQ.imsAORFQImaging"));
+													</script> objects.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairAORFQ.imsAORFQImagingController"));
+													</script> 																
+												</td>
+												<td>
+													Virtual object used to return a collection of 
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairAORFQ.imsAORFQImaging"));
+													</script> objects.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairAORFQ.imsAORFQItem"));
+													</script> 																
+												</td>
+												<td>
+													Used to read and write to table 
+													<script type="text/javascript">
+														document.write(TableLink("tblRFQItem"));
+													</script>.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairAORFQ.imsAORFQItemQuantity"));
+													</script> 																
+												</td>
+												<td>
+													Used to read and write to table 
+													<script type="text/javascript">
+														document.write(TableLink("tblRFQItemQty"));
+													</script>.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairAORFQ.imsAORFQMaster"));
+													</script> 																
+												</td>
+												<td>
+													Used to read and write to table 
+													<script type="text/javascript">
+														document.write(TableLink("tblRFQMaster"));
+													</script>.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairAORFQ.imsAORFQsEmailed"));
+													</script> 																
+												</td>
+												<td>
+													Used to write to table 
+													<script type="text/javascript">
+														document.write(TableLink("tblRFQsEmailed"));
+													</script>.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairAORFQ.imsAORFQUnindexed"));
+													</script> 																
+												</td>
+												<td>
+													Virtual object used to represent a file in a staging directory prior to it being indexed
+													into the database.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairAORFQ.imsAORFQUnindexedController"));
+													</script> 																
+												</td>
+												<td>
+													Virtual object used to return a collection of 
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairAORFQ.imsAORFQUnindexed"));
+													</script> objects.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairAORFQ.imsAORFQVendor"));
+													</script> 																
+												</td>
+												<td>
+													Used to read and write to table 
+													<script type="text/javascript">
+														document.write(TableLink("tblRFQVendor"));
+													</script>.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairAORFQ.imsAORFQVendorCharge"));
+													</script> 																
+												</td>
+												<td>
+													Used to read and write to table 
+													<script type="text/javascript">
+														document.write(TableLink("tblRFQVendorCharge"));
+													</script>.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairAORFQ.imsAORFQVendorQuote"));
+													</script> 																
+												</td>
+												<td>
+													Used to read and write to table 
+													<script type="text/javascript">
+														document.write(TableLink("tblRFQVendorQuote"));
+													</script>.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairAORFQ.RFQIO"));
+													</script> 																
+												</td>
+												<td>
+													File path, extensions and file IO functions relating to RFQs.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+								</div>
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+
+										<p>Table <a href='Tables/tblRFQImaging.png'>tblRFQImaging</a> is a represented by 
+										<a href="RotairAORFQ.imsAORFQImaging.html">imsAO_RFQImaging</a>.</p>
+										<p>Table <a href='Tables/tblRFQItem.png'>tblRFQItem</a> is a represented by 
+										<a href="RotairAORFQ.imsAORFQItem.html">imsAO_RFQItem</a>.</p>
+										<p>Table <a href='Tables/tblRFQItemQty.png'>tblRFQItemQty</a> is a represented by 
+										<a href="RotairAORFQ.imsAORFQItemQuantity.html">imsAO_RFQItemQuantity</a>.</p>
+										<p>Table <a href='Tables/tblRFQMaster.png'>tblRFQMaster</a> is a represented by 
+										<a href="RotairAORFQ.imsAORFQMaster.html">imsAO_RFQMaster</a>.</p>
+										<p>Table <a href='Tables/tblRFQsEmailed.png'>tblRFQsEmailed</a> is a represented by 
+										<a href="RotairAORFQ.imsAORFQsEmailed.html">imsAO_RFQsEmailed</a>.</p>
+										<p>Table <a href='Tables/tblRFQVendor.png'>tblRFQVendor</a> is a represented by 
+										<a href="RotairAORFQVendor.imsAORFQ.html">imsAO_RFQVendor</a>.</p>
+										<p>Table <a href='Tables/tblRFQVendorCharge.png'>tblRFQVendorCharge</a> is a represented by 
+										<a href="RotairAORFQ.imsAORFQVendorCharge.html">imsAO_RFQVendorCharge</a>.</p>
+										<p>Table <a href='Tables/tblRFQVendorQuote.png'>tblRFQVendorQuote</a> is a represented by 
+										<a href="RotairAORFQ.imsAORFQVendorQuote.html">imsAO_RFQVendorQuote</a>.</p>
+										<p>View <a href='Tables/viewRFQImaging.png'>viewRFQImaging</a> is a represented by 
+										<a href="RotairAORFQ.imsAORFQImaging.html">imsAO_RFQImaging</a>.</p>
+
+									</div>
+								</div>						
+								
+							</div>
+										
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

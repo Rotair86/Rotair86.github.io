@@ -1,0 +1,188 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairDebugger - Created by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairDebugger'
+					Source[2] = 'ErrorHandler'
+					Source[3] = 'WriteToErrorFile'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">WriteToErrorFile Method</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Used to store debugging information to a file.</p>
+								
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<img src="Graphics/minus.png" name="Syntax" onclick="CollapseExpand('Syntax')"><span class="LW_CollapsibleArea_Title">Syntax</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div id='Syntax' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">
+													<pre><span style="color: Green;">'Declaration</span></pre>
+													<pre><span style="color: Blue;">Public Shared Function</span> WriteToErrorFile( _</pre>
+													<pre>    strModule<span style='color: Blue;'> As String</span>,</pre>
+													<pre>    strMethod<span style='color: Blue;'> As String</span>,</pre>
+													<pre>    strErrorMessage<span style='color: Blue;'> As String</span></pre>
+													<pre>    ) <span style="color: Blue;">As Boolean</span></pre>
+												</div>				
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div id="parameters">
+									<h4 class="subHeading">Parameters</h4>
+										<dl><dt><span class="parameter">strModule</span></dt>
+											<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string">System.String</a><br><span><span>The class where the error occured.</span><br></span></dd>
+										</dl>
+										<dl><dt><span class="parameter">strMethod</span></dt>
+											<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string">System.String</a><br><span><span>The function which called this method.</span><br></span></dd>
+										</dl>
+										<dl><dt><span class="parameter">strErrorMessage</span></dt>
+											<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string">System.String</a><br><span><span>Text of the error message.</span><br></span></dd>
+										</dl>
+								</div>							
+
+								<div id="returnvalue">
+									<h4 class="subHeading">Return Value</h4>
+										<dl>
+											<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.boolean">System.Boolean</a><br><span><span>The status of the attempt to write out the passed in information.</span><br></span></dd>
+										</dl>
+
+								</div>							
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>Writes out error information to a file.  Uses reflection to get the directory where the code was launched from.</p>
+										
+									</div>
+
+								</div>	
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Example" onclick="CollapseExpand('Example')"><span class="LW_CollapsibleArea_Title">Example</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>The example shows how to put the call in a Try . . . Catch block to write out error information.  It returns
+										TRUE if successful.</p>
+									
+									</div>
+								</div>
+
+								<div id='Example' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">												        
+													<pre><span style="color: Blue;">Private Function</span> DoSomething() <span style="color: Blue;">As Boolean</span></pre>
+													<br>
+													<pre>    <span style="color: Blue;">Dim</span> rc <span style="color: Blue;">As Boolean</span></pre>
+													<br>
+													<br>
+													<pre>    <span style="color: Blue;">Try</span></pre>
+													<br>
+													<pre>        <span style="color: Green;">'Do some processing.</span></pre>
+													<pre>        <span style="color: Green;">'Process</span></pre>
+													<pre>        <span style="color: Green;">'Process</span></pre>
+													<pre>        <span style="color: Green;">'Process</span></pre>
+													<pre>        rc = <span style="color: Blue;">True</span></pre>
+													<br>
+													<pre>    <span style="color: Blue;">Catch</span> ex <span style="color: Blue;">As</span> Exception</pre>
+													<pre>        rc = <span style="color: Blue;">False</span></pre>
+													<pre>        Debugger.ErrorHandler.<b>WriteToErrorFile</b>( _</pre>
+													<pre>            ex.TargetSite.ReflectedType.Name, _</pre>
+													<pre>            ex.TargetSite.Name, _</pre>
+													<pre>            ex.Message)</pre>
+													<br>
+													<pre>    <span style="color: Blue;">End Try</span></pre>
+													<br>
+													<pre>    <span style="color: Blue;">Return</span> rc</pre>
+													<br>
+													<pre><span style="color: Blue;">End Function</span></pre>
+												</div>																	
+											</div>
+										</div>
+									</div>				
+									
+								</div>	
+
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

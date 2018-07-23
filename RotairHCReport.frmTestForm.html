@@ -1,0 +1,564 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairHC_Report Namespace - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<div class="searchcontainer">
+	
+					<form id="SearchForm" action="http://social.msdn.microsoft.com/search/en-us" method="get" style="margin: 0pt; padding: 0pt;" onsubmit="return checkSearchBox()">
+						<div class="searchBoxContainer" style="">
+							<table class="searchBox" border="0" cellpadding="0" cellspacing="0">
+								<tbody>
+									<tr>
+										<td class="searchTextBoxTd">
+											<input value="Search MSDN with Bing" id="SearchInput" maxlength="200" class="searchTextBox" name="query" type="text">        
+										</td>
+										<td class="searchButtonTd">
+											<input src="Graphics/Search.gif" style="position: relative;" title="Search " type="image">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</form>
+					
+					<script type="text/javascript">
+					//<![CDATA[
+						if (!MTPS) var MTPS = {};
+						if (!MTPS.Watermarks) MTPS.Watermarks = {};
+						MTPS.Watermarks.SearchInput = {
+							"control": "SearchInput",
+							"defaultValue": "Search MSDN with Bing",
+							"defaultCSS": "searchTextBox",
+							"focusCSS": "searchTextBoxTrue"
+						};
+						function checkSearchBox() {
+							if (document.getElementById("SearchInput").value == MTPS.Watermarks.SearchInput.defaultValue) {
+								document.getElementById("SearchInput").value = "";
+							}
+						}
+					 //]]>
+					</script>
+				</div>
+
+				<div class="navcontainer">
+			  
+					<div class="nav">
+			
+						<div id="tocnav">
+			
+							<div class="toclevel0 ancestry">
+							
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/ms123401.aspx">MSDN Library</a>
+								</div>
+            
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>								
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/ff361664%28v=vs.110%29.aspx">.NET Development</a>
+								</div>
+            
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>            
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/w0x726c2.aspx">.NET Framework 4</a>
+								</div>
+            
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>								
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/gg145045.aspx">.NET Framework Class Library</a>
+								</div>
+
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="ERP Custom Namespaces.html">ERP Customized Namespaces</a>
+								</div>						
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Base Classes.html">Custom Base Classes</a>
+								</div>
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Classes.html">Custom Classes</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Controls.html">Custom Controls</a>
+								</div>
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Classes Derived.html">Custom Derived from rotAppObject</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Forms Derived from imsForms.html">Custom Forms Derived from imsForm</a>
+								</div>
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Customized Intuitive AppObjects.html">Customized Intuitive imsAppObjects</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Customized Intuitive Forms.html">Customized Intuitive imsForms</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Printing Classes.html">Printing Classes</a>
+								</div>
+								
+								<div class="clip13x9 nav_dots_current">
+									<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+								</div>					
+								<div class="toclevel">
+									<a href="RotairHCReport.html">RotairHC_Report</a>
+								</div>
+
+								<div class="toclevel0">
+							
+									<div class="clip13x9 nav_dots_current">
+										<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+									</div>					
+									<div class="toclevel current">
+										<a href="RotairHCReport.frmTestForm.html">frmTestForm</a>
+									</div>
+								
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Windows Custom Dialog Forms.html">Windows Custom Dialog Forms</a>
+								</div>
+								
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="External Programs.html">External Programs</a>
+								</div>						
+							
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Stored Procedures.html">Stored Procedures</a>
+								</div>						
+							
+							</div>
+							
+						</div>
+
+					</div>
+
+				</div>
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">frmTestForm Form</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Form used to test the report writer <a href="RotairHCReport.rotHCReporter.html">rotHC_Reporter</a>.</p>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Inheritance Hierarchy</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">								
+										<a href="http://msdn.microsoft.com/en-us/library/system.object.aspx">System.Object</a>
+										<br>&nbsp;&nbsp;<a href='http://msdn.microsoft.com/en-us/library/system.windows.forms.form.aspx'>System.Windows.Forms.Form</a>
+									</div>							
+								</div><p></p>
+							
+								<strong>Namespace:</strong>&nbsp;<a href="RotairEmail.html">RotairHC_Report</a><br>
+								<strong>Assembly:</strong>&nbsp;RotairHC_Report.dll
+											
+								<br>								
+								<br>								
+								<p>This class library needs a couple of properties modified in order to use this form.  See <a href='RotairHCReport.frmTestForm(Setup).html'>Setup</a> for instructions.</p>
+								<p>There is also some instructions on how to use this form.  See <a href='RotairHCReport.frmTestForm(Usage).html'>Usage</a> for instructions.</p>
+								<br>								
+								<p>The <span class="selflink">frmTestForm</span> form doesn't expose any members.</p>
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Private Enumerations</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<table id="memberList1" class="members" width='100%'>
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairHCReport.frmTestForm.eDatatype.html">eDatatype</a>
+													</td>
+													<td>
+														Represents the different types of random data this form can create.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>								
+																<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Private Functions</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<table id="memberList1" class="members" width='100%'>
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairHCReport.frmTestForm.CheckColumnsAndRows.html">CheckColumnsAndRows</a>
+													</td>
+													<td>
+														Sets defaults for the number of columns and/or rows if none were entered.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairHCReport.frmTestForm.PrintAndPrintPreviewCommon.html">PrintAndPrintPreviewCommon</a>(rotHC_Reporter)
+													</td>
+													<td>
+														Example code lives here.  This is also the place to test the report writer.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairHCReport.frmTestForm.RandomData.html">RandomData</a>(eDatatype, Integer, Integer, Integer)
+													</td>
+													<td>
+														Creates random data.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairHCReport.frmTestForm.RandomDate.html">RandomDate</a>(Date)
+													</td>
+													<td>
+														Creates a random date.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairHCReport.frmTestForm.RandomDateTime.html">RandomDateTime</a>(DateTime)
+													</td>
+													<td>
+														Creates a random date and time.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairHCReport.frmTestForm.RandomTime.html">RandomTime</a>
+													</td>
+													<td>
+														Creates a random time.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>								
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Handled Events</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+
+									<div class="sectionblock">
+										<div class="LW_CollapsibleArea_TitleDiv">
+											<div>
+												<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+												<span class="LW_CollapsibleArea_Title">Button Events</span></a>
+												<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+											</div>
+										</div>
+										<div class="sectionblock">
+										
+											<table id="memberList1" class="members" width='100%'>
+												<tbody>
+													<tr>
+														<th class="iconColumn">&nbsp;</th>
+														<th class="nameColumn">Name</th>
+														<th class="descriptionColumn">Description</th>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="event_pic">
+															</div>
+														</td>
+														<td>
+															<a href="RotairHCReport.frmTestForm.Button2_Click.html">Button2.Click</a>
+														</td>
+														<td>
+															Prints the dataset..
+														</td>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="event_pic">
+															</div>
+														</td>
+														<td>
+															<a href="RotairHCReport.frmTestForm.Button3_Click.html">Button3.Click</a>
+														</td>
+														<td>
+															Brings up a print preview of the dataset.
+														</td>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="event_pic">
+															</div>
+														</td>
+														<td>
+															<a href="RotairHCReport.frmTestForm.SetCols_Click.html">SetCols.Click</a>
+														</td>
+														<td>
+															Adds a row to the first grid for each column of test data.
+														</td>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="event_pic">
+															</div>
+														</td>
+														<td>
+															<a href="RotairHCReport.frmTestForm.SetRows_Click.html">SetRows.Click</a>
+														</td>
+														<td>
+															Generates the test data.
+														</td>
+													</tr>
+												</tbody>
+											</table>
+											
+											<a href="#mainBody">Top</a>
+										</div>
+
+										<div class="LW_CollapsibleArea_TitleDiv">
+											<div>
+												<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+												<span class="LW_CollapsibleArea_Title">Form Events</span></a>
+												<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+											</div>
+										</div>
+										<div class="sectionblock">
+										
+											<table id="memberList1" class="members" width='100%'>
+												<tbody>
+													<tr>
+														<th class="iconColumn">&nbsp;</th>
+														<th class="nameColumn">Name</th>
+														<th class="descriptionColumn">Description</th>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="event_pic">
+															</div>
+														</td>
+														<td>
+															<a href="RotairHCReport.frmTestForm.frmTestForm_Load.html">frmTestForm.Load</a>
+														</td>
+														<td>
+															Initializes the grid.
+														</td>
+													</tr>
+												</tbody>
+											</table>
+											
+											<a href="#mainBody">Top</a>
+										</div>
+
+										<div class="LW_CollapsibleArea_TitleDiv">
+											<div>
+												<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+												<span class="LW_CollapsibleArea_Title">Miscellaneous Events</span></a>
+												<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+											</div>
+										</div>
+										<div class="sectionblock">
+										
+											<table id="memberList1" class="members" width='100%'>
+												<tbody>
+													<tr>
+														<th class="iconColumn">&nbsp;</th>
+														<th class="nameColumn">Name</th>
+														<th class="descriptionColumn">Description</th>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="event_pic">
+															</div>
+														</td>
+														<td>
+															<a href="RotairHCReport.frmTestForm.DataGridView1_EditingControlShowing.html">DataGridView1.EditingControlShowing</a>
+														</td>
+														<td>
+															Gets a reference to the textbox the grid is using if it is in a column that accepts numeric data only.
+														</td>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="event_pic">
+															</div>
+														</td>
+														<td>
+															<a href="RotairHCReport.frmTestForm.mtxtGridCell_KeyPress.html">mtxtGridCell.KeyPress</a>
+														</td>
+														<td>
+															Prohibits anything except numeric data.
+														</td>
+													</tr>
+												</tbody>
+											</table>
+											
+											<a href="#mainBody">Top</a>
+										</div>										
+										
+									</div>	
+
+								</div>
+
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,1368 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairDialog_Screening - Converted and extremely enhanced from VBA by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<div class="searchcontainer">
+	
+					<form id="SearchForm" action="http://social.msdn.microsoft.com/search/en-us" method="get" style="margin: 0pt; padding: 0pt;" onsubmit="return checkSearchBox()">
+						<div class="searchBoxContainer" style="">
+							<table class="searchBox" border="0" cellpadding="0" cellspacing="0">
+								<tbody>
+									<tr>
+										<td class="searchTextBoxTd">
+											<input value="Search MSDN with Bing" id="SearchInput" maxlength="200" class="searchTextBox" name="query" type="text">        
+										</td>
+										<td class="searchButtonTd">
+											<input src="Graphics/Search.gif" style="position: relative;" title="Search " type="image">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</form>
+					
+					<script type="text/javascript">
+					//<![CDATA[
+						if (!MTPS) var MTPS = {};
+						if (!MTPS.Watermarks) MTPS.Watermarks = {};
+						MTPS.Watermarks.SearchInput = {
+							"control": "SearchInput",
+							"defaultValue": "Search MSDN with Bing",
+							"defaultCSS": "searchTextBox",
+							"focusCSS": "searchTextBoxTrue"
+						};
+						function checkSearchBox() {
+							if (document.getElementById("SearchInput").value == MTPS.Watermarks.SearchInput.defaultValue) {
+								document.getElementById("SearchInput").value = "";
+							}
+						}
+					 //]]>
+					</script>
+				</div>
+
+				<div class="navcontainer">
+			  
+					<div class="nav">
+			
+						<div id="tocnav">
+			
+							<div class="toclevel0 ancestry">
+							
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/ms123401.aspx">MSDN Library</a>
+								</div>
+            
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>								
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/ff361664%28v=vs.110%29.aspx">.NET Development</a>
+								</div>
+            
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>            
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/w0x726c2.aspx">.NET Framework 4</a>
+								</div>
+            
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>								
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/gg145045.aspx">.NET Framework Class Library</a>
+								</div>
+								
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="ERP Custom Namespaces.html">ERP Customized Namespaces</a>
+								</div>						
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Base Classes.html">Custom Base Classes</a>
+								</div>
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Classes.html">Custom Classes</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Controls.html">Custom Controls</a>
+								</div>
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Classes Derived.html">Custom Derived from rotAppObject</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Forms Derived from imsForms.html">Custom Forms Derived from imsForm</a>
+								</div>
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Customized Intuitive AppObjects.html">Customized Intuitive imsAppObjects</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Customized Intuitive Forms.html">Customized Intuitive imsForms</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Printing Classes.html">Printing Classes</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Windows Custom Dialog Forms.html">Windows Custom Dialog Forms</a>
+								</div>
+								
+								<div class="clip13x9 nav_dots_current">
+									<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+								</div>					
+								<div class="toclevel">
+									<a href="RotairDialogScreening.html">RotairDialog_Screening</a>
+								</div>
+
+								<div class="toclevel2 ancestry">
+								
+									<div class="clip13x9 nav_dots_current">
+										<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+									</div>					
+									<div class="toclevel current">
+										<a href='RotairDialogScreening.frmDialogScreening.html'>frmDialogScreening</a>
+									</div>						
+									
+									<div class="toclevel2 ancestry">
+									
+										<div class="clip13x9 nav_dots_current">
+											<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+										</div>					
+										<div class="toclevel">
+											<a href='RotairDialogScreening.frmDialogScreening.Caller.html'>Caller</a>
+										</div>						
+										
+										<div class="clip13x9 nav_dots_current">
+											<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+										</div>					
+										<div class="toclevel">
+											<a href='RotairDialogScreening.frmDialogScreening.PartyID.html'>PartyID</a>
+										</div>						
+										
+										<div class="clip13x9 nav_dots_current">
+											<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+										</div>					
+										<div class="toclevel">
+											<a href='RotairDialogScreening.frmDialogScreening.PartyRecordID.html'>PartyRecordID</a>
+										</div>						
+										
+										<div class="clip13x9 nav_dots_current">
+											<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+										</div>					
+										<div class="toclevel">
+											<a href='RotairDialogScreening.frmDialogScreening.PartyType.html'>PartyType</a>
+										</div>						
+										
+									</div>
+								
+								</div>
+							
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="External Programs.html">External Programs</a>
+								</div>						
+							
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Stored Procedures.html">Stored Procedures</a>
+								</div>						
+								
+							</div>
+														
+						</div>
+
+					</div>
+
+				</div>
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">frmDialogScreening Form</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Used to enter or delete a screening record.</p>
+							
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Inheritance Hierarchy</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">								
+										<a href="http://msdn.microsoft.com/en-us/library/system.object.aspx">System.Object</a>
+										<br>&nbsp;&nbsp;<a href='http://msdn.microsoft.com/en-us/library/system.windows.forms.form.aspx'>System.Windows.Forms.Form</a>
+									</div>							
+								</div><p></p>
+							
+								<strong>Namespace:</strong>&nbsp;<a href="RotairEmail.html">RotairDialog_Screening</a><br>
+								<strong>Assembly:</strong>&nbsp;RotairDialog_Screening.dll
+	
+								<p>The <span class="selflink">frmDialogScreening</span> form exposes the following members.</p>
+	
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Properties</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<table id="memberList1" class="members" width='100%'>
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href='RotairDialogScreening.frmDialogScreening.Caller.html'>Caller</a>
+													</td>
+													<td>
+														A text string to indicate how this form became instantiated.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href='RotairDialogScreening.frmDialogScreening.PartyID.html'>PartyID</a>
+													</td>
+													<td>
+														ID of the party whose record we are to load.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href='RotairDialogScreening.frmDialogScreening.PartyRecordID.html'>PartyRecordID</a>
+													</td>
+													<td>
+														Record ID of the party whose record we are to load.
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href='RotairDialogScreening.frmDialogScreening.PartyType.html'>PartyType</a>
+													</td>
+													<td>
+														Indicates if we are looking at a customer or vendor.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										<a href="#mainBody">Top</a>
+								
+									</div>
+								</div>
+										
+								<br>
+								<p>The following are private members.</p>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Private Constants</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								
+									<div class="sectionblock">
+									
+										<table id="memberList" class="members" width=100%>
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mcomIdLength
+													</td>
+													<td>
+														Maximum length of the string the property <a href='RotairDialogScreening.frmDialogScreening.PartyID.html'>PartyID</a> will accept.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mcomIdPadding
+													</td>
+													<td>
+														Character to pad mstrPartyID with if the string value passed into <a href='RotairDialogScreening.frmDialogScreening.PartyID.html'>PartyID</a>
+														is less than mcomIdLength.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mcomCustomerOrdersButton
+													</td>
+													<td>
+														Text for the button <i>btnExistingOrders</i> if customers are selected for the context.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mcomVendorOrdersButton
+													</td>
+													<td>
+														Text for the button <i>btnExistingOrders</i> if vendors are selected for the context.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mcomEMailTypeClear
+													</td>
+													<td>
+														Suffix for an email type used when the denied party status is cleared.  Currently this email type is surpressed.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mcomEMailTypePrefix
+													</td>
+													<td>
+														Prefix for an email type involved with denied party actions.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mcomEMailTypeSet
+													</td>
+													<td>
+														Suffix for an email type used when the denied party status is set.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mcomCustomerItemsReport
+													</td>
+													<td>
+														The name of a report generated concerning a customer.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mcomVendorItemsReport
+													</td>
+													<td>
+														The name of a report generated concerning a vendor.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconCommentRequired
+													</td>
+													<td>
+														Message indicating that a record can not be saved unless a comment is entered.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconCommentRequiredTitle
+													</td>
+													<td>
+														Title for the message indicating that a record can not be saved unless a comment is entered.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconCheckboxPermission
+													</td>
+													<td>
+														Message warning that the user does not have permission to clear the denied screening checkbox.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconCheckboxPermissionTitle
+													</td>
+													<td>
+														Title for the message warning that the user does not have permission to clear the denied screening checkbox.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconDeleteScreening
+													</td>
+													<td>
+														Question asking for confirmation before deleting a screening record.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconDeleteScreeningTitle
+													</td>
+													<td>
+														Title for the question asking for confirmation before deleting a screening record.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconInvalidId
+													</td>
+													<td>
+														Message informing that the party id was not found in the database.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconInvalidIdTitle
+													</td>
+													<td>
+														Title for the message informing that the party id was not found in the database.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconNewScreeningRecord
+													</td>
+													<td>
+														Message asking for confirmation to create a screening record for someone who was never screened before.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconNewScreeningRecordTitle
+													</td>
+													<td>
+														Title for the message asking for confirmation to create a screening record for someone who was never screened before.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconSaveFailure
+													</td>
+													<td>
+														Message to tell the user the changes they made may not have been saved.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconSaveFailureTitle
+													</td>
+													<td>
+														Title for the message to tell the user the changes they made may not have been saved.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Private Enumerations</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<table id="memberList1" class="members" width='100%'>
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href='RotairDialogScreening.frmDialogScreening.eDropdownColumns.html'>eDropdownColumns</a>
+													</td>
+													<td>
+														Used in the <a href="MultiColCombo.html">multi-column combobox</a> for the displayable columns.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										<a href="#mainBody">Top</a>
+								
+									</div>
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Private Variables</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								
+									<div class="sectionblock">
+									
+										<table id="memberList" class="members">
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='variable_pic'>
+														</div>
+													</td>
+													<td>
+														mbolAdmin
+													</td>
+													<td>
+														If TRUE then will allow the context of the form to be switched between customer and vendor.  Also allows the
+														unchecking of the denied party checkbox.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='variable_pic'>
+														</div>
+													</td>
+													<td>
+														mPartyScreen
+													</td>
+													<td>
+														Object to hold the currently displayed record.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='variable_pic'>
+														</div>
+													</td>
+													<td>
+														mstrCaller
+													</td>
+													<td>
+														Holds the value for the property <a href='RotairDialogScreening.frmDialogScreening.Caller.html'>Caller</a>.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='variable_pic'>
+														</div>
+													</td>
+													<td>
+														mstrPartyID
+													</td>
+													<td>
+														Holds the value for the property <a href='RotairDialogScreening.frmDialogScreening.PartyID.html'>PartyID</a>.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='variable_pic'>
+														</div>
+													</td>
+													<td>
+														mguidPartyRecordID
+													</td>
+													<td>
+														Holds the value for the property <a href='RotairDialogScreening.frmDialogScreening.PartyRecordID.html'>PartyRecordID</a>.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='variable_pic'>
+														</div>
+													</td>
+													<td>
+														mePartyType
+													</td>
+													<td>
+														Holds the value for the property <a href='RotairDialogScreening.frmDialogScreening.PartyType.html'>PartyType</a>.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Private Functions</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<table id="memberList1" class="members" width='100%'>
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairDialogScreening.frmDialogScreening.CancelOrders.html">CancelOrders</a>
+													</td>
+													<td>
+														Cancels the orders for the current party and some other associated stuff.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairDialogScreening.frmDialogScreening.CheckPOsAndRFQs.html">CheckPOsAndRFQs</a>
+													</td>
+													<td>
+														Gathers up some information for an e-mail.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairDialogScreening.frmDialogScreening.DisplayPartyScreen.html">DisplayPartyScreen</a>
+													</td>
+													<td>
+														Copies information from the object to the form and lites up buttons.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairDialogScreening.frmDialogScreening.DoReport.html">DoReport</a>
+													</td>
+													<td>
+														Creates party specific reports.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairDialogScreening.frmDialogScreening.EnableButtons.html">EnableButtons</a>
+													</td>
+													<td>
+														Lites up (or dims) buttons.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairDialogScreening.frmDialogScreening.EnableScreeningControls.html">EnableScreeningControls</a>(Boolean)
+													</td>
+													<td>
+														Allows (or disallows) a screening record to be edited.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairDialogScreening.frmDialogScreening.FormClear.html">FormClear</a>
+													</td>
+													<td>
+														Clears almost all the controls on the form.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairDialogScreening.frmDialogScreening.FormReset.html">FormReset</a>
+													</td>
+													<td>
+														Sets the form to its initial state or disposes it.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairDialogScreening.frmDialogScreening.InitializeDropDown.html">InitializeDropDown</a>
+													</td>
+													<td>
+														Set up for the <a href='MultiColCombo.html'>MultiColCombo</a> control.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairDialogScreening.frmDialogScreening.InstantiateScreeningObject.html">InstantiateScreeningObject</a>(PartyKey)
+													</td>
+													<td>
+														Creates a new object.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairDialogScreening.frmDialogScreening.LoadScreeningInformation.html">LoadScreeningInformation</a>(PartyKey)
+													</td>
+													<td>
+														Populates the object if possible.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairDialogScreening.frmDialogScreening.SendEmail.html">SendEmail</a>
+													</td>
+													<td>
+														Link to <a href="RotairEmail.rotEmailBuilder.html">rotEmailBuilder</a>.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairDialogScreening.frmDialogScreening.SetScreenerData.html">SetScreenerData</a>
+													</td>
+													<td>
+														Updates some fields of the object, possibly sending an e-mail.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairDialogScreening.frmDialogScreening.SetUpForm.html">SetUpForm</a>(<a href='RotairTypes.Enumerations.ePartyType.html'>ePartyType</a>)
+													</td>
+													<td>
+														Initializes the form for a party type.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairDialogScreening.frmDialogScreening.ShowPartySelectionCombo.html">ShowPartySelectionCombo</a>(Boolean)
+													</td>
+													<td>
+														Shows or hides some controls based on the parameter and permissions.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>								
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Handled Events</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+
+									<div class="sectionblock">
+										<div class="LW_CollapsibleArea_TitleDiv">
+											<div>
+												<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+												<span class="LW_CollapsibleArea_Title">Button Events</span></a>
+												<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+											</div>
+										</div>
+										<div class="sectionblock">
+										
+											<table id="memberList1" class="members" width='100%'>
+												<tbody>
+													<tr>
+														<th class="iconColumn">&nbsp;</th>
+														<th class="nameColumn">Name</th>
+														<th class="descriptionColumn">Description</th>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="event_pic">
+															</div>
+														</td>
+														<td>
+															<a href="RotairDialogScreening.frmDialogScreening.btnAcceptScreening_Click.html">btnAcceptScreening.Click</a>
+														</td>
+														<td>
+															Saves a record to table <a href='Tables/tblExDpScreen.png'>tblExDpScreen</a>.
+														</td>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="event_pic">
+															</div>
+														</td>
+														<td>
+															<a href="RotairDialogScreening.frmDialogScreening.btnExistingOrders_Click.html">btnExistingOrders.Click</a>
+														</td>
+														<td>
+															Cancels the orders for the current party and some other associated stuff..
+														</td>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="event_pic">
+															</div>
+														</td>
+														<td>
+															<a href="RotairDialogScreening.frmDialogScreening.btnClose_Click.html">btnClose.Click</a>
+														</td>
+														<td>
+															Disposes (unloads) the form.
+														</td>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="event_pic">
+															</div>
+														</td>
+														<td>
+															<a href="RotairDialogScreening.frmDialogScreening.btnDeleteScreening_Click.html">btnDeleteScreening.Click</a>
+														</td>
+														<td>
+															Deletes the current screening record from <a href='Tables/tblExDpScreen.png'>tblExDpScreen</a>.
+														</td>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="event_pic">
+															</div>
+														</td>
+														<td>
+															<a href="RotairDialogScreening.frmDialogScreening.btnReviewOrders_Click.html">btnReviewOrders.Click</a>
+														</td>
+														<td>
+															Creates reports that are party specific.
+														</td>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="event_pic">
+															</div>
+														</td>
+														<td>
+															<a href="RotairDialogScreening.frmDialogScreening.btnUndoScreening_Click.html">btnUndoScreening.Click</a>
+														</td>
+														<td>
+															Clears the form.
+														</td>
+													</tr>
+												</tbody>
+											</table>
+											
+											<a href="#mainBody">Top</a>
+										</div>
+
+										<div class="LW_CollapsibleArea_TitleDiv">
+											<div>
+												<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+												<span class="LW_CollapsibleArea_Title">Form Events</span></a>
+												<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+											</div>
+										</div>
+										<div class="sectionblock">
+										
+											<table id="memberList1" class="members" width='100%'>
+												<tbody>
+													<tr>
+														<th class="iconColumn">&nbsp;</th>
+														<th class="nameColumn">Name</th>
+														<th class="descriptionColumn">Description</th>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="event_pic">
+															</div>
+														</td>
+														<td>
+															<a href="RotairDialogScreening.frmDialogScreening.frmDialogScreening_Disposed.html">frmDialogScreening.Disposed</a>
+														</td>
+														<td>
+															Cleans up modular level objects.
+														</td>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="event_pic">
+															</div>
+														</td>
+														<td>
+															<a href="RotairDialogScreening.frmDialogScreening.frmDialogScreening_FormClosing.html">frmDialogScreening.FormClosing</a>
+														</td>
+														<td>
+															Checks to see if the form can go bye-bye.
+														</td>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="event_pic">
+															</div>
+														</td>
+														<td>
+															<a href="RotairDialogScreening.frmDialogScreening.frmDialogScreening_Load.html">frmDialogScreening.Load</a>
+														</td>
+														<td>
+															Checks the permissions of the user and possiobly loads a record.
+														</td>
+													</tr>
+												</tbody>
+											</table>
+											
+											<a href="#mainBody">Top</a>
+										</div>
+
+										<div class="LW_CollapsibleArea_TitleDiv">
+											<div>
+												<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+												<span class="LW_CollapsibleArea_Title">Miscellaneous Events</span></a>
+												<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+											</div>
+										</div>
+										<div class="sectionblock">
+										
+											<table id="memberList1" class="members" width='100%'>
+												<tbody>
+													<tr>
+														<th class="iconColumn">&nbsp;</th>
+														<th class="nameColumn">Name</th>
+														<th class="descriptionColumn">Description</th>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="event_pic">
+															</div>
+														</td>
+														<td>
+															<a href="RotairDialogScreening.frmDialogScreening.chkDeniedParty_Click.html">chkDeniedParty.Click</a>
+														</td>
+														<td>
+															Alliows checking but only unchecking with the right permissions.
+														</td>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="event_pic">
+															</div>
+														</td>
+														<td>
+															<a href="RotairDialogScreening.frmDialogScreening.fndObject_FindSelected.html">fndObject.FindSelected</a>
+														</td>
+														<td>
+															Loads a record from <a href='Tables/tblExDpScreen.png'>tblExDpScreen</a>.
+														</td>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="event_pic">
+															</div>
+														</td>
+														<td>
+															<a href="RotairDialogScreening.frmDialogScreening.mccParty_AfterSelect.html">mccParty.AfterSelect</a>
+														</td>
+														<td>
+															Loads a record from <a href='Tables/tblExDpScreen.png'>tblExDpScreen</a>.
+														</td>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="event_pic">
+															</div>
+														</td>
+														<td>
+															<a href="RotairDialogScreening.frmDialogScreening.mccParty_KeyPress.html">mccParty.KeyPress</a>
+														</td>
+														<td>
+															Restricts user input.
+														</td>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="event_pic">
+															</div>
+														</td>
+														<td>
+															<a href="RotairDialogScreening.frmDialogScreening.mccParty_Validating.html">mccParty.Validating</a>
+														</td>
+														<td>
+															May load a record from <a href='Tables/tblExDpScreen.png'>tblExDpScreen</a>.
+														</td>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="event_pic">
+															</div>
+														</td>
+														<td>
+															<a href="RotairDialogScreening.frmDialogScreening.optCustomer_CheckedChanged.html">optCustomer.CheckedChanged</a>
+														</td>
+														<td>
+															Sets up the form for a customer.
+														</td>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="event_pic">
+															</div>
+														</td>
+														<td>
+															<a href="RotairDialogScreening.frmDialogScreening.optVendor_CheckedChanged.html">optVendor.CheckedChanged</a>
+														</td>
+														<td>
+															Sets up the form for a vendor.
+														</td>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="event_pic">
+															</div>
+														</td>
+														<td>
+															<a href="RotairDialogScreening.frmDialogScreening.txtCurrentComments_TextChanged.html">txtCurrentComments.TextChanged</a>
+														</td>
+														<td>
+															Synchronizes the textbox with the object.
+														</td>
+													</tr>
+												</tbody>
+											</table>
+											
+											<a href="#mainBody">Top</a>
+										</div>
+										
+										<div xmlns="">
+											<div class="LW_CollapsibleArea_TitleDiv">
+												<div>
+													<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+													<span class="LW_CollapsibleArea_Title">Example</span></a>
+													<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+												</div>
+											</div>
+											<div class="sectionblock">
+											
+												<p>This is how to launch the party screening form for a customer.</p>
+											
+											</div>
+										</div>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Dim</span> frmScreen <span style="color: Blue;">As New</span> frmDialogScreening</pre>
+															<br>
+															<br>
+															<pre><span style="color: Blue;">With</span> frmScreen</pre>
+															<pre>    .Caller = <span style="color: Blue;">Me</span>.Name</pre>
+															<pre>    .PartyType = Enumerations.ePartyType.Customer</pre>
+															<pre>    <span style="color: Green;">'Either PartyID or PartyRecordID needs to be specified but not both.</span></pre>
+															<pre>    .PartyID = strCustomerID<span style="color: Green;"> '<- strCustomerID holds a valid customer ID.</span></pre>
+															<pre>    .PartyRecordID = guidCustomerID<span style="color: Green;"> '<- guidCustomerID holds a valid customer record ID.</span></pre>
+															<pre>    .ShowDialog(<span style="color: Blue;">Me</span>)</pre>
+															<pre><span style="color: Blue;">End With</span></pre>
+															<br>
+														</div>																	
+													</div>
+												</div>
+											</div>
+
+										</div>											
+										
+									</div>	
+
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

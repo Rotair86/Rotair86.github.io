@@ -1,0 +1,174 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			IntuitiveAppObjectFramework2_CUSTOM - Customizations by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomAppObjects'
+					Source[1] = 'IntuitiveAppObjectFramework2'
+					Source[2] = 'imsAppObject'
+					Source[3] = 'DomainName'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">DomainName Property</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Used to return the Domain name.</p>
+								
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<img src="Graphics/minus.png" name="Syntax" onclick="CollapseExpand('Syntax')"><span class="LW_CollapsibleArea_Title">Syntax</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div id='Syntax' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">
+													<pre><span style="color: Green;">'Declaration</span></pre>
+													<pre><span style="color: Blue;">Public Shared Shadows ReadOnly Property</span> DomainName </pre><span style="color: Blue;">As String</span>
+												</div>				
+											</div>
+										</div>
+									</div>
+									
+									<div id="returnvalue">
+										<h4 class="subHeading">Return Value</h4>
+											<dl>
+												<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string">System.String</a><br><span><span>The domain name.</span><br></span></dd>
+											</dl>
+									</div>							
+									
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>The domain name is the key to <a href='Tables/AppObj_MetadataHeader.png'>AppObj_MetadataHeader</a> and can also
+										be a subdomain.</p>
+										<p>The constructor requires this field as it must access the table with the meta data in it.</p>
+										<p>A domain needs the domain name when it is defining that domain as a subdomain when calling
+										<a href='IntuitiveAppObjectFramework2.imsAppObject.DefineSubdomains.html'>DefineSubdomains</a></p>
+										<p>It can be used to return the collection of objects when it represents a subdomain or to inactivate / reactivate
+										to reload a subdomain.  For these uses it is used in the same way, passed to a method to be used as a key to return
+										the matching subdomain (collection of objects).</p>
+										<p>Used when joining a domain to another for the purpose of looking up fields.</p>
+										<p>In the <a href='IntuitiveAppObjectFramework2.imsAppObject.SubdomainLoadSQL.html'>SubdomainLoadSQL</a> method the
+										domain name (which would really be the subdomain name in this case) is used to determine what SQL to return.</p>
+										<p>Some controls require this information to function properly.</p>										
+										
+									</div>
+
+								</div>	
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Example</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>Here the NewSetup method is overridden to create a new guid for the record id field and prepare two
+										subdomains, '<i>ItemSupplemental</i>' and '<i>ItemUseClass</i>'.</p>
+									
+									</div>
+								</div>
+
+								<div class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">												        
+													<pre><span style="color: Blue;">Protected Overrides Function</span> NewSetup() <span style="color: Blue;">As</span> <a href='IntuitiveAppObjectFramework2.imsReturnData'>imsReturnData</a></pre>
+													<br>
+													<pre>    <span style="color: Blue;">Dim</span> ao <span style="color: Blue;">As</span> <a href='IntuitiveAppObjectFramework2.imsAppObject'>imsAppObject</a></pre>
+													<pre>    <span style="color: Blue;">Dim</span> r2d2 <span style="color: Blue;">As New</span> <a href='IntuitiveAppObjectFramework2.imsReturnData'>imsReturnData()</a></pre>
+													<br>
+													<br>
+													<pre>    <span style="color: Green;">'Call the base to set the standard defaults.</span></pre>
+													<pre>    r2d2.Merge(<span style="color: Blue;">MyBase</span>.NewSetup)</pre>
+													<pre>    <span style="color: Green;">'Sets the field IMA_RecordID to a new guid.  This is already done in the base.</span></pre>
+													<pre>    <span style="color: Green;">'    It is only replicated here for example purposes.</span></pre>
+													<pre>    r2d2.Merge(SetValue(<span style="color: Blue;">True</span>, <span style="color: Red;">"IMA_RecordID"</span>, Guid.NewGuid))</pre>
+													<pre>    <span style="color: Green;">'Must be done for custom subdomains.</span></pre>
+													<pre>    ao = <span style="color: Blue;">Me</span>.ItemSupplemental_Collection.NewObject()</pre>
+													<pre>    ao = <span style="color: Blue;">Me</span>.ItemUseClass_Collection.NewObject()</pre>
+													<br>
+													<pre>    <span style="color: Blue;">Return</span> r2d2</pre>
+													<br>
+													<pre><span style="color: Blue;">End Function</span></pre>
+												</div>																	
+											</div>
+										</div>
+									</div>				
+									
+								</div>	
+
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,103 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			Custom Base Classes - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Links.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomBase'
+					document.write(Menu(Source));
+				</script> 			
+								
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">Custom Base Classes</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								.Net redefines the "Base" class.  Traditionally base class refers to the first class in the hierarchy.  
+								If we use this definition in .NET then we can never create a base class since every class inherits from System.Object.
+								Also since multiple inheritance per class is unsupported we have to make concessions to acheive the desired results.
+								<br>
+								<br>
+								For example, using the traditional system we would have an AppObject base class and a LockingObject base class.  Then
+								a class can inherit AppObject and optionally inherit LockingObject if that is required.  Since this is not permitted in
+								.NET, what I have done is create an AppObject class marked <i>MustInherit</i> which I will refer to as a base class.  I also
+								created AppLockingObject which inherits AppObject and is also marked <i>MustInherit</i> so I will consider it a base class for 
+								this documentation even though technically neither one of them is a base class.  
+								
+							</div>
+							
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Namespaces containing Base (MustInherit) classes</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+										</div>
+									</div>
+								</div>
+								
+								<p>These classes can not be used to create objects without using a derived class.</p>
+								
+								<div class="sectionblock">
+								
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairObject"));
+													</script> 			
+												</td>
+												<td>
+													Used for the common functionality.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

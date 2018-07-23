@@ -1,0 +1,162 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			IntuitiveAO_Item_CUSTOM - Customizations by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomAppObjects'
+					Source[1] = 'IntuitiveAOItem'
+					Source[2] = 'imsAOItem'
+					Source[3] = 'Save'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">Save Method</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Called when saving an object.</p>
+								See <a href='IntuitiveAppObjectFramework2.imsAppObject.Save.html'>Save</a> in the base.
+								
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Syntax</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">
+													<pre><span style="color: Green;">'Declaration</span></pre>
+													<pre><span style="color: Blue;">Public Overrides Function</span> Save( _</pre>
+													<pre>    ProcessNow<span style='color: Blue;'> As Boolean</span></pre>
+													<pre>    ) <span style="color: Blue;">As</span> <a href='IntuitiveAppObjectFramework2.imsReturnData'>imsReturnData</a></pre>
+												</div>				
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div id="parameters">
+									<h4 class="subHeading">Parameters</h4>
+										<dl><dt><span class="parameter">ProcessNow</span></dt>
+											<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.boolean">System.Boolean</a><br><span><span>Undetermined.</span><br></span></dd>
+										</dl>
+								</div>							
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>Only override this method if you need to do anything immediately before or after the save.</p>
+										
+									</div>
+
+								</div>	
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Example</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>Subdomains need to be active or they won't save.  The subdomains '<i>ItemSupplemental</i>' and '<i>ItemUseClass</i>'
+										are activated in the example so they will be saved.  There may be a better way or better place to do this but I haven't
+										found it yet.</p>
+									
+									</div>
+								</div>
+
+								<div class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">												        
+													<pre><span style="color: Blue;">Protected Overrides Function</span> Save() <span style="color: Blue;">As</span> <a href='IntuitiveAppObjectFramework2.imsReturnData'>imsReturnData</a></pre>
+													<br>
+													<pre>    <span style="color: Blue;">Dim</span> r2d2 <span style="color: Blue;">As New</span> <a href='IntuitiveAppObjectFramework2.imsReturnData'>imsReturnData()</a></pre>
+													<br>
+													<br>
+													<pre>    <span style="color: Green;">'Activate the subdomains before calling Save.</span></pre>
+													<pre>    <span style="color: Blue;">Me</span>.SubdomainActivate(<span style="color: Red;">"ItemSupplemental"</span>)</pre>
+													<pre>    <span style="color: Blue;">Me</span>.SubdomainActivate(<span style="color: Red;">"ItemUseClass"</span>)</pre>
+													<pre>    <span style="color: Green;">'Now do the actual saving.</span></pre>
+													<pre>    r2d2 = <span style="color: Blue;">myBase</span>.Save(ProcessNow)</pre>
+													<br>
+													<pre>    <span style="color: Blue;">Return</span> r2d2</pre>
+													<br>
+													<pre><span style="color: Blue;">End Function</span></pre>
+												</div>																	
+											</div>
+										</div>
+									</div>				
+									
+								</div>	
+
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,1483 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			IntuitiveUI_PurchaseOrder_CUSTOM - Customizations by John Maher
+		</title>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script> 		
+		
+	</head>
+	
+	
+	<body>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<div class="searchcontainer">
+	
+					<form id="SearchForm" action="http://social.msdn.microsoft.com/search/en-us" method="get" style="margin: 0pt; padding: 0pt;" onsubmit="return checkSearchBox()">
+						<div class="searchBoxContainer" style="">
+							<table class="searchBox" border="0" cellpadding="0" cellspacing="0">
+								<tbody>
+									<tr>
+										<td class="searchTextBoxTd">
+											<input value="Search MSDN with Bing" id="SearchInput" maxlength="200" class="searchTextBox" name="query" type="text">        
+										</td>
+										<td class="searchButtonTd">
+											<input src="Graphics/Search.gif" style="position: relative;" title="Search " type="image">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</form>
+					
+					<script type="text/javascript">
+					//<![CDATA[
+						if (!MTPS) var MTPS = {};
+						if (!MTPS.Watermarks) MTPS.Watermarks = {};
+						MTPS.Watermarks.SearchInput = {
+							"control": "SearchInput",
+							"defaultValue": "Search MSDN with Bing",
+							"defaultCSS": "searchTextBox",
+							"focusCSS": "searchTextBoxTrue"
+						};
+						function checkSearchBox() {
+							if (document.getElementById("SearchInput").value == MTPS.Watermarks.SearchInput.defaultValue) {
+								document.getElementById("SearchInput").value = "";
+							}
+						}
+					 //]]>
+					</script>
+				</div>
+
+				<div class="navcontainer">
+			  
+					<div class="nav">
+			
+						<div id="tocnav">
+			
+							<div class="toclevel0 ancestry">
+							
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/ms123401.aspx">MSDN Library</a>
+								</div>
+            
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>								
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/ff361664%28v=vs.110%29.aspx">.NET Development</a>
+								</div>
+            
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>            
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/w0x726c2.aspx">.NET Framework 4</a>
+								</div>
+            
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>								
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/gg145045.aspx">.NET Framework Class Library</a>
+								</div>
+
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="ERP Custom Namespaces.html">ERP Customized Namespaces</a>
+								</div>						
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Base Classes.html">Custom Base Classes</a>
+								</div>
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Classes.html">Custom Classes</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Controls.html">Custom Controls</a>
+								</div>
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Classes Derived.html">Custom Derived from rotAppObject</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Forms Derived from imsForms.html">Custom Forms Derived from imsForm</a>
+								</div>
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Customized Intuitive AppObjects.html">Customized Intuitive imsAppObjects</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Customized Intuitive Forms.html">Customized Intuitive imsForms</a>
+								</div>
+								
+								<div class="clip13x9 nav_dots_current">
+									<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+								</div>					
+								<div class="toclevel">
+									<a href="IntuitiveUIPurchaseOrderCUSTOM.html">IntuitiveUI_PurchaseOrder_CUSTOM</a>
+								</div>
+
+								<div class="toclevel0">
+							
+									<div class="clip13x9 nav_dots_current">
+										<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+									</div>					
+									<div class="toclevel current">
+										<a href="IntuitiveUIPurchaseOrderCUSTOM.html.imsUIPurchaseOrderCUSTOM.html">imsUI_PurchaseOrder_CUSTOM</a>
+									</div>
+
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Printing Classes.html">Printing Classes</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Windows Custom Dialog Forms.html">Windows Custom Dialog Forms</a>
+								</div>
+								
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="External Programs.html">External Programs</a>
+								</div>						
+							
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Stored Procedures.html">Stored Procedures</a>
+								</div>						
+							
+							</div>
+							
+						</div>
+
+					</div>
+
+				</div>
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">imsUI_PurchaseOrder_CUSTOM imsForm</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Used for creating or editing a purchase order.</p>
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Inheritance Hierarchy</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">								
+										<a href="http://msdn.microsoft.com/en-us/library/system.object.aspx">System.Object</a>
+										<br>&nbsp;&nbsp;IntuitiveForms.imsForm
+										<br>&nbsp;&nbsp;&nbsp;&nbsp;IntuitiveUI_PurchaseOrder.imsUI_PurchaseOrder
+									</div>							
+								</div><p></p>
+
+								<strong>Namespace:</strong>&nbsp;<a href="IntuitiveUICustomerCUSTOM.html">IntuitiveUI_PurchaseOrder_CUSTOM</a><br>
+								<strong>Assembly:</strong>&nbsp;IntuitiveUI_PurchaseOrder_CUSTOM.dll
+												
+								<p>The imsUI_PurchaseOrder_CUSTOM form exposes the following members.</p>
+																																	
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Methods</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<table id="memberList1" class="members" width='100%'>
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href='IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.DisplayPurchaseOrder.html'>DisplayPurchaseOrder</a>(String)
+													</td>
+													<td>
+														Displays a form showing the purchase order ao.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>		
+
+								<br>
+								<p>The following are private members.</p>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Private Constants</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								
+									<div class="sectionblock">
+									
+										<table id="memberList" class="members" width=100%>
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconInvalidRowID
+													</td>
+													<td>
+														Message key for an invalid row.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconInvalidRowTitle
+													</td>
+													<td>
+														Title for the messagebox for an invalid row.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconNoNotes
+													</td>
+													<td>
+														Text that appears in the cell if no notes have been entered.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconNotesLineItemsColumnIndex
+													</td>
+													<td>
+														Column index for notes on the line items grid.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconNotesMiscLinesColumnIndex
+													</td>
+													<td>
+														Column index for notes on the miscellaneous line grid.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconNotesWOLinesColumnIndex
+													</td>
+													<td>
+														Column index for notes on the work order grid.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconNotesButtonWidth
+													</td>
+													<td>
+														Width of the button in a grid cell that brings up the notes form.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconPhrasesButtonWidth
+													</td>
+													<td>
+														Width of the button in a grid cell that brings up the phrases form.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconPOI_Prefix
+													</td>
+													<td>
+														Qualifyer for a field in the POI table.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconPurchaseOrderLine_Collection
+													</td>
+													<td>
+														Index into the subdomains collection for the line item collection.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconSourceForm
+													</td>
+													<td>
+														Used in email messages to indicate the form where the email originated.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconUndeterminedUseClassID
+													</td>
+													<td>
+														Message key for adding an item that does not have its use class determined.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconUndeterminedUseClassTitle
+													</td>
+													<td>
+														Title for the messagebox for adding an item that does not have its use class determined.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/constant.ico">
+														</div>
+													</td>
+													<td>
+														mconXMLFile
+													</td>
+													<td>
+														Name of the file where the XML that is passed to the <a href="RotairUINote.imsUINoteMaster.html">Notes</a> form is stored.  For debugging purposes.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+
+									<div xmlns="">
+										<div class="LW_CollapsibleArea_TitleDiv">
+											<div>
+												<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+												<span class="LW_CollapsibleArea_Title">Private Variables</span></a>
+												<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+												</div>
+											</div>
+										</div>
+									
+										<div class="sectionblock">
+										
+											<table id="memberList" class="members">
+												<tbody>
+													<tr>
+														<th class="iconColumn">&nbsp;</th>
+														<th class="nameColumn">Name</th>
+														<th class="descriptionColumn">Description</th>
+													</tr>
+													<tr>									
+														<td>		
+															<div class="clip25x25" id="imagecenter25">
+																<img src="Graphics/Graphics.png" class='variable_pic'>
+															</div>
+														</td>
+														<td>
+															mbControlShift
+														</td>
+														<td>
+															TRUE if the control and shift keys are depressed.  Used to display the AO.
+														</td>
+													</tr>
+													<tr>									
+														<td>		
+															<div class="clip25x25" id="imagecenter25">
+																<img src="Graphics/Graphics.png" class='variable_pic'>
+															</div>
+														</td>
+														<td>
+															mbHasNewDefenseArticles
+														</td>
+														<td>
+															TRUE if this purchase order has defense articles added to it this session.
+														</td>
+													</tr>
+													<tr>									
+														<td>		
+															<div class="clip25x25" id="imagecenter25">
+																<img src="Graphics/Graphics.png" class='variable_pic'>
+															</div>
+														</td>
+														<td>
+															mribeItemID
+														</td>
+														<td>
+															Gets set during the CustomRowCellEdit event so we can trap anothe event.
+														</td>
+													</tr>
+													<tr>									
+														<td>		
+															<div class="clip25x25" id="imagecenter25">
+																<img src="Graphics/Graphics.png" class='variable_pic'>
+															</div>
+														</td>
+														<td>
+															mintLineNumber
+														</td>
+														<td>
+															Stores the line number of a line item when the phrase button is clicked so the phrase can be put into the corrent line item.
+														</td>
+													</tr>
+													<tr>									
+														<td>		
+															<div class="clip25x25" id="imagecenter25">
+																<img src="Graphics/Graphics.png" class='variable_pic'>
+															</div>
+														</td>
+														<td>
+															mbNewPurchaseOrder
+														</td>
+														<td>
+															Flag to indicate if the purchase order that was just saved existed prior to the save or not.
+														</td>
+													</tr>
+													<tr>									
+														<td>		
+															<div class="clip25x25" id="imagecenter25">
+																<img src="Graphics/Graphics.png" class='variable_pic'>
+															</div>
+														</td>
+														<td>
+															mcolNotes
+														</td>
+														<td>
+															Collection of notes related to the current purchase order.
+														</td>
+													</tr>
+													<tr>									
+														<td>		
+															<div class="clip25x25" id="imagecenter25">
+																<img src="Graphics/Graphics.png" class='variable_pic'>
+															</div>
+														</td>
+														<td>
+															mfrmNotes
+														</td>
+														<td>
+															Represents the notes form.  Declared with events so the purchase order can be notified when a note is added.
+														</td>
+													</tr>
+													<tr>									
+														<td>		
+															<div class="clip25x25" id="imagecenter25">
+																<img src="Graphics/Graphics.png" class='variable_pic'>
+															</div>
+														</td>
+														<td>
+															mNotesLineItemsButton
+														</td>
+														<td>
+															Needed to trap the click event of the notes button for the line items grid.
+														</td>
+													</tr>
+													<tr>									
+														<td>		
+															<div class="clip25x25" id="imagecenter25">
+																<img src="Graphics/Graphics.png" class='variable_pic'>
+															</div>
+														</td>
+														<td>
+															mNotesMiscLinesButton
+														</td>
+														<td>
+															Needed to trap the click event of the notes button for the misc lines grid.
+														</td>
+													</tr>
+													<tr>									
+														<td>		
+															<div class="clip25x25" id="imagecenter25">
+																<img src="Graphics/Graphics.png" class='variable_pic'>
+															</div>
+														</td>
+														<td>
+															mNotesWOLinesButton
+														</td>
+														<td>
+															Needed to trap the click event of the notes button for the wo lines grid.
+														</td>
+													</tr>
+													<tr>									
+														<td>		
+															<div class="clip25x25" id="imagecenter25">
+																<img src="Graphics/Graphics.png" class='variable_pic'>
+															</div>
+														</td>
+														<td>
+															mbPhraseInLineGrid
+														</td>
+														<td>
+															TRUE if the phrase form was called from the grid, otherwise it was called from the purchase order header.
+														</td>
+													</tr>
+													<tr>									
+														<td>		
+															<div class="clip25x25" id="imagecenter25">
+																<img src="Graphics/Graphics.png" class='variable_pic'>
+															</div>
+														</td>
+														<td>
+															mfrmPhrases
+														</td>
+														<td>
+															Represents the phrases form.  Declared with events so the purchase order can be notified when a phrase is selected.
+														</td>
+													</tr>
+													<tr>									
+														<td>		
+															<div class="clip25x25" id="imagecenter25">
+																<img src="Graphics/Graphics.png" class='variable_pic'>
+															</div>
+														</td>
+														<td>
+															mPhrasesLineItemsButton
+														</td>
+														<td>
+															Neede to trap the click event of the phrases button for the line items grid.
+														</td>
+													</tr>
+													<tr>									
+														<td>		
+															<div class="clip25x25" id="imagecenter25">
+																<img src="Graphics/Graphics.png" class='variable_pic'>
+															</div>
+														</td>
+														<td>
+															mstrPurchaseOrderID
+														</td>
+														<td>
+															Stored when the purchase order is saving so it can be used for email generation after the purchase order has been disposed.
+														</td>
+													</tr>
+													<tr>									
+														<td>		
+															<div class="clip25x25" id="imagecenter25">
+																<img src="Graphics/Graphics.png" class='variable_pic'>
+															</div>
+														</td>
+														<td>
+															meScreenStatus
+														</td>
+														<td>
+															Type of <a href='RotairTypes.Enumerations.eScreeningRC.html'>eScreeningRC</a> to hold the return code of the screening function.  Used in messages and also
+															to prohibit saving an existing purchase order if the vendor's screening did not return successful.
+														</td>
+													</tr>
+													<tr>									
+														<td>		
+															<div class="clip25x25" id="imagecenter25">
+																<img src="Graphics/Graphics.png" class='variable_pic'>
+															</div>
+														</td>
+														<td>
+															mbVendorChanged
+														</td>
+														<td>
+															TRUE if the user changed the vendor.
+														</td>
+													</tr>
+													<tr>									
+														<td>		
+															<div class="clip25x25" id="imagecenter25">
+																<img src="Graphics/Graphics.png" class='variable_pic'>
+															</div>
+														</td>
+														<td>
+															mstrVendorID
+														</td>
+														<td>
+															Holds the vendor id so we can tell if it changed.
+														</td>
+													</tr>
+													<tr>									
+														<td>		
+															<div class="clip25x25" id="imagecenter25">
+																<img src="Graphics/Graphics.png" class='variable_pic'>
+															</div>
+														</td>
+														<td>
+															mguidVendorRecordID
+														</td>
+														<td>
+															Stored when the purchase order is saving so it can be used for email generation after the purchase order has been disposed.
+														</td>
+													</tr>
+													<tr>									
+														<td>		
+															<div class="clip25x25" id="imagecenter25">
+																<img src="Graphics/Graphics.png" class='variable_pic'>
+															</div>
+														</td>
+														<td>
+															mgvwViewLineItems
+														</td>
+														<td>
+															Required to trap some grid events and access some properties.
+														</td>
+													</tr>
+													<tr>									
+														<td>		
+															<div class="clip25x25" id="imagecenter25">
+																<img src="Graphics/Graphics.png" class='variable_pic'>
+															</div>
+														</td>
+														<td>
+															mgvwViewMiscLines
+														</td>
+														<td>
+															Required to trap some grid events and access some properties.
+														</td>
+													</tr>
+													<tr>									
+														<td>		
+															<div class="clip25x25" id="imagecenter25">
+																<img src="Graphics/Graphics.png" class='variable_pic'>
+															</div>
+														</td>
+														<td>
+															mgvwViewMiscLines
+														</td>
+														<td>
+															Required to trap some grid events and access some properties.
+														</td>
+													</tr>
+												</tbody>
+											</table>
+											
+											<a href="#mainBody">Top</a>
+										</div>
+									</div>
+
+									<div xmlns="">
+										<div class="LW_CollapsibleArea_TitleDiv">
+											<div>
+												<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+												<span class="LW_CollapsibleArea_Title">Overridden Functions</span></a>
+												<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+											</div>
+										</div>
+										<div class="sectionblock">
+										
+											<table id="memberList1" class="members" width='100%'>
+												<tbody>
+													<tr>
+														<th class="iconColumn">&nbsp;</th>
+														<th class="nameColumn">Name</th>
+														<th class="descriptionColumn">Description</th>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="function_pic">
+															</div>
+														</td>
+														<td>
+															<a href="IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.InitializeComponentsEx.html">InitializeComponentsEx</a>
+														</td>
+														<td>
+															Adds the buttons in the grid for notes and phrases.
+														</td>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="function_pic">
+															</div>
+														</td>
+														<td>
+															<a href="IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.LoadPurchaseOrder.html">LoadPurchaseOrder</a>
+														</td>
+														<td>
+															Loads the notes for a purchase order.
+														</td>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter23">
+																<img src="Graphics/Graphics.png" class="function_pic">
+															</div>
+														</td>
+														<td>
+															<a href="IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.ResetForm.html">ResetForm</a>
+														</td>
+														<td>
+															Clears any informational labels in the footer panel.
+														</td>
+													</tr>
+												</tbody>
+											</table>
+											
+											<a href="#mainBody">Top</a>
+										</div>
+									</div>	
+									
+									<div xmlns="">
+										<div class="LW_CollapsibleArea_TitleDiv">
+											<div>
+												<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+												<span class="LW_CollapsibleArea_Title">Private Functions</span></a>
+												<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+											</div>
+										</div>
+										<div class="sectionblock">
+										
+											<table id="memberList1" class="members" width='100%'>
+												<tbody>
+													<tr>
+														<th class="iconColumn">&nbsp;</th>
+														<th class="nameColumn">Name</th>
+														<th class="descriptionColumn">Description</th>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter25">
+																<img src="Graphics/Graphics.png" class="function_pic">
+															</div>
+														</td>
+														<td>
+															<a href="IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.CheckForDefenseArticles.html">CheckForDefenseArticles</a>(Boolean)
+														</td>
+														<td>
+															Checks for defense articles in the line items.
+														</td>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter25">
+																<img src="Graphics/Graphics.png" class="function_pic">
+															</div>
+														</td>
+														<td>
+															<a href="IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.CheckForNewlyAddedDefenseArticles.html">CheckForNewlyAddedDefenseArticles</a>
+														</td>
+														<td>
+															Checks for defense articles in the line items but ignores any items that have been added in a prior session.
+														</td>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter25">
+																<img src="Graphics/Graphics.png" class="function_pic">
+															</div>
+														</td>
+														<td>
+															<a href="IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.GetScreeningInfo.html">GetScreeningInfo</a>(String)
+														</td>
+														<td>
+															Screens the vendor.
+														</td>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter25">
+																<img src="Graphics/Graphics.png" class="function_pic">
+															</div>
+														</td>
+														<td>
+															<a href="IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.ShowNotes.html">ShowNotes</a>(XmlDocument)
+														</td>
+														<td>
+															Displays the <a href="RotairUINote.rotUINoteMAster.html">Notes</a> form.
+														</td>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter25">
+																<img src="Graphics/Graphics.png" class="function_pic">
+															</div>
+														</td>
+														<td>
+															<a href="IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.ShowPhrases.html">ShowPhrases</a>(<a href='RotairTypes.Enumerations.ePhraseForm.html'>ePhraseForm</a>, String)
+														</td>
+														<td>
+															Displays the <a href='RotairDialogPhrases.frmDialogPhrases.html'>Phrases</a> form.
+														</td>
+													</tr>
+													<tr>		
+														<td>		  
+															<div class="clip25x25" id="imagecenter25">
+																<img src="Graphics/Graphics.png" class="function_pic">
+															</div>
+														</td>
+														<td>
+															<a href="IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.VendorScreening.html">VendorScreening</a>(String)
+														</td>
+														<td>
+															Displays a label in the footer if the vendor fails the screening test on an existing purchase order.  Prohibits creating a new purchase order for a vendor who did not pass
+															the screening test.
+														</td>
+													</tr>
+												</tbody>
+											</table>
+											
+											<a href="#mainBody">Top</a>
+										</div>
+									</div>	
+
+									<div xmlns="">
+										<div class="LW_CollapsibleArea_TitleDiv">
+											<div>
+												<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+												<span class="LW_CollapsibleArea_Title">Overridden Events</span></a>
+												<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+											</div>
+										</div>
+
+										<div class="sectionblock">
+											<div class="LW_CollapsibleArea_TitleDiv">
+												<div>
+													<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+													<span class="LW_CollapsibleArea_Title">Binder Events</span></a>
+													<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+												</div>
+											</div>
+											<div class="sectionblock">
+											
+												<table id="memberList1" class="members" width='100%'>
+													<tbody>
+														<tr>
+															<th class="iconColumn">&nbsp;</th>
+															<th class="nameColumn">Name</th>
+															<th class="descriptionColumn">Description</th>
+														</tr>
+														<tr>		
+															<td>		  
+																<div class="clip25x25" id="imagecenter23">
+																	<img src="Graphics/Graphics.png" class="event_pic">
+																</div>
+															</td>
+															<td>
+																<a href="IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.bdrPurchaseOrder_Bound.html">bdrPurchaseOrder_Bound</a>
+															</td>
+															<td>
+																Screens the vendor.
+															</td>
+														</tr>
+														<tr>		
+															<td>		  
+																<div class="clip25x25" id="imagecenter23">
+																	<img src="Graphics/Graphics.png" class="event_pic">
+																</div>
+															</td>
+															<td>
+																<a href="IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.bdrPurchaseOrder_Saved.html">bdrPurchaseOrder_Saved</a>
+															</td>
+															<td>
+																Checks to see if any export compliance emails need to go out.
+															</td>
+														</tr>
+														<tr>		
+															<td>		  
+																<div class="clip25x25" id="imagecenter23">
+																	<img src="Graphics/Graphics.png" class="event_pic">
+																</div>
+															</td>
+															<td>
+																<a href="IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.bdrPurchaseOrder_Saving.html">bdrPurchaseOrder_Saving</a>
+															</td>
+															<td>
+																Allows saving only if the vendor passed the screening test and if so then stores some imformation used in the ecport compluance emails.
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												
+												<a href="#mainBody">Top</a>
+											</div>																
+											
+										</div>	
+
+									</div>	
+
+									<div xmlns="">
+										<div class="LW_CollapsibleArea_TitleDiv">
+											<div>
+												<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+												<span class="LW_CollapsibleArea_Title">Handled Events</span></a>
+												<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+											</div>
+										</div>
+
+										<div class="sectionblock">
+											<div class="LW_CollapsibleArea_TitleDiv">
+												<div>
+													<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+													<span class="LW_CollapsibleArea_Title">Button Events</span></a>
+													<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+												</div>
+											</div>
+											<div class="sectionblock">
+											
+												<table id="memberList1" class="members" width='100%'>
+													<tbody>
+														<tr>
+															<th class="iconColumn">&nbsp;</th>
+															<th class="nameColumn">Name</th>
+															<th class="descriptionColumn">Description</th>
+														</tr>
+														<tr>		
+															<td>		  
+																<div class="clip25x25" id="imagecenter23">
+																	<img src="Graphics/Graphics.png" class="event_pic">
+																</div>
+															</td>
+															<td>
+																<a href='IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.btnHelp_Click.html'>btnHelp.Click</a>
+															</td>
+															<td>
+																Shows the ao form if the flag is set.
+															</td>
+														</tr>
+														<tr>		
+															<td>		  
+																<div class="clip25x25" id="imagecenter23">
+																	<img src="Graphics/Graphics.png" class="event_pic">
+																</div>
+															</td>
+															<td>
+																<a href='IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.btnPhrases_Click.html'>btnPhrases.Click</a>
+															</td>
+															<td>
+																Displays the phrases form for the header (master) record.
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												
+												<a href="#mainBody">Top</a>
+											</div>									
+										</div>									
+
+										<div class="sectionblock">
+											<div class="LW_CollapsibleArea_TitleDiv">
+												<div>
+													<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+													<span class="LW_CollapsibleArea_Title">Form Events</span></a>
+													<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+												</div>
+											</div>
+											<div class="sectionblock">
+											
+												<table id="memberList1" class="members" width='100%'>
+													<tbody>
+														<tr>
+															<th class="iconColumn">&nbsp;</th>
+															<th class="nameColumn">Name</th>
+															<th class="descriptionColumn">Description</th>
+														</tr>
+														<tr>		
+															<td>		  
+																<div class="clip25x25" id="imagecenter23">
+																	<img src="Graphics/Graphics.png" class="event_pic">
+																</div>
+															</td>
+															<td>
+																<a href='IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM_KeyDown.html'>imsUI_PurchaseOrder_CUSTOM.KeyDown</a>
+															</td>
+															<td>
+																Sets the flag to display the ao form if both control and shift are held down.
+															</td>
+														</tr>
+														<tr>		
+															<td>		  
+																<div class="clip25x25" id="imagecenter23">
+																	<img src="Graphics/Graphics.png" class="event_pic">
+																</div>
+															</td>
+															<td>
+																<a href='IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM_KeyUp.html'>imsUI_PurchaseOrder_CUSTOM.KeyUp</a>
+															</td>
+															<td>
+																Clears the flag to display the ao form if either control or shift or both are released. 
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												
+												<a href="#mainBody">Top</a>
+											</div>									
+										</div>	
+										
+										<div class="sectionblock">
+											<div class="LW_CollapsibleArea_TitleDiv">
+												<div>
+													<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+													<span class="LW_CollapsibleArea_Title">Grid Events</span></a>
+													<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+												</div>
+											</div>
+
+											<div class="sectionblock">
+												<div class="LW_CollapsibleArea_TitleDiv">
+													<div>
+														<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+														<span class="LW_CollapsibleArea_Title">Line Items</span></a>
+														<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+													</div>
+												</div>
+
+												<div class="sectionblock">
+												
+													<table id="memberList1" class="members" width='100%'>
+														<tbody>
+															<tr>
+																<th class="iconColumn">&nbsp;</th>
+																<th class="nameColumn">Name</th>
+																<th class="descriptionColumn">Description</th>
+															</tr>
+															<tr>		
+																<td>		  
+																	<div class="clip25x25" id="imagecenter23">
+																		<img src="Graphics/Graphics.png" class="event_pic">
+																	</div>
+																</td>
+																<td>
+																	<a href="IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.mgvwViewLineItems_CustomRowCellEdit.html">mgvwViewLineItems.CustomRowCellEdit</a>
+																</td>
+																<td>
+																	Prohibits entering of undetermined items.
+																</td>
+															</tr>
+															<tr>		
+																<td>		  
+																	<div class="clip25x25" id="imagecenter23">
+																		<img src="Graphics/Graphics.png" class="event_pic">
+																	</div>
+																</td>
+																<td>
+																	<a href="IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.mgvwViewLineItems_CustomUnboundColumnData.html">mgvwViewLineItems.CustomUnboundColumnData</a>
+																</td>
+																<td>
+																	Displays the last note entered for the specific line in a cell.
+																</td>
+															</tr>
+															<tr>		
+																<td>		  
+																	<div class="clip25x25" id="imagecenter23">
+																		<img src="Graphics/Graphics.png" class="event_pic">
+																	</div>
+																</td>
+																<td>
+																	<a href="IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.mgvwViewLineItems_mNotesLineItemsButton_ButtonPressed.html">mgvwViewLineItems_mNotesLineItemsButton.ButtonPressed</a>
+																</td>
+																<td>
+																	Displays the notes form for the specific line item.
+																</td>
+															</tr>
+															<tr>		
+																<td>		  
+																	<div class="clip25x25" id="imagecenter23">
+																		<img src="Graphics/Graphics.png" class="event_pic">
+																	</div>
+																</td>
+																<td>
+																	<a href="IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.mgvwViewLineItems_mPhrasesLineItemsButton_ButtonPressed.html">mgvwViewLineItems_mPhrasesLineItemsButton.ButtonPressed</a>
+																</td>
+																<td>
+																	Displays the phrases form for the specific line item.
+																</td>
+															</tr>
+														</tbody>
+													</table>
+													
+													<a href="#mainBody">Top</a>
+												</div>	
+											</div>
+											
+											<div class="sectionblock">
+												<div class="LW_CollapsibleArea_TitleDiv">
+													<div>
+														<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+														<span class="LW_CollapsibleArea_Title">Miscellaneous Lines</span></a>
+														<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+													</div>
+												</div>
+
+												<div class="sectionblock">
+												
+													<table id="memberList1" class="members" width='100%'>
+														<tbody>
+															<tr>
+																<th class="iconColumn">&nbsp;</th>
+																<th class="nameColumn">Name</th>
+																<th class="descriptionColumn">Description</th>
+															</tr>
+															<tr>		
+																<td>		  
+																	<div class="clip25x25" id="imagecenter23">
+																		<img src="Graphics/Graphics.png" class="event_pic">
+																	</div>
+																</td>
+																<td>
+																	<a href="IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.mgvwViewMiscLines_CustomUnboundColumnData.html">mgvwViewMiscLines.CustomUnboundColumnData</a>
+																</td>
+																<td>
+																	Displays the last note entered for the specific line in a cell.
+																</td>
+															</tr>
+															<tr>		
+																<td>		  
+																	<div class="clip25x25" id="imagecenter23">
+																		<img src="Graphics/Graphics.png" class="event_pic">
+																	</div>
+																</td>
+																<td>
+																	<a href="IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.mgvwViewMiscLines_mNotesMiscLinesButton_ButtonPressed.html">mgvwViewMiscLines_mNotesMiscLinesButton.ButtonPressed</a>
+																</td>
+																<td>
+																	Displays the notes form for the specific miscellaneous line.
+																</td>
+															</tr>
+														</tbody>
+													</table>
+													
+													<a href="#mainBody">Top</a>
+												</div>	
+											</div>
+
+											<div class="sectionblock">
+												<div class="LW_CollapsibleArea_TitleDiv">
+													<div>
+														<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+														<span class="LW_CollapsibleArea_Title">Work Order Lines</span></a>
+														<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+													</div>
+												</div>
+
+												<div class="sectionblock">
+												
+													<table id="memberList1" class="members" width='100%'>
+														<tbody>
+															<tr>
+																<th class="iconColumn">&nbsp;</th>
+																<th class="nameColumn">Name</th>
+																<th class="descriptionColumn">Description</th>
+															</tr>
+															<tr>		
+																<td>		  
+																	<div class="clip25x25" id="imagecenter23">
+																		<img src="Graphics/Graphics.png" class="event_pic">
+																	</div>
+																</td>
+																<td>
+																	<a href="IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.mgvwViewWOLines_CustomUnboundColumnData.html">mgvwViewWOLines.CustomUnboundColumnData</a>
+																</td>
+																<td>
+																	Displays the last note entered for the specific line in a cell.
+																</td>
+															</tr>
+															<tr>		
+																<td>		  
+																	<div class="clip25x25" id="imagecenter23">
+																		<img src="Graphics/Graphics.png" class="event_pic">
+																	</div>
+																</td>
+																<td>
+																	<a href="IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.mgvwViewWOLines_mNotesWOLinesButton_ButtonPressed.html">mgvwViewWOLines_mNotesWOLinesButton.ButtonPressed</a>
+																</td>
+																<td>
+																	Displays the notes form for the specific work order line.
+																</td>
+															</tr>
+														</tbody>
+													</table>
+													
+													<a href="#mainBody">Top</a>
+												</div>	
+											</div>										
+											
+										</div>
+										
+										<div class="sectionblock">
+											<div class="LW_CollapsibleArea_TitleDiv">
+												<div>
+													<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+													<span class="LW_CollapsibleArea_Title">Miscellaneous Events</span></a>
+													<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+												</div>
+											</div>
+											<div class="sectionblock">
+											
+												<table id="memberList1" class="members" width='100%'>
+													<tbody>
+														<tr>
+															<th class="iconColumn">&nbsp;</th>
+															<th class="nameColumn">Name</th>
+															<th class="descriptionColumn">Description</th>
+														</tr>
+														<tr>		
+															<td>		  
+																<div class="clip25x25" id="imagecenter23">
+																	<img src="Graphics/Graphics.png" class="event_pic">
+																</div>
+															</td>
+															<td>
+																<a href="IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.lnkNotes_LinkClicked.html">lnkNotes.LinkClicked</a>
+															</td>
+															<td>
+																Displays the <a href="RotairUINote.imsUINote.html">Notes</a> form.
+															</td>
+														</tr>
+														<tr>		
+															<td>		  
+																<div class="clip25x25" id="imagecenter23">
+																	<img src="Graphics/Graphics.png" class="event_pic">
+																</div>
+															</td>
+															<td>
+																<a href="IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.mfrmNotes_NewNote.html">mfrmNotes.NewNote</a>
+															</td>
+															<td>
+																Updates the notes if a new note was added.
+															</td>
+														</tr>
+														<tr>		
+															<td>		  
+																<div class="clip25x25" id="imagecenter23">
+																	<img src="Graphics/Graphics.png" class="event_pic">
+																</div>
+															</td>
+															<td>
+																<a href="IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.mfrmPhrases_PhrasesSelected.html">mfrmPhrases.PhrasesSelected</a>
+															</td>
+															<td>
+																Updates the phrases.
+															</td>
+														</tr>
+														<tr>		
+															<td>		  
+																<div class="clip25x25" id="imagecenter23">
+																	<img src="Graphics/Graphics.png" class="event_pic">
+																</div>
+															</td>
+															<td>
+																<a href="IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.mribeItemID_Validating.html">mribeItemID.Validating</a>
+															</td>
+															<td>
+																Prohibits undetermined items to be entered.
+															</td>
+														</tr>
+														<tr>		
+															<td>		  
+																<div class="clip25x25" id="imagecenter23">
+																	<img src="Graphics/Graphics.png" class="event_pic">
+																</div>
+															</td>
+															<td>
+																<a href="IntuitiveUIPurchaseOrderCUSTOM.imsUIPurchaseOrderCUSTOM.Task_lnkChangeVendorID_LinkClicked.html">Task_lnkChangeVendorID.LinkClicked</a>
+															</td>
+															<td>
+																Clears the flag to display the ao form if either control or shift or both are released.
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												
+												<a href="#mainBody">Top</a>
+											</div>	
+										</div>	
+
+									</div>
+									
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Customizations</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+
+									<h3>Informational Footer</h3>
+									<p>The footer has been transitioned to a display of certain key information that is normally visible on a specific tab so that it is always visible.</p>
+									<p>A label gets displayed for the following:</p>
+									<ul>
+									<li><i>DeniedParty</i> is TRUE; displays "DP Stop".</li>
+									<li>Records exist in <a href='Tables\tblRI_Note.PNG'>tblRI_Note</a>; displays "Notes Exist".</li>
+									</ul>
+									<br>
+
+									<h3>Notes</h3>
+									<p>The last notes entered for line items, if there are any, are displayed in the grid.  Notes for the header are not displayed.  To view them you need
+									to go to the notes form.</p>
+									<p>Notes for the header can be added by clicking on the <i>Notes</i> link label in the task shade.  For a line item clicking on the cell displays a button
+									that will bring up the notes form.</p>
+									<br>
+
+									<h3>Screening</h3>
+									<p>A purchase order can only be edited if the vendor has a successful screening. This is determined by calling <a href="RotairExportManagement.ExportManagement.ScreenVendor.html">ScreenVendor</a>.  
+									If the vendor fails to pass the screening the user is presented with the option to screen the vendor via the <a href='RotairDialogScreening.frmDialogScreening.html'>Screening dialog</a>.</p>
+									<br>
+
+									<h3>Phrases</h3>
+									<p>Predefined blocks of text are stored in the database and added to the purchase order header or item lines via the <a href='RotairDialogPhrases.frmDialogPhrases.html'>Phrases</a> form.</p>
+									<br>
+
+									<h3>Undetermined Items</h3>
+									<p>Undetermined items are not allowed on the purchase order.  The item lookup button has been removed and the item id is checked when entered in the grid.</p>
+									<br>
+
+									<h3>Export Compliance Emails</h3>
+									The system will automatically send out emails if:
+									<script type="text/javascript">
+										document.write(PurchaseOrderExportComplianceEmail());
+									</script> 
+									<br>													
+
+									<h3>Debugging</h3>
+									<p>Holding <b>control</b> and <b>shift</b> down and clicking the <i>Help</i> button will display the purchase order ao in a form.</p>
+									<p>When the <a href="RotairUINote.imsUINoteMaster.html">notes</a> form is displayed the xml that gets passed gets written out to a file.</p>
+									<br>
+
+								</div>
+
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

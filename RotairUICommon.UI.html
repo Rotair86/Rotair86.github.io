@@ -1,0 +1,738 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairUICommon - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairUICommon'
+					Source[2] = 'UI'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			
+			<div class="content">
+
+				<div class="topicContainer">
+			
+					<div class="topic">
+	
+						<h1 class="title">UI Class</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Handles basic messages, notes and dp stop labels and buttons found in the bottom panel and the debugging forms.</p>
+								<p>The functions are shared to eliminate the need for instantiating an object and also to self-document.</p>
+							
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Inheritance Hierarchy</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">								
+										<a href="http://msdn.microsoft.com/en-us/library/system.object.aspx">System.Object</a>
+									</div>							
+								</div><p></p>
+							
+								<strong>Namespace:</strong>&nbsp;<a href="RotairUICommon.html">RotairUI_Common</a><br>
+								<strong>Assembly:</strong>&nbsp;RotairUI_Common.dll
+	
+								<p>The <span class="selflink">UI</span> class exposes the following members.</p>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Public Constants" onclick="CollapseExpand('Public Constants')"><span class="LW_CollapsibleArea_Title">Public Constants</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+									<div id='Public Constants' class="sectionblock">
+									
+										<table id="memberList" class="members">
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														StatusButtonStop
+													</td>
+													<td>
+														Name of the dp stop button.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														StatusButtonWarning
+													</td>
+													<td>
+														Name of the notes button.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>
+						
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Enumerations" onclick="CollapseExpand('Enumerations')"><span class="LW_CollapsibleArea_Title">Enumerations</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								
+									<div id='Enumerations' class="sectionblock">
+									
+										<table id="memberList" class="members">
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="enumeration_pic">
+														</div>
+													</td>
+													<td>
+														<a href='RotairUICommon.UI.eShowStatus.html'>eShowStatus</a>
+													</td>
+													<td>
+														Determines what buttons or labels the functions that work with them act upon.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>
+						
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Read-Only Properties" onclick="CollapseExpand('Read-Only Properties')"><span class="LW_CollapsibleArea_Title">Read-Only Properties</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+									<div id='Read-Only Properties' class="sectionblock">
+									
+										<table id="memberList1" class="members">
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>
+													<td>
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+														</div>
+													</td>
+													<td>
+														<a href="RotairUICommon.UI.InvalidHandle.html">InvalidHandle</a>
+													</td>
+													<td>
+														Read-Only.  Returns the constant returned by the grid for a row that has no corresponding object in the datasource.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										<a href="#mainBody">Top</a>
+								
+									</div>
+								</div>
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Public Methods" onclick="CollapseExpand('Public Methods')"><span class="LW_CollapsibleArea_Title">Public Methods</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div id='Public Methods' class="sectionblock">
+									
+										<table id="memberList1" class="members">
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairUICommon.UI.CantAddNotes.html">CantAddNotes</a>
+													</td>
+													<td>
+														Displays a message indicating notes are unable to be added at this time.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairUICommon.UI.ClearStatus.html">ClearStatus</a>(imsPanel, eShowStatus)
+													</td>
+													<td>
+														Removes labels and buttons for both notes and dp stop on the bottom panel.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairUICommon.UI.DisplayMessage.html">DisplayMessage</a>(String)
+													</td>
+													<td>
+														Displays a message from a table based on an ID.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairUICommon.UI.DisplayMessage.html">DisplayMessage</a>(String, MessageBoxIcon)
+													</td>
+													<td>
+														Displays a message from a table based on an ID choosing an icon to display.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairUICommon.UI.DisplayMessage.html">DisplayMessage</a>(String, MessageBoxIcon, String)
+													</td>
+													<td>
+														Displays a message from a table based on an ID choosing an icon and title to display.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairUICommon.UI.DisplayMessage.html">DisplayMessage</a>(String, MessageBoxIcon, String, String)
+													</td>
+													<td>
+														Displays a message from a table based on an ID choosing an icon and title to display plus adding some custom
+														text to the end of the message.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairUICommon.UI.DisplayMessage.html">DisplayMessage</a>(String, MessageBoxIcon, String, String, String())
+													</td>
+													<td>
+														Displays a message from a table based on an ID choosing an icon and title to display plus adding some custom
+														text to the end of the message.  Also includes strings that are to replace placeholders.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairUICommon.UI.DisplayMessage.html">DisplayMessage</a>(String, MessageBoxIcon, String, String, String(), MessageBoxButtons)
+													</td>
+													<td>
+														Displays a message from a table based on an ID choosing an icon and title to display plus adding some custom
+														text to the end of the message.  Also includes strings that are to replace placeholders and what buttons are
+														displayed.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairUICommon.UI.LockedMessage.html">LockedMessage</a>(String, String)
+													</td>
+													<td>
+														Displays a message indicating a record is locked.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairUICommon.UI.MakeReadOnly.html">MakeReadOnly</a>(imsForm, Boolean)
+													</td>
+													<td>
+														Makes the controls on a form read only or restores them to their previous state.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairUICommon.UI.OKToDiscard.html">OKToDiscard</a>(rotAppObject)
+													</td>
+													<td>
+														Displays a dialog asking the user if they wish to save the changes if the object is dirty.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairUICommon.UI.ShowAO.html">ShowAO</a>(String, imsAppObject)
+													</td>
+													<td>
+														Displays an AO and its children as a tree.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairUICommon.UI.ShowAO.html">ShowAO</a>(String, imsAppObject, <a href="RotairUICommon.frmDisplayAO.strucDisplayField.html">strucDisplayField</a>)
+													</td>
+													<td>
+														Displays an AO and its children as a tree along with specific fields.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairUICommon.UI.ShowAO.html">ShowAO</a>(String, imsAppObject, String())
+													</td>
+													<td>
+														Displays an AO and its children as a tree along with specific fields.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairUICommon.UI.ShowAppObject.html">ShowAppObject</a>(imsAppObject)
+													</td>
+													<td>
+														Displays an AO and its properties.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairUICommon.UI.ShowStatus.html">ShowStatus</a>(imsPanel, eShowStatus)
+													</td>
+													<td>
+														Adds labels for both notes and dp stop on the bottom panel.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairUICommon.UI.ShowStatusButtons.html">ShowStatusButtons</a>(imsPanel, eShowStatus)
+													</td>
+													<td>
+														Adds buttons for both notes and dp stop on the bottom panel.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>	
+									
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Private Constants" onclick="CollapseExpand('Private Constants')"><span class="LW_CollapsibleArea_Title">Private Constants</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+									<div id='Private Constants' class="sectionblock">
+									
+										<table id="memberList" class="members">
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconNewRowHandle
+													</td>
+													<td>
+														This is what DevXpress assigns as a handle to a new row.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconCantAddNotes
+													</td>
+													<td>
+														Message indicating notes can not be added.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconDiscardChanges
+													</td>
+													<td>
+														Message asking if changes are to be discarded for a dirty object.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconMessageTitle
+													</td>
+													<td>
+														Generic title used for the custom messages.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconRecordLocked
+													</td>
+													<td>
+														Message when a record is locked.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconStatusButtonDeniedParty
+													</td>
+													<td>
+														Text for the dp stop button.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconStatusButtonNoQuoteText
+													</td>
+													<td>
+														Text for the no quote button.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconStatusButtonNotesText
+													</td>
+													<td>
+														Text for the notes button.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconStatusLabelDeniedParty
+													</td>
+													<td>
+														Text for the dp stop label.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconStatusLabelNoQuoteText
+													</td>
+													<td>
+														Text for the no quote label.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconStatusLabelNotesText
+													</td>
+													<td>
+														Text for the notes label.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconStatusLabelStop
+													</td>
+													<td>
+														Name of the dp stop label.
+													</td>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Constant.ico" alt="">
+														</div>
+													</td>
+													<td>
+														mconStatusLabelWarning
+													</td>
+													<td>
+														Name of the notes label.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Private Variables" onclick="CollapseExpand('Private Variables')"><span class="LW_CollapsibleArea_Title">Private Variables</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								
+									<div id='Private Variables' class="sectionblock">
+									
+										<table id="memberList" class="members">
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>									
+													<td>		
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class='variable_pic'>
+														</div>
+													</td>
+													<td>
+														mstrLastError
+													</td>
+													<td>
+														Text description of the last error.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>
+							
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Private Methods" onclick="CollapseExpand('Private Methods')"><span class="LW_CollapsibleArea_Title">Private Methods</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div id='Private Methods' class="sectionblock">
+									
+										<table id="memberList1" class="members">
+											<tbody>
+												<tr>
+													<th class="iconColumn">&nbsp;</th>
+													<th class="nameColumn">Name</th>
+													<th class="descriptionColumn">Description</th>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairUICommon.UI.LoopThroughContaiier.html">LoopThroughContaiier</a>(ControlCollection, Boolean)
+													</td>
+													<td>
+														Loops through a controls collection and makes certain controls read only (or appear to be read only)
+														or restores thier previous state.
+													</td>
+												</tr>
+												<tr>		
+													<td>		  
+														<div class="clip25x25" id="imagecenter25">
+															<img src="Graphics/Graphics.png" class="function_pic">
+														</div>
+													</td>
+													<td>
+														<a href="RotairUICommon.UI.RemoveControlIfExists.html">RemoveControlIfExists</a>(imsPanel, String)
+													</td>
+													<td>
+														Removes a control (label or button) from the bottom panel.
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										
+										<a href="#mainBody">Top</a>
+									</div>
+								</div>	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>
+

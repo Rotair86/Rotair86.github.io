@@ -1,0 +1,856 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairObject - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<div class="searchcontainer">
+	
+					<form id="SearchForm" action="http://social.msdn.microsoft.com/search/en-us" method="get" style="margin: 0pt; padding: 0pt;" onsubmit="return checkSearchBox()">
+						<div class="searchBoxContainer" style="">
+							<table class="searchBox" border="0" cellpadding="0" cellspacing="0">
+								<tbody>
+									<tr>
+										<td class="searchTextBoxTd">
+											<input value="Search MSDN with Bing" id="SearchInput" maxlength="200" class="searchTextBox" name="query" type="text">        
+										</td>
+										<td class="searchButtonTd">
+											<input src="Graphics/Search.gif" style="position: relative;" title="Search " type="image">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</form>
+					
+					<script type="text/javascript">
+					//<![CDATA[
+						if (!MTPS) var MTPS = {};
+						if (!MTPS.Watermarks) MTPS.Watermarks = {};
+						MTPS.Watermarks.SearchInput = {
+							"control": "SearchInput",
+							"defaultValue": "Search MSDN with Bing",
+							"defaultCSS": "searchTextBox",
+							"focusCSS": "searchTextBoxTrue"
+						};
+						function checkSearchBox() {
+							if (document.getElementById("SearchInput").value == MTPS.Watermarks.SearchInput.defaultValue) {
+								document.getElementById("SearchInput").value = "";
+							}
+						}
+					 //]]>
+					</script>
+					
+				</div>
+
+				<div class="navcontainer">
+			  
+					<div class="nav">
+			
+						<div id="tocnav">
+			
+							<div class="toclevel0 ancestry">
+							
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Broke.html" title="ERP custom objects">ERP Custom Namespaces</a>
+								</div>						
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="RotairObjects.html">RotairObjects</a>
+								</div>
+							
+							</div>
+			
+							<div class="clip13x9 nav_dots_current">
+								<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+							</div>				
+							<div>
+								<a href="rotAppObject.html" title="Rotair">rotAppObject</a>
+							</div>
+						
+							<div class="toclevel2">
+								
+								<div class="clip13x9 nav_dots">
+									<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+								</div>
+								<div>
+									<a href="rotAppObjectConstructor.html">Constructor</a>
+								</div>
+								
+								<div class="clip13x9 nav_dots">
+									<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+								</div>
+								<div class="toclevel1 current">
+									<a href="rotAppObjectMethods.html">Methods</a>
+								</div>
+								
+								<div class="clip13x9 nav_dots">
+									<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+								</div>
+								<div>
+									<a href="rotAppObjectProperties.html">Properties</a>
+								</div>
+								
+							</div>
+			
+							<div class="clip13x9 nav_dots_current">
+								<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+							</div>				
+							<div class="toclevel1">
+								<a href="rotAppLockingObject.html" title="Rotair">rotAppLockingObject</a>
+							</div>
+					
+							<div class="toclevel2">
+								
+								<div class="clip13x9 nav_dots">
+									<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+								</div>
+								<div>
+									<a href="rotAppLockingObjectConstructor.html">Constructor</a>
+								</div>
+								
+								<div class="clip13x9 nav_dots">
+									<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+								</div>
+								<div>
+									<a href="rotAppLockingObjectMethods.html">Methods</a>
+								</div>
+								
+								<div class="clip13x9 nav_dots">
+									<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+								</div>
+								<div>
+									<a href="rotAppLockingObjectProperties.html">Properties</a>
+								</div>
+								
+							</div>
+						
+							<div class="clip13x9 nav_dots_current">
+								<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+							</div>				
+							<div class="toclevel1">
+								<a href="rotAppObjectCollection.html" title="Rotair">rotAppObjectCollection</a>
+							</div>
+						
+							<div class="toclevel2">
+								
+								<div class="clip13x9 nav_dots">
+									<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+								</div>
+								<div>
+									<a href="rotAppObjectCollectionConstructor.html">Constructor</a>
+								</div>
+								
+								<div class="clip13x9 nav_dots">
+									<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+								</div>
+								<div>
+									<a href="rotAppObjectCollectionMethods.html">Methods</a>
+								</div>
+								
+								<div class="clip13x9 nav_dots">
+									<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+								</div>
+								<div>
+									<a href="rotAppObjectCollectionProperties.html">Properties</a>
+								</div>
+								
+							</div>
+			
+							<div class="toclevel0">
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Broke.html">Derived Objects</a>
+								</div>
+								
+							</div>
+							
+						</div>
+
+					</div>
+
+				</div>
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">rotAppObject Class</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								Base class all other custom classes derive.
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Inheritance Hierarchy</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">								
+										<a href="http://msdn.microsoft.com/en-us/library/system.object.aspx">System.Object</a>
+										<br>&nbsp;&nbsp;<a href="Broke.html">rotAppObject</a>
+									</div>							
+								</div><p></p>
+							
+								<strong>Namespace:</strong>&nbsp;<a href="broke.html">RotairObject</a><br>
+								<strong>Assembly:</strong>&nbsp;RotairObjects.dll
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Syntax</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+										<div class="codeSnippetContainer">  	  
+											<div class="codeSnippetContainerTabs">
+												<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+													<a>VB</a>
+												</div>
+											</div>
+											<div class="codeSnippetContainerCodeContainer">
+												<div class="codeSnippetToolBar">
+												</div>
+												<div class="codeSnippetContainerCode">
+													<div style="color: Black;">
+														<pre><span style="color: Green;">'The class rotAO_NoteType will be derived from rotAppObject</span></pre>
+														<pre><span style="color: Blue;">Public Class</span> rotAO_NoteType</pre>
+														<pre><span style="color: Blue;">    Inherits</span> RotairObject.rotAppObject</pre>												
+													</div>				
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Namespaces</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+										</div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>
+													Namespace
+												</td>
+												<td>
+													This is a Namespace.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<a href="#mainBody">Top</a>
+								</div>
+							</div>
+							<p>The <span class="selflink">rotAppObject</span> type exposes the following members.</p>
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Classes</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+										</div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="iconColumn">&nbsp;</th>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													Class
+												</td>
+												<td>
+													This is a class
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<a href="#mainBody">Top</a>
+								</div>
+							</div>
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Interfaces</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+										</div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="iconColumn">&nbsp;</th>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="interface_pic" alt="">
+													</div>
+												</td>
+												<td>
+													Interface
+												</td>
+												<td>
+													Interface
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<a href="#mainBody">Top</a>
+								</div>
+							</div>
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Constant</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+										</div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="iconColumn">&nbsp;</th>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="constant_pic" alt="">
+													</div>
+												</td>
+												<td>
+													Constant
+												</td>
+												<td>
+													Constant
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<a href="#mainBody">Top</a>
+								</div>
+							</div>
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Structures</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+										</div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="iconColumn">&nbsp;</th>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="structure_pic" alt="">
+													</div>
+												</td>
+												<td>
+													Structure
+												</td>
+												<td>
+													Structure
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<a href="#mainBody">Top</a>
+								</div>
+							</div>
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Constructors</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+										</div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="iconColumn">&nbsp;</th>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="function_pic" alt="">
+													</div>
+												</td>
+												<td>
+													New rotAppObject
+												</td>
+												<td>
+													Initializes a new instance of the RotairObject class.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<a href="#mainBody">Top</a>
+								</div>
+							</div>
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Delegates</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+										</div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="iconColumn">&nbsp;</th>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="delegate_pic" alt="">
+													</div>
+												</td>
+												<td>
+													Delegate
+												</td>
+												<td>
+													Delegate
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<a href="#mainBody">Top</a>
+								</div>
+							</div>
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Enumerators</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+										</div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="iconColumn">&nbsp;</th>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="enumeration_pic" alt="">
+													</div>
+												</td>
+												<td>
+													Enumerator
+												</td>
+												<td>
+													Enum
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<a href="#mainBody">Top</a>
+								</div>
+							</div>
+
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Members (of an enumeration)</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								
+								<div class="sectionblock">
+								
+									<table id="memberList1" class="members" width='100%'>
+										<tbody>
+											<tr>
+												<th class="iconColumn">&nbsp;</th>
+												<th class="nameColumn">Member name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>
+												<td>
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class='enumeration__member_pic' alt=''>
+													</div>
+												</td>
+												<td>
+													NoCountedBy
+												</td>
+												<td>
+													If a counted by method has not been chosen then display this message.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								
+								</div>
+
+							</div>	
+
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Properties</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+										</div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<table id="memberList1" class="members">
+										<tbody>
+											<tr>
+												<th class="iconColumn">&nbsp;</th>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>
+												<td>
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+													</div>
+												</td>
+												<td>
+													<a href="Broke.html">DeleteStatus</a>
+												</td>
+												<td>
+													Read-Only.  Returns TRUE if the last call to the Delete function succedes, otherwise returns FALSE.
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+													</div>
+												</td>
+												<td>
+													<a href="Broke.html">Domain</a>
+												</td>
+												<td>
+													Read-Only.  Returns the string used to identify this "domain", table or table group (for example: EmailType and EmailRecipient both belong to the EmailType domain).
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+													</div>
+												</td>
+												<td>
+													<a href="Broke.html">HasData</a>
+												</td>
+												<td>
+													Read-Only.  Returns TRUE if the <a href="Broke.html">load</a> function does not return an error and does not return NoData.
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+													</div>
+												</td>
+												<td>
+													<a href="Broke.html">LastError</a>
+												</td>
+												<td>
+													Read-Only.  Returns the last error encountered.
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class='property_pic' alt=''>
+													</div>
+												</td>
+												<td>
+													<a href="Broke.html">LoadStatus</a>
+												</td>
+												<td>
+													Read-Only.  Returns enumeration <> returned from the last call to the <a href="Broke.html">load</a> function.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<a href="#mainBody">Top</a>
+								</div>
+							</div>
+					
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Methods</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<table id="memberList2" class="members">
+										<tbody>
+											<tr>
+												<th class="iconColumn">&nbsp;</th>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>		
+												<td>		  
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="function_pic">
+													</div>
+												</td>
+												<td>
+													<a href="Broke.html">AccessibilityNotifyClients(AccessibleEvents, Int32)</a>
+												</td>
+												<td>
+													Notifies the accessibility client applications of the specified 
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<a href="#mainBody">Top</a>
+								</div>
+							</div>
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Events</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<table id="memberList3" class="members">
+										<tbody>
+											<tr>
+												<th class="iconColumn">&nbsp;</th>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>		
+												<td>		  
+													<div class="clip25x25" id="imagecenter23">
+														<img src="Graphics\Graphics.png" class='event_pic' alt=''>
+													</div>
+												</td>
+												<td>
+													<a href="Broke.html">Activated</a>
+												</td>
+												<td>
+													Occurs when the form is activated in code or by the user.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<a href="#mainBody">Top</a>
+								</div>
+							</div>
+
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>A <span><span class="selflink">rotAppObject</span></span> is a </p>
+			
+								</div>
+							</div>
+							<div id="parameters">
+								<h4 class="subHeading">Parameters</h4>
+									<dl><dt><span class="parameter">value</span></dt>
+										<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string.aspx">System<span xmlns="">.</span>String</a><br><span><span>The string that contains the substring used to initialize the value of this instance. If <span class="parameter">value</span> is <span><span class="input"><span xmlns="">Nothing</span></span><span xmlns=""></span></span>, the new <span><a href="http://msdn.microsoft.com/en-us/library/system.text.stringbuilder.aspx">StringBuilder</a></span> will contain the empty string (that is, it contains <span><a href="http://msdn.microsoft.com/en-us/library/system.string.empty.aspx">Empty</a></span>). </span><br></span></dd>
+									</dl>
+									<dl><dt><span class="parameter">startIndex</span></dt>
+										<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.int32.aspx">System<span xmlns="">.</span>Int32</a><br><span><span>The position within <span class="parameter">value</span> where the substring begins. </span><br></span></dd>
+									</dl>
+									<dl><dt><span class="parameter">length</span></dt>
+										<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.int32.aspx">System<span xmlns="">.</span>Int32</a><br><span><span>The number of characters in the substring. </span><br></span></dd>
+									</dl>
+									<dl><dt><span class="parameter">capacity</span></dt>
+										<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.int32.aspx">System<span xmlns="">.</span>Int32</a><br><span><span>The suggested starting size of the <span><a href="http://msdn.microsoft.com/en-us/library/system.text.stringbuilder.aspx">StringBuilder</a></span>. </span><br></span></dd>
+									</dl>
+							</div>
+						
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Exceptions</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<table>
+										<tbody>
+											<tr>
+												<th class="exceptionNameColumn">Exception</th>
+												<th class="exceptionConditionColumn">Condition</th>
+											</tr>
+											<tr>
+												<td>
+													<span>
+														<a href="http://msdn.microsoft.com/en-us/library/system.argumentoutofrangeexception.aspx">ArgumentOutOfRangeException</a>
+													</span>
+												</td>
+												<td>
+													<p><span class="parameter">capacity</span> is less than zero.</p>
+													<p>-or-</p>
+													<p><span class="parameter">startIndex</span> plus <span class="parameter">length</span> is not a position within <span class="parameter">value</span>. </p>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Private Variables</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+										</div>
+									</div>
+								</div>
+							
+								<div class="sectionblock">
+								
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="iconColumn">&nbsp;</th>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class='variable_pic'>
+													</div>
+												</td>
+												<td>
+													mVarialbe
+												</td>
+												<td>
+													Varialbe.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<a href="#mainBody">Top</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

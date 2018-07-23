@@ -1,0 +1,285 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			Rotair_Email - Built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairEmail'
+					Source[2] = 'rotEmailBuilder'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">rotEmailBuilder Class</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Class to send table based e-mail.  Currently uses SMTP but can also use outlook.</p>
+								<br>
+														
+								<strong>Namespace:</strong>&nbsp;<a href="RotairEmail.html">Rotair_Email</a><br>
+								<strong>Assembly:</strong>&nbsp;Rotair_Email.dll
+	
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Usage</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										To use the EmailBuilder class the following steps need to be completed:
+										<ol>
+										<li>The e-mail information needs to be added to table <a href='Tables\tblEmailType.png'>tblEmailType</a>.</li>
+										<li>The recipients for this e-mail need to be in the table <a href='Tables\tblEmailRecipient.png'>tblEmailRecipient</a>.</li>
+										<li>A constant needs to be added for the EmailType in Rotair_Email.rotEmailBuilder.</li>
+										<li>A function may need to be created if there isn't a pre-existing one that can logically include the new type.</li>
+										<li>Add a reference to <a href='RotairEmail.html'>Rotair_Email.dll</a> in the calling application.</li>
+										<li>Add code to call the new function.</li>
+										</ol>
+
+									</div>
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Steps</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+									<div class="sectionblock">
+										
+										This example will create a new e-mail and send it to a customer service representative when a new customer is added.
+									
+										<h3>1) Adding the e-mail information to table tblEmailType</h3>
+										
+										<ul><li>RecType - used for change tracking and must be 'A' for a new record.</li>
+										<li>EmailTypeID - a string and a primary key.  Can be anything as long as it is unique.</li>
+										<li>EmailDesc - a description to indicate what this e-mail is for.</li>
+										<li>EmailSubject - the subject line for the e-mail.  Allows tokens (placeholders).</li>
+										<li>EmailMsg - message body.  Allows tokens (placeholders).</li>
+										<li>EmailUse - boolean to indicate if this e-mail is to be used.</li>
+										<li>RevNbr - used in change tracking and must be 0.</li>
+										<li>LastRevBy - primary key in the Employee table of the user who created this record.</li>
+										<li>LastRevDate - date this record was created.</li>
+										<li>DeletedBy - not used.</li>
+										<li>DeletedDate - not used.</li></ul>
+										
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>SQL</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">INSERT INTO </span>tblEmailType</pre>
+															<pre>	(RecType, EmailTypeID, EmailDesc, EmailSubject, EmailMsg, EmailUse, </pre>
+															<pre>	        RevNbr, LastRevBy, LastRevDate, DeletedBy, DeletedDate)</pre>
+															<pre>	<span style="color: Blue;">VALUES </span>(<span style="color: Red;">'A'</span>, <span style="color: Red;">'NewCustomer'</span>, <span style="color: Red;">'E-mail for the customer service rep for a new customer'</span>, <span style="color: Red;">'New customer'</span>, </pre>
+															<pre>	        <span style="color: Red;">'A customer (==CustomerID==) was added.  Please prepare a welcome packet.'</span>, <span style="color: Gray;">1</span>, <span style="color: Gray;">0</span>, <span style="color: Gray;">943</span>, <span style="color: LightBlue;">GetDate</span>(), <span style="color: LightBlue;">null</span>, <span style="color: LightBlue;">null</span>)</pre>
+															<br>
+														</div>																	
+													</div>
+												</div>
+											</div>
+
+										</div>	
+										<br>
+									
+										<h3>2) Adding recipients</h3>
+										
+										The EmailTypeID must match the one used in step 1.
+
+										<ul><li>RecType - used for change tracking and must be 'A' for a new record.</li>
+										<li>EmailTypeID - a string and a foriegn key.</li>
+										<li>EmployeeID - foreign key into the employee table.</li>
+										<li>RevNbr - used in change tracking and must be 0.</li>
+										<li>LastRevBy - primary key in the Employee table of the user who created this record.</li>
+										<li>LastRevDate - date this record was created.</li>
+										<li>DeletedBy - not used.</li>
+										<li>DeletedDate - not used.</li></ul>
+										
+										<p>There are two recipients (both fictional) for this new e-mail.</p>
+										
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>SQL</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">INSERT INTO </span>tblEmailRecipient</pre>
+															<pre>	(RecType, EmailTypeID, EmployeeID, RevNbr, LastRevBy, LastRevDate, DeletedBy, DeletedDate)</pre>
+															<pre>	<span style="color: Blue;">VALUES </span>(<span style="color: Red;">'A'</span>, <span style="color: Red;">'NewCustomer'</span>, <span style="color: gray;">6545</span>, <span style="color: Gray;">0</span>, <span style="color: Gray;">943</span>, <span style="color: LightBlue;">GetDate</span>(), <span style="color: LightBlue;">null</span>, <span style="color: LightBlue;">null</span>)</pre>
+															<br>
+															<pre><span style="color: Blue;">INSERT INTO </span>tblEmailRecipient</pre>
+															<pre>	(RecType, EmailTypeID, EmployeeID, RevNbr, LastRevBy, LastRevDate, DeletedBy, DeletedDate)</pre>
+															<pre>	<span style="color: Blue;">VALUES </span>(<span style="color: Red;">'A'</span>, <span style="color: Red;">'NewCustomer'</span>, <span style="color: gray;">4455</span>, <span style="color: Gray;">0</span>, <span style="color: Gray;">943</span>, <span style="color: LightBlue;">GetDate</span>(), <span style="color: LightBlue;">null</span>, <span style="color: LightBlue;">null</span>)</pre>
+															<br>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+
+										<h3>3) Adding a constant</h3>
+										
+										<p>Following good programming guidelines encourages us to use a constant instead of hardcoding the value.</p>
+										
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: lue;">Private Const</span> mconNewCustomer<span style="color: Blue;"> As String </span>=<span style="color: Red;">"NewCustomer"</span></pre>
+															<br>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+
+										<h3>4) Adding a function</h3>
+										
+										<p>Since their are no customer focused e-mails we need a new function.  This step is not necessary if there is already a fumction 
+										related (using some of the same tokens (placeholders)).</p>
+										<p>Any tokes are added with out the delimiters (==).</p>
+										
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Private Function</span> SendEmailForCustomer(<span style="color: Blue;">ByVal</span> strCustomerID <span style="color: Blue;">As String</span>)</pre>
+															<br>
+															<pre>    <span style="color: Blue;">Dim</span> Placeholders <span style="color: Blue;">As</span> rotPlaceholders</pre>
+															<br>
+															<br>
+															<pre>    <span style="color: Green;">'We can always add an EmailType parameter and case statement if we ntroduce another customer based e-mail.</span></pre>
+															<br>
+															<pre>    <span style="color: Green;">' Instantiate placeholders.</span></pre>
+															<pre>    Placeholders =<span style="color: Blue;"> New </span>rotPlaceholders</pre>
+															<br>
+															<pre>    <span style="color: Green;">'Add customer id.</span></pre>
+															<pre>    Placeholders.Add(<span style="color: Red;">"CustomerID"</span>, strCustomerID)</pre>
+															<br>
+															<pre>    <span style="color: Green;">' Create and send the e-mail notification.</span></pre>
+															<pre>    <span style="color: Blue;">Return</span> SendClassBasedEmail(mconNewCustomer, Placeholders)</pre>
+															<br>
+															<pre><span style="color: Blue;">End Function</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+
+										<h3>5) Add a reference</h3>
+										
+										<img src='Graphics\EmailReferences.png'>
+										<br>
+										<br>
+										
+										<h3>6) Add code to call the new function</h3>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Private Sub</span> btnSave_Click(<span style="color: Blue;">ByVal</span> sender <span style="color: Blue;">As</span> System.Object, <span style="color: Blue;">ByVal</span> e <span style="color: Blue;">As</span> System.EventArgs) <span style="color: Blue;">Handles</span> btnSave_Click</pre>
+															<br>
+															<pre>    <span style="color: Green;">'Save the customer.</span></pre>
+															<br>
+															<pre>    <span style="color: Green;">'Send an email for new customers.</span></pre>
+															<pre>    Rotair_Email.rotEmailBuilder.SendEmailForCustomer(txtCustomerID.Text)</pre>
+															<br>
+															<pre><span style="color: Blue;">End Sub</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+
+										</div>	
+										<br>
+
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

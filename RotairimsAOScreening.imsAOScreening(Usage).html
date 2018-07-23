@@ -1,0 +1,1189 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairimsAO_Screening - Built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomimsAppObjects'
+					Source[1] = 'RotairimsAOScreening'
+					Source[2] = 'imsAOScreening'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">imsAO_Screening Class</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Class to access <a href='Tables/tblExDPScreen.png'>tblExDPScreen</a>.</p>
+								<br>
+														
+								<strong>Namespace:</strong>&nbsp;<a href="RotairAOScreening.html">RotairimsAO_Screening</a><br>
+								<strong>Assembly:</strong>&nbsp;RotairimsAO_Screening.dll
+	
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="AOUsage" onclick="CollapseExpand('AOUsage')"><span class="LW_CollapsibleArea_Title">Usage in an AO</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+									<div id="AOUsage" class="sectionblock">
+									
+										<p>To use the Screening class as a subdomain the following steps need to be completed in the parent AO:</p>
+										<p>Note: The parent domain needs to be custom or have the custom bit flipped.</p>
+										<ol>
+										<li>A reference to <a href="RotairimsAOScreening.html">RotairimsAO_Screening</a> needs to be added.</li>
+										<li>Optional: Import the namespace.</li>
+										<li>Override / edit the <b>DefineSubdomains</b> method to define the subdomain.</li>
+										<li>Create a <b>ReLoadScreening</b> method.</li>
+										<li>Override / edit the <b>SubdomainDeleteSQL</b> method.</li>
+										<li>Override / edit the <b>SubdomainLoadSQL</b> method.</li>
+										<li>Two properties need to be added:</li>
+											<ol>
+											<li><b>Screening</b> will return the screening record.</li>
+											<li><b>ScreenStatus</b> will return the status of the screening.</li>
+											</ol>
+										</ol>
+
+									</div>
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="AOSteps" onclick="CollapseExpand('AOSteps')"><span class="LW_CollapsibleArea_Title">Steps</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+									<div id="AOSteps" class="sectionblock">
+										
+										<p>This example will add a screening record as a subdomain to the vendor AO.</p>
+									
+										<h3>1) Add a reference</h3>
+										
+										<p>Add a reference to <a href="RotairimsAOScreening.html">RotairimsAO_Screening.dll</a>.  Other
+										assemblies may need to be referenced.  The IDE will inform of any missing dlls.</p>
+										<br>
+									
+										<h3>2) Importing the namespace</h3>
+										
+										<p>It can make the code more readable adding an imports statement to the top of the parent AO.</p>
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Imports</span> RotairimsAO_Screening</pre>
+															<br>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+
+										<h3>3) Define the subdomain</h3>
+										
+										<p>The parent AO must be informed of the new subdomain.</p>
+										
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Protected Overrides Sub</span> DefineSubdomains()</pre>
+															<br>
+															<pre>    <span style="color: Blue;">MyBase</span>.DefineSubdomains()</pre>
+															<pre>    <span style="color: Blue;">MyBase</span>.SubdomainDefs.Add(imsAO_Screening.Domain, relationshipToParent:=imsRelationshipToParent.OneToOne)</pre>
+															<br>
+															<pre><span style="color: Blue;">End Sub</span></pre>
+															<br>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+
+										<h3>4) Create a <b>ReLoadScreening</b> method</h3>
+										
+										<p>This method will reload the screening record.  This is needed since the parent AO will not save if the screening
+										is invalid.  The user has the option to correct this if they have the appropriate permission.  This method needs to
+										be called if the user has updated the screening record.</p>
+										
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Public Sub</span> ReLoadScreening()</pre>
+															<br>
+															<pre>    SubdomainInactivate(imsAO_Screening.Domain)</pre>
+															<pre>    SubdomainActivate(imsAO_Screening.Domain)</pre>
+															<br>
+															<pre><span style="color: Blue;">End Sub</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+
+										<h3>5) Ensure <b>SubdomainDeleteSQL</b> returns nothing</h3>
+										
+										<p>We do not wish to delete screening records.  If the parent AO gets deleted we wish to orphan
+										the screening record.  We do this by returning nothing from the <b>SubdomainDeleteSQL</b> method.</p>
+										<p>May need to import IntuitiveAppObjectFramework2 and / or IntuitiveSystem.</p>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Public Overrides Function</span> SubdomainDeleteSQL(<span style="color: Blue;">ByVal</span> collectionClass <span style="color: Blue;">As</span> imsAppObjects) <span style="color: Blue;">As</span> imsCommand</pre>
+															<br>
+															<pre>    <span style="color: Blue;">Dim</span> cmd <span style="color: Blue;">As</span> imsCommand = <span style="color: Blue;">Nothing</span></pre>
+															<br>
+															<br>
+															<pre>    <span style="color: Blue;">Select Case</span> collectionClass.Domain</pre>
+															<pre>        <span style="color: Blue;">Case</span> imsAO_Screening.Domain</pre>
+															<pre>            <span style="color: Green;">'NOP - we do not delete screening records.</span></pre>
+															<pre>        <span style="color: Blue;">Case Else</span></pre>
+															<pre>            cmd = <span style="color: Blue;">MyBase</span>.SubdomainDeleteSQL(collectionClass)</pre>
+															<pre>    <span style="color: Blue;">End Select</span></pre>
+															<br>
+															<pre>    <span style="color: Blue;">Return</span> cmd</pre>
+															<br>
+															<pre><span style="color: Blue;">End Function</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+										
+										<h3>6) Build the WHERE clause in <b>SubdomainLoadSQL</b></h3>
+										
+										<p>The <b>SubdomainLoadSQL</b> method is where the WHERE clause is built.</p>
+										<p>May need to add properties to the DataAccess class to return the field names.</p>
+										<p>May need to import IntuitiveAppObjectFramework2, IntuitiveSystem and / or System.Text.</p>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Public Overrides Function</span> SubdomainLoadSQL(<span style="color: Blue;">ByVal</span> collectionClass <span style="color: Blue;">As</span> imsAppObjects) <span style="color: Blue;">As</span> imsCommand</pre>
+															<br>
+															<pre>    <span style="color: Blue;">Dim</span> cmd <span style="color: Blue;">As</span> imsCommand</pre>
+															<pre>    <span style="color: Blue;">Dim</span> strParameter <span style="color: Blue;">As String</span></pre>
+															<pre>    <span style="color: Blue;">Dim</span> SQL <span style="color: Blue;">As</span> StringBuilder</pre>
+															<br>
+															<br>
+															<pre>    <span style="color: Blue;">Select Case</span> collectionClass.Domain</pre>
+															<pre>        <span style="color: Blue;">Case</span> imsAO_Screening.Domain</pre>
+															<pre>            cmd = <span style="color: Blue;">New</span> imsCommand</pre>
+															<pre>            SQL = <span style="color: Blue;">New</span> StringBuilder</pre>
+															<pre>            strParameter = DataAccess.DataBase.VendorTableRecordIDParameter</pre>
+															<pre>            SQL.AppendFormat(<span style="color: Red;">"SELECT * FROM {0}"</span>, DataAccess.DataBase.ScreeningTable)</pre>
+															<pre>            SQL.AppendFormat(<span style="color: Red;">" WHERE {0} = {1} AND {2} = '{3}'"</span>, DataAccess.DataBase.ScreeningTablePartyRecordIDField, _</pre>
+															<pre>                            strParameter, DataAccess.DataBase.ScreeningTablePartyTypeField, DataAccess.DataBase.ScreeningTablePartyTypeValueVendor)</pre>
+															<pre>            cmd.CommandText = SQL.ToString</pre>
+															<pre>            cmd.AddParameter(strParameter, GetGuid(DataAccess.DataBase.CustomerTableRecordIDField))</pre>                
+															<pre>        <span style="color: Blue;">Case Else</span></pre>
+															<pre>            cmd = <span style="color: Blue;">MyBase</span>.SubdomainLoadSQL(collectionClass)</pre>
+															<pre>    <span style="color: Blue;">End Select</span></pre>
+															<br>
+															<pre>    <span style="color: Blue;">Return</span> cmd</pre>
+															<br>
+															<pre><span style="color: Blue;">End Function</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+										
+										<p>In this example we needed to add a property to the DataAccess assembly.  We do not want database dependancies
+										outside of the DataAccess assembly.</p>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Public Class</span> DataBase</pre>
+															<br>
+															<pre>. . .</pre>
+															<br>
+															<pre><span style="color: Blue;">#Region</span><span style="color: Red;">"�פפפפפפפפפפפפפפפפפפ Vendor �פפפפפפפפפפפפפפפפפפ"</span></pre>
+															<pre>    <span style="color: Blue;">Public Shared ReadOnly Property</span> VendorTableRecordIDParameter()<span style="color: Blue;">As String</span></pre>
+															<pre>        <span style="color: Blue;">Get</span></pre>
+															<pre>            <span style="color: Blue;">Return</span> gconParameter_Vendor_RecordID</pre>
+															<pre>        <span style="color: Blue;">End Get</span></pre>
+															<pre>    <span style="color: Blue;">End Property</span></pre>
+															<pre><span style="color: Blue;">#End Region</span></pre>
+															<br>
+															<pre>. . .</pre>
+															<br>
+															<pre><span style="color: Blue;">End Class</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+
+										<h3>7.a) Add a <b>Screening</b> property</h3>
+										
+										<p>Activates or loads the subdomain and returns the first record in the collection (there should never be 
+										more than one) if there is one, otherwise returns nothing.</p>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Public ReadOnly Property</span> Screening()<span style="color: Blue;"> As</span> imsAO_Screening</pre>
+															<br>
+															<pre>    <span style="color: Blue;">Get</span></pre>
+															<br>
+															<pre>        <span style="color: Blue;">Dim</span> colScreening <span style="color: Blue;">As</span> imsAppObjects</pre>
+															<pre>        <span style="color: Blue;">Dim</span> ScreeningRecord <span style="color: Blue;">As</span> imsAO_Screening = <span style="color: Blue;">Nothing</span></pre>
+															<br>
+															<br>
+															<pre>        SubdomainActivate(imsAO_Screening.Domain)</pre>
+															<pre>        colScreening = <span style="color: Blue;">CType</span>(Subdomains(imsAO_Screening.Domain), imsAppObjects)</pre>
+															<pre>        <span style="color: Blue;">If</span> colScreening.Count > <span style="color: Gray;">0</span><span style="color: Blue;"> Then</span></pre>
+															<pre>            ScreeningRecord = <span style="color: Blue;">CType</span>(colScreening(<span style="color: Gray;">0</span>), imsAO_Screening)</pre>
+															<pre>        <span style="color: Blue;">End If</span></pre>
+															<br>
+															<pre>        <span style="color: Blue;">Return</span> ScreeningRecord</pre>
+															<br>
+															<pre>    <span style="color: Blue;">End Get</span></pre>
+															<br>
+															<pre><span style="color: Blue;">End Property</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+										
+										<p>When creating a new object like a sales order intuitive does NOT load a subdomain (does not call <b>SubdomainLoadSQL</b>)
+										when calling <b>SubdomainActivate</b>.  It will, however load the subdomain if the object already exists.  To get around
+										this we manually load the screening record.</p>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Public ReadOnly Property</span> Screening()<span style="color: Blue;"> As</span> imsAO_Screening</pre>
+															<br>
+															<pre>    <span style="color: Blue;">Get</span></pre>
+															<br>
+															<pre>        <span style="color: Blue;">Dim</span> strCustomerID <span style="color: Blue;">As String</span></pre>
+															<pre>        <span style="color: Blue;">Dim</span> colScreening <span style="color: Blue;">As</span> imsAppObjects</pre>
+															<pre>        <span style="color: Blue;">Dim</span> colScreening_Collection <span style="color: Blue;">As</span> imsAO_Screening_Collection</pre>
+															<pre>        <span style="color: Blue;">Dim</span> ScreeningRecord <span style="color: Blue;">As</span> imsAO_Screening = <span style="color: Blue;">Nothing</span></pre>
+															<br>
+															<br>
+															<pre>        <span style="color: Blue;">If</span> DocumentState = aoObjectState.NEW_DOCUMENT <span style="color: Blue;">Then</span></pre>
+															<br>
+															<pre>            strCustomerID = DataAccess.Customer.ID(GetGuid(DataAccess.DataBase.SalesOrderTableCustomerRecordIDField))</pre>
+															<br>
+															<pre>            <span style="color: Blue;">If</span> DataAccess.Screening.Exists(strCustomerID, Enumerations.ePartyType.Customer) <span style="color: Blue;"> Then</span></pre>
+															<pre>                ScreeningRecord = <span style="color: Blue;">New</span> imsAO_Screening(imsAO_Screening.DomainName, aoInstantiatedBy.APP_OBJECT, aoInstantiatedAs.PRIMARY, <span style="color: Blue;">Me</span>)</pre>
+															<pre>                ScreeningRecord.SetValue(DataAccess.DataBase.ScreeningTablePartyIDField, strCustomerID)</pre>
+															<pre>                ScreeningRecord.SetValue(DataAccess.DataBase.ScreeningTablePartyTypeField, Enumerations.ePartyType.Customer.ToString)</pre>
+															<pre>                ScreeningRecord.Load()</pre>
+															<pre>            <span style="color: Blue;">End If</span></pre>
+															<br>
+															<pre>        <span style="color: Blue;">Else</span></pre>
+															<br>
+															<pre>            SubdomainActivate(imsAO_Screening.Domain)</pre>
+															<br>
+															<pre>            colScreening = <span style="color: Blue;">CType</span>(Subdomains(imsAO_Screening.Domain), imsAppObjects)</pre>
+															<pre>            <span style="color: Blue;">If</span> colScreening <span style="color: Blue;">IsNot Nothing Then</span></pre>
+															<pre>                <span style="color: Blue;">If</span> colScreening.Count > <span style="color: Gray;">0</span><span style="color: Blue;"> Then</span></pre>
+															<pre>                    ScreeningRecord = <span style="color: Blue;">CType</span>(colScreening(<span style="color: Gray;">0</span>), imsAO_Screening)</pre>
+															<pre>                <span style="color: Blue;">End If</span></pre>
+															<pre>            <span style="color: Blue;">End If</span></pre>
+															<br>
+															<pre>        <span style="color: Blue;">End If</span></pre>
+															<br>
+															<pre>        <span style="color: Blue;">Return</span> ScreeningRecord</pre>
+															<br>
+															<pre>    <span style="color: Blue;">End Get</span></pre>
+															<br>
+															<pre><span style="color: Blue;">End Property</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+										
+										<h3>7.b) Add a <b>ScreenStatus</b> property</h3>
+										
+										<p>Gets a screening record form the <b>Screening</b> property then gets the status if a record exists.  If no
+										record exists then returns Never_Screened (from <a href='RotairTypes.Enumerations.eScreeningRC.html'>eScreeningRC</a>).</p>
+										<p>May need to import <a href="RotairTypes.html">Rotair_Types</a>.</p>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Public ReadOnly Property</span> ScreenStatus() <span style="color: Blue;">As</span> Enumerations.eScreeningRC</pre>
+															<br>
+															<pre>    <span style="color: Blue;">Get</span></pre>
+															<br>
+															<pre>        <span style="color: Blue;">Dim</span> rc <span style="color: Blue;">As</span> Enumerations.eScreeningRC</pre>
+															<pre>        <span style="color: Blue;">Dim</span> ScreeningRecord <span style="color: Blue;">As</span> imsAO_Screening</pre>
+															<br>
+															<br>
+															<pre>        ScreeningRecord = Screening</pre>
+															<pre>        <span style="color: Blue;">If</span> ScreeningRecord <span style="color: Blue;">IsNot Nothing Then</span></pre>
+															<pre>            rc = ScreeningRecord.ScreenStatus</pre>
+															<pre>        <span style="color: Blue;">Else</span></pre>
+															<pre>            rc = Enumerations.eScreeningRC.Never_Screened</pre>
+															<pre>        <span style="color: Blue;">End If</span></pre>
+															<br>
+															<pre>        <span style="color: Blue;">Return</span> rc</pre>
+															<br>
+															<pre>    <span style="color: Blue;">End Get</span></pre>
+															<br>
+															<pre><span style="color: Blue;">End Property</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+										
+									</div>
+								</div>
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="UIUsage" onclick="CollapseExpand('UIUsage')"><span class="LW_CollapsibleArea_Title">Usage in an UI</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+									<div id="UIUsage" class="sectionblock">
+									
+										To use the Screening class in an Intuitive form the following steps need to be completed:
+										<ol>
+										<li>References need to be added for <a href="RotairimsAOScreening.html">RotairimsAO_Screening</a> and 
+										<a href="RotairDialogScreening.html">RotairDialog_Screening</a>.</li>
+										<li>Optional: Import the namespaces.</li>
+										<li>Add member to eScreenSource.</li>
+										<li>Add a Screen Source constant.</li>
+										<li>Add an <b>mbAllowScreening</b> variable.</li>
+										<li>Override / edit the <b>Execute</b> method.</li>
+										<li>Optional: Create a <b>DisplayScreeningInformation</b> method.</li>
+										<li>Optional: Add an AO binder.</li>
+										<li>Optional: Add controls to display any screening information.</li>
+										<li>Override / edit the <b>Bound</b> event from the AO binder.</li>
+										<li>Override / edit the <b>Saving</b> event from the AO binder.</li>
+										<li>Create a Screen method to bring up the screening form.</li>
+										<li>Create a Screen method that is fired from a button on the footer.</li>
+										<li>Add a Screen link label to the task list.</li>
+										<li>Override / edit the <b>ClearForm</b> or <b>ResetForm</b> or whatever it may be called.</li>
+										<li>Create or override a method that will check the screening and query the user if they wish to create a new screening
+										record if an invalid screening record is returned.
+										<li>Create a <b>DisableScreeningFromFooter</b> method.</li>
+										<li>Create a <b>EnableScreeningFromFooter</b> method.</li>
+										</ol>
+
+									</div>
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="UISteps" onclick="CollapseExpand('UISteps')"><span class="LW_CollapsibleArea_Title">Steps</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+									<div id="UISteps" class="sectionblock">
+										
+										This example will utilize the screening subdomain added to the vendor AO.
+									
+										<h3>1) Add a reference</h3>
+										
+										<p>Add a reference to <a href="RotairimsAOScreening.html">RotairimsAO_Screening.dll</a>.</p>
+										<p>Add a reference to <a href="RotairDialogScreening.html">RotairDialog_Screening.dll</a>.</p>
+										<p>May need a reference to <a href="RotairSecurity.html">Rotair_Security.dll</a>.</p>
+										<p>Other assemblies may need to be referenced.  The IDE will inform of any missing dlls.</p>
+										<br>
+									
+										<h3>2) Importing the namespaces</h3>
+										
+										<p>It can make the code more readable adding imports statements to the top of the UI.</p>
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Imports</span> RotairDialog_Screening</pre>
+															<pre><span style="color: Blue;">Imports</span> RotairimsAO_Screening</pre>
+															<pre><span style="color: Blue;">Imports</span> Rotair_Security</pre>
+															<br>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+
+										<h3>3) Add a enumeration member for the parent.</h3>
+										
+										<p>An enumeration needs to exist for the eScreenSource enum (in <a href="RotairTypes.html">Rotair_Types</a>) that is the text of the class name of the 
+										parent AO.</p>
+										<p>In this example we added the <b>imsAO_Vendor_CUSTOM</b> member.</p>
+										
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<br>
+															<pre><span style="color: Blue;">Public Enum</span> eScreenSource</pre>
+															<pre>    None</pre>
+															<pre>    imsAO_Customer_CUSTOM</pre>
+															<pre>    imsAO_Vendor_CUSTOM</pre>
+															<pre><span style="color: Blue;">End Enum</span></pre>
+															<br>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+
+										<h3>4) Add a Screen Source constant.</h3>
+										
+										<p>This constant will be used in the e-mails.  E-mails may need to be created if they do not exist.</p>
+										
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<br>
+															<pre><span style="color: Blue;">Private Const</span> mconScreenSource <span style="color: Blue;">As</span> Enumerations.eScreenAction = Enumerations.eScreenAction.Open_A_Vendor</pre>
+															<br>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+
+										<p>If you have a choice of values for Screen Source then you can use a read only property.  This example is from
+										the Sales Order.</p>
+										
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Private ReadOnly Property</span> ScreenSource() <span style="color: Blue;">As</span> Enumerations.eScreenAction</pre>
+															<br>
+															<pre>    <span style="color: Blue;">Get</span></pre>
+															<br>
+															<pre>        <span style="color: Blue;">Dim</span> ss <span style="color: Blue;">As</span> Enumerations.eScreenAction</pre>
+															<br>
+															<br>
+															<pre>        <span style="color: Blue;">Select Case</span> DocumentState</pre>
+															<pre>            <span style="color: Blue;">Case</span> aoObjectState.NEW_DOCUMENT</pre>
+															<pre>                ss = Enumerations.eScreenAction.Create_A_New_Sales_Order</pre>
+															<pre>            <span style="color: Blue;">Case Else</span></pre>
+															<pre>                ss = Enumerations.eScreenAction.Open_A_Sales_Order</pre>
+															<pre>        <span style="color: Blue;">End Select</span></pre>
+															<br>
+															<pre>        <span style="color: Blue;">Return</span> ss</pre>
+															<br>
+															<pre>    <span style="color: Blue;">End Get</span></pre>
+															<br>
+															<pre><span style="color: Blue;">End Property</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+
+										<h3>5) Add an mbAllowScreening variable.</h3>
+										
+										<p>This variable will get set when the form loads and control access to the screening form.</p>
+										
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<br>
+															<pre><span style="color: Blue;">Private</span> mbAllowScreening <span style="color: Blue;">As Boolean</span></pre>
+															<br>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+
+										<h3>6) Set <b>mbAllowScreening</b> in the <b>Execute</b> method.</h3>
+										
+										<p>We check the security of the user here and we can make decisions in subsequent methods.</p>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Public Overrides Sub</span> Execute(<span style="color: Blue;">Optional ByRef</span> args <span style="color: Blue;">As Object = Nothing</span>, _</pre>
+															<pre>                                <span style="color: Blue;">Optional ByVal</span> wait <span style="color: Blue;">As Boolean = False</span>, _</pre>
+															<pre>                                <span style="color: Blue;">Optional ByVal</span> owner <span style="color: Blue;">As Object = Nothing</span>)</pre>
+															<br>
+															<pre>    <span style="color: Blue;">MyBase</span>.Execute(args, wait, owner)</pre>
+															<pre>    mbAllowScreening = Security.ScreeningAllow</pre>
+															<br>
+															<pre><span style="color: Blue;">End Function</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+										
+										<h3>7) Create a <b>DisplayScreeningInformation</b> method.</h3>
+										
+										<p>This step can be skipped if no screening information is to be displayed to the user.</p>
+										<p>To display some fields pass the parent AO to this method then if the screening record exists
+										set the Recordbinder property(ies) since if the record does not exist we will bomb out.</p>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Private Sub</span> DisplayScreeningInformation(<span style="color: Blue;">ByVal</span> Vendor <span style="color: Blue;">As</span> imsAO_Customer_CUSTOM)</pre>
+															<br>
+															<pre>    <span style="color: Blue;">If</span> Vendor.Screening <span style="color: Blue;">IsNot Nothing Then</span></pre>
+															<pre>        bdrScreening.AO = Vendor.Screening</pre>
+															<pre>        txtLastScreenDate.RecordBinder = bdrScreening</pre>
+															<pre>        txtLastScreenBy.RecordBinder = bdrScreening</pre>
+															<pre>        bdrScreening.Bind()<span style="color: Green;">'Call Bind for an imsAOBinder</span></pre>
+															<pre>        aocScreening.BindControls()<span style="color: Green;">'Call BindControls for an imsAppObjectComponent</span></pre>
+															<pre>        txtLastScreenDate.ReadOnly = <span style="color: Blue;">True</span><span style="color: Green;">'Some controls may need to be reminded that they are read only.</span></pre>
+															<pre>    <span style="color: Blue;">End If</span></pre>
+															<br>
+															<pre><span style="color: Blue;">End Sub</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+
+										<h3>8) Add an AO binder.</h3>
+										
+										<p>This step can be skipped if no screening information is to be displayed to the user.</p>
+										<p>Some forms use an imsAppObjectComponent (depreciated) and others use an imsAOBinder.  I tend
+										to use what ever the parent uses but I believe it does not matter.</p>
+										<p>I have been prefixing the AppObjectComponents with aoc and the AOBinders with bdr.  That
+										is how some forms do it although it is inconsistent throughout the app and I do not know if I picked
+										the predominate convention.  For example the vendor form has an imsAOBinder prefixed with aoc and 
+										within the same assembly the customer form has an imsAppObjectComponent prefixed with aoc but the
+										sales order form has an imsAOBinder prefixed with bdr.</p>
+										<ul>
+										<li>Set the <i>Name</i> property set to <b>aocScreening</b> or <b>bdrScreening</b>.</li>
+										<li>Set the <i>Domain</i> property set to <b>RotairScreening</b>.</li>
+										</ul>
+										<br>
+
+										<h3>9) Add any controls.</h3>
+										
+										<p>This step can be skipped if no screening information is to be displayed to the user.</p>
+										<p>Add any controls to display any of the screening information that you want.</p>
+										<p>The problem with binding controls is we may not have a screening record.  This should only happen 
+										on the customer or vender forms but to be on the safe side we check anyway.  We must set the <b>RecordBinder</b>
+										so we can set the field we wish to bind to then we need to clear this property and set it at run time only if
+										we have a record.  So to set up a control:</p>
+										<ol>
+										<li>Set the <b>RecordBinder</b> property to <b>aocScreening</b> or <b>bdrScreening</b>.</li>
+										<li>Set the <b>ValueBinder.FieldName</b> property to the desired field.</li>
+										<li>Ensure that the control is read only since these fields are NEVER updateable via the parent.</li>
+										<ul>
+										<li>Textboxes need the <i>ReadOnly</i> property set to <b>True</b>.</li>
+										<li>Date controls need the <i>ReadOnly</i> property set to <b>True</b>.</li>
+										<li>Checkboxes need the <i>AutoCheck</i> property set to <b>False</b>.</li>
+										</ul>
+										<li>Set the <b>RecordBinder</b> property to (none).</li>
+										</ol>
+										<br>
+
+										<h3>10) Edit the <b>Bound</b> event from the parent AO binder.</h3>
+										
+										<p>Optionally displays screening information.  More importantly, sends out an e-mail if a
+										vendor is opened that is a denied party.</p>
+										<p>Note: This event is handled in the base so it is overridden unlike the following <b>Saving</b> event.</p>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Protected Overrides Sub</span> MainAO_Bound(<span style="color: Blue;">ByVal</span> sender <span style="color: Blue;"> As Object, ByVal</span> e <span style="color: Blue;">As</span> System.EventArgs)</pre>
+															<br>
+															<pre>    <span style="color: Blue;">Dim</span> Vendor <span style="color: Blue;">As</span> imsAO_Vendor_CUSTOM</pre>
+															<br>
+															<br>
+															<pre>    <span style="color: Blue;">MyBase</span>.MainAO_Bound(sender, e)</pre>
+															<br>
+															<pre>    Vendor = <span style="color: Blue;">CType</span>(MainAO.AO, imsAO_Vendor_CUSTOM)</pre>
+															<pre>    DisplayScreeningInformation(Vendor)</pre>
+															<br>
+															<pre>    <span style="color: Green;">'Send an e-mail if a denied vendor is opened.</span></pre>
+															<pre>    <span style="color: Blue;">If</span> Vendor.ScreenStatus = Enumerations.eScreeningRC.Denied_Party <span style="color: Blue;">Then</span></pre>
+															<pre>        <span style="color: Blue;">If Not</span> E_Mail.rotEmailBuilder.SendScreeningEMail(Enumerations.ePartyType.Vendor, _</pre>
+															<pre>                                                        imsAO_Vendor_CUSTOM.FieldNames.ID, _</pre>
+															<pre>                                                        mconScreenSource, _</pre>
+															<pre>                                                        mconSourceForm) <span style="color: Blue;">Then</span></pre>
+															<pre>            CustomMessage.DisplayEMailFailure(E_Mail.rotEmailBuilder.LastError)</pre>
+															<pre>        <span style="color: Blue;">End If</span></pre>
+															<pre>    <span style="color: Blue;">End If</span></pre>
+															<br>
+															<pre><span style="color: Blue;">End Sub</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+										
+										<h3>11) Edit the <b>Saving</b> event from the parent AO binder.</h3>
+										
+										<p>We need to prohibit saving if the screeing record is not valid.  This is done by setting the <b>Cancel</b> property of
+										the CancelEventArgs to <b>True</b>.  We will also display a message to the user.</p>
+										<p>Note: This event is declared private since it is declared in the derived form unlike the previous <b>Bound</b> event.</p>
+										<p>2nd Note: There is a check for NEW_DOCUMENT in this event.  This can be omitted in circumstances where a party that does
+										not pass the screening test is prohitited from being added to the parent AO.</p>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Private Sub</span> MainAO_Saving(<span style="color: Blue;">ByVal</span> sender <span style="color: Blue;"> As Object, ByVal</span> e <span style="color: Blue;">As</span> System.ComponentModel.CancelEventArgs) <span style="color: Blue;">Handles</span> MainAO.Saving</pre>
+															<br>
+															<pre>    <span style="color: Blue;">Dim</span> eScreenStatus <span style="color: Blue;">As</span> Enumerations.eScreeningRC</pre>
+															<br>
+															<br>
+															<pre>    eScreenStatus = <span style="color: Blue;">CType</span>(MainAO.AO, imsAO_Vendor_CUSTOM).ScreenStatus</pre>
+															<pre>    <span style="color: Green;">'If eScreenStatus <> Enumerations.eScreeningRC.Screened_OK Then 'This would be the statement for another AO like Sales Order.</span></pre>
+															<pre>    <span style="color: Blue;">If</span> eScreenStatus <> Enumerations.eScreeningRC.Screened_OK <span style="color: Blue;">And</span> MainAO.AO.DocumentState <> aoObjectState.NEW_DOCUMENT <span style="color: Blue;">Then</span></pre>
+															<pre>        CustomMessage.DisplayWillNotSaveReason(eScreenStatus)</pre>
+															<pre>        e.Cancel = <span style="color: Blue;">True</span></pre>
+															<pre>    <span style="color: Blue;">End If</span></pre>
+															<br>
+															<pre><span style="color: Blue;">End Sub</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+										
+										<h3>12) Add the Screen method.</h3>
+										
+										<p>This method will display the screening form.  If the user enters a new record then it will reload the screening
+										subdomain, display any of the screeing fields and toggle the button in the footer.</p>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Private Sub</span> ScreenVendor()</pre>
+															<br>
+															<pre>    <span style="color: Blue;">Dim</span> frmScreen <span style="color: Blue;">As</span> frmDialog_Screening</pre>
+															<pre>    <span style="color: Blue;">Dim</span> Vendor <span style="color: Blue;">As</span> imsAO_Vendor_CUSTOM</pre>
+															<br>
+															<br>
+															<pre>    Vendor = <span style="color: Blue;">CType</span>(MainAO.AO, imsAO_Vendor_CUSTOM)</pre>
+															<pre>    frmScreen = <span style="color: Blue;">New</span> frmDialog_Screening</pre>
+															<pre>    <span style="color: Blue;">With</span> frmScreen</pre>
+															<pre>        .Caller = <span style="color: Blue;">Me</span>.Name</pre>
+															<pre>        .PartyType = Enumerations.ePartyType.Vendor</pre>
+															<pre>        .PartyRecordID = MainAO.AO.GetGuid(imsAO_Vendor_CUSTOM.FieldNames.RecordID)</pre>
+															<pre>        .ShowDialog(<span style="color: Blue;">Me</span>)</pre>
+															<pre>    <span style="color: Blue;">End With</span></pre>
+															<br>
+															<pre>    <span style="color: Blue;">If</span> frmScreen.Accepted <span style="color: Blue;">Then</span></pre>
+															<pre>        Vendor.ReLoadScreening()</pre>
+															<pre>        DisplayScreeningInformation(Vendor)</pre>
+															<pre>        <span style="color: Blue;">If</span> Vendor.ScreenStatus = Enumerations.eScreeningRC.Screened_OK <span style="color: Blue;">Then</span></pre>
+															<pre>            UI.ClearStatus(pnlFooter, UI.eShowStatus.Denied)</pre>
+															<pre>            DisableScreeningFromFooter()</pre>
+															<pre>        <span style="color: Blue;">ElseIf</span></pre>
+															<pre>            UI.ShowStatusButtons(pnlFooter, UI.eShowStatus.Denied)</pre>
+															<pre>            EnableScreeningFromFooter()</pre>
+															<pre>        <span style="color: Blue;">End If</span></pre>
+															<pre>    <span style="color: Blue;">End If</span></pre>
+															<br>
+															<pre><span style="color: Blue;">End Sub</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+										
+										<h3>13) Add an event to call the Screen method.</h3>
+										
+										<p>This method will just call the prior one.  A button will appear on the footer that fires this to do two things.</p>										
+										<ol>
+										<li>Indicate in red that the screening is not valid.</li>
+										<li>Allow the user to click the button to create a new screening record.</li>
+										</ol>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Private Sub</span> ScreenVendor(<span style="color: Blue;">ByVal</span> sender <span style="color: Blue;">As Object, ByVal</span> e <span style="color: Blue;">As</span> System.EventArgs)</pre>
+															<br>
+															<pre>    ScreenVendor()</pre>
+															<br>
+															<pre><span style="color: Blue;">End Sub</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+										
+										<h3>14) Add a Screen link label</h3>
+										
+										<p>To facilitate screening, a link label is added to the task shade and clicking it will call the
+										previouldy created method.  Set the properties of the Screen link label to:</p>
+										<ul>
+										<li>Set the <b>Name</b> property to <b>lnkScreen</b>.</li>
+										<li>Set the <b>Text</b> property to <b>Screen</b>.</li>
+										</ul>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Private Sub</span> lnkScreen_LinkClicked(<span style="color: Blue;">ByVal</span> sender <span style="color: Blue;"> As Object</span>, _</pre>
+															<pre>                                <span style="color: Blue;">ByVal</span> e <span style="color: Blue;">As</span> System.Windows.Forms.LinkLabelLinkClickedEventArgs) <span style="color: Blue;">Handles</span> lnkScreen.LinkClicked</pre>
+															<br>
+															<pre>    ScreenVendor()</pre>
+															<br>
+															<pre><span style="color: Blue;">End Sub</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+										
+										<h3>15) Revert the form to its initial state.</h3>
+										
+										<p>Some forms use a <b>ClearForm</b> method while others use a <b>ResetForm</b> method.  There may even be others
+										I have yet to discover.  Whatever the method is add the following code block to clear the screening controls and
+										the footer.</p>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Protected Overrides Sub</span> ResetForm()</pre>
+															<br>
+															<pre>    <span style="color: Blue;">MyBase</span>.ResetForm()</pre></pre>
+															<pre>    txtLastScreenBy.RecordBinder = <span style="color: Blue;">Nothing</span></pre>
+															<pre>    txtLastScreenDate.RecordBinder = <span style="color: Blue;">Nothing</span></pre>
+															<pre>    txtLastScreenBy.Text = <span style="color: Blue;">String</span>.Empty</pre>
+															<pre>    txtLastScreenDate.Text = <span style="color: Blue;">String</span>.Empty</pre>
+															<br>
+															<pre>    UI.ClearStatus(pnlFooter, UI.eShowStatus.All)</pre>
+															<br>
+															<pre><span style="color: Blue;">End Sub</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+										
+										<h3>16) DisplayInstance method</h3>
+										
+										<p>If the form has a display instance method then you can override that.  Otherwise you can create your own.</p>
+										<p>This method will ask the user if they wish to enter a new screening if the current one is not valid..</p>
+										<p>Note: The vendor form did not have a method that I could see would fit.  So I created one then had to incorporate it into
+										all the functions that would cause a vendor to be displayed.  They are:</p>
+										<ul>
+										<li>Key_txtHeader_Validated - Called when a vendor id is entered.</li>
+										<li>Key_fndHeader_FindSelected - Fired when a vendor is selected in the find dialog.</li>
+										<li>Key_recNav_RecordSelected - Executed when the navigation buttons are used.</li>
+										</ul>
+										<p>While the customer form was straight forward to just override the <b>DisplayCustomerInstance</b> the vendor form required
+										the call to be put everywhere a vendor can be brought up.</p>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Protected Overrides Sub</span> DisplayVendorInstance()</pre>
+															<br>
+															<pre>    <span style="color: Blue;">Dim</span> bCancelVendorDisplay <span style="color: Blue;">As Boolean</span></pre>
+															<pre>    <span style="color: Blue;">Dim</span> rc <span style="color: Blue;">As</span> Windows.Forms.DialogResult</pre>
+															<pre>    <span style="color: Blue;">Dim</span> eScreenStatus <span style="color: Blue;">As</span> Enumerations.eScreeningRC</pre>
+															<pre>    <span style="color: Blue;">Dim</span> Vendor <span style="color: Blue;">As</span> imsAO_Vendor_CUSTOM</pre>
+															<pre>    <span style="color: Blue;">Dim</span> strVendorID <span style="color: Blue;">As String</span></pre>
+															<br>
+															<br>
+															<pre>    <span style="color: Blue;">If</span> MainAO.AO <span style="color: Blue;">IsNot Nothing Then</span></pre>
+															<br>
+															<pre>        Vendor = <span style="color: Blue;">CType</span>(MainAO.AO, imsAO_Vendor_CUSTOM)</pre>
+															<pre>        strVendorID = Vendor.GetString(imsAO_Vendor_CUSTOM.FieldNames.ID)</pre>
+															<pre>        eScreenStatus = Vendor.ScreenStatus</pre>
+															<br>
+															<pre>        <span style="color: Blue;">If</span> eScreenStatus <> Enumerations.eScreeningRC.Screened_OK <span style="color: Blue;">Then</span></pre>
+															<pre>            <span style="color: Blue;">If</span> mbAllowScreening <span style="color: Blue;">Then</span></pre>
+															<pre>                rc = CustomMessage.DisplayScreeningFailure(eScreenStatus, _</pre>
+															<pre>                                                mconScreenSource, _</pre>
+															<pre>                                                DataAccessWrapper.Scalar.GetMessage(Constants.Question_WantToScreen), _</pre>
+															<pre>                                                <span style="color: Blue;">New String</span>() {strVendorID}, _</pre>
+															<pre>                                                MessageBoxButtons.YesNoCancel)</pre>
+															<pre>                <span style="color: Blue;">Select Case</span> rc</pre>
+															<pre>                    <span style="color: Blue;">Case</span> Windows.Forms.DialogResult.Yes</pre>
+															<pre>                        ScreenVendor()</pre>
+															<pre>                        eScreenStatus = Vendor.ScreenStatus</pre>
+															<br>
+															<pre>                    <span style="color: Blue;">Case</span> Windows.Forms.DialogResult.Cancel</pre>
+															<pre>                        bCancelVendorDisplay = <span style="color: Blue;">True</span></pre>
+															<pre>                        MainAO.Unbind()</pre>
+															<br>
+															<pre>                <span style="color: Blue;">End Select</span></pre>
+															<br>
+															<pre>            <span style="color: Blue;">Else</span></pre>
+															<pre>                CustomMessage.DisplayScreeningFailure(eScreenStatus, mconScreenSource)</pre>
+															<pre>            <span style="color: Blue;">End If</span></pre>
+															<br>
+															<pre>            <span style="color: Blue;">If</span> eScreenStatus <> Enumerations.eScreeningRC.Screened_OK <span style="color: Blue;">Then</span></pre>
+															<pre>                <span style="color: Blue;">If Not</span> bCancelVendorDisplay <span style="color: Blue;">Then</span></pre>
+															<pre>                    <span style="color: Blue;">If</span> mbAllowScreening <span style="color: Blue;">Then</span></pre>
+															<pre>                        UI.ShowStatusButtons(pnlFooter, UI.eShowStatus.Denied)</pre>
+															<pre>                        EnableScreeningFromFooter()</pre>
+															<pre>                    <span style="color: Blue;">Else</span></pre>
+															<pre>                        UI.ShowStatus(pnlFooter, UI.eShowStatus.Denied)</pre>
+															<pre>                    <span style="color: Blue;">End If</span></pre>
+															<pre>                <span style="color: Blue;">End If</span></pre>
+															<pre>            <span style="color: Blue;">EndIf</span></pre>
+															<br>
+															<pre>            <span style="color: Blue;">If Not</span> bCancelVendorDisplay <span style="color: Blue;">Then</span></pre>
+															<pre>                <span style="color: Blue;">If</span> mbAllowScreening <span style="color: Blue;">Then</span></pre>
+															<pre>                    lnkScreen.Enabled = <span style="color: Blue;">True</span></pre>
+															<pre>                <span style="color: Blue;">End If</span></pre>
+															<pre>            <span style="color: Blue;">End If</span></pre>
+															<br>
+															<pre>        <span style="color: Blue;">End If</span></pre>
+															<br>
+															<pre>    <span style="color: Blue;">End If</span></pre>
+															<br>
+															<pre><span style="color: Blue;">End Sub</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+										
+										<h3>17) Create a <b>DisableScreeningFromFooter</b> method.</h3>
+										
+										<p>This method will just turn off the screening button in the footer.</p>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Private Sub</span> DisableScreeningFromFooter()</pre>
+															<br>
+															<pre>    <span style="color: Blue;">Dim</span> ctl <span style="color: Blue;">As</span> Control</pre>
+															<br>
+															<br>
+															<pre>    ctl = <span style="color: Blue;">Me</span>.Controls(mconFooterName).Controls(UI.StatusButtonStop)</pre>
+															<pre>    <span style="color: Blue;">If</span> ctl <span style="color: Blue;">IsNot Nothing Then</span></pre>
+															<pre>        <span style="color: Blue;">RemoveHandler</span> ctl.Click, <span style="color: Blue;">AddressOf</span> ScreenVendor</pre>
+															<pre>    <span style="color: Blue;">End If</span></pre>
+															<br>
+															<pre><span style="color: Blue;">End Sub</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+										
+										<h3>18) Create a <b>EnableScreeningFromFooter</b> method.</h3>
+										
+										<p>This method will just turn on the screening button in the footer.  It removes the handler first since, however unlikely
+										a user can call up the screening form twice and deny the party twice.  Then if they called up the screening form again it
+										would appear twice.  If the handler is removed first it prevents this.</p>
+
+										<div class="sectionblock">
+											<div class="codeSnippetContainer">  	  
+												<div class="codeSnippetContainerTabs">
+													<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+														<a>VB</a>
+													</div>
+												</div>
+												<div class="codeSnippetContainerCodeContainer">
+													<div class="codeSnippetToolBar">
+													</div>
+													<div class="codeSnippetContainerCode">
+														<div style="color: Black;">
+															<pre><span style="color: Blue;">Private Sub</span> EnableScreeningFromFooter()</pre>
+															<br>
+															<pre>    <span style="color: Blue;">If</span> mbAllowScreening <span style="color: Blue;">Then</span></pre>
+															<pre>        DisableScreeningFromFooter()</pre>
+															<pre>        <span style="color: Blue;">AddHandler Me</span>.Controls(mconFooterName).Controls(UI.StatusButtonStop).Click, <span style="color: Blue;">AddressOf</span> ScreenVendor</pre>
+															<pre>    <span style="color: Blue;">End If</span></pre>
+															<br>
+															<pre><span style="color: Blue;">End Sub</span></pre>
+														</div>																	
+													</div>
+												</div>
+											</div>
+										</div>	
+										<br>
+										
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,183 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairExportManagement - Built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairExportManagement'
+					Source[2] = 'ExportManagement'
+					Source[3] = 'ScreenCustomer'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">ScreenCustomer Method</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Checks a customer's screening.</p>						
+	
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<img src="Graphics/minus.png" name="Syntax" onclick="CollapseExpand('Syntax')"><span class="LW_CollapsibleArea_Title">Syntax</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div id='Syntax' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">
+													<pre><span style="color: Green;">'Declarations</span></pre>
+														<pre><span style="color: Blue;">Public Function </span>ScreenCustomer(<span style="color: Blue;">Of </span>CustomerKey)( _</pre>
+														<pre>        CustomerID<span style="color: Blue;"> As </span>CustomerKey, _</pre>
+														<pre>        eSourceAction<span style="color: Blue;"> As </span>eScreenAction, _</pre>
+														<pre>        CustomerScreening<span style="color: Blue;"> As </span>rotAO_Screening _</pre>
+														<pre>) <span style="color: Blue;">As</span> eScreeningRC</pre>
+													<br>
+												</div>				
+											</div>
+										</div>
+										<div id="typeparameters">
+											<h4 class="subHeading">Type Parameters</h4>
+												<dl><dt><span class="parameter">CustomerKey</span></dt>
+													<dd><span><span>The type of customer key used.  Can be a string or guid.</span><br></span></dd>
+												</dl>
+										</div>							
+
+										<div id="parameters">
+											<h4 class="subHeading">Parameters</h4>
+												<dl><dt><span class="parameter">CustomerID</span></dt>
+													<dd>Type: CustomerKey<br><span><span>Key for the customer.</span><br></span></dd>
+												</dl>
+												<dl><dt><span class="parameter">eSourceAction</span></dt>
+													<dd>Type: <a href='RotairTypes.Enumerations.eScreenAction.html'>eScreenAction</a><br><span><span>What the user did to instigate the screening.</span><br></span></dd>
+												</dl>
+												<dl><dt><span class="parameter">CustomerScreening</span></dt>
+													<dd>Type: <a href="RotairAOScreening.rotAOScreening.html">rotAO_Screening</a><br><span><span>A screening record for the customer.</span><br></span></dd>
+												</dl>
+										</div>							
+
+										<div id="returnvalue">
+											<h4 class="subHeading">Return Value</h4>
+												<dl>
+													<dd>Type: <a href='RotairTypes.Enumerations.eScreeningRC.html'>eScreeningRC</a><br><span><span>Results of the screening.</span><br></span></dd>
+												</dl>
+
+										</div>							
+									</div>
+								</div>
+
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>Returns the results of a customer screening.</p>
+																										
+									</div>
+
+								</div>	
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Example" onclick="CollapseExpand('Example')"><span class="LW_CollapsibleArea_Title">Example</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>The example will display a message depending on the results of the customer's screening.</p>
+									
+									</div>
+								</div>
+
+								<div id='Example' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">												        
+													<pre>eRC<span style="color: Blue;"> As </span>Enumerations.eScreeningRC</pre>
+													<pre>Screening<span style="color: Blue;"> As </span>rotAOScreening</pre>
+													<br>
+													<pre>eRC = ExportManagement.<b>ScreenCustomer</b>( _</pre>
+													<pre>        <span style="color: Red;">"623454"</span>, _</pre>
+													<pre>        Enumerations.eScreenAction.Open_A_Customer, _</pre>
+													<pre>        Screening)</pre>
+													<pre><span style="color: Blue;">Select Case</span> eRC</pre>
+													<pre>    <span style="color: Blue;">Case</span> Enumerations.eScreeningRC.Denied_Party</pre>
+													<pre>        Messagebox.Show(<span style="color: Red;">"Can not do business with this customer."</span>)</pre>
+													<pre>    <span style="color: Blue;">Case</span> Enumerations.eScreeningRC.Never_Screened </pre>
+													<pre>        Messagebox.Show(<span style="color: Red;">"Customer needs to be screened."</span>)</pre>
+													<pre>    <span style="color: Blue;">Case</span> Enumerations.eScreeningRC.Screening_Out_of_Date</pre>
+													<pre>        Messagebox.Show(<span style="color: Red;">"Customer needs a current screening."</span>)</pre>
+													<pre>    <span style="color: Blue;">Case</span> Enumerations.eScreeningRC.Screened_OK</pre>
+													<pre>        Messagebox.Show(<span style="color: Red;">"Clear to do business with this customer."</span>)</pre>
+													<pre><span style="color: Blue;">End Select</span></pre>
+												</div>																	
+											</div>
+										</div>
+									</div>				
+									
+								</div>	
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

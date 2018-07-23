@@ -1,0 +1,372 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairHC_Report Namespace - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<div class="searchcontainer">
+	
+					<form id="SearchForm" action="http://social.msdn.microsoft.com/search/en-us" method="get" style="margin: 0pt; padding: 0pt;" onsubmit="return checkSearchBox()">
+						<div class="searchBoxContainer" style="">
+							<table class="searchBox" border="0" cellpadding="0" cellspacing="0">
+								<tbody>
+									<tr>
+										<td class="searchTextBoxTd">
+											<input value="Search MSDN with Bing" id="SearchInput" maxlength="200" class="searchTextBox" name="query" type="text">        
+										</td>
+										<td class="searchButtonTd">
+											<input src="Graphics/Search.gif" style="position: relative;" title="Search " type="image">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</form>
+					
+					<script type="text/javascript">
+					//<![CDATA[
+						if (!MTPS) var MTPS = {};
+						if (!MTPS.Watermarks) MTPS.Watermarks = {};
+						MTPS.Watermarks.SearchInput = {
+							"control": "SearchInput",
+							"defaultValue": "Search MSDN with Bing",
+							"defaultCSS": "searchTextBox",
+							"focusCSS": "searchTextBoxTrue"
+						};
+						function checkSearchBox() {
+							if (document.getElementById("SearchInput").value == MTPS.Watermarks.SearchInput.defaultValue) {
+								document.getElementById("SearchInput").value = "";
+							}
+						}
+					 //]]>
+					</script>
+				</div>
+
+				<div class="navcontainer">
+			  
+					<div class="nav">
+			
+						<div id="tocnav">
+			
+							<div class="toclevel0 ancestry">
+							
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/ms123401.aspx">MSDN Library</a>
+								</div>
+            
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>								
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/ff361664%28v=vs.110%29.aspx">.NET Development</a>
+								</div>
+            
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>            
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/w0x726c2.aspx">.NET Framework 4</a>
+								</div>
+            
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>								
+								<div class="nav_div_currentroot">
+									<a href="http://msdn.microsoft.com/en-us/library/gg145045.aspx">.NET Framework Class Library</a>
+								</div>
+
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="ERP Custom Namespaces.html">ERP Customized Namespaces</a>
+								</div>						
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Base Classes.html">Custom Base Classes</a>
+								</div>
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Classes.html">Custom Classes</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Controls.html">Custom Controls</a>
+								</div>
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Classes Derived.html">Custom Derived from rotAppObject</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Custom Forms Derived from imsForms.html">Custom Forms Derived from imsForm</a>
+								</div>
+							
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Customized Intuitive AppObjects.html">Customized Intuitive imsAppObjects</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Customized Intuitive Forms.html">Customized Intuitive imsForms</a>
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Printing Classes.html">Printing Classes</a>
+								</div>
+								
+								<div class="clip13x9 nav_dots_current">
+									<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+								</div>					
+								<div class="toclevel">
+									<a href="RotairHCReport.html">RotairHC_Report</a>
+								</div>
+
+								<div class="toclevel0">
+							
+									<div class="clip13x9 nav_dots_current">
+										<img src="Graphics/Graphics.png" class="tree_dots_pic" alt="">
+									</div>					
+									<div class="toclevel current">
+										<a href="RotairHCReport.frmTestForm.html">frmTestForm</a>
+									</div>
+								
+								</div>
+								
+								<div class="clip5x9 nav_arrows">
+									<img src="Graphics/Graphics.png" class="tree_uparrow_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Windows Custom Dialog Forms.html">Windows Custom Dialog Forms</a>
+								</div>
+								
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="External Programs.html">External Programs</a>
+								</div>						
+							
+								<div class="clip5x9 nav_root">
+									<img src="Graphics/Graphics.png" class="tree_bullet_pic" alt="">
+								</div>					
+								<div class="nav_div_currentroot">
+									<a href="Stored Procedures.html">Stored Procedures</a>
+								</div>						
+							
+							</div>
+							
+						</div>
+
+					</div>
+
+				</div>
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">frmTestForm form</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Form used to test the report writer <a href="RotairHCReport.rotHCReporter.html">rotHC_Reporter</a> by creating dummy data.</p>
+
+								<img src='Graphics/RotairHCReport.frmTestForm.png'>
+								<br>
+								<font size='1'>Sample of TestForm and data.</font>
+
+								<p>To use this form follow the following steps.</p>
+								
+								<ol>
+								<li>Enter the number of columns you want in the first textbox.</li>
+								
+								<li>Click the 'Set Cols' buttom.</li>
+								
+								<li>Optional: You can set the minumom and/or maxumom size of the data (applicable only to alpha, numeric or alpha-numeric).  The percent of data that has a null value and the datatype.  
+								Choices of datatype are:</li>
+								
+									<ul>
+									<li>Unspecified - (has not been coded for; does not work.)</li>
+									<li>Alphabetic - letters 'a' through 'z'.</li>
+									<li>Alphanumeric - letters 'a' through 'z' and digits 0 through 9.</li>
+									<li>Date - in the form m/d/yyyy after 1/1/1950.</li>
+									<li>DateTime - a date in the fashion you get from using <b>Date</b> with a <b>Time</b> appended to the end of it.</li>
+									<li>Numeric - digits 0 through 9.</li>
+									<li>Time - a time in the format hh:mm.</li>
+									</ul>
+								
+								<li>Enter the number of rows you want in the second textbox.</li>
+								
+								<li>Click the 'Set Rows' buttom.</li>
+								
+								<li>Click the 'Preview' buttom to get a print preview of the report.  You can also print from the preview.</li>
+								
+								<li>Click the 'Print' buttom to print the report.</li>
+								
+								<li>The 'Add Table' buttom is intended to add a table to the dataset.  The report writer supports this.  The TestForm does not (button has no code behind it).</li>
+								
+
+							</div>
+							
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Example</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>This is the example code used to demonstrate and test teh report writer.</p>
+								
+								</div>
+							</div>
+
+							<div class="sectionblock">
+								<div class="codeSnippetContainer">  	  
+									<div class="codeSnippetContainerTabs">
+										<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+											<a>VB</a>
+										</div>
+									</div>
+									<div class="codeSnippetContainerCodeContainer">
+										<div class="codeSnippetToolBar">
+										</div>
+										<div class="codeSnippetContainerCode">
+											<div style="color: Black;">
+												<pre><span style="color: Blue;">With</span> Printing</pre>
+												<br>
+												<pre>    <span style="color: Green;">'Customize HERE</span></pre>
+												<br>
+												<br>
+												<pre>    <span style="color: Green;">'The first header (or subheader or footer) does not need to be indexed.</span></pre>
+												<pre>    <span style="color: Blue;">With</span> .Header.CenterText</pre>
+												<pre>        .Color = Drawing.Color.Aqua</pre>
+												<pre>        .PrintFrequency = rotHC_Reporter.HeaderFooterOptions.PrintOnce</pre>
+												<pre>        .Size = <span style="color: Gray;">22</span></pre>
+												<pre>        .Text = <span style="color: Red;">"Denied Party (Customer) Order History and Status"</span></pre>
+												<pre>    <span style="color: Blue;">End With</span></pre>
+												<pre>    <span style="color: Green;">'Any additional headers past the first (including subheaders and footers) need to be indexed.</span></pre>
+												<pre>    .Header(<span style="color: Gray;">2</span>).CenterText.PrintFrequency = rotHC_Reporter.HeaderFooterOptions.PrintEveryPage</pre>
+												<pre>    .Header(<span style="color: Gray;">2</span>).CenterText.Text = <span style="color: Red;">"Denied Party 011300          Airrod whatever"</span></pre>
+												<pre>    .Header(<span style="color: Gray;">2</span>).LeftText.PrintFrequency = rotHC_Reporter.HeaderFooterOptions.PrintEveryPage</pre>
+												<pre>    .Header(<span style="color: Gray;">2</span>).LeftText.Text = <span style="color: Red;">"Left ----"</span></pre>
+												<pre>    .Header(<span style="color: Gray;">2</span>).RightText.PrintFrequency = rotHC_Reporter.HeaderFooterOptions.PrintEveryPage</pre>
+												<pre>    .Header(<span style="color: Gray;">2</span>).RightText.Text = <span style="color: Red;">"---- thgiR"</span></pre>
+												<br>
+												<pre>    <span style="color: Green;">'A subheader is associated with a table only noticed in a multi-table report.  Otherwise appears just lie a header.</span></pre>
+												<pre>    <span style="color: Blue;">With</span> .SubHeader.CenterText</pre>
+												<pre>        .Color = Drawing.Color.Brown</pre>
+												<pre>        .PrintFrequency = rotHC_Reporter.HeaderFooterOptions.PrintEveryPage</pre>
+												<pre>        .Size = <span style="color: Gray;">16</span></pre>
+												<pre>        .Text = <span style="color: Red;">"Orders"</span></pre>
+												<pre>    <span style="color: Blue;">End With</span></pre>
+												<br>
+												<pre>    <span style="color: Green;">'The first column header does require an index.  The first line of a multi-line column header does not.</span></pre>
+												<pre>    .ColumnHeaders(<span style="color: Gray;">1</span>).TextLine = <span style="color: Red;">"Numero"</span></pre>
+												<pre>    .ColumnHeaders(<span style="color: Gray;">1</span>).TextLine(<span style="color: Gray;">2</span>) = <span style="color: Red;">"Uno"</span></pre>
+												<pre>    <span style="color: Green;">'Columns can be skipped if there is no need to customize them.</span></pre>
+												<pre>    .ColumnHeaders(<span style="color: Gray;">3</span>).TextLine = <span style="color: Red;">"Header 3"</span></pre>
+												<pre>    .ColumnHeaders(<span style="color: Gray;">3</span>).TextLine(<span style="color: Gray;">2</span>) = <span style="color: Red;">"--------"</span></pre>
+												<pre>    .ColumnHeaders(<span style="color: Gray;">3</span>).Color = Drawing.Color.Red</pre>
+												<pre>    .ColumnHeaders(<span style="color: Gray;">3</span>).Size = <span style="color: Gray;">24</span></pre>
+												<pre>    .ColumnHeaders(<span style="color: Gray;">3</span>).Style = Drawing.FontStyle.Strikeout</pre>
+												<pre>    .ColumnHeaders(<span style="color: Gray;">5</span>).Align = rotHC_Reporter.Alignment.Left</pre>
+												<pre>    .ColumnHeaders(<span style="color: Gray;">6</span>).TextLine = <span style="color: Red;">"Hex"</span></pre>
+												<pre>    .ColumnHeaders(<span style="color: Gray;">7</span>).TextLine(<span style="color: Gray;">2</span>) = <span style="color: Red;">"Sept"</span></pre>
+												<pre>    .ColumnHeaderGroups(<span style="color: Gray;">0</span>).AutoFitColumns = <span style="color: Blue;">True</span></pre>
+												<pre>    .ColumnHeaderGroups(<span style="color: Gray;">0</span>).HideColumnHeaders = <span style="color: Blue;">False</span></pre>
+												<pre>    .DetailColumn(<span style="color: Gray;">2</span>).Color = Drawing.Color.Green</pre>
+												<pre>    .DetailColumn(<span style="color: Gray;">2</span>).Size = <span style="color: Gray;">24</span></pre>
+												<pre>    .DetailColumn(<span style="color: Gray;">5</span>).Align = rotHC_Reporter.Alignment.Right</pre>
+												<br>
+												<pre>    <span style="color: Green;">'Tokens can be used in any header or footer.</span></pre>
+												<pre>    <span style="color: Blue;">With</span> .Footer.LeftText</pre>
+												<pre>        .Color = Drawing.Color.Blue</pre>
+												<pre>        .Font = <span style="color: Red;"></span>"Times New Roman"</pre>
+												<pre>        .PrintFrequency = rotHC_Reporter.HeaderFooterOptions.PrintEveryPage</pre>
+												<pre>        .Size = <span style="color: Gray;">9</span></pre>
+												<pre>        .Text = Printing.TokenOpen & rotHC_Reporter.Tokens.TodayLong.ToString & Printing.TokenClose</pre>
+												<pre>    <span style="color: Blue;">End With</span></pre>
+												<pre>    <span style="color: Blue;">With</span> .Footer(<span style="color: Gray;">1</span>).RightText</pre>
+												<pre>        .Color = Drawing.Color.Blue</pre>
+												<pre>        .Font = <span style="color: Red;"></span>"Times New Roman"</pre>
+												<pre>        .PrintFrequency = rotHC_Reporter.HeaderFooterOptions.PrintEveryPage</pre>
+												<pre>        .Size = <span style="color: Gray;">9</span></pre>
+												<pre>        .Text = <span style="color: Red;">"Page "</span> & Printing.TokenOpen & rotHC_Reporter.Tokens.Page.ToString & Printing.TokenClose & _</pre>
+												<pre>             <span style="color: Red;">" of "</span> & Printing.TokenOpen & rotHC_Reporter.Tokens.Pages.ToString & Printing.TokenClose</pre>
+												<pre>    <span style="color: Blue;">End With</span></pre>
+												<br>
+												<pre>    <span style="color: Green;">'Pass in the data.</span></pre>
+												<pre>    .Data = mDS</pre>
+												<br>
+												<pre>    <span style="color: Green;">'Statistics are for debugging.</span></pre>
+												<pre>    .ShowStatistics = <span style="color: Blue;">True</span></pre>
+												<br>
+												<pre><span style="color: Blue;">End With</span></pre>
+												<br>
+											</div>																	
+
+										</div>
+									</div>
+								</div>
+
+							</div>	
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

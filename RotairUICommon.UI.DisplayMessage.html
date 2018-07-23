@@ -1,0 +1,212 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairUICommon - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="width: 280px; padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairUICommon'
+					Source[2] = 'UI'
+					Source[3] = 'DisplayMessage'
+					document.write(Menu(Source));
+				</script> 			
+
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">DisplayMessage Method</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Displays a message from a table.</p>
+							
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Syntax" onclick="CollapseExpand('Syntax')"><span class="LW_CollapsibleArea_Title">Syntax</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div id='Syntax' class="sectionblock">
+										<div class="codeSnippetContainer">  	  
+											<div class="codeSnippetContainerTabs">
+												<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+													<a>VB</a>
+												</div>
+											</div>
+											<div class="codeSnippetContainerCodeContainer">
+												<div class="codeSnippetToolBar">
+												</div>
+												<div class="codeSnippetContainerCode">
+													<div style="color: Black;">
+														<pre><span style="color: Green;">'Declaration</span></pre>
+														<pre><span style="color: Blue;">Public Sub</span> DisplayMessage( _</pre>
+														<pre>        strMessageID<span style="color: Blue;"> As String</span> _</pre>
+														<pre>) <span style="color: Blue;">As</span> DialogResult</pre>
+														<br>
+														<pre><span style="color: Blue;">Public Sub</span> DisplayMessage( _</pre>
+														<pre>        strMessageID<span style="color: Blue;"> As String</span>, _</pre>
+														<pre>        Style<span style="color: Blue;"> As </span>MessageBoxIcon _</pre>
+														<pre>) <span style="color: Blue;">As</span> DialogResult</pre>
+														<br>
+														<pre><span style="color: Blue;">Public Sub</span> DisplayMessage( _</pre>
+														<pre>        strMessageID<span style="color: Blue;"> As String</span>, _</pre>
+														<pre>        Style<span style="color: Blue;"> As </span>MessageBoxIcon, _</pre>
+														<pre>        strTitle<span style="color: Blue;"> As String</span> _</pre>
+														<pre>) <span style="color: Blue;">As</span> DialogResult</pre>
+														<br>
+														<pre><span style="color: Blue;">Public Sub</span> DisplayMessage( _</pre>
+														<pre>        strMessageID<span style="color: Blue;"> As String</span>, _</pre>
+														<pre>        Style<span style="color: Blue;"> As </span>MessageBoxIcon, _</pre>
+														<pre>        strTitle<span style="color: Blue;"> As String</span>, _</pre>
+														<pre>        strMessageSuffix<span style="color: Blue;"> As String</span> _</pre>
+														<pre>) <span style="color: Blue;">As</span> DialogResult</pre>
+														<br>
+														<pre><span style="color: Blue;">Public Sub</span> DisplayMessage( _</pre>
+														<pre>        strMessageID<span style="color: Blue;"> As String</span>, _</pre>
+														<pre>        Style<span style="color: Blue;"> As </span>MessageBoxIcon, _</pre>
+														<pre>        strTitle<span style="color: Blue;"> As String</span>, _</pre>
+														<pre>        strMessageSuffix<span style="color: Blue;"> As String</span>, _</pre>
+														<pre>        strMessageStrings()<span style="color: Blue;"> As String</span> _</pre>
+														<pre>) <span style="color: Blue;">As</span> DialogResult</pre>
+														<br>
+														<pre><span style="color: Blue;">Public Sub</span> DisplayMessage( _</pre>
+														<pre>        strMessageID<span style="color: Blue;"> As String</span>, _</pre>
+														<pre>        Style<span style="color: Blue;"> As </span>MessageBoxIcon, _</pre>
+														<pre>        strTitle<span style="color: Blue;"> As String</span>, _</pre>
+														<pre>        strMessageSuffix<span style="color: Blue;"> As String</span>, _</pre>
+														<pre>        strMessageStrings()<span style="color: Blue;"> As String</span>, _</pre>
+														<pre>        btnsUserButtons<span style="color: Blue;"> As </span>MessageBoxButtons _</pre>
+														<pre>) <span style="color: Blue;">As</span> DialogResult</pre>
+													</div>				
+												</div>
+											</div>
+											<div id="parameters">
+												<h4 class="subHeading">Parameters</h4>
+													<dl><dt><span class="parameter">strMessageID</span></dt>
+														<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string">System.String</a><br><span><span>Key used to find the message in the table.</span><br></span></dd>
+													</dl>
+													<dl><dt><span class="parameter">Style</span></dt>
+														<dd>Type: <a href='http://msdn.microsoft.com/en-us/library/system.windows.forms.messageboxicon'>MessageBoxIcon</a><br><span><span>Determines the icon to display.</span><br></span></dd>
+													</dl>
+													<dl><dt><span class="parameter">strTitle</span></dt>
+														<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string">System.String</a><br><span><span>Text for the title bar.</span><br></span></dd>
+													</dl>
+													<dl><dt><span class="parameter">strMessageSuffix</span></dt>
+														<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string">System.String</a><br><span><span>Text to append to the end of the message.</span><br></span></dd>
+													</dl>
+													<dl><dt><span class="parameter">strMessageStrings()</span></dt>
+														<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.string">System.String</a><br><span><span>An array of parameters to subtitute for tokens in the message.</span><br></span></dd>
+													</dl>
+													<dl><dt><span class="parameter">btnsUserButtons</span></dt>
+														<dd>Type: <a href='http://msdn.microsoft.com/en-us/library/system.windows.forms.messageboxbuttons'>MessageBoxButtons</a><br><span><span>Determines what buttons to display.</span><br></span></dd>
+													</dl>
+											</div>							
+											<div id="returnvalue">
+												<h4 class="subHeading">Return Value</h4>
+													<dl>
+														<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.windows.forms.form.dialogresult">DialogResult</a><br><span><span>Indicates what button was clicked.</span><br></span></dd>
+													</dl>
+
+											</div>							
+										</div>
+									</div>
+									
+								</div>
+							</div>
+									
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<p>Displays a message from <a href='Tables/MSG_English.PNG'>MSG_English</a> based on the passed in key.</p>
+			
+								</div>
+							</div>
+
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<img src="Graphics/minus.png" name="Example" onclick="CollapseExpand('Example')"><span class="LW_CollapsibleArea_Title">Example</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+										<p>The example checks whether an item has had its use class determined.  If not then it displays a message with the stop sign
+										icon.  This particular message displays the item id in the body of the message so this information is passed in as the last 
+										argument.</p>
+								
+								</div>
+							</div>
+
+							<div id='Example' class="sectionblock">
+								<div class="codeSnippetContainer">  	  
+									<div class="codeSnippetContainerTabs">
+										<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+											<a>VB</a>
+										</div>
+									</div>
+									<div class="codeSnippetContainerCodeContainer">
+										<div class="codeSnippetToolBar">
+										</div>
+										<div class="codeSnippetContainerCode">
+											<div style="color: Black;">												        
+												<pre><span style="color: Blue;">If Not</span> imsAO_UseClass.IsUseClassDetermined(<span style="color: Red;">"57356-001"</span>)<span style="color: Blue;">Then</span></pre>
+												<pre>    UI.DisplayMessage(<span style="color: Red;">"MSG_Rotair_UndeterminedUseClass"</span>, _</pre>												
+												<pre>                    MessageBoxIcon.Stop, _</pre>												
+												<pre>                    <span style="color: Red;">"Undetermined UseClass"</span>, _</pre>												
+												<pre>                    <span style="color: Blue;">String</span>.Empty, _</pre>												
+												<pre>                    <span style="color: Blue;">New String</span>() {<span style="color: Red;">"57356-001"</span>})</pre>												
+												<pre><span style="color: Blue;">End If</span></pre>
+											</div>																	
+										</div>
+									</div>
+								</div>				
+								
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

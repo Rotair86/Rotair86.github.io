@@ -1,0 +1,210 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			Customized imsAppObjects
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Links.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomizedAppObjects'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">Assemblies containing objects inheriting from vendor supplied objects whose base is imsAppObject</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								These are the assemblies that are derived from a vendor supplied class which is in turn derived from imsAppObject.  The framework finds the customizations
+								by the _CUSTOM suffix.  These classes require the custom bit to be flipped in the 
+								<script type="text/javascript">														
+									document.write(TableLink("AppObjMetaDataHeader"));
+								</script> 			
+								table.  The namespaces are named identically to 
+								the assemblies and can be considered as one since the vendor has not introduced additional namespaces.
+								<br>
+								<br>
+								Following is a list of the assemblies in alphabetical order.
+
+							</div>
+
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Customized assemblies of vendor supplied objects</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+										</div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("IntuitiveAOCustomerCUSTOM"));
+													</script>
+												</td>
+												<td>
+													Customer and vendor related functions and business rules.  Reads from tables 
+													<script type="text/javascript">														
+														document.write(TableLink("Customer"));
+													</script> 			
+													and
+													<script type="text/javascript">														
+														document.write(TableLink("VEN"));
+													</script>.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("IntuitiveAOEmployeeCUSTOM"));
+													</script>
+												</td>
+												<td>
+													Employee related functions and business rules.  Reads from table 
+													<script type="text/javascript">														
+														document.write(TableLink("EMP"));
+													</script>.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("IntuitiveAOItemCUSTOM"));
+													</script>
+												</td>
+												<td>
+													Item related functions and business rules.  Reads and writes to 
+													<script type="text/javascript">														
+														document.write(TableLink("Item"));
+													</script>, 
+													<script type="text/javascript">														
+														document.write(TableLink("tblItemSupplemental"));
+													</script> and 
+													<script type="text/javascript">														
+														document.write(TableLink("tblItemUseClass"));
+													</script>.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("IntuitiveAOMasterControlsCUSTOM"));
+													</script>
+												</td>
+												<td>
+													Needs info from Skip House.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("IntuitiveAOPurchaseOrderCUSTOM"));
+													</script>
+												</td>
+												<td>
+													Purchase Order related functions and business rules.  Reads and writes to 
+													<script type="text/javascript">														
+														document.write(TableLink("POM"));
+													</script>, 
+													<script type="text/javascript">														
+														document.write(TableLink("POI"));
+													</script> and 
+													<script type="text/javascript">														
+														document.write(TableLink("POD"));
+													</script>.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("IntuitiveAOQuoteHeaderCUSTOM"));
+													</script>
+												</td>
+												<td>
+													Quote related functions and business rules.  Reads and writes to
+													<script type="text/javascript">														
+														document.write(TableLink("QuoteHeader"));
+													</script>, 
+													<script type="text/javascript">														
+														document.write(TableLink("QuoteLine"));
+													</script>, 
+													<script type="text/javascript">														
+														document.write(TableLink("QuoteDelivery"));
+													</script> and 
+													<script type="text/javascript">														
+														document.write(TableLink("QuotePrice"));
+													</script>.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("IntuitiveAOSalesOrderCUSTOM"));
+													</script>
+												</td>
+												<td>
+													Sales Order related functions and business rules.  Reads and writes to
+													<script type="text/javascript">														
+														document.write(TableLink("SalesOrder"));
+													</script>, 
+													<script type="text/javascript">														
+														document.write(TableLink("SalesOrderLine"));
+													</script> and 
+													<script type="text/javascript">														
+														document.write(TableLink("SalesOrderDelivery"));
+													</script>.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<a href="#mainBody">Top</a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

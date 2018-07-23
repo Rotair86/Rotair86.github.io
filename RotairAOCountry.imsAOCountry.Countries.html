@@ -1,0 +1,175 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairAO_Country - Customizations by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomimsAppObjects'
+					Source[1] = 'RotairAOCountry'
+					Source[2] = 'imsAOCountry'
+					Source[3] = 'Countries'
+					document.write(Menu(Source));
+				</script> 			
+				
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">Countries Method</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Retiurns a dataset of countries.</p>
+								
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<img src="Graphics/minus.png" name="Syntax" onclick="CollapseExpand('Syntax')"><span class="LW_CollapsibleArea_Title">Syntax</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+									</div>
+								</div>
+								<div id='Syntax' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">
+													<pre><span style="color: Green;">'Declaration</span></pre>
+														<pre><span style="color: Blue;">Public Function </span>Countries( _</pre>
+														<pre>) <span style="color: Blue;">As </span>DataSet</pre>
+													<br>
+												</div>				
+											</div>
+										</div>
+									</div>
+
+									<div id="returnvalue">
+										<h4 class="subHeading">Return Value</h4>
+											<dl>
+												<dd>Type: <a href="http://msdn.microsoft.com/en-us/library/system.data.dataset.aspx">System.Data.DataSet</a><br><span><span>A collection of countries.</span><br></span></dd>
+											</dl>
+
+									</div>							
+								</div>
+																												
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Remarks</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>Returns a dataset of countries.</p>
+																										
+									</div>
+
+								</div>	
+								
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<img src="Graphics/minus.png" name="Example" onclick="CollapseExpand('Example')"><span class="LW_CollapsibleArea_Title">Example</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr"></div>
+										</div>
+									</div>
+									<div class="sectionblock">
+									
+										<p>The example populates an intuitive combobox with countries from the database.</p>
+									
+									</div>
+								</div>	
+
+								<div id='Example' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">												        
+													<br>		
+													<pre><span style="color: Blue;">Dim</span> dsCountry <span style="color: Blue;">As</span> DataSet</pre>
+													<pre><span style="color: Blue;">Dim</span> imsDisplayField <span style="color: Blue;">As</span> IntuitiveForms.Binding.imsFormattedFieldBinder</pre>
+													<pre><span style="color: Blue;">Dim</span> imsListViewColumn <span style="color: Blue;">As</span> imsColumnHeader</pre>
+													<br>
+													<br>
+													<pre>dsCountry = RotairAO_Country.imsAO_Country.<b>Countries</b>()</pre>
+													<pre><span style="color: Blue;">With</span> cboCountries</pre>
+													<pre>    imsListViewColumn = <span style="color: Blue;">New</span> imsColumnHeader</pre>
+													<pre>    <span style="color: Blue;">With</span> imsListViewColumn</pre>
+													<pre>        .ValueBinder.FieldName = <span style="color: Red;">"Country"</span></pre>
+													<pre>        .Text = <span style="color: Red;">"Country"</span></pre>
+													<pre>        .Width = <span style="color: Gray;">200</span></pre>
+													<pre>    <span style="color: Blue;">End With</span></pre>
+													<pre>    .ListViewColumns.Add(imsListViewColumn)</pre>
+													<br>
+													<pre>    imsDisplayField = <span style="color: Blue;">New</span> IntuitiveForms.Binding.imsFormattedFieldBinder</pre>
+													<pre>    <span style="color: Blue;">With</span> imsDisplayField</pre>
+													<pre>        .FieldName = <span style="color: Red;">"Country"</span></pre>
+													<pre>    <span style="color: Blue;">End With</span></pre>
+													<pre>    .Display.Fields.Add(imsDisplayField)</pre>
+													<br>
+													<pre>    <span style="color: Green;">'This property is required to be set</span></pre>
+													<pre>    .KeyField = <span style="color: Red;">"Country"</span></pre>
+													<br>
+													<pre>    .ListView.DataSource = dsCountry.Tables(<span style="color: Gray;">0</span>)</pre>
+													<br>
+													<pre><span style="color: Blue;">End With</span></pre>
+												</div>																	
+											</div>
+										</div>
+									</div>				
+									
+								</div>	
+
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

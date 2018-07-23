@@ -1,0 +1,1227 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			RotairDataAccess - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Links.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomClasses'
+					Source[1] = 'RotairDataAccess'
+					document.write(Menu(Source));
+				</script> 			
+								
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">RotairDataAccess Namespace</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<p>Data Access Layer (DAL).  Handles all transfer of data between other classes and the data base (SQL Server on Juliet).</p>
+							
+								<strong>Assembly:</strong>&nbsp;RotairDataAccess.dll
+							
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Dependancies</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<p>Explicitly referenced Intuitive dlls are included with the custom dependencies below.  Only the custom assemblies are displayed in the chart.  All others are ignored.</p>
+								
+								<table>
+									<tbody>
+										<col width='400'>
+										<col width='200'>
+										<tr>
+											<th class="nameColumn">Name</th>
+											<th class="referencedColumn">Explicitly Referenced</th>
+										</tr>
+										<tr>									
+											<td>
+												IntuitiveSystem.dll<br>
+											</td><td>X</td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairDynamicEnums", ".dll"));
+												</script> 			
+											</td><td>X</td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairGeneralFunctions", ".dll"));
+												</script> 			
+											</td><td></td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairTypes", ".dll"));
+												</script> 			
+											</td><td>X</td>
+										</tr>
+										<tr>									
+											<td>
+												<script type="text/javascript">														
+													document.write(AssemblyLink("RotairObject", ".dll"));
+												</script> 			
+											</td><td>X</td>
+										</tr>
+									</tbody>
+								</table>
+
+								<p style="overflow:auto;">
+									<img id='Dependancy Chart' src='Dependancy Charts/RotairDataAccess.png' onclick='ImageToggle(this)'>
+								</p>
+								<script type="text/javascript">
+									ImageToggle(document.getElementById('Dependancy Chart'));
+								</script> 			
+								<br>
+														
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Modules (shared classes)</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="sectionblock">
+								
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="iconColumn">&nbsp;</th>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Module.ico" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.DAConstants"));
+													</script> 																
+												</td>
+												<td>
+													Collection of constants used by the DAL prior, during or after accessing data.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Module.ico" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.DBConstants"));
+													</script> 																
+												</td>
+												<td>
+													Collection of constants directly related to data in the database.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<a href="#mainBody">Top</a>
+								</div>	
+									
+								<div xmlns="">
+									<div class="LW_CollapsibleArea_TitleDiv">
+										<div>
+											<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+											<span class="LW_CollapsibleArea_Title">Classes</span></a>
+											<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="sectionblock">
+
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="iconColumn">&nbsp;</th>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.CageCode"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("tblCAGECode"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.Certificate"));
+													</script> 																
+													<a href="RotairDataAccess.Certificate.html">Certificate</a>
+												</td>
+												<td>
+													Class of shared members allowing data access to the <i>Certificate</i> domain.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.Certificate.Header"));
+													</script> 																													
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("tblCertHeader"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.Certificate.Header.ItemDetail"));
+													</script> 																													
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("tblCertItemDetail"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.Certificate.Signature"));
+													</script> 																													
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("tblCertSignature"));
+													</script> table.
+												</td>
+											</tr>											
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.Customer"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("Customer"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.DataBase"));
+													</script> 																
+												</td>
+												<td>
+													Common functions used in other classes.
+												</td>
+											</tr>
+											<tr>		
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.DataSetCustom"));
+													</script> 																
+												</td>
+												<td>
+													Code to return a dataset from multiple domains, a table that is not in a domain or when the SQL is 
+													not known at compile time.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.DataSetCustom.Countries"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members returning datasets of countries.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.Employee"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("EMP"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.ExportLicense"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("tblExLicense"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.ExportLicense.Item"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("tblExLicenseItem"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.ExportLicense.Transaction"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("tblExLicenseTrans"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.GenericID"));
+													</script> 																
+												</td>
+												<td>
+													Class to facilitate the use of either the natural key or the uniqueidentifier (GUID).
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.Item"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("Item"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.Item.UseClass"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("tblItemUseClass"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.Locking"));
+													</script> 																
+												</td>
+												<td>
+													Any object that inherits from 
+													<script type="text/javascript">														
+														document.write(ClassLink("rotAppLockingObject"));
+													</script> uses this class.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.MCTS"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("MCTS"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.MMTS"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("MMTS"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.MMTS.Condition"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("tblMMTS_Condition"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.NoteType"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("tblRI_NoteType"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.NoteType.Note"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("tblRI_Note"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.PhraseForm"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("tblPhraseForm"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.PhraseForm.Phrase"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("tblPhrase"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.PMA"));
+													</script> 																
+												</td>
+												<td>
+													Encapsulates the 
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.PMA.Item"));
+													</script> class.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.PMA.Item"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("tblPMAItem"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.PurchaseOrder"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("POM"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.PurchaseOrder.Line"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("POI"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.Quote"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the <i>Quote</i> domain.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.Quote.Header"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("QuoteHeader"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.Quote.Header.Line"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("QuoteLine"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.Quote.Header.Line.Delivery"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("QuoteDelivery"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.Quote.Header.Line.Price"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("QuotePrice"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.Report"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("tblReport"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.Report.Footer"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("tblReportFooter"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.Report.Header"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("tblReportHeader"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.Report.Table"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("tblReportTable"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.Report.Table.Column"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("tblReportColumn"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.Report.Table.Detail"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("tblReportDetail"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.RFQ"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the <i>RFQ</i> domain.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.RFQ.Imaging"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("viewRFQImaging"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.RFQ.Master"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("tblRFQMaster"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.RFQ.Master.Item"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("tblRFQItem"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.RFQ.Master.Item.Vendor"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("tblRFQVendor"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.RFQ.Master.Item.Vendor.VendorQuote"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("tblRFQVendorQuote"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.SalesOrder"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("SalesOrder"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.SalesOrder.SalesOrderLine"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("SalesOrderLine"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.SalesOrder.SalesOrderLine.SalesOrderDelivery"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("SalesOrderDelivery"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.SalesOrder.SOMExportData"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("tblSOMExportData"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.Scalar"));
+													</script> 																
+												</td>
+												<td>
+													Functions that return a single value and are not part of a domain.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.Screening"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("tblExDPScreen"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.Shipping"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("Shipment"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.Shipping.Picklist"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("ShippingPicklist"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.Shipping.Picklist.PickListDelivery"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("ShippingPicklistDelivery"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.SupplierManufacturer"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("tblsuppman"));
+													</script> table.  Yes this table was named in all lowercase.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.Vendor"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("VEN"));
+													</script> table.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.WorkOrder"));
+													</script> 																
+												</td>
+												<td>
+													Encapsulates the 
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.WorkOrder.Operation"));
+													</script> class.
+												</td>
+											</tr>
+											<tr>									
+												<td>		
+													<div class="clip25x25" id="imagecenter25">
+														<img src="Graphics/Graphics.png" class="class_pic" alt="">
+													</div>
+												</td>
+												<td>
+													<script type="text/javascript">														
+														document.write(ClassLink("RotairDataAccess.WorkOrder.Operation"));
+													</script> 																
+												</td>
+												<td>
+													Class of shared members allowing data access to the 
+													<script type="text/javascript">														
+														document.write(TableLink("WOO"));
+													</script> table.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<a href="#mainBody">Top</a>
+								</div>
+								
+							</div>
+										
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

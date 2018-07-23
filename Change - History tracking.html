@@ -1,0 +1,372 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			Change / History Tracking - Developed by Skip House and John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+			
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'HistoryTracking'
+					document.write(Menu(Source));
+				</script> 			
+
+			</div>
+				
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">Change / History Tracking</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								<h2>Change Tracking</h2>
+								Skip House developed a change tracking system to track edits to the tables.  I am not an expert on his system, but I know enough to
+								give it a brief documentation.  I do not know if it can handle blobs.  It is however a well thought out system that works rather well.
+								It functions on the domain level and can be applied to any table.  The procedure of adding change tracking to a domain requires the 
+								following steps:
+								<ol><li>Add the change tracking fields to the required table(s).</li>
+								<li>Create the changes table(s) for every table in the domain where change tracking is required.</li>
+								<li>Create the stored procedure (SP) to copy from the tempory table(s) to the original table(s).  I believe a code generator exists for
+								this.</li>
+								<li>Build the object(s) to access the table(s), set fields and call the stored procedure.  Ideally these functions should be split into
+								the DataAccess layer and Business Obejcts layer.</li></ol>
+								
+								<br>
+								<h3>Change Tracking Fields</h3>
+								These fields must be added to the table(s) that change tracking is to be applied on.
+								<table id="memberList" class="members">
+									<tbody>
+										<tr>
+											<th class="nameColumn">Name</th>
+											<th class="descriptionColumn">Description</th>
+										</tr>
+										<tr>									
+											<td>
+												RecType
+											</td>
+											<td>
+												Can be either an 'A' for a newly added record or a 'C' for a changed or deleted record.
+											</td>
+										</tr>
+										<tr>									
+											<td>
+												RevNbr
+											</td>
+											<td>
+												A number that gets incremented each time the record is changed.  If a record gets deleted then added again the
+												numbering will pick up where it left off.
+											</td>
+										</tr>
+										<tr>									
+											<td>
+												LastRevBy
+											</td>
+											<td>
+												The employee id of the user that made this change.
+											</td>
+										</tr>
+										<tr>
+											<td>
+												LastRevDate
+											</td>
+											<td>
+												A datetime when this change took place.
+											</td>
+										</tr>
+										<tr>
+											<td>
+												DeletedBy
+											</td>
+											<td>
+												If the record was deleted then this field will have the employee id of the deleter in the changes table.  It will
+												never have a value in the parent table.
+											</td>
+										</tr>
+										<tr>
+											<td>
+												DeletedDate
+											</td>
+											<td>
+												If the record was deleted then this field will have the date and time when it was deleted in the changes table.  It will
+												never have a value in the parent table..
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								
+								<br>
+								<h3>Change Tracking Table(s)</h3>
+								Every table in the domain that we wish to apply change tracking requires a sister table with the string <b>Changes</b> appended to it.
+								
+								<h3>Change Tracking Stored Procedure</h3>
+								Every domain requires one SP.  This SP will have a section for each table.  It will accomplish the following for each table:
+								<ol><li>Updates the <i>DeletedBy</i> and <i>DeletedDate</i> fields in the original table.</li>
+								<li>Any records to be updated or deleted will get inserted into the changes table.</li>
+								<li>Deletes any records marked for deletion in the original table.</li>
+								<li>Increments the <i>RevNbr</i> field if any records to be inserted have matching primary keys in the changes table.</li>
+								<li>Inserts any new records into the original table.</li>
+								<li>Updates any changed records.</li></ol>
+							
+								There is one major flaw with the change tracking.  It is inapplicable with imsAppObjects (AOs).  This means we can't use any of the 
+								built in AO functions and change tracking at the same time.  We had to create our own base class to use the change tracking.  This is
+								the main driving force that created history tracking.
+								
+							</div>
+							
+							<br>
+							<br>
+							
+							<div id="mainBody">
+		  
+								<h2>History Tracking</h2>
+								<p>History tracking is basically change tracking 2.0.  Its design was copied from change tracking and has been simplified.  The name 
+								was changed to reduce confusion since both systems will be active in production at the same time.  The <i>DeletedBy</i> and 
+								<i>DeletedDate</i> fields have been removed from the source table and also from the history (changes) table.  They have been moved 
+								to a deleted table for a higher level of normalization and clarity.  History tracking works on the table level and trigger(s) will 
+								be created on all the tables we are interested in tracking and also a <b>History</b> and a <b>Deleted</b> table.  It was a little 
+								confusing how the change tracking would store a change and delete record in the same row so deletes have been assigned their own 
+								table.  Does not handle blobs.</p>
+
+								A <a href='Change Tracking Trigger.html'>CreateHistoryTrigger</a> SP exists for easily creating the triggers and tables needed.  
+								Unlike change tracking where one SP can handle an entire domain, history tracking requires a trigger for each table.  To implement 
+								history tracking follow these steps:
+								<ol><li>Add the change tracking fields to the required table(s).  Add an "RI_" prefix to Intuitive tables to drastically reduce the 
+								possibility of conflicts in the future.</li>
+								<li>A <b>Deleted</b> and <b>History</b> table are required.  These get created by the SP.</li>
+								<li>A trigger is required.  This gets created by the SP.</li>
+								<li>Add code to the <b>CheckAllRequiredFields</b>, <b>NewSetup</b> and <b>Save</b> functions.</li></ol>
+								
+								<h3>History Tracking Fields</h3>
+								These fields must be added to the table(s) that history tracking is to be applied on.
+								<table id="memberList" class="members">
+									<tbody>
+										<tr>
+											<th class="nameColumn">Name</th>
+											<th class="descriptionColumn">Description</th>
+										</tr>
+										<tr>									
+											<td>
+												RecType or RI_RecType
+											</td>
+											<td>
+												Can be either an 'A' for a newly <b>A</b>dded record, a 'C' for a <b>C</b>hanged record or a 'U' for a record that existed prior
+												to history tracking being installed for <b>U</b>nknow status.
+											</td>
+										</tr>
+										<tr>									
+											<td>
+												RevNbr or RI_RevNbr
+											</td>
+											<td>
+												A number that gets incremented each time the record is changed.  If a record gets deleted then added again the
+												numbering will pick up where it left off.
+											</td>
+										</tr>
+										<tr>									
+											<td>
+												LastRevBy or RI_LastRevBy
+											</td>
+											<td>
+												The employee id of the user that made this change.
+											</td>
+										</tr>
+										<tr>
+											<td>
+												LastRevDate or RI_LastRevDate
+											</td>
+											<td>
+												A datetime when this change took place.
+											</td>
+										</tr>
+										<tr>
+											<td>
+												DeletedBy or RI_DeletedBy
+											</td>
+											<td>
+												The machine name where the delete was issued from.
+											</td>
+										</tr>
+										<tr>
+											<td>
+												DeletedDate or RI_DeletedDate
+											</td>
+											<td>
+												A datetime when this delete took place.
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								
+								<h3>History Tracking Table(s)</h3>
+								Every table in the domain that we wish to apply history tracking requires two sister tables with the strings <b>Deleted</b> and <b>History</b> 
+								appended to then.  These get created automatically with the SP.
+								
+								<h3>History Tracking Trigger</h3>
+								Every table requires one trigger.  The trigger will be named after the table with a suffix of <i>HistoryTracking</i>.  The trigger will:
+								<ol><li>Copy the original row to the <b>History</b> table for a delete or update.</li>
+								<li>Add a row to the <b>Deleted</b> table for a delete setting the <i>LastRevBy</i> (or <i>RI_LastRevBy</i>) to the machine name and 
+								<i>LastRevDate</i> (or <i>RI_LastRevDate</i>) to the results of the GetDate function.</li>
+								<li>For an insert we need to check the <i>History</i> table for a previously deleted record and update the <i>RevNbr</i> (or <i>RI_RevNbr</i>) if
+								one was found.</li></ol>								
+
+								<br>
+								<h4>CheckAllRequiredFields function</h4>
+								This function needs to update <i>LastRevBy</i> and <i>LastRevDate</i> (or <i>RI_LastRevDate</i> and <i>RI_LastRevBy</i>) only if
+								at least one other field has been changed.
+								<div id='Example' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">												        
+													<pre><span style="color: Blue;">Public Overrides Function</span> CheckAllRequiredFields() <span style="color: Blue;">As</span> imsReturnData</pre>
+													<br>
+													<br>
+													<pre>    <span style="color: Blue;">Dim</span> r2d2 <span style="color: Blue;">As New</span> imsReturnData</pre>
+													<br>
+													<pre>    <span style="color: Green;">'History tracking</span></pre>
+													<pre>    <span style="color: Blue;">If Me</span>.DocumentChanged <span style="color: Blue;">Then</span></pre>
+													<pre>        <span style="color: Green;">'Set the last change date for history tracking.</span></pre>
+													<pre>        r2d2.Merge(SetValue(<span style="color: Blue;">True</span>, Constants.LastRevBy_FieldName_Customized, imsApplication.CurrentUser.EmpID))</pre>
+													<pre>        r2d2.Merge(SetValue(<span style="color: Blue;">True</span>, Constants.LastRevDate_FieldName_Customized, Now))</pre>
+													<pre>        <span style="color: Blue;">If</span> r2d2.AnyAppErrs <span style="color: Blue;">Then Return</span> r2d2</pre>
+													<pre>    <span style="color: Blue;">End If</span></pre>
+													<br>
+													<pre>    r2d2.Merge(<span style="color: Blue;">MyBase</span>.CheckAllRequiredFields())</pre>
+													<pre>    <span style="color: Blue;">Return</span> r2d2</pre>
+													<br>
+													<pre><span style="color: Blue;">End Function</span></pre>
+												</div>																	
+											</div>
+										</div>
+									</div>				
+									
+								</div>								
+								
+								<br>
+								<h4>NewSetup function</h4>
+								This function needs to set the <i>RecType</i> and <i>RevNbr</i> (or <i>RI_RecType</i> and <i>RI_RevNbr</i>).
+								<div id='Example' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">												        
+													<pre><span style="color: Blue;">Public Overrides Function</span> NewSetup() <span style="color: Blue;">As</span> imsReturnData</pre>
+													<br>
+													<br>
+													<pre>    <span style="color: Blue;">Dim</span> r2d2 <span style="color: Blue;">As New</span> imsReturnData</pre>
+													<br>
+													<pre>    r2d2.Merge(<span style="color: Blue;">MyBase</span>.NewSetup())</pre>
+													<br>
+													<pre>    <span style="color: Green;">'History tracking</span></pre>
+													<pre>    r2d2.Merge(SetValue(<span style="color: Blue;">True</span>, Constants.RecType_FieldName_Customized, Constants.RecType_NewRecord))</pre>
+													<pre>    r2d2.Merge(SetValue(<span style="color: Blue;">True</span>, Constants.RevNbr_FieldName_Customized, <span style="color: Gray;">0</span>))</pre>
+													<br>
+													<pre>    <span style="color: Blue;">Return</span> r2d2</pre>
+													<br>
+													<pre><span style="color: Blue;">End Function</span></pre>
+												</div>																	
+											</div>
+										</div>
+									</div>				
+									
+								</div>								
+								
+								<br>
+								<h4>Save function</h4>
+								This function needs to update <i>RecType</i> and <i>RevNbr</i> (or <i>RI_RecType</i> and <i>RI_RevNbr</i>) if at least one other 
+								field has changed and the record does not already exist in the database.
+								<div id='Example' class="sectionblock">
+									<div class="codeSnippetContainer">  	  
+										<div class="codeSnippetContainerTabs">
+											<div class="codeSnippetContainerTab codeSnippetContainerTabActive codeSnippetContainerTabLast" dir="ltr">
+												<a>VB</a>
+											</div>
+										</div>
+										<div class="codeSnippetContainerCodeContainer">
+											<div class="codeSnippetToolBar">
+											</div>
+											<div class="codeSnippetContainerCode">
+												<div style="color: Black;">												        
+													<pre><span style="color: Blue;">Public Overrides Function</span> Save(<span style="color: Blue;">Optional ByVal</span> ProcessNow <span style="color: Blue;">As Boolean</span> = <span style="color: Blue;">True</span>) <span style="color: Blue;">As</span> imsReturnData</pre>
+													<br>
+													<br>
+													<pre>    <span style="color: Blue;">Dim</span> r2d2 <span style="color: Blue;">As New</span> imsReturnData</pre>
+													<pre>    <span style="color: Blue;">Dim</span> intRevisionNumber <span style="color: Blue;">As New</span> imsReturnData</pre>
+													<br>
+													<pre>    <span style="color: Green;">'Update some history fields if this is an existing item</span></pre>
+													<pre>    <span style="color: Blue;">If Me</span>.DocumentChanged <span style="color: Blue;">And Me</span>.DocumentState <> aoObjectState.NEW_DOCUMENT <span style="color: Blue;">Then</span></pre>
+													<pre>        <span style="color: Green;">'Set the last change date for history tracking.</span></pre>
+													<pre>        r2d2.Merge(SetValue(<span style="color: Blue;">True</span>, Constants.RecType_FieldName_Customized, Constants.RecType_ChangedRecord))</pre>
+													<pre>        intRevisionNumber = GetInt32(Constants.RevNbr_FieldName_Customized)</pre>
+													<pre>        r2d2.Merge(SetValue(<span style="color: Blue;">True</span>, Constants.RevNbr_FieldName_Customized, intRevisionNumber + <span style="color: Gray;">1</span>))</pre>
+													<pre>        <span style="color: Blue;">If</span> r2d2.AnyAppErrs <span style="color: Blue;">Then Return</span> r2d2</pre>
+													<pre>    <span style="color: Blue;">End If</span></pre>
+													<br>
+													<pre>    r2d2.Merge(<span style="color: Blue;">MyBase</span>.Save())</pre>
+													<pre>    <span style="color: Blue;">Return</span> r2d2</pre>
+													<br>
+													<pre><span style="color: Blue;">End Function</span></pre>
+												</div>																	
+											</div>
+										</div>
+									</div>				
+									
+								</div>								
+																
+								<p>There is one major flaw with history tracking.  We are unable to trap the user id of the deleter.  Instead we store the machine that
+								requested the delete.  This was deemed acceptable.</p>
+								
+								<p>There is one major flaw with history tracking.  The LastRevBy and LastRevDate fields get updated in the CheckRequiredFields function.
+								The RevNbr and RecType get updated in the Save function.  When a system generated action updates an AO the CheckRequiredFields function
+								does not get called.  So we could get a change record with out a new change date.  If we move the code to the Save function then, using 
+								the Sales Order as an example, the master and lines will all get the LastRevBy and LastRevDate fields changed to a system id when a 
+								delivery line is edited.  So any inconsistemcies are pr5obably the direct result of a system action.</p>
+								
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>

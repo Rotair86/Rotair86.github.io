@@ -1,0 +1,225 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="General.css">
+		
+		<title>
+			Derived imsAppObjects - Architecture conceptualized, built and installed by John Maher
+		</title>
+		
+	</head>
+	
+	
+	<body>
+
+		<script type="text/javascript" src="Scripts/Common.js"></script>
+		<script type="text/javascript" src="Scripts/Links.js"></script>
+		<script type="text/javascript" src="Scripts/Menu.js"></script>
+
+		<div class="contentPlaceHolder">
+		
+			<div class="navigation" id="Navigation" style="padding-bottom: 96px;">
+
+				<script type="text/javascript">
+					Source = new Array(0);
+					Init(Source);
+					Source[0] = 'CustomimsAppObjects'
+					document.write(Menu(Source));
+				</script> 			
+
+			</div>
+			 
+			<div class="content">
+		
+				<div class="topicContainer">
+			
+					<div class="topic">
+					
+						<h1 class="title">Assemblies containing Custom Classes Derived from imsAppObject</h1>
+							  
+						<div id="mainSection">
+						
+							<div id="mainBody">
+		  
+								These are the assemblies we built that contain custom classes with imsAppObject as the base.  The namespaces are named identically to the assemblies and 
+								can be considered as one since we do not introduce additional namespaces.
+								<br>
+								<br>
+								Following is a list of the assemblies in alphabetical order.								
+
+							</div>
+
+							<div xmlns="">
+								<div class="LW_CollapsibleArea_TitleDiv">
+									<div>
+										<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse">
+										<span class="LW_CollapsibleArea_Title">Custom IMS Application Object Assemblies</span></a>
+										<div class="LW_CollapsibleArea_HrDiv"><hr class="LW_CollapsibleArea_Hr">
+										</div>
+									</div>
+								</div>
+								<div class="sectionblock">
+								
+									<table id="memberList" class="members">
+										<tbody>
+											<tr>
+												<th class="nameColumn">Name</th>
+												<th class="descriptionColumn">Description</th>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairAOCountry"));
+													</script> 			
+												</td>
+												<td>
+													Returns country data.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairAOEmail"));
+													</script> 			
+												</td>
+												<td>
+													Reads and writes to
+													<script type="text/javascript">														
+														document.write(TableLink("tblEmailType"));
+													</script> 			
+													and
+													<script type="text/javascript">														
+														document.write(TableLink("tblEmailRecipient"));
+													</script>.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairAOMessages"));
+													</script> 			
+												</td>
+												<td>
+													Returns message data.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairAOPMA"));
+													</script> 			
+												</td>
+												<td>
+													Encapsulates DAL functions.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairAORFQ"));
+													</script> 			
+												</td>
+												<td>
+													Reads and writes to
+													<script type="text/javascript">														
+														document.write(TableLink("tblRFQMaster"));
+													</script>, 
+													<script type="text/javascript">														
+														document.write(TableLink("tblRFQItem"));
+													</script>, 
+													<script type="text/javascript">														
+														document.write(TableLink("tblRFQItemQty"));
+													</script>, 
+													<script type="text/javascript">														
+														document.write(TableLink("tblRFQVendor"));
+													</script>, 
+													<script type="text/javascript">														
+														document.write(TableLink("tblRFQVendorQuote"));
+													</script> and 
+													<script type="text/javascript">														
+														document.write(TableLink("tblRFQVendorCharge"));
+													</script>.
+													<br>
+													Reads from 
+													<script type="text/javascript">														
+														document.write(TableLink("tblRFQImaging"));
+													</script> and 
+													<script type="text/javascript">														
+														document.write(TableLink("viewRFQImaging"));
+													</script>
+													<br>
+													Writes to 
+													<script type="text/javascript">														
+														document.write(TableLink("tblRFQsEmailed"));
+													</script>.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairimsAONote"));
+													</script> 			
+												</td>
+												<td>
+													AO for table 
+													<script type="text/javascript">														
+														document.write(TableLink("tblRI_Note"));
+													</script>.  
+													Replacement for
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairAONote"));
+													</script>.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairimsAOScreening"));
+													</script> 			
+												</td>
+												<td>
+													AO for table 
+													<script type="text/javascript">														
+														document.write(TableLink("tblExDPScreen"));
+													</script>.  
+													Replacement for
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairAOScreening"));
+													</script>.
+												</td>
+											</tr>
+											<tr>									
+												<td>
+													<script type="text/javascript">														
+														document.write(AssemblyLink("RotairAOSupplierManufacturer"));
+													</script> 			
+												</td>
+												<td>
+													Writes to
+													<script type="text/javascript">														
+														document.write(TableLink("tblsuppman"));
+													</script> 			
+													and reads from 
+													<script type="text/javascript">														
+														document.write(TableLink("tblSuppManTranslate"));
+													</script>.
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									
+									<a href="#mainBody">Top</a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="Scripts/Combined.js"></script>
+
+	</body>
+</html>
